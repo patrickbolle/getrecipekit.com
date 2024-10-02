@@ -1,210 +1,322 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "rich_text_hero_kxj36j": {
+      "type": "rich-text-hero",
       "blocks": {
-        "heading": {
+        "heading_3YfApy": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
-      "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
-    "rich_text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
+            "heading": "Sell more products on Shopify",
+            "heading_2": "with beautiful, SEO friendly recipe cards.",
             "heading_size": "h1"
           }
         },
-        "text": {
+        "text_YRCCeX": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "<p>Effortlessly integrate recipes and boost sales through engaging, SEO-optimized content.<\/p>"
+          }
+        },
+        "button_ReBBrJ": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get Started",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "Learn More",
+            "button_link_2": "",
+            "button_style_secondary_2": true
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "heading_3YfApy",
+        "text_YRCCeX",
+        "button_ReBBrJ"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 0
+        "padding_bottom": 52
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
+    "logo_list_zNL88B": {
+      "type": "logo-list",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "logo_PBJU4j": {
+          "type": "logo",
           "settings": {
-            "collection": ""
+            "logo_svg": ""
           }
         },
-        "product": {
-          "type": "product",
+        "logo_4ccGTC": {
+          "type": "logo",
           "settings": {
-            "product": "",
-            "second_image": false
+            "logo_svg": "",
+            "logo_image": "shopify:\/\/shop_images\/Andy_Cooks_-_Brand_Identity_Wordmark_WB.png"
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "logo_FqCzVU": {
+          "type": "logo",
           "settings": {
-            "collection": ""
+            "logo_svg": "",
+            "logo_image": "shopify:\/\/shop_images\/external-content.duckduckgo.com_9cb1fcc7-4e09-4631-b4a7-0f62a15a0b21.png"
+          }
+        },
+        "logo_qLeVjw": {
+          "type": "logo",
+          "settings": {
+            "logo_svg": "",
+            "logo_image": "shopify:\/\/shop_images\/external-content.duckduckgo.com_5e1d2352-251f-494c-aeb9-a199db087359.png"
+          }
+        },
+        "logo_tJdC7T": {
+          "type": "logo",
+          "settings": {
+            "logo_svg": "",
+            "logo_image": "shopify:\/\/shop_images\/5d2e0ca431c96c37ec50b22f.png"
+          }
+        },
+        "logo_7hBkrr": {
+          "type": "logo",
+          "settings": {
+            "logo_svg": "",
+            "logo_image": "shopify:\/\/shop_images\/magical-logo-dark_400x_949c84fa-a45a-457a-8c29-27f2a27dcf55.png"
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+        "logo_PBJU4j",
+        "logo_4ccGTC",
+        "logo_FqCzVU",
+        "logo_qLeVjw",
+        "logo_tJdC7T",
+        "logo_7hBkrr"
       ],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
+        "heading": "Trusted by",
+        "heading_highlight": "2000+ Shopify brands",
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
+    "testimonials_W7jaYf": {
+      "type": "testimonials",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "testimonial_VbdQeF": {
+          "type": "testimonial",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "author": "BBQ Pit Boys",
+            "content": "This is by far the best recipe app that exists for Shopify. We've battled for a long time with Shopify blogs to try to create recipes but thankfully this app solves all those issues! Highly recommend it."
           }
         },
-        "column2": {
-          "type": "column",
+        "testimonial_4JenaF": {
+          "type": "testimonial",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "author": "Brew and Feed",
+            "content": "This app is the best way I engage my customers. Publishing a recipe is quick and easy and the styling on my website is beautiful."
           }
         },
-        "column3": {
-          "type": "column",
+        "testimonial_LEdWMU": {
+          "type": "testimonial",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "author": "All The Bitter",
+            "content": "Huge fan of this app! We've been using it for almost 3 years, and it's a crucial component of our website. It does a fantastic job of hitting all of Google's points for SEO and visibility, the recipes look great on our site, and customer service is fantastic. Highly recommended."
+          }
+        },
+        "testimonial_yJjPib": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Olive Love",
+            "content": "Recipe Kit has been invaluable in showing customers how my store's infused olive oils and vinegars fit into their kitchens. If you're in the culinary e-commerce space, I would go so far as to say that you need this app."
+          }
+        },
+        "testimonial_fYYHQc": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Nomfan",
+            "content": "I moved over from Wordpress and was used to the WP Recipe Maker plugin (the king of recipe plugins on wordpress). I was super excited to see that there was a quality recipe card plugin on Shopify. The developer is super responsive. The app correctly outputs JSON so that your recipes will show up properly in Google search results! If you are looking to blog to increase traffic then this app is for you."
+          }
+        },
+        "testimonial_RNLrRy": {
+          "type": "testimonial",
+          "settings": {
+            "author": "La Boîte",
+            "content": "One of the best app experiences we have had on Shopify. Patrick is incredibly responsive and creative when it comes to our requests and is constantly coming up with new features to make the app better. The app itself is rock solid, easy to use, and does exactly what it's supposed to do. Can't recommend it enough to anyone looking to add recipes to their shopify store."
+          }
+        },
+        "testimonial_jdPeNM": {
+          "type": "testimonial",
+          "settings": {
+            "author": "National Mustard Museum",
+            "content": "We really like using this app to feature recipes that use our products. It's cool that we're able to link to the products directly in the ingredients list. It's nice and easy to import a lot of recipes at once."
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "testimonial_VbdQeF",
+        "testimonial_4JenaF",
+        "testimonial_LEdWMU",
+        "testimonial_yJjPib",
+        "testimonial_fYYHQc",
+        "testimonial_RNLrRy",
+        "testimonial_jdPeNM"
       ],
       "settings": {
-        "title": "",
+        "title": "Read trusted reviews from our customers",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "pricing_plans_pC3n8Q": {
+      "type": "pricing-plans",
+      "blocks": {
+        "pricing_plan_PNwQiw": {
+          "type": "pricing_plan",
+          "settings": {
+            "plan_name": "Starter",
+            "plan_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "plan_price": "20$",
+            "plan_billing_period": "\/month",
+            "button_label": "Get Started",
+            "button_link": "",
+            "features_title": "What's included:",
+            "feature_1": "",
+            "feature_1_enabled": true,
+            "feature_2": "",
+            "feature_2_enabled": true,
+            "feature_3": "",
+            "feature_3_enabled": true,
+            "feature_4": "",
+            "feature_4_enabled": true,
+            "feature_5": "",
+            "feature_5_enabled": true,
+            "feature_6": "",
+            "feature_6_enabled": true
+          }
+        },
+        "pricing_plan_WTLzJK": {
+          "type": "pricing_plan",
+          "settings": {
+            "plan_name": "Starter",
+            "plan_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "plan_price": "20$",
+            "plan_billing_period": "\/month",
+            "button_label": "Get Started",
+            "button_link": "",
+            "features_title": "What's included:",
+            "feature_1": "",
+            "feature_1_enabled": true,
+            "feature_2": "",
+            "feature_2_enabled": true,
+            "feature_3": "",
+            "feature_3_enabled": true,
+            "feature_4": "",
+            "feature_4_enabled": true,
+            "feature_5": "",
+            "feature_5_enabled": true,
+            "feature_6": "",
+            "feature_6_enabled": true
+          }
+        },
+        "pricing_plan_dTmLy7": {
+          "type": "pricing_plan",
+          "settings": {
+            "plan_name": "Starter",
+            "plan_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+            "plan_price": "20$",
+            "plan_billing_period": "\/month",
+            "button_label": "Get Started",
+            "button_link": "",
+            "features_title": "What's included:",
+            "feature_1": "",
+            "feature_1_enabled": true,
+            "feature_2": "",
+            "feature_2_enabled": true,
+            "feature_3": "",
+            "feature_3_enabled": true,
+            "feature_4": "",
+            "feature_4_enabled": true,
+            "feature_5": "",
+            "feature_5_enabled": true,
+            "feature_6": "",
+            "feature_6_enabled": true
+          }
+        }
+      },
+      "block_order": [
+        "pricing_plan_PNwQiw",
+        "pricing_plan_WTLzJK",
+        "pricing_plan_dTmLy7"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_DrytjN": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_EFLb79": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_MXcAHm": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_DPiiHY": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "row_content": "",
+            "page": ""
+          }
+        },
+        "collapsible_row_9L4Fiq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Collapsible row",
+            "row_content": "",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_EFLb79",
+        "collapsible_row_MXcAHm",
+        "collapsible_row_DPiiHY",
+        "collapsible_row_9L4Fiq"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "FAQ",
         "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "open_first_collapsible_row": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "rich_text_hero_kxj36j",
+    "logo_list_zNL88B",
+    "testimonials_W7jaYf",
+    "pricing_plans_pC3n8Q",
+    "collapsible_content_DrytjN"
   ]
 }

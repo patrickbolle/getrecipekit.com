@@ -1,0 +1,291 @@
+{{ 'section-rich-text.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="twcss-isolate{% unless section.settings.full_width %} page-width{% endunless %}">
+  <section class="rich-text-hero content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text-hero--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding twcss-bg-gray-50">
+    <div class="rich-text-hero__wrapper rich-text-hero__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %} twcss-mx-auto twcss-px-4 twcss-py-32 lg:twcss-flex lg:twcss-items-center">
+      <div class="rich-text-hero__blocks {{ section.settings.content_alignment }} twcss-mx-auto twcss-text-center twcss-grid">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'heading' -%}
+              <h1
+                class="rich-text-hero__heading rte {{ block.settings.heading_size }} twcss-text-3xl twcss-font-extrabold sm:twcss-text-5xl{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {{ block.shopify_attributes }}
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                {{ block.settings.heading }}
+                <br />
+                {%- if block.settings.heading_2 != blank -%}
+                  <strong class="twcss-font-extrabold twcss-text-red-500 sm:twcss-block">{{ block.settings.heading_2 }}</strong>
+                {%- endif -%}
+              </h1>
+            {%- when 'text' -%}
+              <p
+                class="rich-text-hero__text rte twcss-mt-4 sm:twcss-text-xl/relaxed{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {{ block.shopify_attributes }}
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                {{ block.settings.text }}
+              </p>
+            {%- when 'button' -%}
+              <div
+                class="rich-text-hero__buttons twcss-mt-8 twcss-max-w-xl twcss-flex twcss-flex-wrap twcss-justify-center twcss-gap-4{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text-hero__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {{ block.shopify_attributes }}
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                  style="--animation-order: {{ forloop.index }};"
+                {% endif %}
+              >
+                {%- if block.settings.button_label != blank -%}
+                  <a
+                    {% if block.settings.button_link == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ block.settings.button_link }}"
+                    {% endif %}
+                    class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %} twcss-block twcss-w-full twcss-rounded twcss-bg-red-600 twcss-px-12 twcss-py-3 twcss-text-sm twcss-font-medium twcss-text-white twcss-shadow hover:twcss-bg-red-700 focus:twcss-outline-none focus:twcss-ring active:twcss-bg-red-500 sm:twcss-w-auto"
+                  >
+                    {{- block.settings.button_label | escape -}}
+                  </a>
+                {%- endif -%}
+                {%- if block.settings.button_label_2 != blank -%}
+                  <a
+                    {% if block.settings.button_link_2 == blank %}
+                      role="link" aria-disabled="true"
+                    {% else %}
+                      href="{{ block.settings.button_link_2 }}"
+                    {% endif %}
+                    class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %} twcss-block twcss-w-full twcss-rounded twcss-px-12 twcss-py-3 twcss-text-sm twcss-font-medium twcss-text-red-600 twcss-shadow hover:twcss-text-red-700 focus:twcss-outline-none focus:twcss-ring active:twcss-text-red-500 sm:twcss-w-auto"
+                  >
+                    {{- block.settings.button_label_2 | escape -}}
+                  </a>
+                {%- endif -%}
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Rich Text Hero",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "desktop_content_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center",
+      "label": "Desktop Content Position",
+      "info": "Position of the content on larger screens"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center",
+      "label": "Content Alignment"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "default": true,
+      "label": "Full width"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "Understand User Flow.",
+          "label": "Heading"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading_2",
+          "default": "Increase Conversion.",
+          "label": "Heading 2"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "Small"
+            },
+            {
+              "value": "h1",
+              "label": "Medium"
+            },
+            {
+              "value": "h0",
+              "label": "Large"
+            }
+          ],
+          "default": "h1",
+          "label": "Heading size"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus numquam ea!</p>",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "Get Started",
+          "label": "First button label",
+          "info": "Leave blank to hide the button"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "First button link"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary",
+          "default": false,
+          "label": "Use secondary style for first button"
+        },
+        {
+          "type": "text",
+          "id": "button_label_2",
+          "default": "Learn More",
+          "label": "Second button label",
+          "info": "Leave blank to hide the button"
+        },
+        {
+          "type": "url",
+          "id": "button_link_2",
+          "label": "Second button link"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary_2",
+          "default": true,
+          "label": "Use secondary style for second button"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Rich Text Hero",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
