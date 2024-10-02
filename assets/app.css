@@ -683,16 +683,12 @@ video {
   max-width: 48rem;
 }
 
-.twcss-max-w-xl {
-  max-width: 36rem;
-}
-
-.twcss-max-w-6xl {
-  max-width: 72rem;
-}
-
 .twcss-max-w-7xl {
   max-width: 80rem;
+}
+
+.twcss-max-w-xl {
+  max-width: 36rem;
 }
 
 .twcss-shrink-0 {
