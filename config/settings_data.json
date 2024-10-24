@@ -1,6 +1,15 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
-    "logo": "shopify:\/\/shop_images\/Recipe-Kit-Logo_Color_5f9b6024-8870-42d5-83cc-e81cf15cca8c.png",
+    "logo": "shopify://shop_images/Recipe-Kit-Logo_Color_5f9b6024-8870-42d5-83cc-e81cf15cca8c.png",
     "logo_width": 180,
     "type_header_font": "hope_sans_n6",
     "heading_scale": 120,

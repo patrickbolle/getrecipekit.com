@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "rich_text_hero_kxj36j": {
@@ -14,7 +23,7 @@
         "text_YRCCeX": {
           "type": "text",
           "settings": {
-            "text": "<p>Effortlessly integrate recipes and boost sales through engaging, SEO-optimized content.<\/p>"
+            "text": "<p>Effortlessly integrate recipes and boost sales through engaging, SEO-optimized content.</p>"
           }
         },
         "button_ReBBrJ": {
@@ -56,35 +65,35 @@
           "type": "logo",
           "settings": {
             "logo_svg": "",
-            "logo_image": "shopify:\/\/shop_images\/Andy_Cooks_-_Brand_Identity_Wordmark_WB.png"
+            "logo_image": "shopify://shop_images/Andy_Cooks_-_Brand_Identity_Wordmark_WB.png"
           }
         },
         "logo_FqCzVU": {
           "type": "logo",
           "settings": {
             "logo_svg": "",
-            "logo_image": "shopify:\/\/shop_images\/external-content.duckduckgo.com_9cb1fcc7-4e09-4631-b4a7-0f62a15a0b21.png"
+            "logo_image": "shopify://shop_images/external-content.duckduckgo.com_9cb1fcc7-4e09-4631-b4a7-0f62a15a0b21.png"
           }
         },
         "logo_qLeVjw": {
           "type": "logo",
           "settings": {
             "logo_svg": "",
-            "logo_image": "shopify:\/\/shop_images\/external-content.duckduckgo.com_5e1d2352-251f-494c-aeb9-a199db087359.png"
+            "logo_image": "shopify://shop_images/external-content.duckduckgo.com_5e1d2352-251f-494c-aeb9-a199db087359.png"
           }
         },
         "logo_tJdC7T": {
           "type": "logo",
           "settings": {
             "logo_svg": "",
-            "logo_image": "shopify:\/\/shop_images\/5d2e0ca431c96c37ec50b22f.png"
+            "logo_image": "shopify://shop_images/5d2e0ca431c96c37ec50b22f.png"
           }
         },
         "logo_7hBkrr": {
           "type": "logo",
           "settings": {
             "logo_svg": "",
-            "logo_image": "shopify:\/\/shop_images\/magical-logo-dark_400x_949c84fa-a45a-457a-8c29-27f2a27dcf55.png"
+            "logo_image": "shopify://shop_images/magical-logo-dark_400x_949c84fa-a45a-457a-8c29-27f2a27dcf55.png"
           }
         }
       },
@@ -180,7 +189,7 @@
             "plan_name": "Starter",
             "plan_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             "plan_price": "20$",
-            "plan_billing_period": "\/month",
+            "plan_billing_period": "/month",
             "button_label": "Get Started",
             "button_link": "",
             "features_title": "What's included:",
@@ -204,7 +213,7 @@
             "plan_name": "Starter",
             "plan_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             "plan_price": "20$",
-            "plan_billing_period": "\/month",
+            "plan_billing_period": "/month",
             "button_label": "Get Started",
             "button_link": "",
             "features_title": "What's included:",
@@ -228,7 +237,7 @@
             "plan_name": "Starter",
             "plan_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
             "plan_price": "20$",
-            "plan_billing_period": "\/month",
+            "plan_billing_period": "/month",
             "button_label": "Get Started",
             "button_link": "",
             "features_title": "What's included:",
@@ -310,6 +319,23 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "featured_blog_kdEgAW": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "Learn about the best tips for food blogging",
+        "heading_size": "h1",
+        "blog": "blog-updates",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "show_image": true,
+        "show_date": false,
+        "show_author": false,
+        "show_view_all": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -317,6 +343,7 @@
     "logo_list_zNL88B",
     "testimonials_W7jaYf",
     "pricing_plans_pC3n8Q",
-    "collapsible_content_DrytjN"
+    "collapsible_content_DrytjN",
+    "featured_blog_kdEgAW"
   ]
 }
