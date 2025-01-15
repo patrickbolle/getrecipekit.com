@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/TrellisCommerce/shopify-dawn-tailwind-starter-base#readme",
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.4",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.3",
