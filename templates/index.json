@@ -29,11 +29,11 @@
         "button_ReBBrJ": {
           "type": "button",
           "settings": {
-            "button_label": "Get Started",
-            "button_link": "",
+            "button_label": "Install on Shopify",
+            "button_link": "https://apps.shopify.com/recipe-kit?utm_source=rk_website&utm_medium=homepage",
             "button_style_secondary": false,
-            "button_label_2": "Learn More",
-            "button_link_2": "",
+            "button_label_2": "View demo",
+            "button_link_2": "shopify://blogs/recipes/broccoli-chickpea-stirfry",
             "button_style_secondary_2": true
           }
         }
