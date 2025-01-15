@@ -48,7 +48,7 @@
               </p>
             {%- when 'button' -%}
               <div
-                class="rich-text-hero__buttons twcss-mt-8 twcss-max-w-xl twcss-flex twcss-flex-wrap twcss-justify-center twcss-gap-4{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text-hero__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class="rich-text-hero__buttons twcss-mt-8 twcss-flex twcss-flex-wrap twcss-justify-center twcss-gap-4{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text-hero__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
