@@ -290,15 +290,15 @@
           "type": "collapsible_row",
           "settings": {
             "heading": "What are some key features of the app?",
-            "row_content": "<p>Key features of Recipe Kit include customizable recipe card designs <br/>(like Uptown, Sunny, and Modern designs), an easy-to-use interface for <br/>creating and editing recipes, and the ability to add detailed <br/>nutritional information. Additionally, the app supports SEO optimization<br/> and integrates smoothly with your Shopify store to make recipes <br/>shoppable.</p>",
+            "row_content": "",
             "page": ""
           }
         },
         "collapsible_row_9L4Fiq": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "row_content": "",
+            "heading": "How do I get started?",
+            "row_content": "<p>You can start with a 14-day free trial by visiting the <a href=\"https://apps.shopify.com/recipe-kit\" target=\"_blank\" title=\"https://apps.shopify.com/recipe-kit\">Recipe Kit app listing</a><br/> and clicking the Install button. Installation is straightforward, and <br/>you can begin creating and publishing beautiful, shoppable recipes on your <br/>Shopify blog immediately! </p>",
             "page": ""
           }
         }
