@@ -23,7 +23,7 @@
         "text_YRCCeX": {
           "type": "text",
           "settings": {
-            "text": "<p>Say goodbye to manually formatting recipes. Meet Recipe Kit — the easy, intuitive recipe tool you’ve been looking for.</p>"
+            "text": "<p>Say goodbye to manually formatting recipes. <br/></p><p>Meet Recipe Kit — the easy, intuitive recipe tool you’ve been looking for.</p>"
           }
         },
         "button_ReBBrJ": {
