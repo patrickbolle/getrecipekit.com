@@ -15,7 +15,7 @@
         "heading_3YfApy": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>The </strong><span style=\"text-decoration:underline\"><strong>simplest way</strong></span>",
+            "heading": "<strong>The </strong><span style=\"text-decoration:underline\"><strong>simplest</strong></span><strong> way</strong>",
             "heading_2": "to create recipes on Shopify.",
             "heading_size": "h1"
           }
