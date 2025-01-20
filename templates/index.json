@@ -261,6 +261,7 @@
         "pricing_plan_WTLzJK",
         "pricing_plan_dTmLy7"
       ],
+      "disabled": true,
       "settings": {
         "padding_top": 36,
         "padding_bottom": 36
@@ -272,8 +273,8 @@
         "collapsible_row_EFLb79": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "row_content": "",
+            "heading": "How does Recipe Kit work?",
+            "row_content": "<p>Recipe Kit works by adding a beautiful, consistently formatted recipe card to any blog post of your choosing on your Shopify store. it takes all the work out of making your recipe look great, and also adds automatically generated rich SEO schema to ensure your recipe starts showing up in Google recipe search results.</p>",
             "page": ""
           }
         },
@@ -310,12 +311,12 @@
       ],
       "settings": {
         "caption": "",
-        "heading": "FAQ",
-        "heading_size": "h1",
-        "heading_alignment": "center",
+        "heading": "<strong>Questions & answers</strong>",
+        "heading_size": "h2",
+        "heading_alignment": "left",
         "layout": "none",
-        "color_scheme": "",
-        "open_first_collapsible_row": false,
+        "color_scheme": "scheme-1",
+        "open_first_collapsible_row": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
