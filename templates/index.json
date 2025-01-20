@@ -180,93 +180,6 @@
         "padding_bottom": 36
       }
     },
-    "pricing_plans_pC3n8Q": {
-      "type": "pricing-plans",
-      "blocks": {
-        "pricing_plan_PNwQiw": {
-          "type": "pricing_plan",
-          "settings": {
-            "plan_name": "Essentials",
-            "plan_description": "Exactly what you need to start your food blog.",
-            "plan_price": "$14.99",
-            "plan_billing_period": "/month",
-            "button_label": "Start free trial",
-            "button_link": "https://apps.shopify.com/recipe-kit?utm_source=rk_website&utm_medium=pricing",
-            "features_title": "What's included:",
-            "feature_1": "Unlimited recipes",
-            "feature_1_enabled": true,
-            "feature_2": "Auto generated SEO rich snippets",
-            "feature_2_enabled": true,
-            "feature_3": "4 recipe designs",
-            "feature_3_enabled": true,
-            "feature_4": "Blog filters",
-            "feature_4_enabled": true,
-            "feature_5": "Add Shopify products to ingredients",
-            "feature_5_enabled": true,
-            "feature_6": "",
-            "feature_6_enabled": true
-          }
-        },
-        "pricing_plan_WTLzJK": {
-          "type": "pricing_plan",
-          "settings": {
-            "plan_name": "Advanced",
-            "plan_description": "When you take your food brand to the next step.",
-            "plan_price": "$24.99",
-            "plan_billing_period": "/month",
-            "button_label": "Start free trial",
-            "button_link": "https://apps.shopify.com/recipe-kit?utm_source=rk_website&utm_medium=pricing",
-            "features_title": "What's included:",
-            "feature_1": "Shoppable recipes: add products to cart from recipe",
-            "feature_1_enabled": true,
-            "feature_2": "Multiple direction images",
-            "feature_2_enabled": true,
-            "feature_3": "AI generated recipes",
-            "feature_3_enabled": true,
-            "feature_4": "Recipe analytics",
-            "feature_4_enabled": true,
-            "feature_5": "Includes everything in Essentials",
-            "feature_5_enabled": true,
-            "feature_6": "",
-            "feature_6_enabled": true
-          }
-        },
-        "pricing_plan_dTmLy7": {
-          "type": "pricing_plan",
-          "settings": {
-            "plan_name": "Enterprise",
-            "plan_description": "For custom needs and priority support.",
-            "plan_price": "$84.99",
-            "plan_billing_period": "/month",
-            "button_label": "Start free trial",
-            "button_link": "https://apps.shopify.com/recipe-kit?utm_source=rk_website&utm_medium=pricing",
-            "features_title": "What's included:",
-            "feature_1": "Everything from Advanced",
-            "feature_1_enabled": true,
-            "feature_2": "1 on 1 consultation call with our team",
-            "feature_2_enabled": true,
-            "feature_3": "Custom recipe styling changes",
-            "feature_3_enabled": true,
-            "feature_4": "First access to new features",
-            "feature_4_enabled": true,
-            "feature_5": "Priority support",
-            "feature_5_enabled": true,
-            "feature_6": "",
-            "feature_6_enabled": true
-          }
-        }
-      },
-      "block_order": [
-        "pricing_plan_PNwQiw",
-        "pricing_plan_WTLzJK",
-        "pricing_plan_dTmLy7"
-      ],
-      "disabled": true,
-      "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "collapsible_content_DrytjN": {
       "type": "collapsible-content",
       "blocks": {
@@ -326,7 +239,6 @@
     "rich_text_hero_kxj36j",
     "logo_list_zNL88B",
     "testimonials_W7jaYf",
-    "pricing_plans_pC3n8Q",
     "collapsible_content_DrytjN"
   ]
 }
