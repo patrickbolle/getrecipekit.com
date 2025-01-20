@@ -15,15 +15,15 @@
         "heading_3YfApy": {
           "type": "heading",
           "settings": {
-            "heading": "<strong>Sell more products on Shopify</strong>",
-            "heading_2": "with beautiful, SEO friendly recipe cards.",
+            "heading": "<strong>The </strong><span style=\"text-decoration:underline\"><strong>simplest way</strong></span>",
+            "heading_2": "to create recipes on Shopify.",
             "heading_size": "h1"
           }
         },
         "text_YRCCeX": {
           "type": "text",
           "settings": {
-            "text": "<p>Effortlessly integrate recipes and boost sales through engaging, SEO-optimized content.</p>"
+            "text": "<p>Say goodbye to manually formatting recipes. Meet Recipe Kit — the easy, intuitive recipe tool you’ve been looking for.</p>"
           }
         },
         "button_ReBBrJ": {
