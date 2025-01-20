@@ -281,16 +281,16 @@
         "collapsible_row_MXcAHm": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "row_content": "",
+            "heading": "Can Recipe Kit help my recipes appear in Google search results?",
+            "row_content": "<p>Yes, Recipe Kit is designed to optimize your recipes for search engines.<br/> By using structured data (Google rich dataschema), Recipe Kit ensures <br/>that your recipes are indexed correctly by search engines, improving <br/>visibility and driving organic traffic to your store.</p>",
             "page": ""
           }
         },
         "collapsible_row_DPiiHY": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "row_content": "",
+            "heading": "What are some key features of the app?",
+            "row_content": "<p>Key features of Recipe Kit include customizable recipe card designs <br/>(like Uptown, Sunny, and Modern designs), an easy-to-use interface for <br/>creating and editing recipes, and the ability to add detailed <br/>nutritional information. Additionally, the app supports SEO optimization<br/> and integrates smoothly with your Shopify store to make recipes <br/>shoppable.</p>",
             "page": ""
           }
         },
