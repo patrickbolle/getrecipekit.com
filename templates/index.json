@@ -29,7 +29,7 @@
         "button_ReBBrJ": {
           "type": "button",
           "settings": {
-            "button_label": "Install on Shopify",
+            "button_label": "Start free trial",
             "button_link": "https://apps.shopify.com/recipe-kit?utm_source=rk_website&utm_medium=homepage",
             "button_style_secondary": false,
             "button_label_2": "View demo",
