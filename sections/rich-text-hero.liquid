@@ -14,55 +14,58 @@
   }
 {%- endstyle -%}
 
-<div class="twcss-isolate{% unless section.settings.full_width %} page-width{% endunless %}">
-  <section class="rich-text-hero content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text-hero--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding twcss-bg-gray-50">
-    <div class="rich-text-hero__wrapper rich-text-hero__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %} twcss-mx-auto twcss-px-4 twcss-py-32 lg:twcss-flex lg:twcss-items-center">
-      <div class="rich-text-hero__blocks {{ section.settings.content_alignment }} twcss-mx-auto twcss-text-center twcss-grid">
+<div class='twcss-isolate{% unless section.settings.full_width %} page-width{% endunless %}'>
+  <section class='rich-text-hero content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text-hero--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding twcss-bg-gray-50'>
+    <div class='rich-text-hero__wrapper rich-text-hero__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %} twcss-mx-auto twcss-px-4 twcss-py-32 lg:twcss-flex lg:twcss-items-center'>
+      <div class='rich-text-hero__blocks {{ section.settings.content_alignment }} twcss-mx-auto twcss-text-center twcss-grid'>
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when 'heading' -%}
+              <h1>Test!</h1>
               <h1
-                class="rich-text-hero__heading rte {{ block.settings.heading_size }} twcss-text-3xl twcss-font-extrabold sm:twcss-text-5xl{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class='rich-text-hero__heading rte {{ block.settings.heading_size }} twcss-text-3xl twcss-font-extrabold sm:twcss-text-5xl{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
-                  style="--animation-order: {{ forloop.index }};"
+                  style='--animation-order: {{ forloop.index }};'
                 {% endif %}
               >
                 {{ block.settings.heading }}
-                <br />
+                <br>
                 {%- if block.settings.heading_2 != blank -%}
-                  <strong class="twcss-font-extrabold twcss-text-red-500 sm:twcss-block">{{ block.settings.heading_2 }}</strong>
+                  <strong class='twcss-font-extrabold twcss-text-red-500 sm:twcss-block'>
+                    {{- block.settings.heading_2 -}}
+                  </strong>
                 {%- endif -%}
               </h1>
             {%- when 'text' -%}
               <p
-                class="rich-text-hero__text rte twcss-mt-4 sm:twcss-text-xl/relaxed{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class='rich-text-hero__text rte twcss-mt-4 sm:twcss-text-xl/relaxed{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
-                  style="--animation-order: {{ forloop.index }};"
+                  style='--animation-order: {{ forloop.index }};'
                 {% endif %}
               >
                 {{ block.settings.text }}
               </p>
             {%- when 'button' -%}
               <div
-                class="rich-text-hero__buttons twcss-mt-8 twcss-flex twcss-flex-wrap twcss-justify-center twcss-gap-4{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text-hero__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class='rich-text-hero__buttons twcss-mt-8 twcss-flex twcss-flex-wrap twcss-justify-center twcss-gap-4{% if block.settings.button_label != blank and block.settings.button_label_2 != blank %} rich-text-hero__buttons--multiple{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
-                  style="--animation-order: {{ forloop.index }};"
+                  style='--animation-order: {{ forloop.index }};'
                 {% endif %}
               >
                 {%- if block.settings.button_label != blank -%}
                   <a
                     {% if block.settings.button_link == blank %}
-                      role="link" aria-disabled="true"
+                      role='link' aria-disabled='true'
                     {% else %}
-                      href="{{ block.settings.button_link }}"
+                      href='{{ block.settings.button_link }}'
                     {% endif %}
-                    class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %} twcss-block twcss-w-full twcss-rounded twcss-bg-red-600 twcss-px-12 twcss-py-3 twcss-text-sm twcss-font-medium twcss-text-white twcss-shadow hover:twcss-bg-red-700 focus:twcss-outline-none focus:twcss-ring active:twcss-bg-red-500 sm:twcss-w-auto"
+                    class='button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %} twcss-block twcss-w-full twcss-rounded twcss-bg-red-600 twcss-px-12 twcss-py-3 twcss-text-sm twcss-font-medium twcss-text-white twcss-shadow hover:twcss-bg-red-700 focus:twcss-outline-none focus:twcss-ring active:twcss-bg-red-500 sm:twcss-w-auto'
                   >
                     {{- block.settings.button_label | escape -}}
                   </a>
@@ -70,11 +73,11 @@
                 {%- if block.settings.button_label_2 != blank -%}
                   <a
                     {% if block.settings.button_link_2 == blank %}
-                      role="link" aria-disabled="true"
+                      role='link' aria-disabled='true'
                     {% else %}
-                      href="{{ block.settings.button_link_2 }}"
+                      href='{{ block.settings.button_link_2 }}'
                     {% endif %}
-                    class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %} twcss-block twcss-w-full twcss-rounded twcss-px-12 twcss-py-3 twcss-text-sm twcss-font-medium twcss-text-red-600 twcss-shadow hover:twcss-text-red-700 focus:twcss-outline-none focus:twcss-ring active:twcss-text-red-500 sm:twcss-w-auto"
+                    class='button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %} twcss-block twcss-w-full twcss-rounded twcss-px-12 twcss-py-3 twcss-text-sm twcss-font-medium twcss-text-red-600 twcss-shadow hover:twcss-text-red-700 focus:twcss-outline-none focus:twcss-ring active:twcss-text-red-500 sm:twcss-w-auto'
                   >
                     {{- block.settings.button_label_2 | escape -}}
                   </a>
