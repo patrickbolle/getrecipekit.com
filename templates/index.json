@@ -272,23 +272,23 @@
         "collapsible_row_EFLb79": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "row_content": "",
+            "heading": "How does Recipe Kit work?",
+            "row_content": "<p>Recipe Kit works by adding a beautiful, consistently formatted recipe card to any blog post of your choosing on your Shopify store. it takes all the work out of making your recipe look great, and also adds automatically generated rich SEO schema to ensure your recipe starts showing up in Google recipe search results.</p>",
             "page": ""
           }
         },
         "collapsible_row_MXcAHm": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "row_content": "",
+            "heading": "Can Recipe Kit help my recipes appear in Google search results?",
+            "row_content": "<p>Yes, Recipe Kit is designed to optimize your recipes for search engines.<br/> By using structured data (Google rich dataschema), Recipe Kit ensures <br/>that your recipes are indexed correctly by search engines, improving <br/>visibility and driving organic traffic to your store.</p>",
             "page": ""
           }
         },
         "collapsible_row_DPiiHY": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "What are some key features of the app?",
             "row_content": "",
             "page": ""
           }
@@ -296,8 +296,8 @@
         "collapsible_row_9L4Fiq": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "row_content": "",
+            "heading": "How do I get started?",
+            "row_content": "<p>You can start with a 14-day free trial by visiting the <a href=\"https://apps.shopify.com/recipe-kit\" target=\"_blank\" title=\"https://apps.shopify.com/recipe-kit\">Recipe Kit app listing</a><br/> and clicking the Install button. Installation is straightforward, and <br/>you can begin creating and publishing beautiful, shoppable recipes on your <br/>Shopify blog immediately! </p>",
             "page": ""
           }
         }
