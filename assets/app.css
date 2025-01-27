@@ -1184,11 +1184,11 @@
   .twcss\:mt-8 {
     margin-top: calc(var(--twcss-spacing) * 8);
   }
-  .twcss\:mt-10 {
-    margin-top: calc(var(--twcss-spacing) * 10);
-  }
   .twcss\:mb-8 {
     margin-bottom: calc(var(--twcss-spacing) * 8);
+  }
+  .twcss\:mb-12 {
+    margin-bottom: calc(var(--twcss-spacing) * 12);
   }
   .twcss\:block {
     display: block;
@@ -1207,8 +1207,20 @@
     width: calc(var(--twcss-spacing) * 10);
     height: calc(var(--twcss-spacing) * 10);
   }
-  .twcss\:max-h-12 {
-    max-height: calc(var(--twcss-spacing) * 12);
+  .twcss\:h-16 {
+    height: calc(var(--twcss-spacing) * 16);
+  }
+  .twcss\:h-auto {
+    height: auto;
+  }
+  .twcss\:h-full {
+    height: 100%;
+  }
+  .twcss\:max-h-full {
+    max-height: 100%;
+  }
+  .twcss\:w-32 {
+    width: calc(var(--twcss-spacing) * 32);
   }
   .twcss\:w-50 {
     width: calc(var(--twcss-spacing) * 50);
@@ -1219,9 +1231,6 @@
   .twcss\:w-full {
     width: 100%;
   }
-  .twcss\:max-w-2xl {
-    max-width: var(--twcss-container-2xl);
-  }
   .twcss\:max-w-3xl {
     max-width: var(--twcss-container-3xl);
   }
@@ -1230,6 +1239,9 @@
   }
   .twcss\:max-w-\[theme\(screens\.xl\)\] {
     max-width: 80rem;
+  }
+  .twcss\:max-w-full {
+    max-width: 100%;
   }
   .twcss\:shrink-0 {
     flex-shrink: 0;
@@ -1267,8 +1279,8 @@
   .twcss\:gap-4 {
     gap: calc(var(--twcss-spacing) * 4);
   }
-  .twcss\:gap-5 {
-    gap: calc(var(--twcss-spacing) * 5);
+  .twcss\:gap-16 {
+    gap: calc(var(--twcss-spacing) * 16);
   }
   .twcss\:space-y-2 {
     :where(& > :not(:last-child)) {
@@ -1342,17 +1354,20 @@
   .twcss\:bg-white {
     background-color: var(--twcss-color-white);
   }
+  .twcss\:object-contain {
+    object-fit: contain;
+  }
   .twcss\:p-1\.5 {
     padding: calc(var(--twcss-spacing) * 1.5);
   }
   .twcss\:p-6 {
     padding: calc(var(--twcss-spacing) * 6);
   }
-  .twcss\:p-8 {
-    padding: calc(var(--twcss-spacing) * 8);
-  }
   .twcss\:px-4 {
     padding-inline: calc(var(--twcss-spacing) * 4);
+  }
+  .twcss\:px-6 {
+    padding-inline: calc(var(--twcss-spacing) * 6);
   }
   .twcss\:px-12 {
     padding-inline: calc(var(--twcss-spacing) * 12);
@@ -1368,9 +1383,6 @@
   }
   .twcss\:py-32 {
     padding-block: calc(var(--twcss-spacing) * 32);
-  }
-  .twcss\:pt-2 {
-    padding-top: calc(var(--twcss-spacing) * 2);
   }
   .twcss\:text-center {
     text-align: center;
@@ -1414,6 +1426,10 @@
   .twcss\:font-medium {
     --tw-font-weight: var(--twcss-font-weight-medium);
     font-weight: var(--twcss-font-weight-medium);
+  }
+  .twcss\:font-semibold {
+    --tw-font-weight: var(--twcss-font-weight-semibold);
+    font-weight: var(--twcss-font-weight-semibold);
   }
   .twcss\:tracking-tight {
     --tw-tracking: var(--twcss-tracking-tight);
@@ -1634,19 +1650,29 @@
       line-height: var(--twcss-leading-relaxed);
     }
   }
+  .twcss\:md\:h-20 {
+    @media (width >= 750px) {
+      height: calc(var(--twcss-spacing) * 20);
+    }
+  }
+  .twcss\:md\:w-40 {
+    @media (width >= 750px) {
+      width: calc(var(--twcss-spacing) * 40);
+    }
+  }
   .twcss\:md\:grid-cols-3 {
     @media (width >= 750px) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
-  .twcss\:md\:justify-around {
-    @media (width >= 750px) {
-      justify-content: space-around;
-    }
-  }
   .twcss\:md\:gap-8 {
     @media (width >= 750px) {
       gap: calc(var(--twcss-spacing) * 8);
+    }
+  }
+  .twcss\:md\:gap-24 {
+    @media (width >= 750px) {
+      gap: calc(var(--twcss-spacing) * 24);
     }
   }
   .twcss\:md\:text-5xl {
