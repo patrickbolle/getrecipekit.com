@@ -1,4 +1,5 @@
 /*! tailwindcss v4.0.0 | MIT License | https://tailwindcss.com */
+@config "./tailwind.config.js";
 @tailwind base;
 @tailwind components;
 .fixed {
@@ -38,7 +39,8 @@
   display: table;
 }
 .transform {
-  transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
+  transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z)
+    var(--tw-skew-x) var(--tw-skew-y);
 }
 .resize {
   resize: both;
@@ -68,76 +70,81 @@
   outline-width: 1px;
 }
 .filter {
-  filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
+    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
+    var(--tw-sepia) var(--tw-drop-shadow);
 }
 .transition {
-  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter;
+  transition-property: color, background-color, border-color, outline-color,
+    text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via,
+    --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate,
+    filter, -webkit-backdrop-filter, backdrop-filter;
   transition-timing-function: var(--tw-ease, ease);
   transition-duration: var(--tw-duration, 0s);
 }
 @property --tw-rotate-x {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
   initial-value: rotateX(0);
 }
 @property --tw-rotate-y {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
   initial-value: rotateY(0);
 }
 @property --tw-rotate-z {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
   initial-value: rotateZ(0);
 }
 @property --tw-skew-x {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
   initial-value: skewX(0);
 }
 @property --tw-skew-y {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
   initial-value: skewY(0);
 }
 @property --tw-outline-style {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
   initial-value: solid;
 }
 @property --tw-blur {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
 }
 @property --tw-brightness {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
 }
 @property --tw-contrast {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
 }
 @property --tw-grayscale {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
 }
 @property --tw-hue-rotate {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
 }
 @property --tw-invert {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
 }
 @property --tw-opacity {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
 }
 @property --tw-saturate {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
 }
 @property --tw-sepia {
-  syntax: "*";
+  syntax: '*';
   inherits: false;
 }
