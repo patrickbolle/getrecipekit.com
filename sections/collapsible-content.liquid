@@ -36,24 +36,24 @@
             <h2 class="visually-hidden">{{ 'accessibility.collapsible_content_title' | t }}</h2>
           {% endif %}
         </div>
-        <div class="twcss-space-y-4">
+        <div class="twcss:space-y-4">
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when 'collapsible_row' -%}
                 <details
-                  class="twcss-group twcss-border-s-4 twcss-border-green-500 twcss-bg-gray-50 twcss-p-6 [&_summary::-webkit-details-marker]:twcss-hidden"
+                  class="twcss:group twcss:border-s-4 twcss:border-green-500 twcss:bg-gray-50 twcss:p-6 twcss:[&_summary::-webkit-details-marker]:hidden"
                   {{ block.shopify_attributes }}
                   {% if section.settings.open_first_collapsible_row and forloop.first %}open{% endif %}
                 >
-                  <summary class="twcss-flex twcss-cursor-pointer twcss-items-center twcss-justify-between twcss-gap-1.5">
-                    <h2 class="twcss-text-lg twcss-font-medium twcss-text-gray-900">
+                  <summary class="twcss:flex twcss:cursor-pointer twcss:items-center twcss:justify-between twcss:gap-1.5">
+                    <h2 class="twcss:text-lg twcss:font-medium twcss:text-gray-900">
                       {{ block.settings.heading | default: block.settings.page.title }}
                     </h2>
 
-                    <span class="twcss-shrink-0 twcss-rounded-full twcss-bg-white twcss-p-1.5 twcss-text-gray-900 sm:twcss-p-3">
+                    <span class="twcss:shrink-0 twcss:rounded-full twcss:bg-white twcss:p-1.5 twcss:text-gray-900 twcss:sm:p-3">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="twcss-size-5 twcss-shrink-0 twcss-transition twcss-duration-300 group-open:-twcss-rotate-45"
+                        class="twcss:size-5 twcss:shrink-0 twcss:transition twcss:duration-300 twcss:group-open:-rotate-45"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -67,7 +67,7 @@
                   </summary>
 
                   <div
-                    class="twcss-mt-4 twcss-leading-relaxed twcss-text-gray-700"
+                    class="twcss:mt-4 twcss:leading-relaxed twcss:text-gray-700"
                     id="CollapsibleAccordion-{{ block.id }}-{{ section.id }}"
                   >
                     {{ block.settings.row_content }}

@@ -101,7 +101,7 @@ These secret values are used in the `ci.yml` GitHub workflow:
    `shopify theme pull -d`
 
 4. Anytime you add a Tailwind CSS class (remember to prefix it with twcss-), run the CLI tool to scan your template files for classes and build your CSS to assets/app.css:
-   `npx tailwindcss -i ./assets/app-tailwind.css -o ./assets/app.css --watch`
+   `npx @tailwindcss/cli -i ./assets/app-tailwind.css -o ./assets/app.css --watch`
 
 - Run this command in a separate terminal, so it will continue to run while you are developing.
 - Note that using a Tailwind CSS class without a space afterward when followed by a liquid tag causes compiling issues:

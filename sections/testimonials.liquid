@@ -12,25 +12,25 @@
   }
 {%- endstyle -%}
 
-<section class="twcss-bg-white section-{{ section.id }}-padding">
-  <div class="twcss-mx-auto twcss-max-w-screen-xl twcss-px-4 twcss-py-12 sm:twcss-px-6 lg:twcss-px-8 lg:twcss-py-16">
-    <h2 class="twcss-text-center twcss-text-4xl twcss-font-bold twcss-tracking-tight twcss-text-gray-900 sm:twcss-text-5xl">
+<section class="twcss:bg-white section-{{ section.id }}-padding">
+  <div class="twcss:mx-auto twcss:max-w-[theme(screens.xl)] twcss:px-4 twcss:py-12 twcss:sm:px-6 twcss:lg:px-8 twcss:lg:py-16">
+    <h2 class="twcss:text-center twcss:text-4xl twcss:font-bold twcss:tracking-tight twcss:text-gray-900 twcss:sm:text-5xl">
       {{ section.settings.title }}
     </h2>
 
-    <div class="twcss-mt-8 twcss-[column-fill:_balance] sm:twcss-columns-2 sm:twcss-gap-6 lg:twcss-columns-3 lg:twcss-gap-8">
+    <div class="twcss:mt-8 twcss:[column-fill:balance] twcss:sm:columns-2 twcss:sm:gap-6 twcss:lg:columns-3 twcss:lg:gap-8">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'testimonial' -%}
-            <div class="twcss-mb-8 sm:twcss-break-inside-avoid" {{ block.shopify_attributes }}>
-              <div class="twcss-rounded-lg twcss-bg-gray-50 twcss-p-6 twcss-shadow-sm sm:twcss-p-8">
-                <div class="twcss-flex twcss-flex-col twcss-gap-4 twcss-text-center">
-                  <div class="twcss-w-50">
-                    <div class="twcss-flex twcss-justify-center twcss-gap-0.5 twcss-text-red-500">
+            <div class="twcss:mb-8 twcss:sm:break-inside-avoid" {{ block.shopify_attributes }}>
+              <div class="twcss:rounded-lg twcss:bg-gray-50 twcss:p-6 twcss:shadow-sm twcss:sm:p-8">
+                <div class="twcss:flex twcss:flex-col twcss:gap-4 twcss:text-center">
+                  <div class="twcss:w-50">
+                    <div class="twcss:flex twcss:justify-center twcss:gap-0.5 twcss:text-red-500">
                       {%- for i in (1..5) -%}
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          class="twcss-size-10"
+                          class="twcss:size-10"
                           viewBox="0 0 20 20"
                           fill="currentColor"
                         >
@@ -41,11 +41,11 @@
                       {%- endfor -%}
                     </div>
 
-                    <p class="twcss-mt-0.5 twcss-text-2xl twcss-font-bold twcss-text-gray-900 ">{{ block.settings.author }}</p>
+                    <p class="twcss:mt-0.5 twcss:text-2xl twcss:font-bold twcss:text-gray-900 ">{{ block.settings.author }}</p>
                   </div>
                 </div>
 
-                <p class="twcss-mt-4 twcss-text-gray-700 twcss-text-md">
+                <p class="twcss:mt-4 twcss:text-gray-700 twcss:text-md">
                   {{ block.settings.content }}
                 </p>
               </div>

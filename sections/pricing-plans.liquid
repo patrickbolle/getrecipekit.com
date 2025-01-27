@@ -12,54 +12,54 @@
   }
 {%- endstyle -%}
 
-<div class="twcss-px-4 twcss-py-8 sm:twcss-px-6 sm:twcss-py-12 lg:twcss-px-8 lg:twcss-py-16 section-{{ section.id }}-padding twcss-max-w-7xl twcss-mx-auto ">
-  <div class="twcss-grid twcss-grid-cols-1 twcss-gap-4 sm:twcss-grid-cols-2 sm:twcss-items-stretch md:twcss-grid-cols-3 md:twcss-gap-8">
+<div class="twcss:px-4 twcss:py-8 twcss:sm:px-6 twcss:sm:py-12 twcss:lg:px-8 twcss:lg:py-16 section-{{ section.id }}-padding twcss:max-w-7xl twcss:mx-auto ">
+  <div class="twcss:grid twcss:grid-cols-1 twcss:gap-4 twcss:sm:grid-cols-2 twcss:sm:items-stretch twcss:md:grid-cols-3 twcss:md:gap-8">
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when 'pricing_plan' -%}
-          <div class="twcss-divide-y twcss-divide-gray-200 twcss-rounded-2xl twcss-border twcss-border-gray-200 twcss-shadow-sm" {{ block.shopify_attributes }}>
-            <div class="twcss-p-6 sm:twcss-px-8">
-              <h2 class="twcss-text-lg twcss-font-medium twcss-text-gray-900">
+          <div class="twcss:divide-y twcss:divide-gray-200 twcss:rounded-2xl twcss:border twcss:border-gray-200 twcss:shadow-sm" {{ block.shopify_attributes }}>
+            <div class="twcss:p-6 twcss:sm:px-8">
+              <h2 class="twcss:text-lg twcss:font-medium twcss:text-gray-900">
                 {{ block.settings.plan_name }}
-                <span class="twcss-sr-only">Plan</span>
+                <span class="twcss:sr-only">Plan</span>
               </h2>
 
-              <p class="twcss-mt-2 twcss-text-gray-700">{{ block.settings.plan_description }}</p>
+              <p class="twcss:mt-2 twcss:text-gray-700">{{ block.settings.plan_description }}</p>
 
-              <p class="twcss-mt-2 sm:twcss-mt-4">
-                <strong class="twcss-text-3xl twcss-font-bold twcss-text-gray-900 sm:twcss-text-4xl">{{ block.settings.plan_price }}</strong>
-                <span class="twcss-text-sm twcss-font-medium twcss-text-gray-700">{{ block.settings.plan_billing_period }}</span>
+              <p class="twcss:mt-2 twcss:sm:mt-4">
+                <strong class="twcss:text-3xl twcss:font-bold twcss:text-gray-900 twcss:sm:text-4xl">{{ block.settings.plan_price }}</strong>
+                <span class="twcss:text-sm twcss:font-medium twcss:text-gray-700">{{ block.settings.plan_billing_period }}</span>
               </p>
 
               <a
-                class="twcss-mt-4 twcss-block twcss-rounded twcss-border twcss-border-indigo-600 twcss-bg-indigo-600 twcss-px-12 twcss-py-3 twcss-text-center twcss-text-sm twcss-font-medium twcss-text-white hover:twcss-bg-transparent hover:twcss-text-indigo-600 focus:twcss-outline-none focus:twcss-ring active:twcss-text-indigo-500 sm:twcss-mt-6"
+                class="twcss:mt-4 twcss:block twcss:rounded twcss:border twcss:border-indigo-600 twcss:bg-indigo-600 twcss:px-12 twcss:py-3 twcss:text-center twcss:text-sm twcss:font-medium twcss:text-white twcss:hover:bg-transparent twcss:hover:text-indigo-600 twcss:focus:outline-hidden twcss:focus:ring twcss:active:text-indigo-500 twcss:sm:mt-6"
                 href="{{ block.settings.button_link }}"
               >
                 {{ block.settings.button_label }}
               </a>
             </div>
 
-            <div class="twcss-p-6 sm:twcss-px-8">
-              <p class="twcss-text-lg twcss-font-medium twcss-text-gray-900 sm:twcss-text-xl">{{ block.settings.features_title }}</p>
+            <div class="twcss:p-6 twcss:sm:px-8">
+              <p class="twcss:text-lg twcss:font-medium twcss:text-gray-900 twcss:sm:text-xl">{{ block.settings.features_title }}</p>
 
-              <ul class="twcss-mt-2 twcss-space-y-2 sm:twcss-mt-4">
+              <ul class="twcss:mt-2 twcss:space-y-2 twcss:sm:mt-4">
                 {%- for i in (1..6) -%}
                   {%- assign feature_key = 'feature_' | append: i -%}
                   {%- assign feature_enabled_key = 'feature_' | append: i | append: '_enabled' -%}
                   {%- if block.settings[feature_key] != blank -%}
-                    <li class="twcss-flex twcss-items-center twcss-gap-1">
+                    <li class="twcss:flex twcss:items-center twcss:gap-1">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke-width="1.5"
                         stroke="currentColor"
-                        class="twcss-size-5 {% if block.settings[feature_enabled_key] %}twcss-text-indigo-700{% else %}twcss-text-red-700{% endif %}"
+                        class="twcss:size-5 {% if block.settings[feature_enabled_key] %}twcss:text-indigo-700{% else %}twcss:text-red-700{% endif %}"
                       >
                         <path stroke-linecap="round" stroke-linejoin="round" d="{% if block.settings[feature_enabled_key] %}M4.5 12.75l6 6 9-13.5{% else %}M6 18L18 6M6 6l12 12{% endif %}" />
                       </svg>
 
-                      <span class="twcss-text-gray-700">{{ block.settings[feature_key] }}</span>
+                      <span class="twcss:text-gray-700">{{ block.settings[feature_key] }}</span>
                     </li>
                   {%- endif -%}
                 {%- endfor -%}
