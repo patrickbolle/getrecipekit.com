@@ -14,25 +14,29 @@
   }
 {%- endstyle -%}
 
-<div class="twcss:container twcss:p-8 twcss:mx-auto twcss:w-full twcss:max-w-2xl twcss:xl:px-0 section-{{ section.id }}-padding">
-  <div class="twcss:flex twcss:flex-col twcss:justify-center">
+<div class='twcss:container twcss:p-8 twcss:mx-auto twcss:w-full twcss:max-w-2xl twcss:xl:px-0 section-{{ section.id }}-padding'>
+  <div class='twcss:flex twcss:flex-col twcss:justify-center'>
     {%- if section.settings.heading != blank -%}
-      <div class="twcss:text-xl twcss:text-center twcss:text-semibold twcss:text-gray-700">
+      <div class='twcss:text-xl twcss:text-center twcss:text-semibold twcss:text-gray-700'>
         {{ section.settings.heading }}
         {%- if section.settings.heading_highlight != blank -%}
-          <span class="twcss:text-indigo-600 twcss:font-bold">{{ section.settings.heading_highlight }}</span>
+          <span class='twcss:text-indigo-600 twcss:font-bold'>{{ section.settings.heading_highlight }}</span>
         {%- endif -%}
       </div>
     {%- endif -%}
-    <div class="twcss:flex twcss:flex-wrap twcss:justify-center twcss:gap-5 twcss:mt-10 twcss:md:justify-around">
+    <div class='twcss:flex twcss:flex-wrap twcss:justify-center twcss:gap-5 twcss:mt-10 twcss:md:justify-around'>
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'logo' -%}
-            <div class="twcss:pt-2 twcss:text-gray-400" {{ block.shopify_attributes }}>
+            <div class='twcss:pt-2 twcss:text-gray-400' {{ block.shopify_attributes }}>
               {%- if block.settings.logo_svg != blank -%}
                 {{ block.settings.logo_svg }}
               {%- elsif block.settings.logo_image != blank -%}
-                {{ block.settings.logo_image | image_url: width: 150 | image_tag: class: 'twcss:max-h-12 twcss:w-auto', loading: 'lazy' }}
+                {{
+                  block.settings.logo_image
+                  | image_url: width: 150
+                  | image_tag: class: 'twcss:max-h-12 twcss:w-auto', loading: 'lazy'
+                }}
               {%- else -%}
                 {{ 'image' | placeholder_svg_tag: 'twcss:max-h-12 twcss:w-auto' }}
               {%- endif -%}
