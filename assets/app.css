@@ -1,5 +1,5 @@
 /*! tailwindcss v4.0.0 | MIT License | https://tailwindcss.com */
-@config "./tailwind.config.js";
+@config "../tailwind.config.js";
 @tailwind base;
 @tailwind components;
 .fixed {
