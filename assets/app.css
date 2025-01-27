@@ -1327,9 +1327,6 @@
   .twcss\:border-indigo-600 {
     border-color: var(--twcss-color-indigo-600);
   }
-  .twcss\:bg-black {
-    background-color: var(--twcss-color-black);
-  }
   .twcss\:bg-blue-50 {
     background-color: var(--twcss-color-blue-50);
   }
@@ -1359,9 +1356,6 @@
   }
   .twcss\:px-12 {
     padding-inline: calc(var(--twcss-spacing) * 12);
-  }
-  .twcss\:py-2 {
-    padding-block: calc(var(--twcss-spacing) * 2);
   }
   .twcss\:py-3 {
     padding-block: calc(var(--twcss-spacing) * 3);
