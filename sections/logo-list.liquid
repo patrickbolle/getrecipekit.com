@@ -1,5 +1,3 @@
-{{ 'section-logo-list.css' | asset_url | stylesheet_tag }}
-
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -14,31 +12,44 @@
   }
 {%- endstyle -%}
 
-<div class='twcss:container twcss:p-8 twcss:mx-auto twcss:w-full twcss:max-w-2xl twcss:xl:px-0 section-{{ section.id }}-padding'>
-  <div class='twcss:flex twcss:flex-col twcss:justify-center'>
+<div class='twcss:container twcss:mx-auto twcss:w-full twcss:max-w-7xl twcss:px-6 twcss:xl:px-0 section-{{ section.id }}-padding'>
+  <div class='twcss:flex twcss:flex-col twcss:items-center'>
     {%- if section.settings.heading != blank -%}
-      <div class='twcss:text-xl twcss:text-center twcss:text-semibold twcss:text-gray-700'>
-        {{ section.settings.heading }}
-        {%- if section.settings.heading_highlight != blank -%}
-          <span class='twcss:text-indigo-600 twcss:font-bold'>{{ section.settings.heading_highlight }}</span>
-        {%- endif -%}
+      <div class='twcss:text-center twcss:mb-12'>
+        <h2 class='twcss:text-xl twcss:font-semibold twcss:text-gray-700'>
+          {{ section.settings.heading }}
+          {%- if section.settings.heading_highlight != blank -%}
+            <span class='twcss:text-indigo-600 twcss:font-bold'>{{ section.settings.heading_highlight }}</span>
+          {%- endif -%}
+        </h2>
       </div>
     {%- endif -%}
-    <div class='twcss:flex twcss:flex-wrap twcss:justify-center twcss:gap-5 twcss:mt-10 twcss:md:justify-around'>
+
+    <div class='twcss:flex twcss:flex-wrap twcss:items-center twcss:justify-center twcss:gap-16 twcss:md:gap-24'>
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'logo' -%}
-            <div class='twcss:pt-2 twcss:text-gray-400' {{ block.shopify_attributes }}>
+            <div
+              class='twcss:flex twcss:h-16 twcss:w-32 twcss:items-center twcss:justify-center twcss:md:h-20 twcss:md:w-40'
+              {{ block.shopify_attributes }}
+            >
               {%- if block.settings.logo_svg != blank -%}
-                {{ block.settings.logo_svg }}
+                <div class='twcss:w-full twcss:h-full twcss:flex twcss:items-center twcss:justify-center twcss:text-gray-400'>
+                  {{ block.settings.logo_svg }}
+                </div>
               {%- elsif block.settings.logo_image != blank -%}
                 {{
                   block.settings.logo_image
-                  | image_url: width: 150
-                  | image_tag: class: 'twcss:max-h-12 twcss:w-auto', loading: 'lazy'
+                  | image_url: width: 200
+                  | image_tag:
+                    class: 'twcss:w-auto twcss:h-auto twcss:max-h-full twcss:max-w-full twcss:object-contain',
+                    loading: 'lazy'
                 }}
               {%- else -%}
-                {{ 'image' | placeholder_svg_tag: 'twcss:max-h-12 twcss:w-auto' }}
+                {{
+                  'image'
+                  | placeholder_svg_tag: 'twcss:w-auto twcss:h-auto twcss:max-h-full twcss:max-w-full twcss:object-contain'
+                }}
               {%- endif -%}
             </div>
         {%- endcase -%}
@@ -94,7 +105,7 @@
     {
       "type": "logo",
       "name": "Logo",
-      "limit": 6,
+      "limit": 8,
       "settings": [
         {
           "type": "textarea",
