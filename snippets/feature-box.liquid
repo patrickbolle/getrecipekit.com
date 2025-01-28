@@ -1,0 +1,98 @@
+{%- style -%}
+  .feature-box-shadow {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(61, 59, 53, 0.16) 0px 0px 0px 1px,
+      rgba(61, 59, 53, 0.08) 0px 3px 9px 0px, rgba(61, 59, 53, 0.08) 0px 2px 5px 0px;
+  }
+
+  .box-image {
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+    border: 2px solid rgba(var(--color-border), 0.1);
+  }
+
+  .button-primary {
+    background-color: rgb(var(--color-button));
+    color: rgb(var(--color-button-text));
+  }
+  .button-primary:hover {
+    background-color: rgba(var(--color-button), 0.8);
+  }
+
+  .button-secondary {
+    background-color: transparent;
+    color: rgb(var(--color-button));
+    border: 1px solid rgb(var(--color-button));
+  }
+  .button-secondary:hover {
+    background-color: rgba(var(--color-button), 0.04);
+  }
+{%- endstyle -%}
+
+<div class='color-{{ color_scheme }} gradient twcss:rounded-2xl twcss:p-8 twcss:md:p-12 feature-box-shadow twcss:h-full'>
+  <div class='twcss:flex twcss:flex-col {% if block.settings.layout == "two_column" %}twcss:md:flex-row twcss:gap-8{% else %}twcss:gap-6{% endif %} twcss:items-start'>
+    <div class='{% if block.settings.layout == "two_column" %}twcss:md:flex-1{% endif %} twcss:flex twcss:flex-col twcss:h-full'>
+      {% if block.settings.icon != 'none' %}
+        <div class='twcss:w-12 twcss:h-12 twcss:flex twcss:items-center twcss:justify-center twcss:rounded-lg'>
+          {% render 'icon' with icon: block.settings.icon, class: 'twcss:w-8 twcss:h-8 twcss:text-accent twcss:size-8' %}
+        </div>
+      {% endif %}
+
+      <h3 class='{% if block.settings.icon != blank %}twcss:mt-6{% endif %} twcss:!text-3xl twcss:!font-semibold'>
+        {{ block.settings.box_heading }}
+      </h3>
+
+      <p class='twcss:mt-4 twcss:!text-2xl'>
+        {{ block.settings.box_text }}
+      </p>
+
+      {% if block.settings.show_checklist %}
+        <ul class='twcss:mt-4 twcss:!text-2xl twcss:space-y-6'>
+          {% if block.settings.check_1 != blank %}
+            <li class='twcss:flex twcss:items-start twcss:gap-3'>
+              {% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}
+              <span>{{ block.settings.check_1 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.check_2 != blank %}
+            <li class='twcss:flex twcss:items-start twcss:gap-3'>
+              {% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}
+              <span>{{ block.settings.check_2 }}</span>
+            </li>
+          {% endif %}
+          {% if block.settings.check_3 != blank %}
+            <li class='twcss:flex twcss:items-start twcss:gap-3'>
+              {% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}
+              <span>{{ block.settings.check_3 }}</span>
+            </li>
+          {% endif %}
+        </ul>
+      {% endif %}
+
+      {% if block.settings.show_button
+        and block.settings.button_label != blank
+        and block.settings.button_link != blank
+      %}
+        <div class='twcss:mt-auto twcss:pt-8'>
+          <a
+            href='{{ block.settings.button_link }}'
+            class='twcss:inline-flex twcss:items-center twcss:px-8 twcss:py-4 twcss:text-xl twcss:font-medium twcss:transition-colors twcss:duration-200 button-{{ block.settings.button_style }}'
+          >
+            {{ block.settings.button_label }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if block.settings.box_image != blank %}
+      <div class='{% if block.settings.layout == "two_column" %}twcss:md:flex-1 twcss:mt-6 twcss:md:mt-0{% else %}twcss:w-full twcss:mt-6{% endif %} twcss:h-full twcss:flex-1 twcss:min-h-[300px]'>
+        <img
+          src='{{ block.settings.box_image | image_url: width: 400, height: auto }}'
+          alt='{{ block.settings.box_image.alt | escape }}'
+          class='twcss:w-full twcss:h-full twcss:rounded-xl box-image twcss:object-cover twcss:object-center'
+          loading='lazy'
+          width='{{ block.settings.box_image.width }}'
+          height='{{ block.settings.box_image.height }}'
+        >
+      </div>
+    {% endif %}
+  </div>
+</div>

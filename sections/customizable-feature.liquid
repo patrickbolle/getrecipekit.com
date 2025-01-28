@@ -10,116 +10,58 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-
-  .feature-box-shadow {
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(61, 59, 53, 0.16) 0px 0px 0px 1px, rgba(61, 59, 53, 0.08) 0px 3px 9px 0px, rgba(61, 59, 53, 0.08) 0px 2px 5px 0px
-  }
-
-  .box-image {
-      box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
-      border: 2px solid rgba(55, 53, 47, 0.09);
-  }
 {%- endstyle -%}
 
-<div class='twcss:px-4 twcss:py-8 twcss:sm:px-6 twcss:lg:px-8 section-{{ section.id }}-padding twcss:max-w-7xl twcss:mx-auto'>
-  <div class='twcss:md:max-w-[60%] {% if section.settings.text_alignment == 'left' %}twcss:text-left{% elsif section.settings.text_alignment == 'right' %}twcss:text-right{% else %}twcss:text-center{% endif %}'>
-    <h2 class='twcss:text-4xl twcss:!font-bold twcss:tracking-tight twcss:text-gray-900 twcss:sm:text-5xl'>
+<div class='twcss:px-4 twcss:py-8 twcss:sm:px-6 twcss:lg:px-8 section-{{ section.id }}-padding page-width twcss:mx-auto color-{{ section.settings.color_scheme }} gradient'>
+  <div class='twcss:md:max-w-[500px] {% if section.settings.text_alignment == 'left' %}twcss:text-left{% elsif section.settings.text_alignment == 'right' %}twcss:text-right{% else %}twcss:text-center{% endif %}'>
+    <h2 class='twcss:text-4xl twcss:!font-bold twcss:tracking-tight twcss:sm:!text-6xl'>
       {{ section.settings.heading_prefix }}
-      <span class='twcss:text-[#ff5558]'>{{ section.settings.heading_emphasis }}</span>
+      <span class='twcss:text-accent'>{{ section.settings.heading_emphasis }}</span>
       {{ section.settings.heading_suffix }}
     </h2>
-    <p class='twcss:mt-4 twcss:!text-2xl twcss:text-gray-600'>
+    <p class='twcss:mt-4 twcss:!text-2xl'>
       {{ section.settings.subheading }}
     </p>
   </div>
 
-  <div
-    class='twcss:mt-16 twcss:grid twcss:gap-8'
-    style='
-      {% if section.settings.layout_mode == 'manual' %}
-        grid-template-columns: {{ section.settings.custom_grid }};
-      {% elsif section.settings.layout_mode == '1-2' %}
-        grid-template-columns: 1fr 2fr;
-      {% elsif section.settings.layout_mode == '1-3' %}
-        grid-template-columns: 1fr 3fr;
-      {% else %}
-        /* fallback to existing columns logic */
-        {% if section.settings.columns == '1' %}
-          grid-template-columns: 1fr;
-        {% elsif section.settings.columns == '2' %}
-          grid-template-columns: repeat(2, minmax(0,1fr));
-        {% elsif section.settings.columns == '3' %}
-          grid-template-columns: repeat(3, minmax(0,1fr));
-        {% elsif section.settings.columns == '4' %}
-          grid-template-columns: repeat(4, minmax(0,1fr));
-        {% endif %}
-      {% endif %}
-    '
-  >
-    {%- for block in section.blocks -%}
-      {%- case block.type -%}
-        {%- when 'feature_box' -%}
-          <div class='twcss:bg-white twcss:rounded-2xl twcss:p-8 feature-box-shadow' {{ block.shopify_attributes }}>
-            <div class='twcss:flex twcss:flex-col {% if block.settings.layout == "two_column" %}twcss:!flex-row twcss:gap-8{% else %}twcss:gap-6{% endif %} twcss:items-start'>
-              <div class='{% if block.settings.layout == "two_column" %}twcss:flex-1{% endif %}'>
-                {% if block.settings.icon != blank %}
-                  <div class='twcss:w-12 twcss:h-12 twcss:flex twcss:items-center twcss:justify-center twcss:rounded-lg'>
-                    {%
-                      render 'icon' with
-                      icon: block.settings.icon,
-                      class: 'twcss:w-8 twcss:h-8 twcss:text-red-500 twcss:size-8'
-                    %}
-                  </div>
-                {% endif %}
-
-                <h3 class='twcss:mt-6 twcss:!text-2xl twcss:!font-semibold twcss:text-gray-900'>
-                  {{ block.settings.box_heading }}
-                </h3>
-
-                <p class='twcss:mt-4 twcss:!text-lg twcss:text-gray-600'>
-                  {{ block.settings.box_text }}
-                </p>
-
-                {% if block.settings.show_checklist %}
-                  <ul class='twcss:mt-4 twcss:!text-lg twcss:text-gray-600 twcss:space-y-3'>
-                    {% if block.settings.check_1 != blank %}
-                      <li class='twcss:flex twcss:items-start twcss:gap-3'>
-                        {% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-red-500 twcss:flex-shrink-0 twcss:mt-0.5' %}
-                        <span>{{ block.settings.check_1 }}</span>
-                      </li>
-                    {% endif %}
-                    {% if block.settings.check_2 != blank %}
-                      <li class='twcss:flex twcss:items-start twcss:gap-3'>
-                        {% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-red-500 twcss:flex-shrink-0 twcss:mt-0.5' %}
-                        <span>{{ block.settings.check_2 }}</span>
-                      </li>
-                    {% endif %}
-                    {% if block.settings.check_3 != blank %}
-                      <li class='twcss:flex twcss:items-start twcss:gap-3'>
-                        {% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-red-500 twcss:flex-shrink-0 twcss:mt-0.5' %}
-                        <span>{{ block.settings.check_3 }}</span>
-                      </li>
-                    {% endif %}
-                  </ul>
-                {% endif %}
-              </div>
-
-              {% if block.settings.box_image != blank %}
-                <div class='{% if block.settings.layout == "two_column" %}twcss:flex-1 twcss:mt-6 twcss:md:mt-0{% else %}twcss:w-full twcss:mt-6{% endif %}'>
-                  <img
-                    src='{{ block.settings.box_image | image_url: width: 400, height: 400 }}'
-                    alt='{{ block.settings.box_image.alt | escape }}'
-                    class='twcss:w-full twcss:rounded-xl box-image'
-                    loading='lazy'
-                    width='{{ block.settings.box_image.width }}'
-                    height='{{ block.settings.box_image.height }}'
-                  >
-                </div>
-              {% endif %}
+  <div class='twcss:mt-16'>
+    {% if section.settings.special_grid_type != 'none' %}
+      <div
+        class='twcss:grid twcss:grid-cols-1 twcss:gap-8 {% if section.settings.custom_grid != blank %}twcss:md:grid-cols-[{{ section.settings.custom_grid }}]{% else %}twcss:md:grid-cols-2{% endif %}'
+      >
+        {% for block in section.blocks %}
+          {% if forloop.first %}
+            <div {{ block.shopify_attributes }}>
+              {% render 'feature-box', block: block, color_scheme: section.settings.color_scheme %}
             </div>
+          {% elsif forloop.first == false and forloop.length <= 4 %}
+            {% if forloop.index == 2 %}
+              <div
+                class='twcss:grid twcss:grid-cols-1 twcss:gap-8 {% if section.settings.special_grid_type == "1-2" %}twcss:md:grid-cols-2{% else %}twcss:md:grid-cols-1{% endif %}'
+              >
+            {% endif %}
+
+            <div {{ block.shopify_attributes }}>
+              {% render 'feature-box', block: block, color_scheme: section.settings.color_scheme %}
+            </div>
+
+            {% if forloop.last %}
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div
+        class='twcss:grid twcss:grid-cols-1 twcss:gap-8 {% if section.settings.layout_mode == "manual" %}twcss:md:grid-cols-[{{ section.settings.custom_grid }}]{% else %}{% if section.settings.columns == "1" %}twcss:md:grid-cols-1{% elsif section.settings.columns == "2" %}twcss:md:grid-cols-2{% elsif section.settings.columns == "3" %}twcss:md:grid-cols-3{% elsif section.settings.columns == "4" %}twcss:md:grid-cols-4{% endif %}{% endif %}'
+      >
+        {%- for block in section.blocks -%}
+          <div {{ block.shopify_attributes }}>
+            {% render 'feature-box', block: block, color_scheme: section.settings.color_scheme %}
           </div>
-      {%- endcase -%}
-    {%- endfor -%}
+        {%- endfor -%}
+      </div>
+    {% endif %}
   </div>
 </div>
 
@@ -129,6 +71,12 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
     {
       "type": "select",
       "id": "columns",
@@ -157,19 +105,11 @@
       "type": "select",
       "id": "layout_mode",
       "label": "Layout Mode",
-      "info": "Choose a preset layout or Manual to define your own grid.",
+      "info": "Choose how to arrange the cards",
       "options": [
         {
           "value": "default",
           "label": "Use Columns (above)"
-        },
-        {
-          "value": "1-2",
-          "label": "1-2 layout"
-        },
-        {
-          "value": "1-3",
-          "label": "1-3 layout"
         },
         {
           "value": "manual",
@@ -177,6 +117,27 @@
         }
       ],
       "default": "default"
+    },
+    {
+      "type": "select",
+      "id": "special_grid_type",
+      "label": "Special Grid Type",
+      "info": "Special layouts for 3-4 cards",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "1-2",
+          "label": "1 card left, 2 cards right"
+        },
+        {
+          "value": "1-3",
+          "label": "1 card left, 3 cards right"
+        }
+      ],
+      "default": "none"
     },
     {
       "type": "text",
@@ -353,6 +314,43 @@
           "type": "image_picker",
           "id": "box_image",
           "label": "Box Image"
+        },
+        {
+          "type": "header",
+          "content": "Button Settings"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_button",
+          "label": "Show Button",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button Label",
+          "default": "Learn More"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button Style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            }
+          ],
+          "default": "primary"
         }
       ]
     }

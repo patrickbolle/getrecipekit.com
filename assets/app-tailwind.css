@@ -31,3 +31,18 @@
     border-color: var(--color-gray-200, currentColor);
   }
 }
+
+/* Custom overrides for Recipe Kit */
+@layer overrides {
+  :root {
+    --color-accent: 255, 85, 88;
+  }
+
+  .twcss\:max-w-content {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  .twcss\:text-accent {
+    color: rgb(var(--color-accent));
+  }
+}
