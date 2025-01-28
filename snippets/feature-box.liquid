@@ -83,9 +83,9 @@
     </div>
 
     {% if block.settings.box_image != blank %}
-      <div class='{% if block.settings.layout == "two_column" %}twcss:md:flex-1 twcss:mt-6 twcss:md:mt-0{% else %}twcss:w-full twcss:mt-6{% endif %} twcss:h-full twcss:flex-1 twcss:min-h-[300px]'>
+      <div class='{% if block.settings.layout == "two_column" %}twcss:md:flex-1{% else %}twcss:w-full{% endif %} twcss:mt-6 twcss:md:mt-0 {% if block.settings.image_aspect == "square" %}twcss:aspect-square{% elsif block.settings.image_aspect == "landscape" %}twcss:aspect-[4/3]{% elsif block.settings.image_aspect == "wide" %}twcss:aspect-video{% elsif block.settings.image_aspect == "portrait" %}twcss:aspect-[3/4]{% elsif block.settings.image_aspect == "tall" %}twcss:aspect-[2/3]{% endif %}'>
         <img
-          src='{{ block.settings.box_image | image_url: width: 400, height: auto }}'
+          src='{{ block.settings.box_image | image_url: width: 800 }}'
           alt='{{ block.settings.box_image.alt | escape }}'
           class='twcss:w-full twcss:h-full twcss:rounded-xl box-image twcss:object-cover twcss:object-center'
           loading='lazy'
