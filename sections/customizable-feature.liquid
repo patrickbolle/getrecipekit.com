@@ -1,0 +1,171 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .feature-box-shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+{%- endstyle -%}
+
+<div class='twcss:px-4 twcss:py-8 twcss:sm:px-6 twcss:lg:px-8 section-{{ section.id }}-padding twcss:max-w-7xl twcss:mx-auto'>
+  <div class='twcss:text-center twcss:max-w-3xl twcss:mx-auto'>
+    <h2 class='twcss:text-4xl twcss:font-bold twcss:tracking-tight twcss:text-gray-900 twcss:sm:text-5xl'>
+      {{ section.settings.heading_prefix }}
+      <span class='twcss:text-indigo-600'>{{ section.settings.heading_emphasis }}</span>
+      {{ section.settings.heading_suffix }}
+    </h2>
+    <p class='twcss:mt-4 twcss:text-xl twcss:text-gray-600'>
+      {{ section.settings.subheading }}
+    </p>
+  </div>
+
+  <div class='twcss:mt-16'>
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'feature_box' -%}
+          <div class='twcss:bg-white twcss:rounded-2xl twcss:p-8 feature-box-shadow' {{ block.shopify_attributes }}>
+            <div class='twcss:flex twcss:flex-col twcss:md:flex-row twcss:gap-8 twcss:items-start'>
+              <div class='twcss:flex-1'>
+                {% if block.settings.icon != blank %}
+                  <div class='twcss:w-12 twcss:h-12 twcss:flex twcss:items-center twcss:justify-center twcss:rounded-lg twcss:bg-indigo-100'>
+                    <img
+                      src='{{ block.settings.icon | image_url: '48x48' }}'
+                      alt=''
+                      width='24'
+                      height='24'
+                      class='twcss:w-6 twcss:h-6'
+                    >
+                  </div>
+                {% endif %}
+
+                <h3 class='twcss:mt-6 twcss:text-xl twcss:font-semibold twcss:text-gray-900'>
+                  {{ block.settings.box_heading }}
+                </h3>
+
+                <p class='twcss:mt-4 twcss:text-gray-600'>
+                  {{ block.settings.box_text }}
+                </p>
+              </div>
+
+              {% if block.settings.box_image != blank %}
+                <div class='twcss:flex-1 twcss:mt-6 twcss:md:mt-0'>
+                  <img
+                    src='{{ block.settings.box_image | image_url: 'master' }}'
+                    alt='{{ block.settings.box_image.alt | escape }}'
+                    class='twcss:w-full twcss:rounded-lg'
+                    loading='lazy'
+                    width='{{ block.settings.box_image.width }}'
+                    height='{{ block.settings.box_image.height }}'
+                  >
+                </div>
+              {% endif %}
+            </div>
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Feature with Image",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading_prefix",
+      "label": "Heading Prefix",
+      "default": "Make forms"
+    },
+    {
+      "type": "text",
+      "id": "heading_emphasis",
+      "label": "Heading Emphasis",
+      "default": "uniquely"
+    },
+    {
+      "type": "text",
+      "id": "heading_suffix",
+      "label": "Heading Suffix",
+      "default": "yours"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Easily customize the design and layout to fit any form to your brand."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature_box",
+      "name": "Feature Box",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "box_heading",
+          "label": "Box Heading",
+          "default": "Customize your form"
+        },
+        {
+          "type": "textarea",
+          "id": "box_text",
+          "label": "Box Text",
+          "default": "Use our pre-made themes or create your own design by customizing colors, fonts, buttons, and more."
+        },
+        {
+          "type": "image_picker",
+          "id": "box_image",
+          "label": "Box Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Feature with Image",
+      "blocks": [
+        {
+          "type": "feature_box"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
