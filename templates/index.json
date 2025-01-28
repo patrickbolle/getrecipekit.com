@@ -105,10 +105,10 @@
         "padding_bottom": 36
       }
     },
-    "feature_box_grid_YXYic9": {
+    "feature_box_grid_UUefGJ": {
       "type": "feature-box-grid",
       "blocks": {
-        "feature_box_b8h3hd": {
+        "feature_box_4DGXYx": {
           "type": "feature_box",
           "settings": {
             "layout": "two_column",
@@ -128,7 +128,7 @@
         }
       },
       "block_order": [
-        "feature_box_b8h3hd"
+        "feature_box_4DGXYx"
       ],
       "settings": {
         "color_scheme": "",
@@ -374,7 +374,7 @@
   "order": [
     "rich_text_hero_kxj36j",
     "logo_list_zNL88B",
-    "feature_box_grid_YXYic9",
+    "feature_box_grid_UUefGJ",
     "testimonials_W7jaYf",
     "pricing_plans_pC3n8Q",
     "collapsible_content_DrytjN",
