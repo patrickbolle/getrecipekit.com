@@ -24,14 +24,19 @@
       }
     }
   {% endif %}
+
+  @media screen and (min-width: 768px) {
+    .header-{{ section.id }} {
+      max-width: {{ section.settings.header_width }}%;
+    }
+  }
 {%- endstyle -%}
 
 <div class='twcss:px-4 twcss:py-8 twcss:sm:px-6 twcss:lg:px-8 section-{{ section.id }}-padding twcss:max-w-content twcss:mx-auto color-{{ section.settings.color_scheme }} gradient'>
   <div
-    class='twcss:w-full {% if section.settings.text_alignment == 'left' %}twcss:text-left{% elsif section.settings.text_alignment == 'right' %}twcss:text-right twcss:ml-auto{% else %}twcss:text-center twcss:mx-auto{% endif %}'
-    style='max-width: {{ section.settings.header_width }}%;'
+    class='header-{{ section.id }} twcss:w-full {% if section.settings.text_alignment == 'left' %}twcss:text-left{% elsif section.settings.text_alignment == 'right' %}twcss:text-right twcss:ml-auto{% else %}twcss:text-center twcss:mx-auto{% endif %}'
   >
-    <h2 class='twcss:text-4xl twcss:!font-bold twcss:tracking-tight twcss:sm:!text-6xl twcss:!leading-16'>
+    <h2 class='twcss:!text-5xl twcss:!font-bold twcss:tracking-tight twcss:md:!text-6xl twcss:md:!leading-16'>
       {{ section.settings.heading_prefix }}
       <span class='twcss:text-accent'>{{ section.settings.heading_emphasis }}</span>
       {{ section.settings.heading_suffix }}
