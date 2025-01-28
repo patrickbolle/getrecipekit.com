@@ -1,5 +1,4 @@
 export default {
-  prefix: 'twcss-',
   content: [
     './layout/*.liquid',
     './templates/*.liquid',
@@ -22,7 +21,5 @@ export default {
       },
     },
   },
-  plugins: [
-    await import('@tailwindcss/typography')
-  ],
+  plugins: [await import('@tailwindcss/typography')],
 };
