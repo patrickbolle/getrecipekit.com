@@ -15,8 +15,8 @@
 <div class='twcss:container twcss:mx-auto twcss:w-full twcss:max-w-7xl twcss:px-6 twcss:xl:px-0 section-{{ section.id }}-padding'>
   <div class='twcss:flex twcss:flex-col twcss:items-center'>
     {%- if section.settings.heading != blank -%}
-      <div class='twcss:text-center twcss:mb-12'>
-        <h2 class='twcss:text-xl twcss:font-semibold twcss:text-gray-700'>
+      <div class='twcss:text-center twcss:mb-12 twcss:w-full'>
+        <h2 class='twcss:!text-3xl twcss:font-semibold twcss:text-gray-700 twcss:tracking-wider !twcss:font-semibold'>
           {{ section.settings.heading }}
           {%- if section.settings.heading_highlight != blank -%}
             <span class='twcss:text-indigo-600 twcss:font-bold'>{{ section.settings.heading_highlight }}</span>

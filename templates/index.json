@@ -55,12 +55,6 @@
     "logo_list_zNL88B": {
       "type": "logo-list",
       "blocks": {
-        "logo_PBJU4j": {
-          "type": "logo",
-          "settings": {
-            "logo_svg": ""
-          }
-        },
         "logo_4ccGTC": {
           "type": "logo",
           "settings": {
@@ -98,7 +92,6 @@
         }
       },
       "block_order": [
-        "logo_PBJU4j",
         "logo_4ccGTC",
         "logo_FqCzVU",
         "logo_qLeVjw",

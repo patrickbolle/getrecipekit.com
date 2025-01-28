@@ -1373,6 +1373,15 @@
   .twcss\:mb-12 {
     margin-bottom: calc(var(--twcss-spacing) * 12);
   }
+  .twcss\:ml-8 {
+    margin-left: calc(var(--twcss-spacing) * 8);
+  }
+  .twcss\:ml-auto {
+    margin-left: auto;
+  }
+  .twcss\:\!flex {
+    display: flex !important;
+  }
   .twcss\:block {
     display: block;
   }
@@ -1381,6 +1390,9 @@
   }
   .twcss\:grid {
     display: grid;
+  }
+  .twcss\:hidden {
+    display: none;
   }
   .twcss\:size-5 {
     width: calc(var(--twcss-spacing) * 5);
@@ -1441,8 +1453,14 @@
   .twcss\:flex-wrap {
     flex-wrap: wrap;
   }
+  .twcss\:\!items-center {
+    align-items: center !important;
+  }
   .twcss\:items-center {
     align-items: center;
+  }
+  .twcss\:\!justify-between {
+    justify-content: space-between !important;
   }
   .twcss\:justify-between {
     justify-content: space-between;
@@ -1563,8 +1581,14 @@
   .twcss\:px-12 {
     padding-inline: calc(var(--twcss-spacing) * 12);
   }
+  .twcss\:py-2 {
+    padding-block: calc(var(--twcss-spacing) * 2);
+  }
   .twcss\:py-3 {
     padding-block: calc(var(--twcss-spacing) * 3);
+  }
+  .twcss\:py-5 {
+    padding-block: calc(var(--twcss-spacing) * 5);
   }
   .twcss\:py-8 {
     padding-block: calc(var(--twcss-spacing) * 8);
@@ -1577,6 +1601,13 @@
   }
   .twcss\:text-center {
     text-align: center;
+  }
+  .twcss\:\!text-3xl {
+    font-size: var(--twcss-text-3xl) !important;
+    line-height: var(
+      --tw-leading,
+      var(--twcss-text-3xl--line-height)
+    ) !important;
   }
   .twcss\:text-2xl {
     font-size: var(--twcss-text-2xl);
@@ -1597,10 +1628,6 @@
   .twcss\:text-sm {
     font-size: var(--twcss-text-sm);
     line-height: var(--tw-leading, var(--twcss-text-sm--line-height));
-  }
-  .twcss\:text-xl {
-    font-size: var(--twcss-text-xl);
-    line-height: var(--tw-leading, var(--twcss-text-xl--line-height));
   }
   .twcss\:leading-relaxed {
     --tw-leading: var(--twcss-leading-relaxed);
@@ -1625,6 +1652,10 @@
   .twcss\:tracking-tight {
     --tw-tracking: var(--twcss-tracking-tight);
     letter-spacing: var(--twcss-tracking-tight);
+  }
+  .twcss\:tracking-wider {
+    --tw-tracking: var(--twcss-tracking-wider);
+    letter-spacing: var(--twcss-tracking-wider);
   }
   .twcss\:text-blue-600 {
     color: var(--twcss-color-blue-600);
@@ -1741,6 +1772,12 @@
         outline: 2px solid transparent;
         outline-offset: 2px;
       }
+    }
+  }
+  .twcss\:focus\:outline-none {
+    &:focus {
+      --tw-outline-style: none;
+      outline-style: none;
     }
   }
   .twcss\:active\:bg-red-500 {
@@ -1886,6 +1923,11 @@
     @media (width >= 750px) {
       font-size: var(--twcss-text-5xl);
       line-height: var(--tw-leading, var(--twcss-text-5xl--line-height));
+    }
+  }
+  .twcss\:lg\:block {
+    @media (width >= 990px) {
+      display: block;
     }
   }
   .twcss\:lg\:flex {
