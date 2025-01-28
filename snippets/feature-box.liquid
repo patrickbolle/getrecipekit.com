@@ -27,7 +27,7 @@
   }
 {%- endstyle -%}
 
-<div class='color-{{ color_scheme }} gradient twcss:rounded-2xl twcss:p-8 twcss:md:p-12 feature-box-shadow twcss:h-full'>
+<div class='color-{{ color_scheme }} gradient twcss:rounded-2xl twcss:p-8 twcss:md:p-12 feature-box-shadow'>
   <div class='twcss:flex twcss:flex-col {% if block.settings.layout == "two_column" %}twcss:md:flex-row twcss:gap-8{% else %}twcss:gap-6{% endif %} twcss:items-start'>
     <div class='{% if block.settings.layout == "two_column" %}twcss:md:flex-1{% endif %} twcss:flex twcss:flex-col twcss:h-full'>
       {% if block.settings.icon != 'none' %}
@@ -40,12 +40,12 @@
         {{ block.settings.box_heading }}
       </h3>
 
-      <p class='twcss:mt-4 twcss:!text-2xl'>
+      <p class='twcss:mt-6 twcss:!text-2xl'>
         {{ block.settings.box_text }}
       </p>
 
       {% if block.settings.show_checklist %}
-        <ul class='twcss:mt-4 twcss:!text-2xl twcss:space-y-6'>
+        <ul class='twcss:mt-8 twcss:!text-2xl twcss:space-y-6'>
           {% if block.settings.check_1 != blank %}
             <li class='twcss:flex twcss:items-start twcss:gap-3'>
               {% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}

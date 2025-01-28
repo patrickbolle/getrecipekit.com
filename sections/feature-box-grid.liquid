@@ -10,34 +10,51 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  {% if section.settings.custom_grid != 'none' and section.settings.columns != blank %}
+    @media screen and (min-width: 768px) {
+      .section-{{ section.id }}-grid {
+        grid-template-columns: {{ section.settings.custom_grid }} !important;
+      }
+    }
+  {% elsif section.settings.special_grid_type != 'none' %}
+    @media screen and (min-width: 768px) {
+      .section-{{ section.id }}-grid {
+        grid-template-columns: {{ section.settings.custom_grid }} !important;
+      }
+    }
+  {% endif %}
 {%- endstyle -%}
 
-<div class='twcss:px-4 twcss:py-8 twcss:sm:px-6 twcss:lg:px-8 section-{{ section.id }}-padding page-width twcss:mx-auto color-{{ section.settings.color_scheme }} gradient'>
-  <div class='twcss:md:max-w-[500px] {% if section.settings.text_alignment == 'left' %}twcss:text-left{% elsif section.settings.text_alignment == 'right' %}twcss:text-right{% else %}twcss:text-center{% endif %}'>
-    <h2 class='twcss:text-4xl twcss:!font-bold twcss:tracking-tight twcss:sm:!text-6xl'>
+<div class='twcss:px-4 twcss:py-8 twcss:sm:px-6 twcss:lg:px-8 section-{{ section.id }}-padding twcss:max-w-content twcss:mx-auto color-{{ section.settings.color_scheme }} gradient'>
+  <div
+    class='twcss:w-full {% if section.settings.text_alignment == 'left' %}twcss:text-left{% elsif section.settings.text_alignment == 'right' %}twcss:text-right twcss:ml-auto{% else %}twcss:text-center twcss:mx-auto{% endif %}'
+    style='max-width: {{ section.settings.header_width }}%;'
+  >
+    <h2 class='twcss:text-4xl twcss:!font-bold twcss:tracking-tight twcss:sm:!text-6xl twcss:!leading-16'>
       {{ section.settings.heading_prefix }}
       <span class='twcss:text-accent'>{{ section.settings.heading_emphasis }}</span>
       {{ section.settings.heading_suffix }}
     </h2>
-    <p class='twcss:mt-4 twcss:!text-2xl'>
+    <p class='twcss:mt-6 twcss:!text-2xl'>
       {{ section.settings.subheading }}
     </p>
   </div>
 
   <div class='twcss:mt-16'>
-    {% if section.settings.special_grid_type != 'none' %}
+    {% if section.settings.special_grid_type == '1-left' %}
       <div
-        class='twcss:grid twcss:grid-cols-1 twcss:gap-8 {% if section.settings.custom_grid != blank %}twcss:md:grid-cols-[{{ section.settings.custom_grid }}]{% else %}twcss:md:grid-cols-2{% endif %}'
+        class='twcss:grid twcss:md:grid-cols-2 twcss:gap-12 section-{{ section.id }}-grid'
       >
         {% for block in section.blocks %}
           {% if forloop.first %}
             <div {{ block.shopify_attributes }}>
               {% render 'feature-box', block: block, color_scheme: section.settings.color_scheme %}
             </div>
-          {% elsif forloop.first == false and forloop.length <= 4 %}
+          {% elsif forloop.first == false and forloop.length <= 6 %}
             {% if forloop.index == 2 %}
               <div
-                class='twcss:grid twcss:grid-cols-1 twcss:gap-8 {% if section.settings.special_grid_type == "1-2" %}twcss:md:grid-cols-2{% else %}twcss:md:grid-cols-1{% endif %}'
+                class='twcss:flex twcss:flex-col twcss:gap-12'
               >
             {% endif %}
 
@@ -51,9 +68,31 @@
           {% endif %}
         {% endfor %}
       </div>
+    {% elsif section.settings.special_grid_type == '1-right' %}
+      <div
+        class='twcss:grid twcss:md:grid-cols-2 twcss:gap-12 section-{{ section.id }}-grid'
+      >
+        <div class='twcss:flex twcss:flex-col twcss:gap-12'>
+          {% for block in section.blocks %}
+            {% unless forloop.first %}
+              <div {{ block.shopify_attributes }}>
+                {% render 'feature-box', block: block, color_scheme: section.settings.color_scheme %}
+              </div>
+            {% endunless %}
+          {% endfor %}
+        </div>
+
+        {% for block in section.blocks %}
+          {% if forloop.first %}
+            <div {{ block.shopify_attributes }}>
+              {% render 'feature-box', block: block, color_scheme: section.settings.color_scheme %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
     {% else %}
       <div
-        class='twcss:grid twcss:grid-cols-1 twcss:gap-8 {% if section.settings.layout_mode == "manual" %}twcss:md:grid-cols-[{{ section.settings.custom_grid }}]{% else %}{% if section.settings.columns == "1" %}twcss:md:grid-cols-1{% elsif section.settings.columns == "2" %}twcss:md:grid-cols-2{% elsif section.settings.columns == "3" %}twcss:md:grid-cols-3{% elsif section.settings.columns == "4" %}twcss:md:grid-cols-4{% endif %}{% endif %}'
+        class='twcss:grid twcss:grid-cols-1 twcss:gap-12 {% if section.settings.columns == "1" %}twcss:md:grid-cols-1{% elsif section.settings.columns == "2" %}twcss:md:grid-cols-2{% elsif section.settings.columns == "3" %}twcss:md:grid-cols-3{% elsif section.settings.columns == "4" %}twcss:md:grid-cols-4{% endif %} section-{{ section.id }}-grid'
       >
         {%- for block in section.blocks -%}
           <div {{ block.shopify_attributes }}>
@@ -67,7 +106,7 @@
 
 {% schema %}
 {
-  "name": "Feature with Image",
+  "name": "Feature Box Grid",
   "tag": "section",
   "class": "section",
   "settings": [
@@ -78,91 +117,18 @@
       "default": "background-1"
     },
     {
-      "type": "select",
-      "id": "columns",
-      "label": "Columns per row (standard)",
-      "options": [
-        {
-          "value": "1",
-          "label": "1 column"
-        },
-        {
-          "value": "2",
-          "label": "2 columns"
-        },
-        {
-          "value": "3",
-          "label": "3 columns"
-        },
-        {
-          "value": "4",
-          "label": "4 columns"
-        }
-      ],
-      "default": "2"
+      "type": "header",
+      "content": "Header Settings"
     },
     {
-      "type": "select",
-      "id": "layout_mode",
-      "label": "Layout Mode",
-      "info": "Choose how to arrange the cards",
-      "options": [
-        {
-          "value": "default",
-          "label": "Use Columns (above)"
-        },
-        {
-          "value": "manual",
-          "label": "Manual grid"
-        }
-      ],
-      "default": "default"
-    },
-    {
-      "type": "select",
-      "id": "special_grid_type",
-      "label": "Special Grid Type",
-      "info": "Special layouts for 3-4 cards",
-      "options": [
-        {
-          "value": "none",
-          "label": "None"
-        },
-        {
-          "value": "1-2",
-          "label": "1 card left, 2 cards right"
-        },
-        {
-          "value": "1-3",
-          "label": "1 card left, 3 cards right"
-        }
-      ],
-      "default": "none"
-    },
-    {
-      "type": "text",
-      "id": "custom_grid",
-      "label": "Custom Grid Template Columns",
-      "info": "E.g. '2fr 1fr 1fr' or '1fr 3fr' (used only when Layout Mode is Manual)",
-      "default": "1fr 1fr"
-    },
-    {
-      "type": "text",
-      "id": "heading_prefix",
-      "label": "Heading Prefix",
-      "default": "Make forms"
-    },
-    {
-      "type": "text",
-      "id": "heading_emphasis",
-      "label": "Heading Emphasis",
-      "default": "uniquely"
-    },
-    {
-      "type": "text",
-      "id": "heading_suffix",
-      "label": "Heading Suffix",
-      "default": "yours"
+      "type": "range",
+      "id": "header_width",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Header Width",
+      "default": 60
     },
     {
       "type": "select",
@@ -186,9 +152,84 @@
     },
     {
       "type": "text",
+      "id": "heading_prefix",
+      "label": "Heading Prefix",
+      "default": "This is the"
+    },
+    {
+      "type": "text",
+      "id": "heading_emphasis",
+      "label": "Heading Emphasis",
+      "default": "emphasized part"
+    },
+    {
+      "type": "text",
+      "id": "heading_suffix",
+      "label": "Heading Suffix",
+      "default": "of the heading"
+    },
+    {
+      "type": "text",
       "id": "subheading",
       "label": "Subheading",
-      "default": "Easily customize the design and layout to fit any form to your brand."
+      "default": "This is the subheading text that appears below the main heading. It can be used to provide additional context or information."
+    },
+    {
+      "type": "header",
+      "content": "Grid Settings"
+    },
+    {
+      "type": "select",
+      "id": "special_grid_type",
+      "label": "Special Grid Type",
+      "info": "Special layouts for 3-4 cards",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "1-left",
+          "label": "1 card left, other cards right"
+        },
+        {
+          "value": "1-right",
+          "label": "1 card right, other cards left"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns per row",
+      "info": "Used when Special Grid Type is set to None",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        },
+        {
+          "value": "3",
+          "label": "3 columns"
+        },
+        {
+          "value": "4",
+          "label": "4 columns"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "text",
+      "id": "custom_grid",
+      "label": "Custom Grid Template Columns",
+      "info": "E.g. '2fr 1fr 1fr' or '1fr 3fr'. Overrides the Columns per row setting when Special Grid Type is None, or customizes the wrapper grid when using Special Grid Types. Enter 'none' to use default columns.",
+      "default": "none"
     },
     {
       "type": "range",
@@ -281,13 +322,13 @@
           "type": "text",
           "id": "box_heading",
           "label": "Box Heading",
-          "default": "Customize your form"
+          "default": "This is a feature box heading"
         },
         {
           "type": "textarea",
           "id": "box_text",
           "label": "Box Text",
-          "default": "Use our pre-made themes or create your own design by customizing colors, fonts, buttons, and more."
+          "default": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information."
         },
         {
           "type": "checkbox",
@@ -298,17 +339,20 @@
         {
           "type": "text",
           "id": "check_1",
-          "label": "Checklist Item 1"
+          "label": "Checklist Item 1",
+          "default": "This is the first checklist item"
         },
         {
           "type": "text",
           "id": "check_2",
-          "label": "Checklist Item 2"
+          "label": "Checklist Item 2",
+          "default": "This is the second checklist item"
         },
         {
           "type": "text",
           "id": "check_3",
-          "label": "Checklist Item 3"
+          "label": "Checklist Item 3",
+          "default": "This is the third checklist item"
         },
         {
           "type": "image_picker",
@@ -329,7 +373,7 @@
           "type": "text",
           "id": "button_label",
           "label": "Button Label",
-          "default": "Learn More"
+          "default": "Click this button"
         },
         {
           "type": "url",
@@ -357,7 +401,7 @@
   ],
   "presets": [
     {
-      "name": "Feature with Image",
+      "name": "Feature Box Grid",
       "blocks": [
         {
           "type": "feature_box"

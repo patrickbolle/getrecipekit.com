@@ -41,6 +41,7 @@
   .twcss\:max-w-content {
     max-width: 1024px;
     margin: 0 auto;
+    padding: 0 2rem;
   }
   .twcss\:text-accent {
     color: rgb(var(--color-accent));
