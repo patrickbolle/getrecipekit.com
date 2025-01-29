@@ -111,15 +111,16 @@
         "feature_box_4DGXYx": {
           "type": "feature_box",
           "settings": {
-            "layout": "two_column",
-            "icon": "sparkles",
+            "layout": "one_column",
+            "icon": "banknotes",
             "box_heading": "This is a feature box heading",
             "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
             "show_checklist": false,
             "check_1": "This is the first checklist item",
             "check_2": "This is the second checklist item",
             "check_3": "This is the third checklist item",
-            "image_aspect": "landscape",
+            "box_image": "shopify://shop_images/20241023213348-wqurxy1511453156.jpg",
+            "image_aspect": "wide",
             "show_button": false,
             "button_label": "Click this button",
             "button_link": "",
@@ -132,16 +133,114 @@
       ],
       "settings": {
         "color_scheme": "",
-        "header_width": 60,
-        "text_alignment": "center",
+        "header_width": 55,
+        "text_alignment": "left",
         "heading_prefix": "This is the",
         "heading_emphasis": "emphasized part",
         "heading_suffix": "of the heading",
         "subheading": "This is the subheading text that appears below the main heading. It can be used to provide additional context or information.",
         "special_grid_type": "none",
-        "columns": "2",
+        "columns": "1",
         "custom_grid": "none",
         "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "feature_box_grid_xBUEfq": {
+      "type": "feature-box-grid",
+      "blocks": {
+        "feature_box_wnb3Ba": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "icon": "sparkles",
+            "box_heading": "This is a feature box heading",
+            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "box_image": "shopify://shop_images/20241023213348-wqurxy1511453156.jpg",
+            "image_aspect": "portrait",
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        },
+        "feature_box_kbRnGN": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "icon": "clock",
+            "box_heading": "This is a feature box heading",
+            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
+            "show_checklist": true,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "landscape",
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "primary"
+          }
+        },
+        "feature_box_iPwN8q": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "icon": "heart",
+            "box_heading": "This is a feature box heading",
+            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "landscape",
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "secondary"
+          }
+        },
+        "feature_box_DPhh9c": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "icon": "shop",
+            "box_heading": "This is a feature box heading",
+            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "landscape",
+            "show_button": true,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "feature_box_wnb3Ba",
+        "feature_box_kbRnGN",
+        "feature_box_iPwN8q",
+        "feature_box_DPhh9c"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "header_width": 80,
+        "text_alignment": "center",
+        "heading_prefix": "This is the",
+        "heading_emphasis": "emphasized part",
+        "heading_suffix": "of the heading",
+        "subheading": "This is the subheading text that appears below the main heading. It can be used to provide additional context or information.",
+        "special_grid_type": "1-left",
+        "columns": "2",
+        "custom_grid": "3fr 2fr",
+        "padding_top": 100,
         "padding_bottom": 36
       }
     },
@@ -375,6 +474,7 @@
     "rich_text_hero_kxj36j",
     "logo_list_zNL88B",
     "feature_box_grid_UUefGJ",
+    "feature_box_grid_xBUEfq",
     "testimonials_W7jaYf",
     "pricing_plans_pC3n8Q",
     "collapsible_content_DrytjN",
