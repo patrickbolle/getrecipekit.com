@@ -255,6 +255,13 @@
       "unit": "px",
       "label": "Padding bottom",
       "default": 36
+    },
+    {
+      "type": "checkbox",
+      "id": "boxes_fill_height",
+      "label": "Boxes fill available space?",
+      "info": "When enabled, boxes will stretch to fill the available height in their row",
+      "default": true
     }
   ],
   "blocks": [
@@ -278,6 +285,13 @@
             }
           ],
           "default": "two_column"
+        },
+        {
+          "type": "checkbox",
+          "id": "reverse_columns",
+          "label": "Reverse columns",
+          "info": "When using Two Columns layout, flip the order of content and image",
+          "default": false
         },
         {
           "type": "select",

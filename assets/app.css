@@ -2057,6 +2057,11 @@
       flex-direction: row;
     }
   }
+  .twcss\:md\:flex-row-reverse {
+    @media (width >= 750px) {
+      flex-direction: row-reverse;
+    }
+  }
   .twcss\:md\:gap-8 {
     @media (width >= 750px) {
       gap: calc(var(--twcss-spacing) * 8);

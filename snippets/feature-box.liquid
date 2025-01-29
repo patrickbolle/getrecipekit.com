@@ -27,60 +27,68 @@
   }
 {%- endstyle -%}
 
-<div class='color-{{ color_scheme }} gradient twcss:rounded-2xl twcss:p-8 twcss:md:p-12 feature-box-shadow'>
-  <div class='twcss:flex twcss:flex-col {% if block.settings.layout == "two_column" %}twcss:md:flex-row twcss:gap-8{% else %}twcss:gap-6{% endif %} twcss:items-start'>
-    <div class='{% if block.settings.layout == "two_column" %}twcss:md:flex-1{% endif %} twcss:flex twcss:flex-col twcss:h-full'>
-      {% if block.settings.icon != 'none' %}
-        <div class='twcss:w-12 twcss:h-12 twcss:flex twcss:items-center twcss:justify-center twcss:rounded-lg'>
-          {% render 'icon' with icon: block.settings.icon, class: 'twcss:w-8 twcss:h-8 twcss:text-accent twcss:size-8' %}
-        </div>
-      {% endif %}
+<div class='color-{{ color_scheme }} gradient twcss:rounded-2xl twcss:p-8 twcss:md:p-12 feature-box-shadow {% if section.settings.boxes_fill_height %}twcss:h-full{% endif %}'>
+  <div class='twcss:flex twcss:flex-col {% if block.settings.layout == "two_column" %}twcss:md:flex-row {% if block.settings.reverse_columns %}twcss:md:flex-row-reverse{% endif %} twcss:gap-8{% else %}twcss:gap-6{% endif %} twcss:items-start'>
+    {% comment %} Only show the column if there is SOME content... ANY content {% endcomment %}
+    {% if block.settings.icon != 'none'
+      or block.settings.box_heading != blank
+      or block.settings.box_text != blank
+      or block.settings.show_checklist
+      or block.settings.show_button
+    %}
+      <div class='{% if block.settings.layout == "two_column" %}twcss:md:flex-1{% endif %} twcss:flex twcss:flex-col twcss:h-full'>
+        {% if block.settings.icon != 'none' %}
+          <div class='twcss:w-12 twcss:h-12 twcss:flex twcss:items-center twcss:justify-center twcss:rounded-lg'>
+            {% render 'icon' with icon: block.settings.icon, class: 'twcss:w-8 twcss:h-8 twcss:text-accent twcss:size-8' %}
+          </div>
+        {% endif %}
 
-      <h3 class='{% if block.settings.icon != blank %}twcss:mt-6{% endif %} twcss:!text-3xl twcss:!font-semibold'>
-        {{ block.settings.box_heading }}
-      </h3>
+        <h3 class='{% if block.settings.icon != blank %}twcss:mt-6{% endif %} twcss:!text-3xl twcss:!font-semibold'>
+          {{ block.settings.box_heading }}
+        </h3>
 
-      <p class='twcss:mt-6 twcss:!text-2xl'>
-        {{ block.settings.box_text }}
-      </p>
+        <p class='twcss:mt-6 twcss:!text-2xl'>
+          {{ block.settings.box_text }}
+        </p>
 
-      {% if block.settings.show_checklist %}
-        <ul class='twcss:mt-8 twcss:!text-2xl twcss:space-y-6'>
-          {% if block.settings.check_1 != blank %}
-            <li class='twcss:flex twcss:items-start twcss:gap-3'>
-              {% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}
-              <span>{{ block.settings.check_1 }}</span>
-            </li>
-          {% endif %}
-          {% if block.settings.check_2 != blank %}
-            <li class='twcss:flex twcss:items-start twcss:gap-3'>
-              {% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}
-              <span>{{ block.settings.check_2 }}</span>
-            </li>
-          {% endif %}
-          {% if block.settings.check_3 != blank %}
-            <li class='twcss:flex twcss:items-start twcss:gap-3'>
-              {% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}
-              <span>{{ block.settings.check_3 }}</span>
-            </li>
-          {% endif %}
-        </ul>
-      {% endif %}
+        {% if block.settings.show_checklist %}
+          <ul class='twcss:mt-8 twcss:!text-2xl twcss:space-y-6'>
+            {% if block.settings.check_1 != blank %}
+              <li class='twcss:flex twcss:items-start twcss:gap-3'>
+                {% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}
+                <span>{{ block.settings.check_1 }}</span>
+              </li>
+            {% endif %}
+            {% if block.settings.check_2 != blank %}
+              <li class='twcss:flex twcss:items-start twcss:gap-3'>
+                {% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}
+                <span>{{ block.settings.check_2 }}</span>
+              </li>
+            {% endif %}
+            {% if block.settings.check_3 != blank %}
+              <li class='twcss:flex twcss:items-start twcss:gap-3'>
+                {% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}
+                <span>{{ block.settings.check_3 }}</span>
+              </li>
+            {% endif %}
+          </ul>
+        {% endif %}
 
-      {% if block.settings.show_button
-        and block.settings.button_label != blank
-        and block.settings.button_link != blank
-      %}
-        <div class='twcss:mt-auto twcss:pt-8'>
-          <a
-            href='{{ block.settings.button_link }}'
-            class='twcss:inline-flex twcss:items-center twcss:px-8 twcss:py-4 twcss:text-xl twcss:font-medium twcss:transition-colors twcss:duration-200 button-{{ block.settings.button_style }}'
-          >
-            {{ block.settings.button_label }}
-          </a>
-        </div>
-      {% endif %}
-    </div>
+        {% if block.settings.show_button
+          and block.settings.button_label != blank
+          and block.settings.button_link != blank
+        %}
+          <div class='twcss:mt-auto twcss:pt-8'>
+            <a
+              href='{{ block.settings.button_link }}'
+              class='twcss:inline-flex twcss:items-center twcss:px-8 twcss:py-4 twcss:text-xl twcss:font-medium twcss:transition-colors twcss:duration-200 button-{{ block.settings.button_style }}'
+            >
+              {{ block.settings.button_label }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
 
     {% if block.settings.box_image != blank %}
       <div class='{% if block.settings.layout == "two_column" %}twcss:md:flex-1{% else %}twcss:w-full{% endif %} twcss:mt-6 twcss:md:mt-0 {% if block.settings.image_aspect == "square" %}twcss:aspect-square{% elsif block.settings.image_aspect == "landscape" %}twcss:aspect-[4/3]{% elsif block.settings.image_aspect == "wide" %}twcss:aspect-video{% elsif block.settings.image_aspect == "portrait" %}twcss:aspect-[3/4]{% elsif block.settings.image_aspect == "tall" %}twcss:aspect-[2/3]{% endif %}'>
