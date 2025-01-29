@@ -112,6 +112,7 @@
           "type": "feature_box",
           "settings": {
             "layout": "one_column",
+            "reverse_columns": false,
             "icon": "banknotes",
             "box_heading": "This is a feature box heading",
             "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
@@ -153,6 +154,7 @@
           "type": "feature_box",
           "settings": {
             "layout": "one_column",
+            "reverse_columns": false,
             "icon": "sparkles",
             "box_heading": "This is a feature box heading",
             "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
@@ -172,6 +174,7 @@
           "type": "feature_box",
           "settings": {
             "layout": "one_column",
+            "reverse_columns": false,
             "icon": "clock",
             "box_heading": "This is a feature box heading",
             "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
@@ -190,6 +193,7 @@
           "type": "feature_box",
           "settings": {
             "layout": "one_column",
+            "reverse_columns": false,
             "icon": "heart",
             "box_heading": "This is a feature box heading",
             "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
@@ -208,6 +212,7 @@
           "type": "feature_box",
           "settings": {
             "layout": "one_column",
+            "reverse_columns": false,
             "icon": "shop",
             "box_heading": "This is a feature box heading",
             "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.\n<br><br>\nA little extra content in this one! I just added this to help balance out the column lengths on desktop... gives it a sense of balance. very nice.",
@@ -251,6 +256,7 @@
           "type": "feature_box",
           "settings": {
             "layout": "one_column",
+            "reverse_columns": false,
             "icon": "clock",
             "box_heading": "This is a feature box heading",
             "box_text": "",
@@ -269,6 +275,7 @@
           "type": "feature_box",
           "settings": {
             "layout": "one_column",
+            "reverse_columns": false,
             "icon": "heart",
             "box_heading": "This is a feature box heading",
             "box_text": "",
@@ -287,6 +294,7 @@
           "type": "feature_box",
           "settings": {
             "layout": "one_column",
+            "reverse_columns": false,
             "icon": "shop",
             "box_heading": "This is a feature box heading",
             "box_text": "",
@@ -329,6 +337,7 @@
           "type": "feature_box",
           "settings": {
             "layout": "two_column",
+            "reverse_columns": false,
             "icon": "clock",
             "box_heading": "This is a feature box heading",
             "box_text": "I added the ability to show the image in another column within the cards themselves.\n<br><br>\nHow neat is that?",
@@ -348,6 +357,7 @@
           "type": "feature_box",
           "settings": {
             "layout": "one_column",
+            "reverse_columns": false,
             "icon": "fire",
             "box_heading": "Convinced yet?",
             "box_text": "Install recipe book today on your Shopify store, and experience the best recipe app out there.",
@@ -389,15 +399,16 @@
           "type": "feature_box",
           "settings": {
             "layout": "one_column",
+            "reverse_columns": false,
             "icon": "none",
-            "box_heading": "Mmmm this one looks good",
+            "box_heading": "",
             "box_text": "",
             "show_checklist": false,
             "check_1": "This is the first checklist item",
             "check_2": "This is the second checklist item",
             "check_3": "This is the third checklist item",
-            "box_image": "shopify://shop_images/20241016192230-vegan-ramen-square.jpg",
-            "image_aspect": "landscape",
+            "box_image": "shopify://shop_images/hands-type-on-a-laptop-with-google-home-screen.jpg",
+            "image_aspect": "portrait",
             "show_button": false,
             "button_label": "Click this button",
             "button_link": "#",
@@ -408,6 +419,7 @@
           "type": "feature_box",
           "settings": {
             "layout": "one_column",
+            "reverse_columns": false,
             "icon": "none",
             "box_heading": "Maybe we add the ability for images to be links?",
             "box_text": "",
@@ -415,7 +427,7 @@
             "check_1": "This is the first checklist item",
             "check_2": "This is the second checklist item",
             "check_3": "This is the third checklist item",
-            "box_image": "shopify://shop_images/Meal_Prep_Hacks_1_24e8f17f-28c3-41cc-96c5-1e5360b69487.png",
+            "box_image": "shopify://shop_images/chad-montano-lP5MCM6nZ5A-unsplash_cropped.jpg",
             "image_aspect": "wide",
             "show_button": false,
             "button_label": "Click this button",
