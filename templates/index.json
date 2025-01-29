@@ -142,7 +142,7 @@
         "special_grid_type": "none",
         "columns": "1",
         "custom_grid": "none",
-        "padding_top": 36,
+        "padding_top": 64,
         "padding_bottom": 36
       }
     },
@@ -210,7 +210,7 @@
             "layout": "one_column",
             "icon": "shop",
             "box_heading": "This is a feature box heading",
-            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
+            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.\n<br><br>\nA little extra content in this one! I just added this to help balance out the column lengths on desktop... gives it a sense of balance. very nice.",
             "show_checklist": false,
             "check_1": "This is the first checklist item",
             "check_2": "This is the second checklist item",
@@ -233,14 +233,213 @@
         "color_scheme": "",
         "header_width": 80,
         "text_alignment": "center",
-        "heading_prefix": "This is the",
-        "heading_emphasis": "emphasized part",
-        "heading_suffix": "of the heading",
+        "heading_prefix": "This is another",
+        "heading_emphasis": "of the same section type",
+        "heading_suffix": "",
         "subheading": "This is the subheading text that appears below the main heading. It can be used to provide additional context or information.",
         "special_grid_type": "1-left",
         "columns": "2",
         "custom_grid": "3fr 2fr",
         "padding_top": 100,
+        "padding_bottom": 36
+      }
+    },
+    "feature_box_grid_KBNjXp": {
+      "type": "feature-box-grid",
+      "blocks": {
+        "feature_box_4JwkGf": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "icon": "clock",
+            "box_heading": "This is a feature box heading",
+            "box_text": "",
+            "show_checklist": true,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "landscape",
+            "show_button": true,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "secondary"
+          }
+        },
+        "feature_box_JjWBzd": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "icon": "heart",
+            "box_heading": "This is a feature box heading",
+            "box_text": "",
+            "show_checklist": true,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "landscape",
+            "show_button": true,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "primary"
+          }
+        },
+        "feature_box_jC3rEy": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "icon": "shop",
+            "box_heading": "This is a feature box heading",
+            "box_text": "",
+            "show_checklist": true,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "landscape",
+            "show_button": true,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "feature_box_4JwkGf",
+        "feature_box_JjWBzd",
+        "feature_box_jC3rEy"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "header_width": 80,
+        "text_alignment": "center",
+        "heading_prefix": "These",
+        "heading_emphasis": "box sections",
+        "heading_suffix": "are so fun",
+        "subheading": "What's this one for? Who knows! Could be a pricing table, value proposition, or whatever you want! These are totally customizable.",
+        "special_grid_type": "none",
+        "columns": "3",
+        "custom_grid": "",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "feature_box_grid_wHGd3i": {
+      "type": "feature-box-grid",
+      "blocks": {
+        "feature_box_DVxDpG": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "two_column",
+            "icon": "clock",
+            "box_heading": "This is a feature box heading",
+            "box_text": "I added the ability to show the image in another column within the cards themselves.\n<br><br>\nHow neat is that?",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "box_image": "shopify://shop_images/20241016192230-vegan-ramen-square.jpg",
+            "image_aspect": "landscape",
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "secondary"
+          }
+        },
+        "feature_box_fDHYTT": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "icon": "fire",
+            "box_heading": "Convinced yet?",
+            "box_text": "Install recipe book today on your Shopify store, and experience the best recipe app out there.",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "landscape",
+            "show_button": true,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "feature_box_DVxDpG",
+        "feature_box_fDHYTT"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "header_width": 80,
+        "text_alignment": "center",
+        "heading_prefix": "One more,",
+        "heading_emphasis": "just for kicks",
+        "heading_suffix": "",
+        "subheading": "What's this one for? Who knows! Could be a pricing table, value proposition, or whatever you want! These are totally customizable.",
+        "special_grid_type": "none",
+        "columns": "2",
+        "custom_grid": "2fr 1fr",
+        "padding_top": 100,
+        "padding_bottom": 0
+      }
+    },
+    "feature_box_grid_7PNgbc": {
+      "type": "feature-box-grid",
+      "blocks": {
+        "feature_box_hWFK9b": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "icon": "none",
+            "box_heading": "Mmmm this one looks good",
+            "box_text": "",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "box_image": "shopify://shop_images/20241016192230-vegan-ramen-square.jpg",
+            "image_aspect": "landscape",
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "secondary"
+          }
+        },
+        "feature_box_HNBeNN": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "icon": "none",
+            "box_heading": "Maybe we add the ability for images to be links?",
+            "box_text": "",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "box_image": "shopify://shop_images/Meal_Prep_Hacks_1_24e8f17f-28c3-41cc-96c5-1e5360b69487.png",
+            "image_aspect": "wide",
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "feature_box_hWFK9b",
+        "feature_box_HNBeNN"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "header_width": 80,
+        "text_alignment": "center",
+        "heading_prefix": "",
+        "heading_emphasis": "",
+        "heading_suffix": "",
+        "subheading": "",
+        "special_grid_type": "none",
+        "columns": "2",
+        "custom_grid": "1fr 2fr",
+        "padding_top": 0,
         "padding_bottom": 36
       }
     },
@@ -475,6 +674,9 @@
     "logo_list_zNL88B",
     "feature_box_grid_UUefGJ",
     "feature_box_grid_xBUEfq",
+    "feature_box_grid_KBNjXp",
+    "feature_box_grid_wHGd3i",
+    "feature_box_grid_7PNgbc",
     "testimonials_W7jaYf",
     "pricing_plans_pC3n8Q",
     "collapsible_content_DrytjN",
