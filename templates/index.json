@@ -112,7 +112,7 @@
           "type": "feature_box",
           "settings": {
             "layout": "two_column",
-            "icon": "checkmark",
+            "icon": "sparkles",
             "box_heading": "This is a feature box heading",
             "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
             "show_checklist": false,
