@@ -12,8 +12,8 @@
       aria-label='{{ 'sections.header.menu' | t }}'
     >
       <span>
-        {% render 'icon-hamburger' %}
-        {% render 'icon-close' %}
+        {{- 'icon-hamburger.svg' | inline_asset_content -}}
+        {{- 'icon-close.svg' | inline_asset_content -}}
       </span>
     </summary>
     <div id='menu-drawer' class='gradient menu-drawer motion-reduce color-{{ section.settings.menu_color_scheme }}'>
@@ -30,8 +30,12 @@
                         class='menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}'
                       >
                         {{ link.title | escape }}
-                        {% render 'icon-arrow' %}
-                        {% render 'icon-caret' %}
+                        <span class='svg-wrapper'>
+                          {{- 'icon-arrow.svg' | inline_asset_content -}}
+                        </span>
+                        <span class='svg-wrapper'>
+                          {{- 'icon-caret.svg' | inline_asset_content -}}
+                        </span>
                       </summary>
                       <div
                         id='link-{{ link.handle | escape }}'
@@ -64,8 +68,12 @@
                                       class='menu-drawer__menu-item link link--text list-menu__item focus-inset'
                                     >
                                       {{ childlink.title | escape }}
-                                      {% render 'icon-arrow' %}
-                                      {% render 'icon-caret' %}
+                                      <span class='svg-wrapper'>
+                                        {{- 'icon-arrow.svg' | inline_asset_content -}}
+                                      </span>
+                                      <span class='svg-wrapper'>
+                                        {{- 'icon-caret.svg' | inline_asset_content -}}
+                                      </span>
                                     </summary>
                                     <div
                                       id='childlink-{{ childlink.handle | escape }}'
@@ -75,7 +83,9 @@
                                         class='menu-drawer__close-button link link--text focus-inset'
                                         aria-expanded='true'
                                       >
-                                        {% render 'icon-arrow' %}
+                                        <span class='svg-wrapper'>
+                                          {{- 'icon-arrow.svg' | inline_asset_content -}}
+                                        </span>
                                         {{ childlink.title | escape }}
                                       </button>
                                       <ul
@@ -143,11 +153,15 @@
                     {%- if customer and customer.has_avatar? -%}
                       {{ customer | avatar }}
                     {%- else -%}
-                      {% render 'icon-account' %}
+                      <span class='svg-wrapper'>
+                        {{- 'icon-account.svg' | inline_asset_content -}}
+                      </span>
                     {%- endif -%}
                   </account-icon>
                 {%- else -%}
-                  {% render 'icon-account' %}
+                  <span class='svg-wrapper'>
+                    {{- 'icon-account.svg' | inline_asset_content -}}
+                  </span>
                 {%- endif -%}
                 {%- liquid
                   if customer

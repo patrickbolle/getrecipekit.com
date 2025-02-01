@@ -15,47 +15,49 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="collapsible-content collapsible-{{ section.settings.layout }}-layout isolate{% if section.settings.layout == 'section' %} page-width{% elsif section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}">
-    <div class="collapsible-content__wrapper section-{{ section.id }}-padding{% if section.settings.layout == 'section' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}">
-      <div class="{% if section.settings.image == blank %}collapsible-content-wrapper-narrow{% else %}page-width{% endif %}">
+<div class='color-{{ section.settings.color_scheme }} gradient'>
+  <div class='collapsible-content collapsible-{{ section.settings.layout }}-layout isolate{% if section.settings.layout == 'section' %} page-width{% elsif section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}'>
+    <div class='collapsible-content__wrapper section-{{ section.id }}-padding{% if section.settings.layout == 'section' %} content-container color-{{ section.settings.container_color_scheme }} gradient{% endif %}'>
+      <div class='{% if section.settings.image == blank %}collapsible-content-wrapper-narrow{% else %}page-width{% endif %}'>
         <div
-          class="collapsible-content__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          style="text-align: {{ section.settings.heading_alignment }};"
+          class='collapsible-content__header{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
+          style='text-align: {{ section.settings.heading_alignment }};'
         >
           {%- if section.settings.caption != blank -%}
-            <p class="caption-with-letter-spacing">
+            <p class='caption-with-letter-spacing'>
               {{ section.settings.caption | escape }}
             </p>
           {% endif %}
           {%- if section.settings.heading != blank -%}
-            <h2 class="collapsible-content__heading inline-richtext {{ section.settings.heading_size }}">
+            <h2 class='collapsible-content__heading inline-richtext {{ section.settings.heading_size }}'>
               {{ section.settings.heading }}
             </h2>
           {%- else -%}
-            <h2 class="visually-hidden">{{ 'accessibility.collapsible_content_title' | t }}</h2>
+            <h2 class='visually-hidden'>{{ 'accessibility.collapsible_content_title' | t }}</h2>
           {% endif %}
         </div>
-        <div class="twcss:space-y-4">
+        <div class='twcss:space-y-4'>
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when 'collapsible_row' -%}
                 <details
-                  class="twcss:group twcss:border-s-4 twcss:border-green-500 twcss:bg-gray-50 twcss:p-6 twcss:[&_summary::-webkit-details-marker]:hidden"
+                  class='twcss:group twcss:border-s-4 twcss:border-green-500 twcss:bg-gray-50 twcss:p-6 twcss:[&_summary::-webkit-details-marker]:hidden'
                   {{ block.shopify_attributes }}
-                  {% if section.settings.open_first_collapsible_row and forloop.first %}open{% endif %}
+                  {% if section.settings.open_first_collapsible_row and forloop.first %}
+                    open
+                  {% endif %}
                 >
-                  <summary class="twcss:flex twcss:cursor-pointer twcss:items-center twcss:justify-between twcss:gap-1.5">
-                    <h2 class="twcss:text-lg twcss:font-medium twcss:text-gray-900">
+                  <summary class='twcss:flex twcss:cursor-pointer twcss:items-center twcss:justify-between twcss:gap-1.5'>
+                    <h2 class='twcss:text-lg twcss:font-medium twcss:text-gray-900'>
                       {{ block.settings.heading | default: block.settings.page.title }}
                     </h2>
 
-                    <span class="twcss:shrink-0 twcss:rounded-full twcss:bg-white twcss:p-1.5 twcss:text-gray-900 twcss:sm:p-3">
+                    <span class='twcss:shrink-0 twcss:rounded-full twcss:bg-white twcss:p-1.5 twcss:text-gray-900 twcss:sm:p-3'>
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="twcss:size-5 twcss:shrink-0 twcss:transition twcss:duration-300 twcss:group-open:-rotate-45"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
+                        xmlns='http://www.w3.org/2000/svg'
+                        class='twcss:size-5 twcss:shrink-0 twcss:transition twcss:duration-300 twcss:group-open:-rotate-45'
+                        viewBox='0 0 20 20'
+                        fill='currentColor'
                       >
                         <path
                           fill-rule="evenodd"
@@ -67,8 +69,8 @@
                   </summary>
 
                   <div
-                    class="twcss:mt-4 twcss:leading-relaxed twcss:text-gray-700"
-                    id="CollapsibleAccordion-{{ block.id }}-{{ section.id }}"
+                    class='twcss:mt-4 twcss:leading-relaxed twcss:text-gray-700'
+                    id='CollapsibleAccordion-{{ block.id }}-{{ section.id }}'
                   >
                     {{ block.settings.row_content }}
                     {{ block.settings.page.content }}
