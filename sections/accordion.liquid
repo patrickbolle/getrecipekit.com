@@ -46,7 +46,7 @@
     <div class='accordion-{{ section.id }} twcss:mx-auto twcss:max-w-6xl'>
       {%- if section.settings.title != blank -%}
         <div class='twcss:mb-12 twcss:text-center'>
-          <h2 class='twcss:text-3xl twcss:!font-bold {{ section.settings.heading_size }}'>
+          <h2 class='twcss:!text-4xl twcss:!font-bold twcss:md:!text-6xl {{ section.settings.heading_size }}'>
             {{ section.settings.title | escape }}
           </h2>
           {%- if section.settings.subtitle != blank -%}
