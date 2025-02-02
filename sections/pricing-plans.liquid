@@ -4,62 +4,109 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  .pricing-card-{{ section.id }} {
+    transition: all 300ms ease-in-out;
+  }
+
+  .pricing-card-{{ section.id }}.recommended {
+    transform: scale(1.05);
+    border-color: rgb(var(--color-button));
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  @media screen and (max-width: 750px) {
+    .pricing-card-{{ section.id }} {
+      box-shadow: unset;
+      border-color: rgba(25, 25, 25, 0.3);
+    }
+
+    .pricing-card-{{ section.id }}.recommended {
+      transform: none;
+      box-shadow: unset;
+    }
+  }
 {%- endstyle -%}
 
-<div class="twcss:px-4 twcss:py-8 twcss:sm:px-6 twcss:sm:py-12 twcss:lg:px-8 twcss:lg:py-16 section-{{ section.id }}-padding twcss:max-w-7xl twcss:mx-auto ">
-  <div class="twcss:grid twcss:grid-cols-1 twcss:gap-4 twcss:sm:grid-cols-2 twcss:sm:items-stretch twcss:md:grid-cols-3 twcss:md:gap-8">
+<div class='twcss:px-4 twcss:py-8 twcss:sm:px-6 twcss:sm:py-12 twcss:lg:px-8 twcss:lg:py-16 section-{{ section.id }}-padding twcss:max-w-content twcss:mx-auto'>
+  {% if section.settings.title != blank %}
+    <div class='twcss:max-w-3xl twcss:mx-auto twcss:text-center twcss:mb-20'>
+      <h2 class='twcss:text-3xl twcss:!font-bold twcss:sm:text-4xl twcss:mb-6'>{{ section.settings.title }}</h2>
+      {% if section.settings.subtitle != blank %}
+        <p class='twcss:text-xl twcss:text-gray-600'>{{ section.settings.subtitle }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class='twcss:grid twcss:grid-cols-1 twcss:gap-8 twcss:md:grid-cols-3 twcss:sm:items-stretch twcss:lg:grid-cols-3'>
     {%- for block in section.blocks -%}
       {%- case block.type -%}
         {%- when 'pricing_plan' -%}
-          <div class="twcss:divide-y twcss:divide-gray-200 twcss:rounded-2xl twcss:border twcss:border-gray-200 twcss:shadow-sm" {{ block.shopify_attributes }}>
-            <div class="twcss:p-6 twcss:sm:px-8">
-              <h2 class="twcss:text-lg twcss:font-medium twcss:text-gray-900">
+          <div
+            class='pricing-card-{{ section.id }} twcss:shadow-clean twcss:relative twcss:flex twcss:flex-col twcss:divide-y twcss:divide-gray-200 twcss:rounded-2xl twcss:border twcss:border-transparent twcss:bg-white twcss:transition-all twcss:duration-300 {% if block.settings.is_recommended %}recommended{% endif %}'
+            {{ block.shopify_attributes }}
+          >
+            {% if block.settings.is_recommended %}
+              <div class='twcss:absolute twcss:-top-4 twcss:left-0 twcss:right-0 twcss:mx-auto twcss:w-32 twcss:rounded-full twcss:bg-[rgb(var(--color-button))] twcss:px-3 twcss:py-1 twcss:text-center twcss:text-sm twcss:font-medium twcss:text-white'>
+                {{ block.settings.recommended_label }}
+              </div>
+            {% endif %}
+
+            <div class='twcss:p-6 twcss:sm:px-8 {% if block.settings.is_recommended %}twcss:pt-8{% endif %}'>
+              <h2 class='twcss:text-2xl twcss:font-bold twcss:text-gray-900'>
                 {{ block.settings.plan_name }}
-                <span class="twcss:sr-only">Plan</span>
               </h2>
 
-              <p class="twcss:mt-2 twcss:text-gray-700">{{ block.settings.plan_description }}</p>
+              <p class='twcss:mt-4 twcss:text-gray-700'>{{ block.settings.plan_description }}</p>
 
-              <p class="twcss:mt-2 twcss:sm:mt-4">
-                <strong class="twcss:text-3xl twcss:font-bold twcss:text-gray-900 twcss:sm:text-4xl">{{ block.settings.plan_price }}</strong>
-                <span class="twcss:text-sm twcss:font-medium twcss:text-gray-700">{{ block.settings.plan_billing_period }}</span>
+              <p class='twcss:mt-6 twcss:flex twcss:items-baseline twcss:gap-x-2'>
+                <span class='twcss:text-4xl twcss:font-bold twcss:tracking-tight twcss:text-gray-900'>
+                  {{- block.settings.plan_price -}}
+                </span>
+                <span class='twcss:text-sm twcss:font-semibold twcss:text-gray-600'>
+                  {{- block.settings.plan_billing_period -}}
+                </span>
               </p>
 
               <a
-                class="twcss:mt-4 twcss:block twcss:rounded twcss:border twcss:border-indigo-600 twcss:bg-indigo-600 twcss:px-12 twcss:py-3 twcss:text-center twcss:text-sm twcss:font-medium twcss:text-white twcss:hover:bg-transparent twcss:hover:text-indigo-600 twcss:focus:outline-hidden twcss:focus:ring twcss:active:text-indigo-500 twcss:sm:mt-6"
-                href="{{ block.settings.button_link }}"
+                class='twcss:mt-6 twcss:block twcss:w-full twcss:px-4 twcss:py-4 twcss:text-center twcss:text-lg twcss:font-semibold twcss:transition-all twcss:duration-300 twcss:relative twcss:overflow-hidden {% if block.settings.button_style == 'primary' %}twcss:bg-[rgb(var(--color-button))] twcss:text-[rgb(var(--color-button-text))] twcss:hover:translate-y-[-2px] twcss:hover:shadow-lg twcss:active:translate-y-0 twcss:active:shadow-md{% else %}twcss:border-2 twcss:border-[rgb(var(--color-button))] twcss:text-[rgb(var(--color-button))] twcss:hover:bg-[rgb(var(--color-button))] twcss:hover:text-[rgb(var(--color-button-text))] twcss:hover:translate-y-[-2px] twcss:hover:shadow-lg twcss:active:translate-y-0 twcss:active:shadow-md{% endif %}'
+                href='{{ block.settings.button_link }}'
               >
                 {{ block.settings.button_label }}
               </a>
             </div>
 
-            <div class="twcss:p-6 twcss:sm:px-8">
-              <p class="twcss:text-lg twcss:font-medium twcss:text-gray-900 twcss:sm:text-xl">{{ block.settings.features_title }}</p>
+            <div class='twcss:flex twcss:flex-1 twcss:flex-col twcss:p-6 twcss:sm:p-8'>
+              <p class='twcss:text-lg twcss:font-medium twcss:text-gray-900'>{{ block.settings.features_title }}</p>
 
-              <ul class="twcss:mt-2 twcss:space-y-2 twcss:sm:mt-4">
+              <ul class='twcss:mt-6 twcss:space-y-4 twcss:flex-1'>
                 {%- for i in (1..6) -%}
                   {%- assign feature_key = 'feature_' | append: i -%}
                   {%- assign feature_enabled_key = 'feature_' | append: i | append: '_enabled' -%}
                   {%- if block.settings[feature_key] != blank -%}
-                    <li class="twcss:flex twcss:items-center twcss:gap-1">
+                    <li class='twcss:flex twcss:items-center twcss:gap-3'>
                       <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="twcss:size-5 {% if block.settings[feature_enabled_key] %}twcss:text-indigo-700{% else %}twcss:text-red-700{% endif %}"
+                        xmlns='http://www.w3.org/2000/svg'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke-width='2'
+                        stroke='currentColor'
+                        class='twcss:size-5 {% if block.settings[feature_enabled_key] %}twcss:text-[rgb(var(--color-button))]{% else %}twcss:text-gray-400{% endif %}'
                       >
-                        <path stroke-linecap="round" stroke-linejoin="round" d="{% if block.settings[feature_enabled_key] %}M4.5 12.75l6 6 9-13.5{% else %}M6 18L18 6M6 6l12 12{% endif %}" />
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="{% if block.settings[feature_enabled_key] %}M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z{% else %}M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z{% endif %}"
+                        />
                       </svg>
 
-                      <span class="twcss:text-gray-700">{{ block.settings[feature_key] }}</span>
+                      <span class='twcss:text-gray-700'>{{ block.settings[feature_key] }}</span>
                     </li>
                   {%- endif -%}
                 {%- endfor -%}
@@ -77,6 +124,18 @@
   "tag": "section",
   "class": "section",
   "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Simple, transparent pricing"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Choose the perfect plan for your needs. Always know what you'll pay."
+    },
     {
       "type": "range",
       "id": "padding_top",
@@ -114,19 +173,39 @@
           "type": "textarea",
           "id": "plan_description",
           "label": "Plan Description",
-          "default": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          "default": "Perfect for those just getting started with our product."
         },
         {
           "type": "text",
           "id": "plan_price",
           "label": "Plan Price",
-          "default": "20$"
+          "default": "$29"
         },
         {
           "type": "text",
           "id": "plan_billing_period",
           "label": "Billing Period",
           "default": "/month"
+        },
+        {
+          "type": "header",
+          "content": "Recommended Plan Settings"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_recommended",
+          "label": "Mark as Recommended Plan",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "recommended_label",
+          "label": "Recommended Label",
+          "default": "Popular"
+        },
+        {
+          "type": "header",
+          "content": "Button Settings"
         },
         {
           "type": "text",
@@ -140,10 +219,30 @@
           "label": "Button Link"
         },
         {
+          "type": "select",
+          "id": "button_style",
+          "label": "Button Style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "Primary"
+            },
+            {
+              "value": "secondary",
+              "label": "Secondary"
+            }
+          ],
+          "default": "primary"
+        },
+        {
+          "type": "header",
+          "content": "Features"
+        },
+        {
           "type": "text",
           "id": "features_title",
           "label": "Features Title",
-          "default": "What's included:"
+          "default": "What's included"
         },
         {
           "type": "text",
@@ -222,10 +321,19 @@
           "type": "pricing_plan"
         },
         {
-          "type": "pricing_plan"
+          "type": "pricing_plan",
+          "settings": {
+            "plan_name": "Pro",
+            "plan_price": "$59",
+            "is_recommended": true
+          }
         },
         {
-          "type": "pricing_plan"
+          "type": "pricing_plan",
+          "settings": {
+            "plan_name": "Enterprise",
+            "plan_price": "$139"
+          }
         }
       ]
     }

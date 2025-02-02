@@ -1,9 +1,4 @@
 {%- style -%}
-  .feature-box-shadow {
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(61, 59, 53, 0.16) 0px 0px 0px 1px,
-      rgba(61, 59, 53, 0.08) 0px 3px 9px 0px, rgba(61, 59, 53, 0.08) 0px 2px 5px 0px;
-  }
-
   .box-image {
     box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
     border: 2px solid rgba(var(--color-border), 0.1);
@@ -27,7 +22,7 @@
   }
 {%- endstyle -%}
 
-<div class='color-{{ color_scheme }} gradient twcss:rounded-2xl twcss:p-8 twcss:md:p-12 feature-box-shadow {% if section.settings.boxes_fill_height %}twcss:h-full{% endif %}'>
+<div class='color-{{ color_scheme }} gradient twcss:rounded-2xl twcss:p-8 twcss:md:p-12 twcss:shadow-clean {% if section.settings.boxes_fill_height %}twcss:h-full{% endif %}'>
   <div class='twcss:flex twcss:flex-col {% if block.settings.layout == "two_column" %}twcss:md:flex-row {% if block.settings.reverse_columns %}twcss:md:flex-row-reverse{% endif %} twcss:gap-8{% else %}twcss:gap-6{% endif %} twcss:items-start'>
     {% comment %} Only show the column if there is SOME content... ANY content {% endcomment %}
     {% if block.settings.icon != 'none'

@@ -144,7 +144,8 @@
         "columns": "1",
         "custom_grid": "none",
         "padding_top": 64,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "boxes_fill_height": true
       }
     },
     "feature_box_grid_xBUEfq": {
@@ -246,7 +247,8 @@
         "columns": "2",
         "custom_grid": "3fr 2fr",
         "padding_top": 100,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "boxes_fill_height": true
       }
     },
     "feature_box_grid_KBNjXp": {
@@ -327,7 +329,8 @@
         "columns": "3",
         "custom_grid": "",
         "padding_top": 100,
-        "padding_bottom": 100
+        "padding_bottom": 100,
+        "boxes_fill_height": true
       }
     },
     "feature_box_grid_wHGd3i": {
@@ -389,7 +392,8 @@
         "columns": "2",
         "custom_grid": "2fr 1fr",
         "padding_top": 100,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "boxes_fill_height": true
       }
     },
     "feature_box_grid_7PNgbc": {
@@ -452,7 +456,8 @@
         "columns": "2",
         "custom_grid": "1fr 2fr",
         "padding_top": 0,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "boxes_fill_height": true
       }
     },
     "testimonials_W7jaYf": {
@@ -519,6 +524,9 @@
       ],
       "settings": {
         "title": "Reviews from food brands that love Recipe Kit",
+        "review_line": "5/5 from 75+ reviews!",
+        "review_url": "https://apps.shopify.com/recipe-kit?utm_source=rk_website",
+        "review_url_new_tab": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -533,8 +541,11 @@
             "plan_description": "Exactly what you need to start your food blog.",
             "plan_price": "$14.99",
             "plan_billing_period": "/month",
+            "is_recommended": false,
+            "recommended_label": "Popular",
             "button_label": "Start free trial",
             "button_link": "https://apps.shopify.com/recipe-kit?utm_source=rk_website&utm_medium=pricing",
+            "button_style": "secondary",
             "features_title": "What's included:",
             "feature_1": "Unlimited recipes",
             "feature_1_enabled": true,
@@ -557,8 +568,11 @@
             "plan_description": "When you take your food brand to the next step.",
             "plan_price": "$24.99",
             "plan_billing_period": "/month",
+            "is_recommended": true,
+            "recommended_label": "Popular",
             "button_label": "Start free trial",
             "button_link": "https://apps.shopify.com/recipe-kit?utm_source=rk_website&utm_medium=pricing",
+            "button_style": "primary",
             "features_title": "What's included:",
             "feature_1": "Shoppable recipes: add products to cart from recipe",
             "feature_1_enabled": true,
@@ -581,8 +595,11 @@
             "plan_description": "For custom needs and priority support.",
             "plan_price": "$84.99",
             "plan_billing_period": "/month",
+            "is_recommended": false,
+            "recommended_label": "Popular",
             "button_label": "Start free trial",
             "button_link": "https://apps.shopify.com/recipe-kit?utm_source=rk_website&utm_medium=pricing",
+            "button_style": "secondary",
             "features_title": "What's included:",
             "feature_1": "Everything from Advanced",
             "feature_1_enabled": true,
@@ -605,60 +622,59 @@
         "pricing_plan_dTmLy7"
       ],
       "settings": {
-        "padding_top": 36,
+        "title": "Simple, transparent pricing",
+        "subtitle": "Choose the perfect plan for your needs. Always know what you'll pay.",
+        "padding_top": 92,
         "padding_bottom": 36
       }
     },
-    "collapsible_content_DrytjN": {
-      "type": "collapsible-content",
+    "accordion_dh7tGF": {
+      "type": "accordion",
       "blocks": {
-        "collapsible_row_EFLb79": {
-          "type": "collapsible_row",
+        "accordion_item_EiwVAD": {
+          "type": "accordion_item",
           "settings": {
-            "heading": "How does Recipe Kit work?",
-            "row_content": "<p>Recipe Kit works by adding a beautiful, consistently formatted recipe card to any blog post of your choosing on your Shopify store. it takes all the work out of making your recipe look great, and also adds automatically generated rich SEO schema to ensure your recipe starts showing up in Google recipe search results.</p>",
-            "page": ""
+            "title": "How does Recipe Kit work?",
+            "content": "<p>Recipe Kit works by adding a beautiful, consistently formatted recipe card to any blog post of your choosing on your Shopify store. it takes all the work out of making your recipe look great, and also adds automatically generated rich SEO schema to ensure your recipe starts showing up in Google recipe search results.</p>"
           }
         },
-        "collapsible_row_MXcAHm": {
-          "type": "collapsible_row",
+        "accordion_item_9ezgEM": {
+          "type": "accordion_item",
           "settings": {
-            "heading": "Can Recipe Kit help my recipes appear in Google search results?",
-            "row_content": "<p>Yes, Recipe Kit is designed to optimize your recipes for search engines.<br/> By using structured data (Google rich dataschema), Recipe Kit ensures <br/>that your recipes are indexed correctly by search engines, improving <br/>visibility and driving organic traffic to your store.</p>",
-            "page": ""
+            "title": "Can Recipe Kit help my recipes appear in Google search results?",
+            "content": "<p>Yes, Recipe Kit is designed to optimize your recipes for search engines.<br/> By using structured data (Google rich dataschema), Recipe Kit ensures <br/>that your recipes are indexed correctly by search engines, improving <br/>visibility and driving organic traffic to your store.</p>"
           }
         },
-        "collapsible_row_DPiiHY": {
-          "type": "collapsible_row",
+        "accordion_item_rUYwhq": {
+          "type": "accordion_item",
           "settings": {
-            "heading": "What are some key features of the app?",
-            "row_content": "",
-            "page": ""
+            "title": "What are some key features of the app?",
+            "content": "<p>Use this text to answer questions in a clear and concise way to help your customers understand your product, service, or processes better.</p>"
           }
         },
-        "collapsible_row_9L4Fiq": {
-          "type": "collapsible_row",
+        "accordion_item_dKqDMm": {
+          "type": "accordion_item",
           "settings": {
-            "heading": "How do I get started?",
-            "row_content": "<p>You can start with a 14-day free trial by visiting the <a href=\"https://apps.shopify.com/recipe-kit\" target=\"_blank\" title=\"https://apps.shopify.com/recipe-kit\">Recipe Kit app listing</a><br/> and clicking the Install button. Installation is straightforward, and <br/>you can begin creating and publishing beautiful, shoppable recipes on your <br/>Shopify blog immediately! </p>",
-            "page": ""
+            "title": "How do I get started?",
+            "content": "<p>You can start with a 14-day free trial by visiting the Recipe Kit app listing and clicking the Install button. Installation is straightforward, and you can begin creating and publishing beautiful, shoppable recipes on your Shopify blog immediately! </p>"
           }
         }
       },
       "block_order": [
-        "collapsible_row_EFLb79",
-        "collapsible_row_MXcAHm",
-        "collapsible_row_DPiiHY",
-        "collapsible_row_9L4Fiq"
+        "accordion_item_EiwVAD",
+        "accordion_item_9ezgEM",
+        "accordion_item_rUYwhq",
+        "accordion_item_dKqDMm"
       ],
       "settings": {
-        "caption": "",
-        "heading": "FAQ",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "layout": "none",
+        "title": "FAQ",
+        "subtitle": "",
+        "heading_size": "twcss:text-3xl",
+        "open_first_item": true,
         "color_scheme": "",
-        "open_first_collapsible_row": false,
+        "item_background": "white",
+        "title_color": "gray-900",
+        "content_color": "gray-700",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -691,7 +707,7 @@
     "feature_box_grid_7PNgbc",
     "testimonials_W7jaYf",
     "pricing_plans_pC3n8Q",
-    "collapsible_content_DrytjN",
+    "accordion_dh7tGF",
     "featured_blog_kdEgAW"
   ]
 }
