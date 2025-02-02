@@ -2023,8 +2023,6 @@
   *, ::after, ::before, ::backdrop, ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
-}
-@layer overrides {
   :root {
     --color-accent: 255, 85, 88;
   }
