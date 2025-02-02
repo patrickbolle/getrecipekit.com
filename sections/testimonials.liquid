@@ -10,29 +10,34 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .review-card {
+    background-color: rgba(245, 245, 245, 0.3);
+    border: 1px solid rgba(200, 200, 200, 0.5);
+  }
 {%- endstyle -%}
 
-<section class="twcss:bg-white section-{{ section.id }}-padding">
-  <div class="twcss:mx-auto twcss:max-w-[theme(screens.xl)] twcss:px-4 twcss:py-12 twcss:sm:px-6 twcss:lg:px-8 twcss:lg:py-16">
-    <h2 class="twcss:text-center twcss:text-4xl twcss:font-bold twcss:tracking-tight twcss:text-gray-900 twcss:sm:text-5xl">
+<section class='twcss:bg-white section-{{ section.id }}-padding'>
+  <div class='twcss:mx-auto twcss:max-w-content twcss:px-4 twcss:py-12 twcss:sm:px-6 twcss:lg:px-8 twcss:lg:py-16'>
+    <h2 class='twcss:text-center twcss:text-4xl twcss:font-bold twcss:tracking-tight twcss:text-gray-900 twcss:sm:text-5xl'>
       {{ section.settings.title }}
     </h2>
 
-    <div class="twcss:mt-8 twcss:[column-fill:balance] twcss:sm:columns-2 twcss:sm:gap-6 twcss:lg:columns-3 twcss:lg:gap-8">
+    <div class='twcss:mt-8 twcss:[column-fill:balance] twcss:sm:columns-2 twcss:sm:gap-6 twcss:lg:columns-3 twcss:lg:gap-8'>
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'testimonial' -%}
-            <div class="twcss:mb-8 twcss:sm:break-inside-avoid" {{ block.shopify_attributes }}>
-              <div class="twcss:rounded-lg twcss:bg-gray-50 twcss:p-6 twcss:shadow-sm twcss:sm:p-8">
-                <div class="twcss:flex twcss:flex-col twcss:gap-4 twcss:text-center">
-                  <div class="twcss:w-50">
-                    <div class="twcss:flex twcss:justify-center twcss:gap-0.5 twcss:text-red-500">
+            <div class='twcss:mb-8 twcss:sm:break-inside-avoid' {{ block.shopify_attributes }}>
+              <div class='review-card twcss:rounded-lg twcss:p-6 twcss:sm:p-8'>
+                <div class='twcss:flex twcss:flex-col twcss:gap-6 twcss:text-center'>
+                  <div class='twcss:w-50'>
+                    <div class='twcss:flex twcss:justify-center twcss:gap-0.5 twcss:text-red-500'>
                       {%- for i in (1..5) -%}
                         <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          class="twcss:size-10"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
+                          xmlns='http://www.w3.org/2000/svg'
+                          class='twcss:size-10'
+                          viewBox='0 0 20 20'
+                          fill='currentColor'
                         >
                           <path
                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
@@ -40,12 +45,16 @@
                         </svg>
                       {%- endfor -%}
                     </div>
+                  </div>
 
-                    <p class="twcss:mt-0.5 twcss:text-2xl twcss:font-bold twcss:text-gray-900 ">{{ block.settings.author }}</p>
+                  <div class='twcss:w-full'>
+                    <p class='twcss:mt-0.5 twcss:text-2xl twcss:font-bold twcss:text-gray-900 twcss:text-left'>
+                      {{ block.settings.author }}
+                    </p>
                   </div>
                 </div>
 
-                <p class="twcss:mt-4 twcss:text-gray-700 twcss:text-md">
+                <p class='twcss:mt-4 twcss:text-gray-700 twcss:text-md'>
                   {{ block.settings.content }}
                 </p>
               </div>
