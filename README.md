@@ -283,7 +283,7 @@ content: [
 ],
 ```
 
-If desired, run the Tailwind compile command to purge any unused styles (this step is optional as making a commit with changes to the tailwind config file will auto-generate a new `app.css` file after the commit is pushed, but this step will allow for a quick check on the proper purging of the classes): `npx tailwindcss -i ./assets/app-tailwind.css -o ./assets/app.css`
+If desired, run the Tailwind compile command to purge any unused styles (this step is optional as making a commit with changes to the tailwind config file will auto-generate a new `app.css` file after the commit is pushed, but this step will allow for a quick check on the proper purging of the classes): `npx @tailwindcss/cli -i ./assets/app-tailwind.css -o ./assets/app.css`
 
 #### Lock Down the Admin Fields
 
