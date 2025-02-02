@@ -7,9 +7,6 @@
   }
 
   .accordion-{{ section.id }} details {
-    /* border-left-width: 2px; */
-    /* border-left-color: transparent; */
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgba(61, 59, 53, 0.16) 0px 0px 0px 1px, rgba(61, 59, 53, 0.08) 0px 3px 9px 0px, rgba(61, 59, 53, 0.08) 0px 2px 5px 0px;
     border-left: 2px solid transparent;
   }
 
@@ -28,8 +25,8 @@
   }
 
   .accordion-{{ section.id }} details[open] {
-    border-color: rgba(var(--color-button), 0.8);
-
+    border-color: rgba(var(--color-accent), 0.8);
+    border-bottom-color: transparent;
   }
 
   .accordion-{{ section.id }} details[open] .chevron {
@@ -49,7 +46,7 @@
     <div class='accordion-{{ section.id }} twcss:mx-auto twcss:max-w-6xl'>
       {%- if section.settings.title != blank -%}
         <div class='twcss:mb-12 twcss:text-center'>
-          <h2 class='twcss:text-3xl twcss:font-bold {{ section.settings.heading_size }}'>
+          <h2 class='twcss:text-3xl twcss:!font-bold {{ section.settings.heading_size }}'>
             {{ section.settings.title | escape }}
           </h2>
           {%- if section.settings.subtitle != blank -%}
@@ -61,7 +58,7 @@
       <div class='twcss:space-y-6'>
         {%- for block in section.blocks -%}
           <details
-            class='group twcss:py-6 twcss:rounded-lg twcss:bg-{{ section.settings.item_background }} twcss:shadow-sm twcss:transition-all twcss:duration-200'
+            class='group twcss:py-0 twcss:!border-b twcss:border-gray-200 twcss:bg-{{ section.settings.item_background }} twcss:transition-all twcss:duration-200'
             {{ block.shopify_attributes }}
             {% if section.settings.open_first_item and forloop.first %}
               open
@@ -110,22 +107,6 @@
       summary.addEventListener('click', (e) => {
         e.preventDefault();
 
-        // If this detail is already open, close it
-        {% comment %} {% comment %} if (detail.open ) {
-          const height = content.scrollHeight;
-          content.style.height = `${height}px`;
-          content.offsetHeight; // Force reflow
-          content.style.height = '0';
-
-          const handleTransitionEnd = () => {
-            detail.open = false;
-            content.style.height = '';
-            content.removeEventListener('transitionend', handleTransitionEnd);
-          };
-          content.addEventListener('transitionend', handleTransitionEnd);
-          return;
-        } {% endcomment %} {% endcomment %}
-
         // Close all other details first
         details.forEach((otherDetail) => {
           if (otherDetail !== detail && otherDetail.open) {
@@ -151,7 +132,6 @@
         content.offsetHeight;
         const height = content.scrollHeight;
         content.style.height = `${height}px`;
-
       });
     });
   });
