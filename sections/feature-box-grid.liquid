@@ -285,7 +285,7 @@
       "type": "checkbox",
       "id": "boxes_fill_height",
       "label": "Boxes fill available space?",
-      "info": "When enabled, boxes will stretch to fill the available height in their row",
+      "info": "When enabled, boxes will stretch to fill the available height in their row. Note: If the images disappear for single-column rows (check mobile too), either use aspect ratio instead, or set an 'Image Minimum Height' for the Feature Box.",
       "default": true
     }
   ],
@@ -484,8 +484,15 @@
           "type": "checkbox",
           "id": "image_fill",
           "label": "Images fills available space?",
-          "info": "When enabled, images will ignore aspect ratio and fill their container",
+          "info": "When enabled, images will ignore aspect ratio and fill their container. Note: If the images disappear for single-column rows (check mobile too), either use aspect ratio instead, or set an 'Image Minimum Height' (below)",
           "default": false
+        },
+        {
+          "type": "text",
+          "id": "image_min_height",
+          "label": "Image Minimum Height",
+          "info": "Only applies when 'Image fills available space' is enabled. Enter a valid CSS height value (e.g. '300px', '50vh', '20rem', etc.)",
+          "default": "300px"
         },
         {
           "type": "range",

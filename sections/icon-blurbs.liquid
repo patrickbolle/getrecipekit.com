@@ -24,7 +24,7 @@
         </div>
       {% endif %}
 
-      <div class='twcss:grid twcss:grid-cols-1 twcss:gap-20 twcss:sm:grid-cols-2 twcss:lg:grid-cols-3'>
+      <div class='twcss:grid twcss:grid-cols-1 twcss:gap-10 twcss:md:gap-20 twcss:sm:grid-cols-2 twcss:lg:grid-cols-3'>
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when 'blurb' -%}
@@ -40,7 +40,9 @@
                     </div>
                   {% endif %}
 
-                  <h3 class='twcss:text-xl twcss:!font-bold twcss:!text-gray-700'>{{ block.settings.title }}</h3>
+                  <h3 class='twcss:text-xl twcss:!font-bold twcss:!text-gray-700'>
+                    {{ block.settings.title }}
+                  </h3>
                 </div>
                 <p class='twcss:mt-4 twcss:ml-4 twcss:text-gray-600'>{{ block.settings.text }}</p>
               </div>

@@ -139,7 +139,12 @@
     {% endif %}
 
     {% if block.settings.box_image != blank %}
-      <div class='{% if block.settings.layout == "two_column" %}twcss:md:flex-1 twcss:!mt-0{% else %}twcss:w-full{% endif %} twcss:md:mt-0 {% unless block.settings.image_fill %}{% if block.settings.image_aspect == "square" %}twcss:aspect-square{% elsif block.settings.image_aspect == "landscape" %}twcss:aspect-[4/3]{% elsif block.settings.image_aspect == "wide" %}twcss:aspect-video{% elsif block.settings.image_aspect == "portrait" %}twcss:aspect-[3/4]{% elsif block.settings.image_aspect == "tall" %}twcss:aspect-[2/3]{% endif %}{% endunless %} {% if block.settings.image_fill %}twcss:h-full{% endif %}'>
+      <div
+        class='{% if block.settings.layout == "two_column" %}twcss:md:flex-1 twcss:!mt-0{% else %}twcss:w-full{% endif %} twcss:md:mt-0 {% unless block.settings.image_fill %}{% if block.settings.image_aspect == "square" %}twcss:aspect-square{% elsif block.settings.image_aspect == "landscape" %}twcss:aspect-[4/3]{% elsif block.settings.image_aspect == "wide" %}twcss:aspect-video{% elsif block.settings.image_aspect == "portrait" %}twcss:aspect-[3/4]{% elsif block.settings.image_aspect == "tall" %}twcss:aspect-[2/3]{% endif %}{% endunless %} {% if block.settings.image_fill %}twcss:h-full{% endif %}'
+        {% if block.settings.image_fill and block.settings.image_min_height != blank %}
+          style='min-height: {{ block.settings.image_min_height }}'
+        {% endif %}
+      >
         <div class='slideshow-{{ section.id }}-{{ block.id }} slideshow-container twcss:rounded-xl box-image twcss:h-full'>
           <img
             src='{{ block.settings.box_image | image_url: width: 800 }}'
