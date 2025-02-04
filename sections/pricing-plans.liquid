@@ -53,7 +53,7 @@
             {{ block.shopify_attributes }}
           >
             {% if block.settings.is_recommended %}
-              <div class='twcss:absolute twcss:-top-5 twcss:left-0 twcss:right-0 twcss:mx-auto twcss:w-32 twcss:rounded-full twcss:bg-[rgb(var(--color-button))] twcss:px-3 twcss:py-1 twcss:text-center twcss:text-lg twcss:font-medium twcss:text-white'>
+              <div class='twcss:absolute twcss:-top-5 twcss:left-0 twcss:right-0 twcss:mx-auto twcss:w-fit twcss:min-w-32 twcss:rounded-full twcss:bg-[rgb(var(--color-button))] twcss:px-3 twcss:py-1 twcss:text-center twcss:text-lg twcss:font-medium twcss:text-white'>
                 {{ block.settings.recommended_label }}
               </div>
             {% endif %}

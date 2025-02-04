@@ -1499,6 +1499,9 @@
   .twcss\:w-auto {
     width: auto;
   }
+  .twcss\:w-fit {
+    width: fit-content;
+  }
   .twcss\:w-full {
     width: 100%;
   }
@@ -1514,11 +1517,17 @@
   .twcss\:max-w-7xl {
     max-width: var(--twcss-container-7xl);
   }
+  .twcss\:max-w-52 {
+    max-width: calc(var(--twcss-spacing) * 52);
+  }
   .twcss\:max-w-\[theme\(screens\.xl\)\] {
     max-width: 80rem;
   }
   .twcss\:max-w-full {
     max-width: 100%;
+  }
+  .twcss\:min-w-32 {
+    min-width: calc(var(--twcss-spacing) * 32);
   }
   .twcss\:flex-1 {
     flex: 1;
