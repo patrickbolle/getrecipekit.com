@@ -13,7 +13,7 @@
 {%- endstyle -%}
 
 <div class='color-{{ section.settings.color_scheme }} gradient'>
-  <div class='page-width section-{{ section.id }}-padding'>
+  <div class='md:page-width section-{{ section.id }}-padding'>
     <div class='twcss:max-w-content twcss:mx-auto'>
       {% if section.settings.title != blank %}
         <div class='twcss:max-w-3xl twcss:mx-auto twcss:text-center twcss:mb-16'>
@@ -24,12 +24,12 @@
         </div>
       {% endif %}
 
-      <div class='twcss:grid twcss:grid-cols-1 twcss:gap-10 twcss:md:gap-20 twcss:sm:grid-cols-2 twcss:lg:grid-cols-3'>
+      <div class='twcss:grid twcss:grid-cols-1 twcss:space-x-2 twcss:space-y-12 twcss:md:gap-20 twcss:sm:grid-cols-2 twcss:lg:grid-cols-3'>
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when 'blurb' -%}
-              <div class='twcss:text-left' {{ block.shopify_attributes }}>
-                <div class='twcss:flex twcss:flex-row twcss:items-center twcss:gap-4 twcss:justify-start'>
+              <div class='twcss:text-center twcss:md:text-left' {{ block.shopify_attributes }}>
+                <div class='twcss:flex twcss:flex-col twcss:md:flex-row twcss:items-center twcss:gap-4 twcss:justify-start'>
                   {% if block.settings.icon != 'none' %}
                     <div class='twcss:flex twcss:h-16 twcss:w-16 twcss:items-center twcss:justify-center twcss:rounded-full twcss:bg-[rgba(var(--color-button),0.1)]'>
                       {%
@@ -40,7 +40,7 @@
                     </div>
                   {% endif %}
 
-                  <h3 class='twcss:text-xl twcss:!font-bold twcss:!text-gray-700'>
+                  <h3 class='twcss:text-xl twcss:!font-bold twcss:!text-gray-700 twcss:flex-1'>
                     {{ block.settings.title }}
                   </h3>
                 </div>

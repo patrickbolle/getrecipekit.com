@@ -1466,6 +1466,9 @@
   .twcss\:max-h-full {
     max-height: 100%;
   }
+  .twcss\:\!w-16 {
+    width: calc(var(--twcss-spacing) * 16) !important;
+  }
   .twcss\:w-6 {
     width: calc(var(--twcss-spacing) * 6);
   }
@@ -1477,6 +1480,15 @@
   }
   .twcss\:w-16 {
     width: calc(var(--twcss-spacing) * 16);
+  }
+  .twcss\:w-20 {
+    width: calc(var(--twcss-spacing) * 20);
+  }
+  .twcss\:w-26 {
+    width: calc(var(--twcss-spacing) * 26);
+  }
+  .twcss\:w-28 {
+    width: calc(var(--twcss-spacing) * 28);
   }
   .twcss\:w-32 {
     width: calc(var(--twcss-spacing) * 32);
@@ -1553,8 +1565,14 @@
   .twcss\:justify-start {
     justify-content: flex-start;
   }
+  .twcss\:gap-0 {
+    gap: calc(var(--twcss-spacing) * 0);
+  }
   .twcss\:gap-0\.5 {
     gap: calc(var(--twcss-spacing) * 0.5);
+  }
+  .twcss\:gap-1 {
+    gap: calc(var(--twcss-spacing) * 1);
   }
   .twcss\:gap-1\.5 {
     gap: calc(var(--twcss-spacing) * 1.5);
@@ -1605,6 +1623,83 @@
       );
       margin-block-end: calc(
         calc(var(--twcss-spacing) * 6) * calc(1 - var(--tw-space-y-reverse))
+      );
+    }
+  }
+  .twcss\:space-y-10 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(
+        calc(var(--twcss-spacing) * 10) * var(--tw-space-y-reverse)
+      );
+      margin-block-end: calc(
+        calc(var(--twcss-spacing) * 10) * calc(1 - var(--tw-space-y-reverse))
+      );
+    }
+  }
+  .twcss\:space-y-12 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(
+        calc(var(--twcss-spacing) * 12) * var(--tw-space-y-reverse)
+      );
+      margin-block-end: calc(
+        calc(var(--twcss-spacing) * 12) * calc(1 - var(--tw-space-y-reverse))
+      );
+    }
+  }
+  .twcss\:space-x-1 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(
+        calc(var(--twcss-spacing) * 1) * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        calc(var(--twcss-spacing) * 1) * calc(1 - var(--tw-space-x-reverse))
+      );
+    }
+  }
+  .twcss\:space-x-2 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(
+        calc(var(--twcss-spacing) * 2) * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        calc(var(--twcss-spacing) * 2) * calc(1 - var(--tw-space-x-reverse))
+      );
+    }
+  }
+  .twcss\:space-x-4 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(
+        calc(var(--twcss-spacing) * 4) * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        calc(var(--twcss-spacing) * 4) * calc(1 - var(--tw-space-x-reverse))
+      );
+    }
+  }
+  .twcss\:space-x-6 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(
+        calc(var(--twcss-spacing) * 6) * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        calc(var(--twcss-spacing) * 6) * calc(1 - var(--tw-space-x-reverse))
+      );
+    }
+  }
+  .twcss\:space-x-8 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(
+        calc(var(--twcss-spacing) * 8) * var(--tw-space-x-reverse)
+      );
+      margin-inline-end: calc(
+        calc(var(--twcss-spacing) * 8) * calc(1 - var(--tw-space-x-reverse))
       );
     }
   }
@@ -1673,6 +1768,9 @@
   }
   .twcss\:bg-\[rgba\(var\(--color-button\)\,0\.1\)\] {
     background-color: rgba(var(--color-button), 0.1);
+  }
+  .twcss\:bg-amber-100 {
+    background-color: var(--twcss-color-amber-100);
   }
   .twcss\:bg-blue-50 {
     background-color: var(--twcss-color-blue-50);
@@ -1759,8 +1857,14 @@
   .twcss\:pb-0 {
     padding-bottom: calc(var(--twcss-spacing) * 0);
   }
+  .twcss\:\!text-justify {
+    text-align: justify !important;
+  }
   .twcss\:text-center {
     text-align: center;
+  }
+  .twcss\:text-justify {
+    text-align: justify;
   }
   .twcss\:text-left {
     text-align: left;
@@ -2208,6 +2312,11 @@
       padding: calc(var(--twcss-spacing) * 12);
     }
   }
+  .twcss\:md\:text-left {
+    @media (width >= 750px) {
+      text-align: left;
+    }
+  }
   .twcss\:md\:\!text-5xl {
     @media (width >= 750px) {
       font-size: var(--twcss-text-5xl) !important;
@@ -2354,6 +2463,11 @@
   }
 }
 @property --tw-space-y-reverse {
+  syntax: '*';
+  inherits: false;
+  initial-value: 0;
+}
+@property --tw-space-x-reverse {
   syntax: '*';
   inherits: false;
   initial-value: 0;
