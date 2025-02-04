@@ -57,7 +57,8 @@
               {% render 'feature-box',
                 block: block,
                 color_scheme: section.settings.color_scheme,
-                image_fill: block.settings.image_fill_space
+                image_fill: block.settings.image_fill,
+                slideshow_interval: block.settings.slideshow_interval
               %}
             </div>
           {% elsif forloop.first == false and forloop.length <= 6 %}
@@ -71,7 +72,8 @@
               {% render 'feature-box',
                 block: block,
                 color_scheme: section.settings.color_scheme,
-                image_fill: block.settings.image_fill_space
+                image_fill: block.settings.image_fill,
+                slideshow_interval: block.settings.slideshow_interval
               %}
             </div>
 
@@ -92,7 +94,8 @@
                 {% render 'feature-box',
                   block: block,
                   color_scheme: section.settings.color_scheme,
-                  image_fill: block.settings.image_fill_space
+                  image_fill: block.settings.image_fill,
+                  slideshow_interval: block.settings.slideshow_interval
                 %}
               </div>
             {% endunless %}
@@ -105,7 +108,8 @@
               {% render 'feature-box',
                 block: block,
                 color_scheme: section.settings.color_scheme,
-                image_fill: block.settings.image_fill_space
+                image_fill: block.settings.image_fill,
+                slideshow_interval: block.settings.slideshow_interval
               %}
             </div>
           {% endif %}
@@ -120,7 +124,8 @@
             {% render 'feature-box',
               block: block,
               color_scheme: section.settings.color_scheme,
-              image_fill: block.settings.image_fill_space
+              image_fill: block.settings.image_fill,
+              slideshow_interval: block.settings.slideshow_interval
             %}
           </div>
         {%- endfor -%}
@@ -430,7 +435,22 @@
         {
           "type": "image_picker",
           "id": "box_image",
-          "label": "Box Image"
+          "label": "Primary Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "box_image_2",
+          "label": "Additional Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "box_image_3",
+          "label": "Additional Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "box_image_4",
+          "label": "Additional Image 4"
         },
         {
           "type": "select",
@@ -462,10 +482,21 @@
         },
         {
           "type": "checkbox",
-          "id": "image_fill_space",
-          "label": "Image fills available space?",
-          "info": "When enabled, image will ignore aspect ratio and fill its container",
+          "id": "image_fill",
+          "label": "Images fills available space?",
+          "info": "When enabled, images will ignore aspect ratio and fill their container",
           "default": false
+        },
+        {
+          "type": "range",
+          "id": "slideshow_interval",
+          "min": 2,
+          "max": 10,
+          "step": 1,
+          "unit": "s",
+          "label": "Slideshow Interval",
+          "info": "Time between image transitions in seconds",
+          "default": 4
         },
         {
           "type": "header",

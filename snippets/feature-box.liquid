@@ -1,25 +1,74 @@
 {%- style -%}
-  .box-image {
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
-    border: 2px solid rgba(var(--color-border), 0.1);
+    .box-image {
+      box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+      border: 2px solid rgba(var(--color-border), 0.1);
+    }
+
+  .slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent;
   }
 
-  .button-primary {
-    background-color: rgb(var(--color-button));
-    color: rgb(var(--color-button-text));
-  }
-  .button-primary:hover {
-    background-color: rgba(var(--color-button), 0.8);
+  .slideshow-image {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 1;
   }
 
-  .button-secondary {
-    background-color: transparent;
-    color: rgb(var(--color-button));
-    border: 1px solid rgb(var(--color-button));
+  .slideshow-image.active {
+    opacity: 1;
+    z-index: 2;
   }
-  .button-secondary:hover {
-    background-color: rgba(var(--color-button), 0.04);
-  }
+
+    {% assign total_images = 0 %}
+    {% if block.settings.box_image != blank %}{% assign total_images = total_images | plus: 1 %}{% endif %}
+    {% if block.settings.box_image_2 != blank %}{% assign total_images = total_images | plus: 1 %}{% endif %}
+    {% if block.settings.box_image_3 != blank %}{% assign total_images = total_images | plus: 1 %}{% endif %}
+    {% if block.settings.box_image_4 != blank %}{% assign total_images = total_images | plus: 1 %}{% endif %}
+
+    {% if total_images > 1 %}
+      {% for i in (1..4) %}
+        {% assign image_key = 'box_image' %}
+        {% if i > 1 %}
+          {% assign image_key = image_key | append: '_' | append: i %}
+        {% endif %}
+
+        {% if i == 1 %}
+          .slideshow-{{ section.id }}-{{ block.id }} .slideshow-image:nth-child({{ i }}) {
+            animation: slideshow {{ total_images | times: 4 }}s linear infinite;
+          }
+        {% else %}
+          {% assign delay = i | minus: 1 | times: 4 %}
+          {% if block.settings[image_key] != blank %}
+            .slideshow-{{ section.id }}-{{ block.id }} .slideshow-image:nth-child({{ i }}) {
+              animation: slideshow {{ total_images | times: 4 }}s linear infinite;
+              animation-delay: {{ delay }}s;
+            }
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
+    .button-primary {
+      background-color: rgb(var(--color-button));
+      color: rgb(var(--color-button-text));
+    }
+    .button-primary:hover {
+      background-color: rgba(var(--color-button), 0.8);
+    }
+
+    .button-secondary {
+      background-color: transparent;
+      color: rgb(var(--color-button));
+      border: 1px solid rgb(var(--color-button));
+    }
+    .button-secondary:hover {
+      background-color: rgba(var(--color-button), 0.04);
+    }
 {%- endstyle -%}
 
 <div class='color-{{ color_scheme }} gradient twcss:rounded-2xl twcss:p-8 twcss:md:p-12 twcss:shadow-clean {% if section.settings.boxes_fill_height %}twcss:h-full{% endif %}'>
@@ -90,16 +139,65 @@
     {% endif %}
 
     {% if block.settings.box_image != blank %}
-      <div class='{% if block.settings.layout == "two_column" %}twcss:md:flex-1 twcss:!mt-0{% else %}twcss:w-full{% endif %} twcss:md:mt-0 {% unless image_fill %}{% if block.settings.image_aspect == "square" %}twcss:aspect-square{% elsif block.settings.image_aspect == "landscape" %}twcss:aspect-[4/3]{% elsif block.settings.image_aspect == "wide" %}twcss:aspect-video{% elsif block.settings.image_aspect == "portrait" %}twcss:aspect-[3/4]{% elsif block.settings.image_aspect == "tall" %}twcss:aspect-[2/3]{% endif %}{% endunless %} {% if image_fill %}twcss:h-full{% endif %}'>
-        <img
-          src='{{ block.settings.box_image | image_url: width: 800 }}'
-          alt='{{ block.settings.box_image.alt | escape }}'
-          class='twcss:w-full twcss:h-full twcss:rounded-xl box-image twcss:object-cover twcss:object-center'
-          loading='lazy'
-          width='{{ block.settings.box_image.width }}'
-          height='{{ block.settings.box_image.height }}'
-        >
+      <div class='{% if block.settings.layout == "two_column" %}twcss:md:flex-1 twcss:!mt-0{% else %}twcss:w-full{% endif %} twcss:md:mt-0 {% unless block.settings.image_fill %}{% if block.settings.image_aspect == "square" %}twcss:aspect-square{% elsif block.settings.image_aspect == "landscape" %}twcss:aspect-[4/3]{% elsif block.settings.image_aspect == "wide" %}twcss:aspect-video{% elsif block.settings.image_aspect == "portrait" %}twcss:aspect-[3/4]{% elsif block.settings.image_aspect == "tall" %}twcss:aspect-[2/3]{% endif %}{% endunless %} {% if block.settings.image_fill %}twcss:h-full{% endif %}'>
+        <div class='slideshow-{{ section.id }}-{{ block.id }} slideshow-container twcss:rounded-xl box-image twcss:h-full'>
+          <img
+            src='{{ block.settings.box_image | image_url: width: 800 }}'
+            alt='{{ block.settings.box_image.alt | escape }}'
+            class='slideshow-image twcss:w-full twcss:h-full twcss:rounded-xl twcss:object-cover twcss:object-center active'
+            loading='lazy'
+            width='{{ block.settings.box_image.width }}'
+            height='{{ block.settings.box_image.height }}'
+          >
+          {% for i in (2..4) %}
+            {% assign image_key = 'box_image_' | append: i %}
+            {% assign image = block.settings[image_key] %}
+            {% if image != blank %}
+              <img
+                src='{{ image | image_url: width: 800 }}'
+                alt='{{ image.alt | escape }}'
+                class='slideshow-image twcss:w-full twcss:h-full twcss:rounded-xl twcss:object-cover twcss:object-center'
+                loading='lazy'
+                width='{{ image.width }}'
+                height='{{ image.height }}'
+              >
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
     {% endif %}
   </div>
 </div>
+
+{% if block.settings.box_image != blank %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Select the unique slideshow container by using the generated class name
+      const slideshow = document.querySelector('.slideshow-{{ section.id }}-{{ block.id }}');
+      if (!slideshow) return; // exit if not found
+
+      // Get all slideshow images
+      const images = slideshow.querySelectorAll('.slideshow-image');
+
+      // Only run the slideshow if there's more than one image
+      if (images.length < 2) return;
+
+      // Start with the first image already active as provided by Liquid markup
+      let currentIndex = 0;
+
+      function showNextImage() {
+        // Remove active class from current image
+        images[currentIndex].classList.remove('active');
+
+        // Calculate next image index (wrap around at the end)
+        currentIndex = (currentIndex + 1) % images.length;
+
+        // Add active class to the next image to start its fade-in behind the current fade-out
+        images[currentIndex].classList.add('active');
+      }
+
+      // Set interval using the block setting (convert seconds to milliseconds)
+      setInterval(showNextImage, {{ block.settings.slideshow_interval | times: 1000 }});
+    });
+  </script>
+{% endif %}
