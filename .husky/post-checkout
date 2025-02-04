@@ -1,4 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-git update-index --skip-worktree assets/app.css
+# Commenting this out because I want to push updated app.css while the GH Workflow is disabled!
+# git update-index --skip-worktree assets/app.css

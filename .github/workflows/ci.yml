@@ -1,6 +1,7 @@
 name: CI
 on: [push]
 jobs:
+  #################### REMEMBER TO ENABLE code in .husky/post-checkout when this job is enabled! ####################
   # tailwindcss-update:
   #   name: Generate Tailwind CSS
   #   runs-on: ubuntu-latest
