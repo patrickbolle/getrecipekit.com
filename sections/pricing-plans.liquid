@@ -90,14 +90,14 @@
                   {%- assign feature_key = 'feature_' | append: i -%}
                   {%- assign feature_enabled_key = 'feature_' | append: i | append: '_enabled' -%}
                   {%- if block.settings[feature_key] != blank -%}
-                    <li class='twcss:flex twcss:items-center twcss:gap-3'>
+                    <li class='twcss:flex twcss:items-center twcss:gap-4'>
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         fill='none'
                         viewBox='0 0 24 24'
                         stroke-width='2'
                         stroke='currentColor'
-                        class='twcss:size-5 {% if block.settings[feature_enabled_key] %}twcss:text-[rgb(var(--color-button))]{% else %}twcss:text-gray-400{% endif %}'
+                        class='twcss:size-5 twcss:flex-shrink-0 {% if block.settings[feature_enabled_key] %}twcss:text-[rgb(var(--color-button))]{% else %}twcss:text-gray-400{% endif %}'
                       >
                         <path
                           stroke-linecap="round"

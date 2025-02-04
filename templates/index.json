@@ -125,7 +125,7 @@
             "box_image_3": "shopify://shop_images/20240618212816-8-grohjwffncwzdii.png",
             "image_aspect": "wide",
             "image_fill": false,
-            "image_min_height": "",
+            "image_min_height": "50vh",
             "slideshow_interval": 6,
             "show_button": false,
             "button_label": "Click this button",
@@ -161,7 +161,7 @@
           "settings": {
             "title": "Vestibulum Sagittis",
             "text": "Vestibulum sagittis purus sit amet volutpat consequat mauris nunc congue.",
-            "icon": "light-bulb"
+            "icon": "internet"
           }
         },
         "blurb_d8btQD": {
@@ -516,7 +516,7 @@
             "box_image_2": "shopify://shop_images/20241023213952-wqurxy1511453156.jpg",
             "image_aspect": "square",
             "image_fill": true,
-            "image_min_height": "320px",
+            "image_min_height": "300px",
             "slideshow_interval": 6,
             "show_button": false,
             "button_label": "Click this button",
@@ -650,7 +650,7 @@
             "plan_price": "$14.99",
             "plan_billing_period": "/month",
             "is_recommended": false,
-            "recommended_label": "Popular",
+            "recommended_label": "",
             "button_label": "Start free trial",
             "button_link": "https://apps.shopify.com/recipe-kit?utm_source=rk_website&utm_medium=pricing",
             "button_style": "secondary",
@@ -677,7 +677,7 @@
             "plan_price": "$24.99",
             "plan_billing_period": "/month",
             "is_recommended": true,
-            "recommended_label": "Popular",
+            "recommended_label": "Recommended",
             "button_label": "Start free trial",
             "button_link": "https://apps.shopify.com/recipe-kit?utm_source=rk_website&utm_medium=pricing",
             "button_style": "primary",
