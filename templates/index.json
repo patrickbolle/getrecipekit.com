@@ -122,6 +122,7 @@
             "check_3": "This is the third checklist item",
             "box_image": "shopify://shop_images/20241023213348-wqurxy1511453156.jpg",
             "image_aspect": "wide",
+            "image_fill_space": false,
             "show_button": false,
             "button_label": "Click this button",
             "button_link": "",
@@ -148,6 +149,74 @@
         "boxes_fill_height": true
       }
     },
+    "icon_blurbs_NBcN7z": {
+      "type": "icon-blurbs",
+      "blocks": {
+        "blurb_fqd7rW": {
+          "type": "blurb",
+          "settings": {
+            "title": "Vestibulum Sagittis",
+            "text": "Vestibulum sagittis purus sit amet volutpat consequat mauris nunc congue.",
+            "icon": "light-bulb"
+          }
+        },
+        "blurb_d8btQD": {
+          "type": "blurb",
+          "settings": {
+            "title": "Nulla Facilisi",
+            "text": "Nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris.",
+            "icon": "sparkles"
+          }
+        },
+        "blurb_mqRtqx": {
+          "type": "blurb",
+          "settings": {
+            "title": "Massa Tempor",
+            "text": "Massa tempor nec feugiat nisl pretium fusce id velit ut tortor.",
+            "icon": "star"
+          }
+        },
+        "blurb_jjLYY7": {
+          "type": "blurb",
+          "settings": {
+            "title": "Ultrices Gravida",
+            "text": "Ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim.",
+            "icon": "gift"
+          }
+        },
+        "blurb_Kr4PL6": {
+          "type": "blurb",
+          "settings": {
+            "title": "Pharetra Magna",
+            "text": "Pharetra magna ac placerat vestibulum lectus mauris ultrices eros in.",
+            "icon": "heart"
+          }
+        },
+        "blurb_YFKG9M": {
+          "type": "blurb",
+          "settings": {
+            "title": "Cursus Euismod",
+            "text": "Cursus euismod quis viverra nibh cras pulvinar mattis nunc sed.",
+            "icon": "beaker"
+          }
+        }
+      },
+      "block_order": [
+        "blurb_fqd7rW",
+        "blurb_d8btQD",
+        "blurb_mqRtqx",
+        "blurb_jjLYY7",
+        "blurb_Kr4PL6",
+        "blurb_YFKG9M"
+      ],
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "feature_box_grid_xBUEfq": {
       "type": "feature-box-grid",
       "blocks": {
@@ -165,6 +234,7 @@
             "check_3": "This is the third checklist item",
             "box_image": "shopify://shop_images/20241023213348-wqurxy1511453156.jpg",
             "image_aspect": "portrait",
+            "image_fill_space": true,
             "show_button": false,
             "button_label": "Click this button",
             "button_link": "",
@@ -184,6 +254,7 @@
             "check_2": "This is the second checklist item",
             "check_3": "This is the third checklist item",
             "image_aspect": "landscape",
+            "image_fill_space": false,
             "show_button": false,
             "button_label": "Click this button",
             "button_link": "#",
@@ -203,6 +274,7 @@
             "check_2": "This is the second checklist item",
             "check_3": "This is the third checklist item",
             "image_aspect": "landscape",
+            "image_fill_space": false,
             "show_button": false,
             "button_label": "Click this button",
             "button_link": "#",
@@ -222,6 +294,7 @@
             "check_2": "This is the second checklist item",
             "check_3": "This is the third checklist item",
             "image_aspect": "landscape",
+            "image_fill_space": false,
             "show_button": true,
             "button_label": "Click this button",
             "button_link": "#",
@@ -267,6 +340,7 @@
             "check_2": "This is the second checklist item",
             "check_3": "This is the third checklist item",
             "image_aspect": "landscape",
+            "image_fill_space": false,
             "show_button": true,
             "button_label": "Click this button",
             "button_link": "#",
@@ -286,6 +360,7 @@
             "check_2": "This is the second checklist item",
             "check_3": "This is the third checklist item",
             "image_aspect": "landscape",
+            "image_fill_space": false,
             "show_button": true,
             "button_label": "Click this button",
             "button_link": "#",
@@ -305,6 +380,7 @@
             "check_2": "This is the second checklist item",
             "check_3": "This is the third checklist item",
             "image_aspect": "landscape",
+            "image_fill_space": false,
             "show_button": true,
             "button_label": "Click this button",
             "button_link": "#",
@@ -350,6 +426,7 @@
             "check_3": "This is the third checklist item",
             "box_image": "shopify://shop_images/20241016192230-vegan-ramen-square.jpg",
             "image_aspect": "landscape",
+            "image_fill_space": false,
             "show_button": false,
             "button_label": "Click this button",
             "button_link": "#",
@@ -369,6 +446,7 @@
             "check_2": "This is the second checklist item",
             "check_3": "This is the third checklist item",
             "image_aspect": "landscape",
+            "image_fill_space": false,
             "show_button": true,
             "button_label": "Click this button",
             "button_link": "#",
@@ -413,6 +491,7 @@
             "check_3": "This is the third checklist item",
             "box_image": "shopify://shop_images/hands-type-on-a-laptop-with-google-home-screen.jpg",
             "image_aspect": "portrait",
+            "image_fill_space": true,
             "show_button": false,
             "button_label": "Click this button",
             "button_link": "#",
@@ -433,6 +512,7 @@
             "check_3": "This is the third checklist item",
             "box_image": "shopify://shop_images/chad-montano-lP5MCM6nZ5A-unsplash_cropped.jpg",
             "image_aspect": "wide",
+            "image_fill_space": true,
             "show_button": false,
             "button_label": "Click this button",
             "button_link": "#",
@@ -701,6 +781,7 @@
     "rich_text_hero_kxj36j",
     "logo_list_zNL88B",
     "feature_box_grid_UUefGJ",
+    "icon_blurbs_NBcN7z",
     "feature_box_grid_xBUEfq",
     "feature_box_grid_KBNjXp",
     "feature_box_grid_wHGd3i",
