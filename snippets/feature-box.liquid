@@ -23,7 +23,7 @@
 {%- endstyle -%}
 
 <div class='color-{{ color_scheme }} gradient twcss:rounded-2xl twcss:p-8 twcss:md:p-12 twcss:shadow-clean {% if section.settings.boxes_fill_height %}twcss:h-full{% endif %}'>
-  <div class='twcss:flex twcss:flex-col {% if block.settings.layout == "two_column" %}twcss:md:flex-row {% if block.settings.reverse_columns %}twcss:md:flex-row-reverse{% endif %} twcss:gap-8{% else %}twcss:gap-6{% endif %} twcss:items-start'>
+  <div class='twcss:flex twcss:flex-col twcss:h-full {% if block.settings.layout == "two_column" %}twcss:md:flex-row {% if block.settings.reverse_columns %}twcss:md:flex-row-reverse{% endif %} twcss:gap-8{% else %}twcss:gap-6{% endif %} twcss:items-start'>
     {% comment %} Only show the column if there is SOME content... ANY content {% endcomment %}
     {% if block.settings.icon != 'none'
       or block.settings.box_heading != blank
@@ -31,20 +31,24 @@
       or block.settings.show_checklist
       or block.settings.show_button
     %}
-      <div class='{% if block.settings.layout == "two_column" %}twcss:md:flex-1{% endif %} twcss:flex twcss:flex-col twcss:h-full'>
+      <div class='{% if block.settings.layout == "two_column" %}twcss:md:flex-1{% endif %} twcss:flex twcss:flex-col'>
         {% if block.settings.icon != 'none' %}
-          <div class='twcss:w-12 twcss:h-12 twcss:flex twcss:items-center twcss:justify-center twcss:rounded-lg'>
+          <div class='twcss:w-12 twcss:h-12 twcss:flex twcss:mb-6 twcss:items-center twcss:justify-center twcss:rounded-lg'>
             {% render 'icon' with icon: block.settings.icon, class: 'twcss:w-8 twcss:h-8 twcss:text-accent twcss:size-8' %}
           </div>
         {% endif %}
 
-        <h3 class='{% if block.settings.icon != blank %}twcss:mt-6{% endif %} twcss:!text-3xl twcss:!font-semibold'>
-          {{ block.settings.box_heading }}
-        </h3>
+        {% if block.settings.box_heading != blank %}
+          <h3 class='twcss:!text-3xl twcss:!font-semibold'>
+            {{ block.settings.box_heading }}
+          </h3>
+        {% endif %}
 
-        <p class='twcss:mt-6 twcss:!text-2xl'>
-          {{ block.settings.box_text }}
-        </p>
+        {% if block.settings.box_text != blank %}
+          <p class='twcss:mt-6 twcss:!text-2xl'>
+            {{ block.settings.box_text }}
+          </p>
+        {% endif %}
 
         {% if block.settings.show_checklist %}
           <ul class='twcss:mt-8 twcss:!text-2xl twcss:space-y-6'>
@@ -86,7 +90,7 @@
     {% endif %}
 
     {% if block.settings.box_image != blank %}
-      <div class='{% if block.settings.layout == "two_column" %}twcss:md:flex-1{% else %}twcss:w-full{% endif %} twcss:mt-6 twcss:md:mt-0 {% if block.settings.image_aspect == "square" %}twcss:aspect-square{% elsif block.settings.image_aspect == "landscape" %}twcss:aspect-[4/3]{% elsif block.settings.image_aspect == "wide" %}twcss:aspect-video{% elsif block.settings.image_aspect == "portrait" %}twcss:aspect-[3/4]{% elsif block.settings.image_aspect == "tall" %}twcss:aspect-[2/3]{% endif %}'>
+      <div class='{% if block.settings.layout == "two_column" %}twcss:md:flex-1 twcss:!mt-0{% else %}twcss:w-full{% endif %} twcss:md:mt-0 {% unless image_fill %}{% if block.settings.image_aspect == "square" %}twcss:aspect-square{% elsif block.settings.image_aspect == "landscape" %}twcss:aspect-[4/3]{% elsif block.settings.image_aspect == "wide" %}twcss:aspect-video{% elsif block.settings.image_aspect == "portrait" %}twcss:aspect-[3/4]{% elsif block.settings.image_aspect == "tall" %}twcss:aspect-[2/3]{% endif %}{% endunless %} {% if image_fill %}twcss:h-full{% endif %}'>
         <img
           src='{{ block.settings.box_image | image_url: width: 800 }}'
           alt='{{ block.settings.box_image.alt | escape }}'

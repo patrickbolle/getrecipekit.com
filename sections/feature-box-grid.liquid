@@ -54,7 +54,11 @@
         {% for block in section.blocks %}
           {% if forloop.first %}
             <div {{ block.shopify_attributes }}>
-              {% render 'feature-box', block: block, color_scheme: section.settings.color_scheme %}
+              {% render 'feature-box',
+                block: block,
+                color_scheme: section.settings.color_scheme,
+                image_fill: block.settings.image_fill_space
+              %}
             </div>
           {% elsif forloop.first == false and forloop.length <= 6 %}
             {% if forloop.index == 2 %}
@@ -64,7 +68,11 @@
             {% endif %}
 
             <div {{ block.shopify_attributes }}>
-              {% render 'feature-box', block: block, color_scheme: section.settings.color_scheme %}
+              {% render 'feature-box',
+                block: block,
+                color_scheme: section.settings.color_scheme,
+                image_fill: block.settings.image_fill_space
+              %}
             </div>
 
             {% if forloop.last %}
@@ -81,7 +89,11 @@
           {% for block in section.blocks %}
             {% unless forloop.first %}
               <div {{ block.shopify_attributes }}>
-                {% render 'feature-box', block: block, color_scheme: section.settings.color_scheme %}
+                {% render 'feature-box',
+                  block: block,
+                  color_scheme: section.settings.color_scheme,
+                  image_fill: block.settings.image_fill_space
+                %}
               </div>
             {% endunless %}
           {% endfor %}
@@ -90,7 +102,11 @@
         {% for block in section.blocks %}
           {% if forloop.first %}
             <div {{ block.shopify_attributes }}>
-              {% render 'feature-box', block: block, color_scheme: section.settings.color_scheme %}
+              {% render 'feature-box',
+                block: block,
+                color_scheme: section.settings.color_scheme,
+                image_fill: block.settings.image_fill_space
+              %}
             </div>
           {% endif %}
         {% endfor %}
@@ -101,7 +117,11 @@
       >
         {%- for block in section.blocks -%}
           <div {{ block.shopify_attributes }}>
-            {% render 'feature-box', block: block, color_scheme: section.settings.color_scheme %}
+            {% render 'feature-box',
+              block: block,
+              color_scheme: section.settings.color_scheme,
+              image_fill: block.settings.image_fill_space
+            %}
           </div>
         {%- endfor -%}
       </div>
@@ -404,6 +424,10 @@
           "default": "This is the third checklist item"
         },
         {
+          "type": "header",
+          "content": "Image Settings"
+        },
+        {
           "type": "image_picker",
           "id": "box_image",
           "label": "Box Image"
@@ -435,6 +459,13 @@
             }
           ],
           "default": "landscape"
+        },
+        {
+          "type": "checkbox",
+          "id": "image_fill_space",
+          "label": "Image fills available space?",
+          "info": "When enabled, image will ignore aspect ratio and fill its container",
+          "default": false
         },
         {
           "type": "header",

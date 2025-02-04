@@ -1,0 +1,247 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class='color-{{ section.settings.color_scheme }} gradient'>
+  <div class='page-width section-{{ section.id }}-padding'>
+    <div class='twcss:max-w-content twcss:mx-auto'>
+      {% if section.settings.title != blank %}
+        <div class='twcss:max-w-3xl twcss:mx-auto twcss:text-center twcss:mb-16'>
+          <h2 class='twcss:!text-3xl twcss:!font-bold twcss:md:!text-5xl'>{{ section.settings.title }}</h2>
+          {% if section.settings.subtitle != blank %}
+            <p class='twcss:mt-4 twcss:text-2xl twcss:text-gray-600'>{{ section.settings.subtitle }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <div class='twcss:grid twcss:grid-cols-1 twcss:gap-20 twcss:sm:grid-cols-2 twcss:lg:grid-cols-3'>
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'blurb' -%}
+              <div class='twcss:text-left' {{ block.shopify_attributes }}>
+                <div class='twcss:flex twcss:flex-row twcss:items-center twcss:gap-4 twcss:justify-start'>
+                  {% if block.settings.icon != 'none' %}
+                    <div class='twcss:flex twcss:h-16 twcss:w-16 twcss:items-center twcss:justify-center twcss:rounded-full twcss:bg-[rgba(var(--color-button),0.1)]'>
+                      {%
+                        render 'icon' with
+                        icon: block.settings.icon,
+                        class: 'twcss:h-8 twcss:w-8 twcss:text-[rgb(var(--color-button))]'
+                      %}
+                    </div>
+                  {% endif %}
+
+                  <h3 class='twcss:text-xl twcss:!font-bold twcss:!text-gray-700'>{{ block.settings.title }}</h3>
+                </div>
+                <p class='twcss:mt-4 twcss:ml-4 twcss:text-gray-600'>{{ block.settings.text }}</p>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Icon Blurbs",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Lorem Ipsum Features"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor."
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "blurb",
+      "name": "Icon Blurb",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Lorem Ipsum"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt."
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "banknotes",
+              "label": "Banknotes"
+            },
+            {
+              "value": "beaker",
+              "label": "Beaker"
+            },
+            {
+              "value": "checkmark",
+              "label": "Checkmark"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "credit-card",
+              "label": "Credit Card"
+            },
+            {
+              "value": "fire",
+              "label": "Fire"
+            },
+            {
+              "value": "gift",
+              "label": "Gift"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "internet",
+              "label": "Internet"
+            },
+            {
+              "value": "light-bulb",
+              "label": "Light Bulb"
+            },
+            {
+              "value": "shop",
+              "label": "Shop"
+            },
+            {
+              "value": "sparkles",
+              "label": "Sparkles"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "wrench",
+              "label": "Wrench"
+            }
+          ],
+          "default": "checkmark"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icon Blurbs",
+      "blocks": [
+        {
+          "type": "blurb",
+          "settings": {
+            "title": "Vestibulum Sagittis",
+            "text": "Vestibulum sagittis purus sit amet volutpat consequat mauris nunc congue.",
+            "icon": "light-bulb"
+          }
+        },
+        {
+          "type": "blurb",
+          "settings": {
+            "title": "Nulla Facilisi",
+            "text": "Nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris.",
+            "icon": "sparkles"
+          }
+        },
+        {
+          "type": "blurb",
+          "settings": {
+            "title": "Massa Tempor",
+            "text": "Massa tempor nec feugiat nisl pretium fusce id velit ut tortor.",
+            "icon": "star"
+          }
+        },
+        {
+          "type": "blurb",
+          "settings": {
+            "title": "Ultrices Gravida",
+            "text": "Ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim.",
+            "icon": "gift"
+          }
+        },
+        {
+          "type": "blurb",
+          "settings": {
+            "title": "Pharetra Magna",
+            "text": "Pharetra magna ac placerat vestibulum lectus mauris ultrices eros in.",
+            "icon": "heart"
+          }
+        },
+        {
+          "type": "blurb",
+          "settings": {
+            "title": "Cursus Euismod",
+            "text": "Cursus euismod quis viverra nibh cras pulvinar mattis nunc sed.",
+            "icon": "beaker"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
