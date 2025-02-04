@@ -2,6 +2,7 @@ name: CI
 on: [push]
 jobs:
   #################### REMEMBER TO ENABLE code in .husky/post-checkout when this job is enabled! ####################
+  #################### AND run `git update-index --skip-worktree assets/app.css` to prevent the file from being committed! ####################
   # tailwindcss-update:
   #   name: Generate Tailwind CSS
   #   runs-on: ubuntu-latest
