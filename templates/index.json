@@ -23,7 +23,7 @@
         "text_YRCCeX": {
           "type": "text",
           "settings": {
-            "text": "<p>Say goodbye to manually formatting recipes. <br/></p><p>Meet Recipe Kit — the easy, intuitive recipe tool you’ve been looking for.</p>"
+            "text": "<p>Say goodbye to manually formatting recipes. <br/></p><p>Meet Recipe Kit — the easy, intuitive recipe tool you've been looking for.</p>"
           }
         },
         "button_ReBBrJ": {
@@ -180,56 +180,630 @@
         "padding_bottom": 36
       }
     },
-    "collapsible_content_DrytjN": {
-      "type": "collapsible-content",
+    "feature_box_grid_UUefGJ": {
+      "type": "feature-box-grid",
       "blocks": {
-        "collapsible_row_EFLb79": {
-          "type": "collapsible_row",
+        "feature_box_4DGXYx": {
+          "type": "feature_box",
           "settings": {
-            "heading": "How does Recipe Kit work?",
-            "row_content": "<p>Recipe Kit works by adding a beautiful, consistently formatted recipe card to any blog post of your choosing on your Shopify store. it takes all the work out of making your recipe look great, and also adds automatically generated rich SEO schema to ensure your recipe starts showing up in Google recipe search results.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_MXcAHm": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "Can Recipe Kit help my recipes appear in Google search results?",
-            "row_content": "<p>Yes, Recipe Kit is designed to optimize your recipes for search engines.<br/> By using structured data (Google rich dataschema), Recipe Kit ensures <br/>that your recipes are indexed correctly by search engines, improving <br/>visibility and driving organic traffic to your store.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_row_DPiiHY": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "What are some key features of the app?",
-            "row_content": "",
-            "page": ""
-          }
-        },
-        "collapsible_row_9L4Fiq": {
-          "type": "collapsible_row",
-          "settings": {
-            "heading": "How do I get started?",
-            "row_content": "<p>You can start with a 14-day free trial by visiting the <a href=\"https://apps.shopify.com/recipe-kit\" target=\"_blank\" title=\"https://apps.shopify.com/recipe-kit\">Recipe Kit app listing</a><br/> and clicking the Install button. Installation is straightforward, and <br/>you can begin creating and publishing beautiful, shoppable recipes on your <br/>Shopify blog immediately! </p>",
-            "page": ""
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "banknotes",
+            "box_heading": "This is a feature box heading",
+            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "box_image": "shopify://shop_images/20241023213348-wqurxy1511453156.jpg",
+            "box_image_2": "shopify://shop_images/Screenshot_2024-06-19_at_14-54-42_mac_and_cheese_recipe_shopify_-_Google_Search.png",
+            "box_image_3": "shopify://shop_images/20240618212816-8-grohjwffncwzdii.png",
+            "image_aspect": "wide",
+            "image_fill": false,
+            "image_min_height": "50vh",
+            "slideshow_interval": 6,
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "",
+            "button_style": "primary"
           }
         }
       },
       "block_order": [
-        "collapsible_row_EFLb79",
-        "collapsible_row_MXcAHm",
-        "collapsible_row_DPiiHY",
-        "collapsible_row_9L4Fiq"
+        "feature_box_4DGXYx"
       ],
       "settings": {
-        "caption": "",
-        "heading": "<strong>Questions & answers</strong>",
-        "heading_size": "h2",
-        "heading_alignment": "left",
-        "layout": "none",
+        "color_scheme": "",
+        "header_width": 55,
+        "text_alignment": "left",
+        "heading_prefix": "This is the",
+        "heading_emphasis": "emphasized part",
+        "heading_suffix": "of the heading",
+        "subheading": "This is the subheading text that appears below the main heading. It can be used to provide additional context or information.",
+        "special_grid_type": "none",
+        "columns": "1",
+        "custom_grid": "none",
+        "padding_top": 64,
+        "padding_bottom": 36,
+        "boxes_fill_height": true
+      }
+    },
+    "icon_blurbs_NBcN7z": {
+      "type": "icon-blurbs",
+      "blocks": {
+        "blurb_fqd7rW": {
+          "type": "blurb",
+          "settings": {
+            "title": "Vestibulum Sagittis",
+            "text": "Vestibulum sagittis purus sit amet volutpat consequat mauris nunc congue.",
+            "icon": "internet"
+          }
+        },
+        "blurb_d8btQD": {
+          "type": "blurb",
+          "settings": {
+            "title": "Nulla Facilisi",
+            "text": "Nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris.",
+            "icon": "sparkles"
+          }
+        },
+        "blurb_mqRtqx": {
+          "type": "blurb",
+          "settings": {
+            "title": "Massa Tempor",
+            "text": "Massa tempor nec feugiat nisl pretium fusce id velit ut tortor.",
+            "icon": "star"
+          }
+        },
+        "blurb_jjLYY7": {
+          "type": "blurb",
+          "settings": {
+            "title": "Ultrices Gravida",
+            "text": "Ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim.",
+            "icon": "gift"
+          }
+        },
+        "blurb_Kr4PL6": {
+          "type": "blurb",
+          "settings": {
+            "title": "Pharetra Magna",
+            "text": "Pharetra magna ac placerat vestibulum lectus mauris ultrices eros in.",
+            "icon": "heart"
+          }
+        },
+        "blurb_YFKG9M": {
+          "type": "blurb",
+          "settings": {
+            "title": "Cursus Euismod",
+            "text": "Cursus euismod quis viverra nibh cras pulvinar mattis nunc sed.",
+            "icon": "beaker"
+          }
+        }
+      },
+      "block_order": [
+        "blurb_fqd7rW",
+        "blurb_d8btQD",
+        "blurb_mqRtqx",
+        "blurb_jjLYY7",
+        "blurb_Kr4PL6",
+        "blurb_YFKG9M"
+      ],
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "feature_box_grid_xBUEfq": {
+      "type": "feature-box-grid",
+      "blocks": {
+        "feature_box_wnb3Ba": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "sparkles",
+            "box_heading": "This is a feature box heading",
+            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "box_image": "shopify://shop_images/20241023213348-wqurxy1511453156.jpg",
+            "box_image_2": "shopify://shop_images/DALL_E2024-01-1110.48.35-Aproductimageofajarofpeanutbutterlabeled_Grandma_sPeanutButter_.Thejarisglasswithaclassicdesign_featuringaredandwhitegingham.png",
+            "image_aspect": "portrait",
+            "image_fill": true,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        },
+        "feature_box_kbRnGN": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "clock",
+            "box_heading": "This is a feature box heading",
+            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
+            "show_checklist": true,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "landscape",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "primary"
+          }
+        },
+        "feature_box_iPwN8q": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "heart",
+            "box_heading": "This is a feature box heading",
+            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "landscape",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "secondary"
+          }
+        },
+        "feature_box_DPhh9c": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "shop",
+            "box_heading": "This is a feature box heading",
+            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.\n<br><br>\nA little extra content in this one! I just added this to help balance out the column lengths on desktop... gives it a sense of balance. very nice.",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "landscape",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": true,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "feature_box_wnb3Ba",
+        "feature_box_kbRnGN",
+        "feature_box_iPwN8q",
+        "feature_box_DPhh9c"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "header_width": 80,
+        "text_alignment": "center",
+        "heading_prefix": "This is another",
+        "heading_emphasis": "of the same section type",
+        "heading_suffix": "",
+        "subheading": "This is the subheading text that appears below the main heading. It can be used to provide additional context or information.",
+        "special_grid_type": "1-left",
+        "columns": "2",
+        "custom_grid": "3fr 2fr",
+        "padding_top": 100,
+        "padding_bottom": 36,
+        "boxes_fill_height": true
+      }
+    },
+    "feature_box_grid_KBNjXp": {
+      "type": "feature-box-grid",
+      "blocks": {
+        "feature_box_4JwkGf": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "clock",
+            "box_heading": "This is a feature box heading",
+            "box_text": "",
+            "show_checklist": true,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "landscape",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": true,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "secondary"
+          }
+        },
+        "feature_box_JjWBzd": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "heart",
+            "box_heading": "This is a feature box heading",
+            "box_text": "",
+            "show_checklist": true,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "landscape",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": true,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "primary"
+          }
+        },
+        "feature_box_jC3rEy": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "shop",
+            "box_heading": "This is a feature box heading",
+            "box_text": "",
+            "show_checklist": true,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "landscape",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": true,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "feature_box_4JwkGf",
+        "feature_box_JjWBzd",
+        "feature_box_jC3rEy"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "header_width": 80,
+        "text_alignment": "center",
+        "heading_prefix": "These",
+        "heading_emphasis": "box sections",
+        "heading_suffix": "are so fun",
+        "subheading": "What's this one for? Who knows! Could be a pricing table, value proposition, or whatever you want! These are totally customizable.",
+        "special_grid_type": "none",
+        "columns": "3",
+        "custom_grid": "",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "boxes_fill_height": true
+      }
+    },
+    "feature_box_grid_wHGd3i": {
+      "type": "feature-box-grid",
+      "blocks": {
+        "feature_box_DVxDpG": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "two_column",
+            "reverse_columns": false,
+            "icon": "clock",
+            "box_heading": "This is a feature box heading",
+            "box_text": "I added the ability to show the image in another column within the cards themselves.\n<br><br>\nHow neat is that?",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "box_image": "shopify://shop_images/20241016192230-vegan-ramen-square.jpg",
+            "image_aspect": "landscape",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "secondary"
+          }
+        },
+        "feature_box_fDHYTT": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "fire",
+            "box_heading": "Convinced yet?",
+            "box_text": "Install recipe book today on your Shopify store, and experience the best recipe app out there.",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "landscape",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": true,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "feature_box_DVxDpG",
+        "feature_box_fDHYTT"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "header_width": 80,
+        "text_alignment": "center",
+        "heading_prefix": "One more,",
+        "heading_emphasis": "just for kicks",
+        "heading_suffix": "",
+        "subheading": "What's this one for? Who knows! Could be a pricing table, value proposition, or whatever you want! These are totally customizable.",
+        "special_grid_type": "none",
+        "columns": "2",
+        "custom_grid": "2fr 1fr",
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "boxes_fill_height": true
+      }
+    },
+    "feature_box_grid_7PNgbc": {
+      "type": "feature-box-grid",
+      "blocks": {
+        "feature_box_hWFK9b": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "none",
+            "box_heading": "",
+            "box_text": "",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "box_image": "shopify://shop_images/hands-type-on-a-laptop-with-google-home-screen.jpg",
+            "box_image_2": "shopify://shop_images/20241023213952-wqurxy1511453156.jpg",
+            "image_aspect": "square",
+            "image_fill": true,
+            "image_min_height": "300px",
+            "slideshow_interval": 6,
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "secondary"
+          }
+        },
+        "feature_box_HNBeNN": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "none",
+            "box_heading": "Maybe we add the ability for images to be links?",
+            "box_text": "",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "box_image": "shopify://shop_images/chad-montano-lP5MCM6nZ5A-unsplash_cropped.jpg",
+            "image_aspect": "wide",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "#",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "feature_box_hWFK9b",
+        "feature_box_HNBeNN"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "header_width": 80,
+        "text_alignment": "center",
+        "heading_prefix": "",
+        "heading_emphasis": "",
+        "heading_suffix": "",
+        "subheading": "",
+        "special_grid_type": "none",
+        "columns": "2",
+        "custom_grid": "1fr 2fr",
+        "padding_top": 0,
+        "padding_bottom": 36,
+        "boxes_fill_height": true
+      }
+    },
+    "pricing_plans_pC3n8Q": {
+      "type": "pricing-plans",
+      "blocks": {
+        "pricing_plan_PNwQiw": {
+          "type": "pricing_plan",
+          "settings": {
+            "plan_name": "Essentials",
+            "plan_description": "Exactly what you need to start your food blog.",
+            "plan_price": "$14.99",
+            "plan_billing_period": "/month",
+            "is_recommended": false,
+            "recommended_label": "",
+            "button_label": "Start free trial",
+            "button_link": "https://apps.shopify.com/recipe-kit?utm_source=rk_website&utm_medium=pricing",
+            "button_style": "secondary",
+            "features_title": "What's included:",
+            "feature_1": "Unlimited recipes",
+            "feature_1_enabled": true,
+            "feature_2": "Auto generated SEO rich snippets",
+            "feature_2_enabled": true,
+            "feature_3": "4 recipe designs",
+            "feature_3_enabled": true,
+            "feature_4": "Blog filters",
+            "feature_4_enabled": true,
+            "feature_5": "Add Shopify products to ingredients",
+            "feature_5_enabled": true,
+            "feature_6": "",
+            "feature_6_enabled": true
+          }
+        },
+        "pricing_plan_WTLzJK": {
+          "type": "pricing_plan",
+          "settings": {
+            "plan_name": "Advanced",
+            "plan_description": "When you take your food brand to the next step.",
+            "plan_price": "$24.99",
+            "plan_billing_period": "/month",
+            "is_recommended": true,
+            "recommended_label": "Recommended",
+            "button_label": "Start free trial",
+            "button_link": "https://apps.shopify.com/recipe-kit?utm_source=rk_website&utm_medium=pricing",
+            "button_style": "primary",
+            "features_title": "What's included:",
+            "feature_1": "Shoppable recipes: add products to cart from recipe",
+            "feature_1_enabled": true,
+            "feature_2": "Multiple direction images",
+            "feature_2_enabled": true,
+            "feature_3": "AI generated recipes",
+            "feature_3_enabled": true,
+            "feature_4": "Recipe analytics",
+            "feature_4_enabled": true,
+            "feature_5": "Includes everything in Essentials",
+            "feature_5_enabled": true,
+            "feature_6": "",
+            "feature_6_enabled": true
+          }
+        },
+        "pricing_plan_dTmLy7": {
+          "type": "pricing_plan",
+          "settings": {
+            "plan_name": "Enterprise",
+            "plan_description": "For custom needs and priority support.",
+            "plan_price": "$84.99",
+            "plan_billing_period": "/month",
+            "is_recommended": false,
+            "recommended_label": "Popular",
+            "button_label": "Start free trial",
+            "button_link": "https://apps.shopify.com/recipe-kit?utm_source=rk_website&utm_medium=pricing",
+            "button_style": "secondary",
+            "features_title": "What's included:",
+            "feature_1": "Everything from Advanced",
+            "feature_1_enabled": true,
+            "feature_2": "1 on 1 consultation call with our team",
+            "feature_2_enabled": true,
+            "feature_3": "Custom recipe styling changes",
+            "feature_3_enabled": true,
+            "feature_4": "First access to new features",
+            "feature_4_enabled": true,
+            "feature_5": "Priority support",
+            "feature_5_enabled": true,
+            "feature_6": "",
+            "feature_6_enabled": true
+          }
+        }
+      },
+      "block_order": [
+        "pricing_plan_PNwQiw",
+        "pricing_plan_WTLzJK",
+        "pricing_plan_dTmLy7"
+      ],
+      "settings": {
+        "title": "Simple, transparent pricing",
+        "subtitle": "Choose the perfect plan for your needs. Always know what you'll pay.",
+        "padding_top": 92,
+        "padding_bottom": 36
+      }
+    },
+    "accordion_dh7tGF": {
+      "type": "accordion",
+      "blocks": {
+        "accordion_item_EiwVAD": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "How does Recipe Kit work?",
+            "content": "<p>Recipe Kit works by adding a beautiful, consistently formatted recipe card to any blog post of your choosing on your Shopify store. it takes all the work out of making your recipe look great, and also adds automatically generated rich SEO schema to ensure your recipe starts showing up in Google recipe search results.</p>"
+          }
+        },
+        "accordion_item_9ezgEM": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "Can Recipe Kit help my recipes appear in Google search results?",
+            "content": "<p>Yes, Recipe Kit is designed to optimize your recipes for search engines.<br/> By using structured data (Google rich dataschema), Recipe Kit ensures <br/>that your recipes are indexed correctly by search engines, improving <br/>visibility and driving organic traffic to your store.</p>"
+          }
+        },
+        "accordion_item_rUYwhq": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "What are some key features of the app?",
+            "content": "<p>Use this text to answer questions in a clear and concise way to help your customers understand your product, service, or processes better.</p>"
+          }
+        },
+        "accordion_item_dKqDMm": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "How do I get started?",
+            "content": "<p>You can start with a 14-day free trial by visiting the Recipe Kit app listing and clicking the Install button. Installation is straightforward, and you can begin creating and publishing beautiful, shoppable recipes on your Shopify blog immediately! </p>"
+          }
+        }
+      },
+      "block_order": [
+        "accordion_item_EiwVAD",
+        "accordion_item_9ezgEM",
+        "accordion_item_rUYwhq",
+        "accordion_item_dKqDMm"
+      ],
+      "settings": {
+        "title": "FAQs",
+        "subtitle": "",
+        "heading_size": "twcss:text-3xl",
+        "open_first_item": true,
+        "color_scheme": "",
+        "item_background": "white",
+        "title_color": "gray-900",
+        "content_color": "gray-700",
+        "padding_top": 80,
+        "padding_bottom": 36
+      }
+    },
+    "featured_blog_kdEgAW": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "Learn about the best tips for food blogging",
+        "heading_size": "h1",
+        "blog": "our-blog",
+        "post_limit": 3,
+        "columns_desktop": 3,
         "color_scheme": "scheme-1",
-        "open_first_collapsible_row": true,
+        "show_image": true,
+        "show_date": false,
+        "show_author": false,
+        "show_view_all": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -238,7 +812,15 @@
   "order": [
     "rich_text_hero_kxj36j",
     "logo_list_zNL88B",
+    "feature_box_grid_UUefGJ",
+    "icon_blurbs_NBcN7z",
+    "feature_box_grid_xBUEfq",
+    "feature_box_grid_KBNjXp",
+    "feature_box_grid_wHGd3i",
+    "feature_box_grid_7PNgbc",
     "testimonials_W7jaYf",
-    "collapsible_content_DrytjN"
+    "pricing_plans_pC3n8Q",
+    "accordion_dh7tGF",
+    "featured_blog_kdEgAW"
   ]
 }
