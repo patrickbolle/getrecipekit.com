@@ -9,6 +9,25 @@
     0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
+/* .button-primary {
+  background-color: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+}
+
+.button-primary:hover {
+  background-color: rgba(var(--color-button), 0.8);
+}
+
+.button-secondary {
+  background-color: transparent !important;
+  color: rgb(var(--color-button));
+  border: 1px solid rgb(var(--color-button));
+}
+
+.button-secondary:hover {
+  background-color: rgba(var(--color-button), 0.04);
+} */
+
 .product-card-wrapper .card,
 .contains-card--product {
   --border-radius: var(--product-card-corner-radius);
@@ -1179,6 +1198,14 @@ deferred-media {
 
 /* component-button */
 /* Button - default */
+
+.button {
+  transition: all 0.2s ease-in-out !important;
+}
+
+.button:hover {
+  opacity: 0.8 !important;
+}
 
 .button--secondary,
 .button--tertiary {

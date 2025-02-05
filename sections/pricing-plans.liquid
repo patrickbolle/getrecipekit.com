@@ -75,7 +75,7 @@
               </p>
 
               <a
-                class='twcss:mt-6 twcss:block twcss:w-full twcss:px-4 twcss:py-4 twcss:text-center twcss:text-lg twcss:font-semibold twcss:transition-all twcss:duration-300 twcss:relative twcss:overflow-hidden {% if block.settings.button_style == 'primary' %}twcss:bg-[rgb(var(--color-button))] twcss:text-[rgb(var(--color-button-text))] twcss:hover:translate-y-[-2px] twcss:hover:shadow-lg twcss:active:translate-y-0 twcss:active:shadow-md{% else %}twcss:border-2 twcss:border-[rgb(var(--color-button))] twcss:text-[rgb(var(--color-button))] twcss:hover:bg-[rgb(var(--color-button))] twcss:hover:text-[rgb(var(--color-button-text))] twcss:hover:translate-y-[-2px] twcss:hover:shadow-lg twcss:active:translate-y-0 twcss:active:shadow-md{% endif %}'
+                class='button button--{{ block.settings.button_style }} twcss:!text-lg twcss:!px-8 twcss:!py-4 twcss:!min-h-0 twcss:mt-6'
                 href='{{ block.settings.button_link }}'
               >
                 {{ block.settings.button_label }}
