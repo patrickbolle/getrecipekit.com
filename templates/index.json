@@ -55,12 +55,6 @@
     "logo_list_zNL88B": {
       "type": "logo-list",
       "blocks": {
-        "logo_PBJU4j": {
-          "type": "logo",
-          "settings": {
-            "logo_svg": ""
-          }
-        },
         "logo_4ccGTC": {
           "type": "logo",
           "settings": {
@@ -98,7 +92,6 @@
         }
       },
       "block_order": [
-        "logo_PBJU4j",
         "logo_4ccGTC",
         "logo_FqCzVU",
         "logo_qLeVjw",
@@ -108,74 +101,6 @@
       "settings": {
         "heading": "Trusted by",
         "heading_highlight": "1500+ Shopify brands",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "testimonials_W7jaYf": {
-      "type": "testimonials",
-      "blocks": {
-        "testimonial_VbdQeF": {
-          "type": "testimonial",
-          "settings": {
-            "author": "BBQ Pit Boys",
-            "content": "This is by far the best recipe app that exists for Shopify. We've battled for a long time with Shopify blogs to try to create recipes but thankfully this app solves all those issues! Highly recommend it."
-          }
-        },
-        "testimonial_4JenaF": {
-          "type": "testimonial",
-          "settings": {
-            "author": "Brew and Feed",
-            "content": "This app is the best way I engage my customers. Publishing a recipe is quick and easy and the styling on my website is beautiful."
-          }
-        },
-        "testimonial_LEdWMU": {
-          "type": "testimonial",
-          "settings": {
-            "author": "All The Bitter",
-            "content": "Huge fan of this app! We've been using it for almost 3 years, and it's a crucial component of our website. It does a fantastic job of hitting all of Google's points for SEO and visibility, the recipes look great on our site, and customer service is fantastic. Highly recommended."
-          }
-        },
-        "testimonial_yJjPib": {
-          "type": "testimonial",
-          "settings": {
-            "author": "Olive Love",
-            "content": "Recipe Kit has been invaluable in showing customers how my store's infused olive oils and vinegars fit into their kitchens. If you're in the culinary e-commerce space, I would go so far as to say that you need this app."
-          }
-        },
-        "testimonial_fYYHQc": {
-          "type": "testimonial",
-          "settings": {
-            "author": "Nomfan",
-            "content": "I moved over from Wordpress and was used to the WP Recipe Maker plugin (the king of recipe plugins on wordpress). I was super excited to see that there was a quality recipe card plugin on Shopify. The developer is super responsive. The app correctly outputs JSON so that your recipes will show up properly in Google search results! If you are looking to blog to increase traffic then this app is for you."
-          }
-        },
-        "testimonial_RNLrRy": {
-          "type": "testimonial",
-          "settings": {
-            "author": "La Boîte",
-            "content": "One of the best app experiences we have had on Shopify. Patrick is incredibly responsive and creative when it comes to our requests and is constantly coming up with new features to make the app better. The app itself is rock solid, easy to use, and does exactly what it's supposed to do. Can't recommend it enough to anyone looking to add recipes to their shopify store."
-          }
-        },
-        "testimonial_jdPeNM": {
-          "type": "testimonial",
-          "settings": {
-            "author": "National Mustard Museum",
-            "content": "We really like using this app to feature recipes that use our products. It's cool that we're able to link to the products directly in the ingredients list. It's nice and easy to import a lot of recipes at once."
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_VbdQeF",
-        "testimonial_4JenaF",
-        "testimonial_LEdWMU",
-        "testimonial_yJjPib",
-        "testimonial_fYYHQc",
-        "testimonial_RNLrRy",
-        "testimonial_jdPeNM"
-      ],
-      "settings": {
-        "title": "Reviews from food brands that love Recipe Kit",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -641,6 +566,77 @@
         "padding_top": 0,
         "padding_bottom": 36,
         "boxes_fill_height": true
+      }
+    },
+    "testimonials_W7jaYf": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_VbdQeF": {
+          "type": "testimonial",
+          "settings": {
+            "author": "BBQ Pit Boys",
+            "content": "This is by far the best recipe app that exists for Shopify. We've battled for a long time with Shopify blogs to try to create recipes but thankfully this app solves all those issues! Highly recommend it."
+          }
+        },
+        "testimonial_4JenaF": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Brew and Feed",
+            "content": "This app is the best way I engage my customers. Publishing a recipe is quick and easy and the styling on my website is beautiful."
+          }
+        },
+        "testimonial_LEdWMU": {
+          "type": "testimonial",
+          "settings": {
+            "author": "All The Bitter",
+            "content": "Huge fan of this app! We've been using it for almost 3 years, and it's a crucial component of our website. It does a fantastic job of hitting all of Google's points for SEO and visibility, the recipes look great on our site, and customer service is fantastic. Highly recommended."
+          }
+        },
+        "testimonial_yJjPib": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Olive Love",
+            "content": "Recipe Kit has been invaluable in showing customers how my store's infused olive oils and vinegars fit into their kitchens. If you're in the culinary e-commerce space, I would go so far as to say that you need this app."
+          }
+        },
+        "testimonial_fYYHQc": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Nomfan",
+            "content": "I moved over from Wordpress and was used to the WP Recipe Maker plugin (the king of recipe plugins on wordpress). I was super excited to see that there was a quality recipe card plugin on Shopify. The developer is super responsive. The app correctly outputs JSON so that your recipes will show up properly in Google search results! If you are looking to blog to increase traffic then this app is for you."
+          }
+        },
+        "testimonial_RNLrRy": {
+          "type": "testimonial",
+          "settings": {
+            "author": "La Boîte",
+            "content": "One of the best app experiences we have had on Shopify. Patrick is incredibly responsive and creative when it comes to our requests and is constantly coming up with new features to make the app better. The app itself is rock solid, easy to use, and does exactly what it's supposed to do. Can't recommend it enough to anyone looking to add recipes to their shopify store."
+          }
+        },
+        "testimonial_jdPeNM": {
+          "type": "testimonial",
+          "settings": {
+            "author": "National Mustard Museum",
+            "content": "We really like using this app to feature recipes that use our products. It's cool that we're able to link to the products directly in the ingredients list. It's nice and easy to import a lot of recipes at once."
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_VbdQeF",
+        "testimonial_4JenaF",
+        "testimonial_LEdWMU",
+        "testimonial_yJjPib",
+        "testimonial_fYYHQc",
+        "testimonial_RNLrRy",
+        "testimonial_jdPeNM"
+      ],
+      "settings": {
+        "title": "Reviews from food brands that love Recipe Kit",
+        "review_line": "5/5 from 75+ reviews on Shopify!",
+        "review_url": "",
+        "review_url_new_tab": true,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "pricing_plans_pC3n8Q": {
