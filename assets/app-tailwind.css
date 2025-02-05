@@ -32,7 +32,8 @@
   }
 
   :root {
-    --color-accent: 255, 85, 88;
+    --color-accent-light: 255, 85, 88;
+    --color-accent: 250, 91, 91;
   }
 
   .twcss\:max-w-content {
