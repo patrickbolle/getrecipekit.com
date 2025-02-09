@@ -1,4 +1,4 @@
-{% comment %} {{ 'section-accordion.css' | asset_url | stylesheet_tag }} {% endcomment %}
+{{ 'section-accordion.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -67,9 +67,20 @@
             <summary
               class='twcss:flex twcss:px-6 twcss:py-6 twcss:cursor-pointer twcss:items-center twcss:justify-between twcss:gap-1.5 twcss:text-{{ section.settings.title_color }} twcss:transition-all twcss:duration-200'
             >
-              <h3 class='twcss:font-medium twcss:text-lg twcss:break-words twcss:whitespace-normal twcss:overflow-hidden'>
-                {{ block.settings.title | escape }}
-              </h3>
+              <div class='twcss:flex twcss:items-center twcss:gap-4'>
+                {% if block.settings.icon != 'none' %}
+                  <div class='twcss:flex twcss:h-8 twcss:w-8 twcss:items-center twcss:justify-center twcss:text-[rgb(var(--color-accent))]'>
+                    {%
+                      render 'icon' with
+                      icon: block.settings.icon,
+                      class: 'twcss:h-6 twcss:w-6'
+                    %}
+                  </div>
+                {% endif %}
+                <h3 class='twcss:font-medium twcss:text-lg twcss:break-words twcss:whitespace-normal twcss:overflow-hidden'>
+                  {{ block.settings.title | escape }}
+                </h3>
+              </div>
 
               <span class='chevron twcss:shrink-0 twcss:transition-all twcss:duration-300'>
                 {% render 'icon-chevron-down' %}
@@ -287,6 +298,82 @@
           "default": "Frequently asked question"
         },
         {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "question-mark",
+              "label": "Question Mark"
+            },
+            {
+              "value": "banknotes",
+              "label": "Banknotes"
+            },
+            {
+              "value": "beaker",
+              "label": "Beaker"
+            },
+            {
+              "value": "checkmark",
+              "label": "Checkmark"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "credit-card",
+              "label": "Credit Card"
+            },
+            {
+              "value": "fire",
+              "label": "Fire"
+            },
+            {
+              "value": "gift",
+              "label": "Gift"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "internet",
+              "label": "Internet"
+            },
+            {
+              "value": "light-bulb",
+              "label": "Light Bulb"
+            },
+            {
+              "value": "shop",
+              "label": "Shop"
+            },
+            {
+              "value": "sparkles",
+              "label": "Sparkles"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "wrench",
+              "label": "Wrench"
+            }
+          ],
+          "default": "none"
+        },
+        {
           "type": "richtext",
           "id": "content",
           "label": "Answer",
@@ -300,13 +387,28 @@
       "name": "Accordion",
       "blocks": [
         {
-          "type": "accordion_item"
+          "type": "accordion_item",
+          "settings": {
+            "title": "How do I place an order?",
+            "content": "<p>Simply browse our products, add items to your cart, and proceed to checkout. Follow the steps to enter your shipping and payment information.</p>",
+            "icon": "shop"
+          }
         },
         {
-          "type": "accordion_item"
+          "type": "accordion_item",
+          "settings": {
+            "title": "What payment methods do you accept?",
+            "content": "<p>We accept all major credit cards, PayPal, and other secure payment methods. Your payment information is always encrypted and secure.</p>",
+            "icon": "credit-card"
+          }
         },
         {
-          "type": "accordion_item"
+          "type": "accordion_item",
+          "settings": {
+            "title": "How long does shipping take?",
+            "content": "<p>Shipping times vary depending on your location. Typically, orders are processed within 1-2 business days and delivery takes 3-7 business days.</p>",
+            "icon": "truck"
+          }
         }
       ]
     }

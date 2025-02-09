@@ -743,6 +743,7 @@
           "type": "accordion_item",
           "settings": {
             "title": "How does Recipe Kit work?",
+            "icon": "question-mark",
             "content": "<p>Recipe Kit works by adding a beautiful, consistently formatted recipe card to any blog post of your choosing on your Shopify store. it takes all the work out of making your recipe look great, and also adds automatically generated rich SEO schema to ensure your recipe starts showing up in Google recipe search results.</p>"
           }
         },
@@ -750,6 +751,7 @@
           "type": "accordion_item",
           "settings": {
             "title": "Can Recipe Kit help my recipes appear in Google search results?",
+            "icon": "question-mark",
             "content": "<p>Yes, Recipe Kit is designed to optimize your recipes for search engines.<br/> By using structured data (Google rich dataschema), Recipe Kit ensures <br/>that your recipes are indexed correctly by search engines, improving <br/>visibility and driving organic traffic to your store.</p>"
           }
         },
@@ -757,6 +759,7 @@
           "type": "accordion_item",
           "settings": {
             "title": "What are some key features of the app?",
+            "icon": "question-mark",
             "content": "<p>Use this text to answer questions in a clear and concise way to help your customers understand your product, service, or processes better.</p>"
           }
         },
@@ -764,6 +767,7 @@
           "type": "accordion_item",
           "settings": {
             "title": "How do I get started?",
+            "icon": "question-mark",
             "content": "<p>You can start with a 14-day free trial by visiting the Recipe Kit app listing and clicking the Install button. Installation is straightforward, and you can begin creating and publishing beautiful, shoppable recipes on your Shopify blog immediately! </p>"
           }
         }
