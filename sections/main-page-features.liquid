@@ -1,0 +1,158 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class='twcss:px-4 twcss:py-8 twcss:sm:px-6 twcss:lg:px-8 section-{{ section.id }}-padding twcss:max-w-content twcss:mx-auto color-{{ section.settings.color_scheme }} gradient'>
+  {%- if page.metafields.custom.hero_overline != blank
+    or page.metafields.custom.hero_heading != blank
+    or page.metafields.custom.hero_content != blank
+  -%}
+    <div class='twcss:text-center twcss:max-w-3xl twcss:mx-auto twcss:mb-24'>
+      {%- if page.metafields.custom.hero_overline != blank -%}
+        <div class='twcss:text-accent twcss:font-semibold twcss:text-sm twcss:uppercase twcss:tracking-wide'>
+          {{ page.metafields.custom.hero_overline }}
+        </div>
+      {%- endif -%}
+
+      {%- if page.metafields.custom.hero_heading != blank -%}
+        <h1 class='twcss:text-5xl twcss:font-bold twcss:tracking-tight twcss:md:text-6xl twcss:mt-4'>
+          {{ page.metafields.custom.hero_heading }}
+        </h1>
+      {%- endif -%}
+
+      {%- if page.metafields.custom.hero_content != blank -%}
+        <div class='twcss:prose twcss:prose-lg twcss:mt-6 twcss:mx-auto'>
+          {{ page.metafields.custom.hero_content }}
+        </div>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  {%- if page.metafields.custom.features != blank -%}
+    {%- assign features = page.metafields.custom.features.value -%}
+    {%- for feature in features -%}
+      <div class='twcss:grid twcss:grid-cols-1 twcss:gap-12 twcss:items-center twcss:md:grid-cols-2 {% if feature.image_position == "right" %}twcss:md:grid-flow-dense{% endif %} twcss:mb-24 twcss:last:mb-0'>
+        <div class='twcss:flex twcss:flex-col twcss:gap-6 {% if feature.image_position == "right" %}twcss:md:col-start-1{% endif %}'>
+          {%- if feature.overline != blank -%}
+            <div class='twcss:text-accent twcss:font-semibold twcss:text-sm twcss:uppercase twcss:tracking-wide'>
+              {{ feature.overline }}
+            </div>
+          {%- endif -%}
+
+          <h2 class='twcss:text-4xl twcss:font-bold twcss:tracking-tight twcss:md:text-5xl'>
+            {{ feature.heading }}
+          </h2>
+
+          <div class='twcss:prose twcss:prose-lg'>
+            {{ feature.content }}
+          </div>
+
+          {%- if feature.cta_text != blank and feature.cta_url != blank -%}
+            <div class='twcss:mt-4'>
+              <a href='{{ feature.cta_url }}' class='button'>
+                {{ feature.cta_text }}
+              </a>
+            </div>
+          {%- endif -%}
+        </div>
+
+        <div class='{% if feature.image_position == "right" %}twcss:md:col-start-2{% endif %}'>
+          {%- if feature.image != blank -%}
+            <img
+              src='{{ feature.image }}'
+              alt='{{ feature.heading }}'
+              loading='lazy'
+              width='800'
+              height='600'
+              class='twcss:w-full twcss:rounded-lg twcss:shadow-lg'
+            >
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'twcss:w-full twcss:rounded-lg twcss:bg-gray-100' }}
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  {%- endif -%}
+
+  {%- if page.metafields.custom.faq_items != blank -%}
+    <div class='twcss:mt-24'>
+      {%- if page.metafields.custom.faq_heading != blank -%}
+        <h2 class='twcss:text-4xl twcss:font-bold twcss:tracking-tight twcss:md:text-5xl twcss:text-center twcss:mb-12'>
+          {{ page.metafields.custom.faq_heading }}
+        </h2>
+      {%- endif -%}
+
+      {%- assign faq_items = page.metafields.custom.faq_items.value -%}
+      <div class='twcss:max-w-3xl twcss:mx-auto'>
+        {%- for item in faq_items -%}
+          <details class='twcss:group twcss:border-b twcss:border-gray-200 twcss:py-6'>
+            <summary class='twcss:flex twcss:items-center twcss:justify-between twcss:cursor-pointer twcss:list-none'>
+              <h3 class='twcss:text-lg twcss:font-semibold'>{{ item.question }}</h3>
+              <span class='twcss:ml-6 twcss:flex twcss:h-7 twcss:items-center'>
+                <svg
+                  class='twcss:h-6 twcss:w-6 twcss:rotate-0 twcss:transform twcss:group-open:rotate-180'
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke-width='1.5'
+                  stroke='currentColor'
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </span>
+            </summary>
+            <div class='twcss:mt-4 twcss:prose twcss:prose-sm'>
+              {{ item.answer }}
+            </div>
+          </details>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Features Page",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

@@ -21,7 +21,7 @@
         "show_line_separator": true,
         "show_cta_button": true,
         "cta_button_text": "Get Recipe Kit",
-        "cta_button_link": "",
+        "cta_button_link": "https://apps.shopify.com/recipe-kit?utm_source=rk_website&utm_medium=homepage",
         "color_scheme": "scheme-1",
         "menu_color_scheme": "",
         "mobile_logo_position": "center",

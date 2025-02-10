@@ -1,0 +1,92 @@
+{
+  "namespace": "custom",
+  "key": "features_page_fields",
+  "name": "Features Page Fields",
+  "metafields": [
+    {
+      "namespace": "custom",
+      "key": "hero_overline",
+      "name": "Hero Overline",
+      "type": "single_line_text_field"
+    },
+    {
+      "namespace": "custom",
+      "key": "hero_heading",
+      "name": "Hero Heading",
+      "type": "single_line_text_field"
+    },
+    {
+      "namespace": "custom",
+      "key": "hero_content",
+      "name": "Hero Content",
+      "type": "multi_line_text_field"
+    },
+    {
+      "namespace": "custom",
+      "key": "features",
+      "name": "Features",
+      "type": "list.product_reference",
+      "list": {
+        "type": "json",
+        "properties": [
+          {
+            "name": "overline",
+            "type": "single_line_text_field"
+          },
+          {
+            "name": "heading",
+            "type": "single_line_text_field"
+          },
+          {
+            "name": "content",
+            "type": "multi_line_text_field"
+          },
+          {
+            "name": "image",
+            "type": "file_reference"
+          },
+          {
+            "name": "image_position",
+            "type": "single_line_text_field",
+            "validations": {
+              "options": ["left", "right"]
+            }
+          },
+          {
+            "name": "cta_text",
+            "type": "single_line_text_field"
+          },
+          {
+            "name": "cta_url",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "namespace": "custom",
+      "key": "faq_heading",
+      "name": "FAQ Heading",
+      "type": "single_line_text_field"
+    },
+    {
+      "namespace": "custom",
+      "key": "faq_items",
+      "name": "FAQ Items",
+      "type": "list.product_reference",
+      "list": {
+        "type": "json",
+        "properties": [
+          {
+            "name": "question",
+            "type": "single_line_text_field"
+          },
+          {
+            "name": "answer",
+            "type": "multi_line_text_field"
+          }
+        ]
+      }
+    }
+  ]
+} 
