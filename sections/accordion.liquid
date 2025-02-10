@@ -65,9 +65,19 @@
             {% endif %}
           >
             <summary
-              class='twcss:flex twcss:px-6 twcss:py-6 twcss:cursor-pointer twcss:items-center twcss:justify-between twcss:gap-1.5 twcss:text-{{ section.settings.title_color }} twcss:transition-all twcss:duration-200'
+              class='twcss:flex twcss:px-6 twcss:py-6 twcss:cursor-pointer twcss:items-center twcss:gap-4 twcss:text-{{ section.settings.title_color }} twcss:transition-all twcss:duration-200'
             >
-              <h3 class='twcss:font-medium twcss:text-lg twcss:break-words twcss:whitespace-normal twcss:overflow-hidden'>
+              {% if block.settings.icon != 'none' %}
+                <div class='twcss:flex twcss:h-10 twcss:w-10 twcss:shrink-0 twcss:items-center twcss:justify-center twcss:rounded-full'>
+                  {%
+                    render 'icon' with
+                    icon: block.settings.icon,
+                    class: 'twcss:h-8 twcss:w-8 twcss:text-[rgb(var(--color-button))]'
+                  %}
+                </div>
+              {% endif %}
+
+              <h3 class='twcss:font-medium twcss:text-lg twcss:break-words twcss:whitespace-normal twcss:overflow-hidden twcss:flex-1'>
                 {{ block.settings.title | escape }}
               </h3>
 
@@ -76,7 +86,7 @@
               </span>
             </summary>
 
-            <div class='twcss:px-6 twcss:pb-0 twcss:text-{{ section.settings.content_color }}'>
+            <div class='accortion-item-content twcss:px-6 twcss:pb-0 twcss:text-{{ section.settings.content_color }}'>
               {{ block.settings.content }}
             </div>
           </details>
@@ -93,7 +103,7 @@
 
     // Set initial heights
     details.forEach((detail) => {
-      const content = detail.querySelector('div');
+      const content = detail.querySelector('.accortion-item-content');
       if (detail.open) {
         content.style.height = `${content.scrollHeight}px`;
       }
@@ -101,7 +111,7 @@
 
     // Add click handlers
     details.forEach((detail) => {
-      const content = detail.querySelector('div');
+      const content = detail.querySelector('.accortion-item-content');
       const summary = detail.querySelector('summary');
 
       summary.addEventListener('click', (e) => {
@@ -110,7 +120,7 @@
         // Close all other details first
         details.forEach((otherDetail) => {
           if (otherDetail !== detail && otherDetail.open) {
-            const otherContent = otherDetail.querySelector('div');
+            const otherContent = otherDetail.querySelector('.accortion-item-content');
             const otherHeight = otherContent.scrollHeight;
             otherContent.style.height = `${otherHeight}px`;
             otherContent.offsetHeight; // Force reflow
@@ -285,6 +295,82 @@
           "id": "title",
           "label": "Question",
           "default": "Frequently asked question"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "question-mark",
+              "label": "Question Mark"
+            },
+            {
+              "value": "banknotes",
+              "label": "Banknotes"
+            },
+            {
+              "value": "beaker",
+              "label": "Beaker"
+            },
+            {
+              "value": "checkmark",
+              "label": "Checkmark"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "credit-card",
+              "label": "Credit Card"
+            },
+            {
+              "value": "fire",
+              "label": "Fire"
+            },
+            {
+              "value": "gift",
+              "label": "Gift"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "internet",
+              "label": "Internet"
+            },
+            {
+              "value": "light-bulb",
+              "label": "Light Bulb"
+            },
+            {
+              "value": "shop",
+              "label": "Shop"
+            },
+            {
+              "value": "sparkles",
+              "label": "Sparkles"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "wrench",
+              "label": "Wrench"
+            }
+          ],
+          "default": "none"
         },
         {
           "type": "richtext",
