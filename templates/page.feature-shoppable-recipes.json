@@ -1,0 +1,275 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "hero": {
+      "type": "feature-box-grid",
+      "blocks": {
+        "hero_feature": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "two_column",
+            "reverse_columns": true,
+            "icon": "none",
+            "box_heading": "Turn Recipe Browsers into Buyers",
+            "box_text": "Recipe Kit makes this easy, adding a slick add to cart button to your recipe card allowing for quick checkouts while visitors are interested and reading.",
+            "show_checklist": true,
+            "check_1": "Seamless shopping experience",
+            "check_2": "Quick checkout process",
+            "check_3": "Higher conversion rates",
+            "box_image": "shopify://shop_images/Screenshot_2024-04-29_at_12-47-02_Uptown_Recipe_Card_Design.png",
+            "image_aspect": "wide",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": true,
+            "button_label": "Install Recipe Kit",
+            "button_link": "#",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "hero_feature"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "header_width": 80,
+        "text_alignment": "center",
+        "heading_prefix": "Sell more with",
+        "heading_emphasis": "Shoppable Recipes",
+        "heading_suffix": "on Shopify",
+        "subheading": "Looking for a new way to advertise your store products without expensive advertising or cold outreach? Use shoppable recipe blog posts to both provide high value (delicious recipes) to your visitors, and naturally show off your ingredient products.",
+        "special_grid_type": "1-right",
+        "columns": "2",
+        "custom_grid": "none",
+        "padding_top": 72,
+        "padding_bottom": 36,
+        "boxes_fill_height": false
+      }
+    },
+    "how_it_works": {
+      "type": "feature-box-grid",
+      "blocks": {
+        "step_1": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "sparkles",
+            "box_heading": "1. Create Recipe Cards",
+            "box_text": "Create beautiful recipe cards for your Shopify blog posts using our intuitive interface",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "square",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        },
+        "step_2": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "shop",
+            "box_heading": "2. Link Products",
+            "box_text": "Link the ingredients in your recipes to the corresponding products in your store",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "square",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        },
+        "step_3": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "internet",
+            "box_heading": "3. Publish & Track",
+            "box_text": "Watch as your shoppable recipe cards are automatically published and track analytics to optimize performance",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "square",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "header_width": 60,
+        "text_alignment": "center",
+        "heading_prefix": "",
+        "heading_emphasis": "Easy to Set Up",
+        "heading_suffix": "and Use",
+        "subheading": "Implementing shoppable recipe cards doesn't have to be a complex, time-consuming task. With Recipe Kit, the process is simple and straightforward.",
+        "special_grid_type": "none",
+        "columns": "3",
+        "custom_grid": "none",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "boxes_fill_height": true
+      }
+    },
+    "easy_setup": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_iGpFga": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Increase product sales with shoppable ingredient lists on Shopify</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_GhVUJV": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Turn recipe browsers into buyers with seamless shopping experiences. Recipe Kit connects your store's products directly to recipe ingredients, letting customers add items to cart while they're inspired. <strong>No popups, no interruptions—just a natural path from 'that looks delicious' to checkout.<br/></strong><br/>By integrating shopping into the recipe experience, you'll boost sales while delivering exactly what your customers need to bring your recipes to life.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_iGpFga",
+        "text_GhVUJV"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/RK-Feature-2021_0727-3.jpg",
+        "height": "small",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "faq": {
+      "type": "accordion",
+      "blocks": {
+        "faq_1": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "Can I manually add recipe schema without an app?",
+            "icon": "question-mark",
+            "content": "<p>Absolutely you can add the recipe schema to your website by yourself - the issue is that adding this structured data requires editing your theme code; which most store owners are not too keen on doing. You could get a developer to make a custom implementation, but that will still likely require adding the recipe data to an external part of your site (eg. in metafields) alongside writing your recipe in your blog post which means double the writing/effort just to generate the structured data.</p><p>Recipe Kit essentially does this all for you, and also adds a ton of other great features like printable recipe cards (that look fantastic), add to cart buttons, analytics, and more.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "Does adding structured data guarantee that my recipe will show in recipe search results?",
+            "icon": "sparkles",
+            "content": "<p>Unfortunately Google doesn't guarantee anything in regards to whether or not they will show your recipe as a rich recipe snippet or not. Their only claim towards this is that <strong>filling out the structured data gives your recipe the opportunity</strong> to be shown in rich recipe results; without this recipe structured data, there is no chance for your recipe to show in recipe carousels, etc. in Google search results.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "How does structured data affect recipe search result rankings?",
+            "icon": "internet",
+            "content": "<p>While structured data itself is not a direct ranking factor, it can significantly improve your click-through rates from search results. Rich results are more visually appealing and provide more information upfront, making users more likely to click on your recipes.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "How do I test my recipes for structured data?",
+            "icon": "beaker",
+            "content": "<p>Recipe Kit automatically validates your recipe schema before publishing. However, you can also use Google's Rich Results Test tool to verify the structured data implementation. We ensure all generated schema meets Google's requirements.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4"
+      ],
+      "settings": {
+        "title": "FAQs about Shoppable Recipes",
+        "subtitle": "Common questions about implementing shoppable recipes",
+        "heading_size": "twcss:text-4xl",
+        "open_first_item": true,
+        "color_scheme": "background-1",
+        "item_background": "white",
+        "title_color": "gray-900",
+        "content_color": "gray-700",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "cta": {
+      "type": "cta",
+      "settings": {
+        "background_image": "shopify://shop_images/key_benefit_2_stock.png",
+        "overlay_opacity": 55,
+        "color_scheme": "accent-1",
+        "heading": "Add automatic recipe structured data to your Shopify store, easily.",
+        "text": "<p>Automatic recipe structured data, beautiful recipe cards, and shoppable ingredient buttons make your recipe blog magic, helping you sell more products immediately.</p>",
+        "button_label": "Install Recipe Kit on Shopify",
+        "button_link": "#",
+        "button_style": "primary",
+        "text_alignment": "center",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero",
+    "how_it_works",
+    "easy_setup",
+    "faq",
+    "cta"
+  ]
+}

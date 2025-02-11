@@ -597,11 +597,17 @@
   .twcss\:relative {
     position: relative;
   }
+  .twcss\:-top-4 {
+    top: calc(var(--twcss-spacing) * -4);
+  }
   .twcss\:-top-5 {
     top: calc(var(--twcss-spacing) * -5);
   }
   .twcss\:right-0 {
     right: calc(var(--twcss-spacing) * 0);
+  }
+  .twcss\:-left-4 {
+    left: calc(var(--twcss-spacing) * -4);
   }
   .twcss\:left-0 {
     left: calc(var(--twcss-spacing) * 0);
@@ -1760,6 +1766,9 @@
   .twcss\:max-w-3xl {
     max-width: var(--twcss-container-3xl);
   }
+  .twcss\:max-w-4xl {
+    max-width: var(--twcss-container-4xl);
+  }
   .twcss\:max-w-5xl {
     max-width: var(--twcss-container-5xl);
   }
@@ -1927,6 +1936,9 @@
   .twcss\:rounded-2xl {
     border-radius: var(--twcss-radius-2xl);
   }
+  .twcss\:rounded-3xl {
+    border-radius: var(--twcss-radius-3xl);
+  }
   .twcss\:rounded-full {
     border-radius: calc(infinity * 1px);
   }
@@ -1951,6 +1963,30 @@
   .twcss\:border-b {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
+  }
+  .twcss\:\!border-l-0 {
+    border-left-style: var(--tw-border-style) !important;
+    border-left-width: 0px !important;
+  }
+  .twcss\:border-l-0 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 0px;
+  }
+  .twcss\:border-l-4 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 4px;
+  }
+  .twcss\:\!border-\[var\(--accent\)\] {
+    border-color: var(--accent) !important;
+  }
+  .twcss\:\!border-\[var\(--accent-color\)\] {
+    border-color: var(--accent-color) !important;
+  }
+  .twcss\:\!border-\[var\(--color-accent\)\] {
+    border-color: var(--color-accent) !important;
+  }
+  .twcss\:border-\[var\(--color-accent\)\] {
+    border-color: var(--color-accent);
   }
   .twcss\:border-gray-200 {
     border-color: var(--twcss-color-gray-200);
@@ -1984,6 +2020,9 @@
   }
   .twcss\:bg-red-600 {
     background-color: var(--twcss-color-red-600);
+  }
+  .twcss\:bg-transparent {
+    background-color: transparent;
   }
   .twcss\:bg-white {
     background-color: var(--twcss-color-white);
@@ -2055,6 +2094,9 @@
   .twcss\:py-12 {
     padding-block: calc(var(--twcss-spacing) * 12);
   }
+  .twcss\:py-16 {
+    padding-block: calc(var(--twcss-spacing) * 16);
+  }
   .twcss\:py-32 {
     padding-block: calc(var(--twcss-spacing) * 32);
   }
@@ -2066,6 +2108,9 @@
   }
   .twcss\:pb-0 {
     padding-bottom: calc(var(--twcss-spacing) * 0);
+  }
+  .twcss\:pl-4 {
+    padding-left: calc(var(--twcss-spacing) * 4);
   }
   .twcss\:text-center {
     text-align: center;
@@ -2127,6 +2172,14 @@
     font-size: var(--twcss-text-5xl);
     line-height: var(--tw-leading, var(--twcss-text-5xl--line-height));
   }
+  .twcss\:text-6xl {
+    font-size: var(--twcss-text-6xl);
+    line-height: var(--tw-leading, var(--twcss-text-6xl--line-height));
+  }
+  .twcss\:text-8xl {
+    font-size: var(--twcss-text-8xl);
+    line-height: var(--tw-leading, var(--twcss-text-8xl--line-height));
+  }
   .twcss\:text-lg {
     font-size: var(--twcss-text-lg);
     line-height: var(--tw-leading, var(--twcss-text-lg--line-height));
@@ -2150,6 +2203,10 @@
   .twcss\:\!font-bold {
     --tw-font-weight: var(--twcss-font-weight-bold) !important;
     font-weight: var(--twcss-font-weight-bold) !important;
+  }
+  .twcss\:\!font-extrabold {
+    --tw-font-weight: var(--twcss-font-weight-extrabold) !important;
+    font-weight: var(--twcss-font-weight-extrabold) !important;
   }
   .twcss\:\!font-semibold {
     --tw-font-weight: var(--twcss-font-weight-semibold) !important;
@@ -2192,6 +2249,9 @@
   .twcss\:\!text-gray-700 {
     color: var(--twcss-color-gray-700) !important;
   }
+  .twcss\:\!text-white {
+    color: var(--twcss-color-white) !important;
+  }
   .twcss\:text-\[rgb\(var\(--color-button\)\)\] {
     color: rgb(var(--color-button));
   }
@@ -2227,6 +2287,15 @@
   }
   .twcss\:uppercase {
     text-transform: uppercase;
+  }
+  .twcss\:italic {
+    font-style: italic;
+  }
+  .twcss\:opacity-25 {
+    opacity: 25%;
+  }
+  .twcss\:opacity-50 {
+    opacity: 50%;
   }
   .twcss\:shadow {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)),
@@ -2269,6 +2338,17 @@
     transition-property: color, background-color, border-color, outline-color,
       text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via,
       --tw-gradient-to;
+    transition-timing-function: var(
+      --tw-ease,
+      var(--twcss-default-transition-timing-function)
+    );
+    transition-duration: var(
+      --tw-duration,
+      var(--twcss-default-transition-duration)
+    );
+  }
+  .twcss\:transition-transform {
+    transition-property: transform, translate, scale, rotate;
     transition-timing-function: var(
       --tw-ease,
       var(--twcss-default-transition-timing-function)
@@ -2567,6 +2647,18 @@
         --tw-leading,
         var(--twcss-text-7xl--line-height)
       ) !important;
+    }
+  }
+  .twcss\:md\:text-2xl {
+    @media (width >= 750px) {
+      font-size: var(--twcss-text-2xl);
+      line-height: var(--tw-leading, var(--twcss-text-2xl--line-height));
+    }
+  }
+  .twcss\:md\:text-3xl {
+    @media (width >= 750px) {
+      font-size: var(--twcss-text-3xl);
+      line-height: var(--tw-leading, var(--twcss-text-3xl--line-height));
     }
   }
   .twcss\:md\:text-5xl {

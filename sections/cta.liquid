@@ -1,0 +1,206 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .section-{{ section.id }} {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .section-{{ section.id }}::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    {% if section.settings.background_image != blank %}
+      background: linear-gradient(to bottom, rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }}), rgba(0, 0, 0, {{ section.settings.overlay_opacity | divided_by: 100.0 }}));
+    {% else %}
+      background: linear-gradient(45deg, rgba(var(--color-accent), 0.1), rgba(var(--color-accent), 0.05));
+    {% endif %}
+    z-index: 1;
+  }
+
+  {% if section.settings.background_image != blank %}
+    .section-{{ section.id }} {
+      background-image: url({{ section.settings.background_image | image_url: width: 2000 }});
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #ffffff;
+    }
+
+  {% endif %}
+
+  .section-{{ section.id }} .content-wrapper {
+    position: relative;
+    z-index: 2;
+  }
+{%- endstyle -%}
+
+<div class='color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}'>
+  <div class='section-{{ section.id }}-padding page-width'>
+    <div class='content-wrapper twcss:max-w-6xl twcss:mx-auto twcss:text-{{ section.settings.text_alignment }} twcss:relative twcss:py-16 md:twcss:py-24'>
+      <div class='{% if section.settings.background_image != blank %}twcss:bg-transparent{% else %}twcss:bg-opacity-95{% endif %} twcss:rounded-3xl twcss:px-8 twcss:py-12 md:twcss:px-16 md:twcss:py-20'>
+        {%- if section.settings.heading != blank -%}
+          <h2 class='twcss:!text-4xl twcss:!font-extrabold twcss:tracking-tight twcss:md:!text-6xl twcss:md:!leading-16 twcss:mb-8 {% if section.settings.background_image != blank %}twcss:!text-white{% endif %}'>
+            {{ section.settings.heading }}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.text != blank -%}
+          <div class='twcss:text-xl twcss:md:text-2xl twcss:mb-12 twcss:max-w-3xl twcss:mx-auto {% if section.settings.background_image != blank %}twcss:text-white twcss:text-opacity-90{% endif %}'>
+            {{ section.settings.text }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.button_label != blank -%}
+          <div class='twcss:flex twcss:justify-{{ section.settings.text_alignment }} twcss:items-center'>
+            <a
+              href='{{ section.settings.button_link }}'
+              class='button button--{{ section.settings.button_style }} twcss:text-lg twcss:px-12 twcss:py-6 twcss:rounded-full twcss:font-bold twcss:transform hover:twcss:scale-105 twcss:transition-all twcss:duration-200 hover:twcss:shadow-lg'
+            >
+              {{ section.settings.button_label }}
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Call to Action",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 95,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 70
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "accent-1"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Add automatic recipe structured data to your Shopify store, easily."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Automatic recipe structured data, beautiful recipe cards, and shoppable ingredient buttons make your recipe blog magic, helping you sell more products immediately.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Install Recipe Kit on Shopify"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "primary"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Call to Action",
+      "settings": {
+        "heading": "Add automatic recipe structured data to your Shopify store, easily.",
+        "text": "<p>Automatic recipe structured data, beautiful recipe cards, and shoppable ingredient buttons make your recipe blog magic, helping you sell more products immediately.</p>",
+        "button_label": "Install Recipe Kit on Shopify",
+        "color_scheme": "accent-1",
+        "text_alignment": "center"
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,286 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "hero": {
+      "type": "feature-box-grid",
+      "blocks": {
+        "hero_feature": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "two_column",
+            "reverse_columns": false,
+            "icon": "none",
+            "box_heading": "Automatic Recipe Schema Generation",
+            "box_text": "Implementing recipe schema markup is crucial, but it can be a tedious and time-consuming process. Fortunately, Recipe Kit automatically generates and maintains recipe structured data when you create a recipe on your Shopify store.\n\nLearn more about how recipe structured data works, and how it helps you grow your website (and increase product sales) with hungry visitors.",
+            "show_checklist": true,
+            "check_1": "SEO-optimized recipe schema",
+            "check_2": "Automatic generation for every recipe",
+            "check_3": "Higher visibility in Google search",
+            "box_image": "shopify://shop_images/Screenshot_2024-06-19_at_14-54-42_mac_and_cheese_recipe_shopify_-_Google_Search.png",
+            "image_aspect": "landscape",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": true,
+            "button_label": "Install Recipe Kit",
+            "button_link": "#",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "hero_feature"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "header_width": 80,
+        "text_alignment": "center",
+        "heading_prefix": "Add",
+        "heading_emphasis": "Recipe Schema",
+        "heading_suffix": "to your Shopify store, automatically",
+        "subheading": "Looking to display your store's recipes on Google? Pages that display as rich results with recipe schema data see an 82% higher click-through rate compared to non-rich result pages!",
+        "special_grid_type": "none",
+        "columns": "1",
+        "custom_grid": "none",
+        "padding_top": 72,
+        "padding_bottom": 36,
+        "boxes_fill_height": false
+      }
+    },
+    "what_is_schema": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_by8dzw": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>What is Google's rich recipe schema?                  </strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_8R8Wnt": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Google (and other search engines) now display recipes (and some other specific page types) in a special manner, usually with additional information. These recipes are easy to scan for users, and typically come with a higher engagement rate than a standard search result in Google.<br/><br/>The issue: Google requires you to manually add recipe schema data to your website for each and every recipe. This is a time consuming process.<br/><br/>Recipe Kit makes this far easier by <strong>automatically generating this recipe structured data for you</strong> when you create a recipe in the app. The schema data is formatted exactly how Google requests it, and enables your recipes to start showing up in Google search results with extra information like recipe ratings, ingredients, cuisine, etc.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_by8dzw",
+        "text_8R8Wnt"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/recipe-rich-result-google-search.png",
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "background-2",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 72,
+        "padding_bottom": 36
+      }
+    },
+    "google_quote": {
+      "type": "quote",
+      "settings": {
+        "color_scheme": "background-2",
+        "quote": "Recipe structured data helps users find your recipe content by telling Google about your recipe with structured data. When you provide information such as reviewer ratings, cooking and preparation times, and nutrition information, Google can better understand your recipe and present it to users in interesting ways. Recipes can appear in Google Search results and Google Images.",
+        "author": "from Google's Structured Data Documentation",
+        "padding_top": 60,
+        "padding_bottom": 72
+      }
+    },
+    "benefits": {
+      "type": "feature-box-grid",
+      "blocks": {
+        "benefit_1": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "sparkles",
+            "box_heading": "Beautiful Recipe Cards",
+            "box_text": "Easily create beautiful, printable recipe cards for your Shopify blog posts",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "square",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        },
+        "benefit_2": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "light-bulb",
+            "box_heading": "Automatic Schema",
+            "box_text": "Have Recipe Kit auto-generate all the necessary recipe schema data",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "square",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        },
+        "benefit_3": {
+          "type": "feature_box",
+          "settings": {
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "internet",
+            "box_heading": "Rich Results",
+            "box_text": "Ensure your recipes appear in Google search results with rich snippets, like the recipe carousel, ratings, and more",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "square",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_1",
+        "benefit_2",
+        "benefit_3"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "header_width": 60,
+        "text_alignment": "center",
+        "heading_prefix": "Instantly enhance your Shopify content marketing strategy with",
+        "heading_emphasis": "Recipe Kit",
+        "heading_suffix": "",
+        "subheading": "Recipe Kit makes it easy to integrate your existing recipes and bring your SEO to the next level immediately",
+        "special_grid_type": "none",
+        "columns": "3",
+        "custom_grid": "none",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "boxes_fill_height": true
+      }
+    },
+    "faq": {
+      "type": "accordion",
+      "blocks": {
+        "faq_1": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "Can I manually add recipe schema without an app?",
+            "icon": "question-mark",
+            "content": "<p>Absolutely you can add the recipe schema to your website by yourself - the issue is that adding this structured data requires editing your theme code; which most store owners are not too keen on doing. You could get a developer to make a custom implementation, but that will still likely require adding the recipe data to an external part of your site (eg. in metafields) alongside writing your recipe in your blog post which means double the writing/effort just to generate the structured data.</p><p>Recipe Kit essentially does this all for you, and also adds a ton of other great features like printable recipe cards (that look fantastic), add to cart buttons, analytics, and more.</p>"
+          }
+        },
+        "faq_2": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "Does adding structured data guarantee that my recipe will show in recipe search results?",
+            "icon": "sparkles",
+            "content": "<p>Unfortunately Google doesn't guarantee anything in regards to whether or not they will show your recipe as a rich recipe snippet or not. Their only claim towards this is that <strong>filling out the structured data gives your recipe the opportunity</strong> to be shown in rich recipe results; without this recipe structured data, there is no chance for your recipe to show in recipe carousels, etc. in Google search results.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "How does structured data affect recipe search result rankings?",
+            "icon": "internet",
+            "content": "<p>While structured data itself is not a direct ranking factor, it can significantly improve your click-through rates from search results. Rich results are more visually appealing and provide more information upfront, making users more likely to click on your recipes.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "accordion_item",
+          "settings": {
+            "title": "How do I test my recipes for structured data?",
+            "icon": "beaker",
+            "content": "<p>Recipe Kit automatically validates your recipe schema before publishing. However, you can also use Google's Rich Results Test tool to verify the structured data implementation. We ensure all generated schema meets Google's requirements.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4"
+      ],
+      "settings": {
+        "title": "FAQs about Recipe Structured Data",
+        "subtitle": "Common questions about implementing recipe schema",
+        "heading_size": "twcss:text-4xl",
+        "open_first_item": true,
+        "color_scheme": "background-1",
+        "item_background": "white",
+        "title_color": "gray-900",
+        "content_color": "gray-700",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "cta_89cLVD": {
+      "type": "cta",
+      "settings": {
+        "background_image": "shopify://shop_images/20241023211956-wqurxy1511453156.jpg",
+        "overlay_opacity": 60,
+        "color_scheme": "scheme-1",
+        "heading": "Add automatic recipe structured data to your Shopify store, easily.",
+        "text": "<p>Automatic recipe structured data, beautiful recipe cards, and shoppable ingredient buttons make your recipe blog magic, helping you sell more products immediately.<br/></p>",
+        "button_label": "Button label",
+        "button_link": "",
+        "button_style": "primary",
+        "text_alignment": "center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero",
+    "what_is_schema",
+    "google_quote",
+    "benefits",
+    "faq",
+    "cta_89cLVD"
+  ]
+}
