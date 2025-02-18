@@ -34,7 +34,7 @@
 <footer class='footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding'>
   <div class='page-width'>
     <div class='footer__content-top twcss:pt-5'>
-      <div class='footer__blocks-wrapper twcss:grid twcss:grid-cols-1 twcss:md:grid-cols-3 twcss:lg:grid-cols-5 twcss:justify-center twcss:gap-10 twcss:md:gap-x-[100px]'>
+      <div class='footer__blocks-wrapper twcss:grid twcss:grid-cols-1 twcss:md:grid-cols-3 twcss:lg:grid-cols-5 twcss:justify-center twcss:items-center twcss:gap-10 twcss:md:gap-x-[100px]'>
         {%- for block in section.blocks -%}
           <div
             class='footer-block twcss:w-full twcss:text-left {% if block.type == "link_list" %}twcss:md:col-span-2 twcss:lg:!col-span-1{% else %}twcss:md:col-span-2 twcss:lg:col-span-2{% endif %} {% if block.type == "cta" %}twcss:md:col-span-5 twcss:lg:col-span-2{% endif %}'
