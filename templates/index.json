@@ -111,10 +111,10 @@
         "feature_box_4DGXYx": {
           "type": "feature_box",
           "settings": {
+            "title": "This is a feature box heading",
             "layout": "one_column",
             "reverse_columns": false,
             "icon": "banknotes",
-            "box_heading": "This is a feature box heading",
             "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
             "show_checklist": false,
             "check_1": "This is the first checklist item",
@@ -227,10 +227,10 @@
         "feature_box_wnb3Ba": {
           "type": "feature_box",
           "settings": {
+            "title": "Heading for box 1",
             "layout": "one_column",
             "reverse_columns": false,
             "icon": "sparkles",
-            "box_heading": "This is a feature box heading",
             "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
             "show_checklist": false,
             "check_1": "This is the first checklist item",
@@ -251,10 +251,10 @@
         "feature_box_kbRnGN": {
           "type": "feature_box",
           "settings": {
+            "title": "Heading 2",
             "layout": "one_column",
             "reverse_columns": false,
             "icon": "clock",
-            "box_heading": "This is a feature box heading",
             "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
             "show_checklist": true,
             "check_1": "This is the first checklist item",
@@ -273,10 +273,10 @@
         "feature_box_iPwN8q": {
           "type": "feature_box",
           "settings": {
+            "title": "Heading 3",
             "layout": "one_column",
             "reverse_columns": false,
             "icon": "heart",
-            "box_heading": "This is a feature box heading",
             "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
             "show_checklist": false,
             "check_1": "This is the first checklist item",
@@ -295,10 +295,10 @@
         "feature_box_DPhh9c": {
           "type": "feature_box",
           "settings": {
+            "title": "Heading 4",
             "layout": "one_column",
             "reverse_columns": false,
             "icon": "shop",
-            "box_heading": "This is a feature box heading",
             "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.\n<br><br>\nA little extra content in this one! I just added this to help balance out the column lengths on desktop... gives it a sense of balance. very nice.",
             "show_checklist": false,
             "check_1": "This is the first checklist item",
@@ -343,10 +343,10 @@
         "feature_box_4JwkGf": {
           "type": "feature_box",
           "settings": {
+            "title": "This is a feature box heading",
             "layout": "one_column",
             "reverse_columns": false,
             "icon": "clock",
-            "box_heading": "This is a feature box heading",
             "box_text": "",
             "show_checklist": true,
             "check_1": "This is the first checklist item",
@@ -365,10 +365,10 @@
         "feature_box_JjWBzd": {
           "type": "feature_box",
           "settings": {
+            "title": "This is a feature box heading",
             "layout": "one_column",
             "reverse_columns": false,
             "icon": "heart",
-            "box_heading": "This is a feature box heading",
             "box_text": "",
             "show_checklist": true,
             "check_1": "This is the first checklist item",
@@ -387,10 +387,10 @@
         "feature_box_jC3rEy": {
           "type": "feature_box",
           "settings": {
+            "title": "This is a feature box heading",
             "layout": "one_column",
             "reverse_columns": false,
             "icon": "shop",
-            "box_heading": "This is a feature box heading",
             "box_text": "",
             "show_checklist": true,
             "check_1": "This is the first checklist item",
@@ -434,10 +434,10 @@
         "feature_box_DVxDpG": {
           "type": "feature_box",
           "settings": {
+            "title": "This is a feature box heading",
             "layout": "two_column",
             "reverse_columns": false,
             "icon": "clock",
-            "box_heading": "This is a feature box heading",
             "box_text": "I added the ability to show the image in another column within the cards themselves.\n<br><br>\nHow neat is that?",
             "show_checklist": false,
             "check_1": "This is the first checklist item",
@@ -457,10 +457,10 @@
         "feature_box_fDHYTT": {
           "type": "feature_box",
           "settings": {
+            "title": "This is a feature box heading",
             "layout": "one_column",
             "reverse_columns": false,
             "icon": "fire",
-            "box_heading": "Convinced yet?",
             "box_text": "Install recipe book today on your Shopify store, and experience the best recipe app out there.",
             "show_checklist": false,
             "check_1": "This is the first checklist item",
@@ -503,10 +503,10 @@
         "feature_box_hWFK9b": {
           "type": "feature_box",
           "settings": {
+            "title": "",
             "layout": "one_column",
             "reverse_columns": false,
             "icon": "none",
-            "box_heading": "",
             "box_text": "",
             "show_checklist": false,
             "check_1": "This is the first checklist item",
@@ -527,10 +527,10 @@
         "feature_box_HNBeNN": {
           "type": "feature_box",
           "settings": {
+            "title": "This is a feature box heading",
             "layout": "one_column",
             "reverse_columns": false,
             "icon": "none",
-            "box_heading": "Maybe we add the ability for images to be links?",
             "box_text": "",
             "show_checklist": false,
             "check_1": "This is the first checklist item",

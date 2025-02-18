@@ -58,7 +58,7 @@
   <div class='twcss:flex twcss:flex-col twcss:h-full {% if block.settings.layout == "two_column" %}twcss:md:flex-row {% if block.settings.reverse_columns %}twcss:md:flex-row-reverse{% endif %} twcss:gap-8{% else %}twcss:gap-6{% endif %} twcss:items-start'>
     {% comment %} Only show the column if there is SOME content... ANY content {% endcomment %}
     {% if block.settings.icon != 'none'
-      or block.settings.box_heading != blank
+      or block.settings.title != blank
       or block.settings.box_text != blank
       or block.settings.show_checklist
       or block.settings.show_button
@@ -70,9 +70,9 @@
           </div>
         {% endif %}
 
-        {% if block.settings.box_heading != blank %}
+        {% if block.settings.title != blank %}
           <h3 class='twcss:!text-3xl twcss:!font-semibold'>
-            {{ block.settings.box_heading }}
+            {{ block.settings.title }}
           </h3>
         {% endif %}
 

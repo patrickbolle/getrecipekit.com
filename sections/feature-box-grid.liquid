@@ -63,6 +63,7 @@
             </div>
           {% elsif forloop.first == false and forloop.length <= 6 %}
             {% if forloop.index == 2 %}
+              <!-- ignore error -->
               <div
                 class='twcss:flex twcss:flex-col twcss:gap-12'
               >
@@ -296,6 +297,12 @@
       "limit": 6,
       "settings": [
         {
+          "type": "text",
+          "id": "title",
+          "label": "Box Heading",
+          "default": "This is a feature box heading"
+        },
+        {
           "type": "select",
           "id": "layout",
           "label": "Layout for this box",
@@ -393,12 +400,6 @@
             }
           ],
           "default": "none"
-        },
-        {
-          "type": "text",
-          "id": "box_heading",
-          "label": "Box Heading",
-          "default": "This is a feature box heading"
         },
         {
           "type": "textarea",
