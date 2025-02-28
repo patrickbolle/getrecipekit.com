@@ -52,20 +52,6 @@
         "padding_bottom": 52
       }
     },
-    "video_mqjLCq": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "enable_video_looping": true,
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "logo_list_zNL88B": {
       "type": "logo-list",
       "blocks": {
@@ -119,154 +105,16 @@
         "padding_bottom": 36
       }
     },
-    "icon_blurbs_NBcN7z": {
-      "type": "icon-blurbs",
-      "blocks": {
-        "blurb_fqd7rW": {
-          "type": "blurb",
-          "settings": {
-            "title": "Vestibulum Sagittis",
-            "text": "Vestibulum sagittis purus sit amet volutpat consequat mauris nunc congue.",
-            "icon": "internet"
-          }
-        },
-        "blurb_d8btQD": {
-          "type": "blurb",
-          "settings": {
-            "title": "Nulla Facilisi",
-            "text": "Nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris.",
-            "icon": "sparkles"
-          }
-        },
-        "blurb_mqRtqx": {
-          "type": "blurb",
-          "settings": {
-            "title": "Massa Tempor",
-            "text": "Massa tempor nec feugiat nisl pretium fusce id velit ut tortor.",
-            "icon": "star"
-          }
-        },
-        "blurb_jjLYY7": {
-          "type": "blurb",
-          "settings": {
-            "title": "Ultrices Gravida",
-            "text": "Ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim.",
-            "icon": "gift"
-          }
-        },
-        "blurb_Kr4PL6": {
-          "type": "blurb",
-          "settings": {
-            "title": "Pharetra Magna",
-            "text": "Pharetra magna ac placerat vestibulum lectus mauris ultrices eros in.",
-            "icon": "heart"
-          }
-        },
-        "blurb_YFKG9M": {
-          "type": "blurb",
-          "settings": {
-            "title": "Cursus Euismod",
-            "text": "Cursus euismod quis viverra nibh cras pulvinar mattis nunc sed.",
-            "icon": "beaker"
-          }
-        }
-      },
-      "block_order": [
-        "blurb_fqd7rW",
-        "blurb_d8btQD",
-        "blurb_mqRtqx",
-        "blurb_jjLYY7",
-        "blurb_Kr4PL6",
-        "blurb_YFKG9M"
-      ],
+    "video_mqjLCq": {
+      "type": "video",
       "settings": {
-        "title": "",
-        "subtitle": "",
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
         "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "testimonials_W7jaYf": {
-      "type": "testimonials",
-      "blocks": {
-        "testimonial_VbdQeF": {
-          "type": "testimonial",
-          "settings": {
-            "author": "BBQ Pit Boys",
-            "content": "This is by far the best recipe app that exists for Shopify. We've battled for a long time with Shopify blogs to try to create recipes but thankfully this app solves all those issues! Highly recommend it."
-          }
-        },
-        "testimonial_LEdWMU": {
-          "type": "testimonial",
-          "settings": {
-            "author": "All The Bitter",
-            "content": "Huge fan of this app! We've been using it for almost 3 years, and it's a crucial component of our website. It does a fantastic job of hitting all of Google's points for SEO and visibility, the recipes look great on our site, and customer service is fantastic. Highly recommended."
-          }
-        },
-        "testimonial_yJjPib": {
-          "type": "testimonial",
-          "settings": {
-            "author": "Olive Love",
-            "content": "Recipe Kit has been invaluable in showing customers how my store's infused olive oils and vinegars fit into their kitchens. If you're in the culinary e-commerce space, I would go so far as to say that you need this app."
-          }
-        }
-      },
-      "block_order": [
-        "testimonial_VbdQeF",
-        "testimonial_LEdWMU",
-        "testimonial_yJjPib"
-      ],
-      "settings": {
-        "title": "Reviews from brands that love Recipe Kit",
-        "review_line": "5/5 from 75+ reviews on Shopify",
-        "review_url": "https://apps.shopify.com/recipe-kit?utm_source=rk_website&utm_medium=homepage",
-        "review_url_new_tab": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "stats_BmRkMe": {
-      "type": "stats",
-      "blocks": {
-        "stat_nqEc8V": {
-          "type": "stat",
-          "settings": {
-            "label": "Total Sales",
-            "value": "$4.8m"
-          }
-        },
-        "stat_RcEHKp": {
-          "type": "stat",
-          "settings": {
-            "label": "Total Sales",
-            "value": "$4.8m"
-          }
-        },
-        "stat_JVcYNT": {
-          "type": "stat",
-          "settings": {
-            "label": "Total Sales",
-            "value": "$4.8m"
-          }
-        },
-        "stat_fr8mJY": {
-          "type": "stat",
-          "settings": {
-            "label": "Total Sales",
-            "value": "$4.8m"
-          }
-        }
-      },
-      "block_order": [
-        "stat_nqEc8V",
-        "stat_RcEHKp",
-        "stat_JVcYNT",
-        "stat_fr8mJY"
-      ],
-      "settings": {
-        "title": "Trusted by eCommerce Businesses",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolores laborum labore provident impedit esse recusandae facere libero harum sequi.",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -384,6 +232,158 @@
         "padding_top": 36,
         "padding_bottom": 36,
         "boxes_fill_height": true
+      }
+    },
+    "testimonials_W7jaYf": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_VbdQeF": {
+          "type": "testimonial",
+          "settings": {
+            "author": "BBQ Pit Boys",
+            "content": "This is by far the best recipe app that exists for Shopify. We've battled for a long time with Shopify blogs to try to create recipes but thankfully this app solves all those issues! Highly recommend it."
+          }
+        },
+        "testimonial_LEdWMU": {
+          "type": "testimonial",
+          "settings": {
+            "author": "All The Bitter",
+            "content": "Huge fan of this app! We've been using it for almost 3 years, and it's a crucial component of our website. It does a fantastic job of hitting all of Google's points for SEO and visibility, the recipes look great on our site, and customer service is fantastic. Highly recommended."
+          }
+        },
+        "testimonial_yJjPib": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Olive Love",
+            "content": "Recipe Kit has been invaluable in showing customers how my store's infused olive oils and vinegars fit into their kitchens. If you're in the culinary e-commerce space, I would go so far as to say that you need this app."
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_VbdQeF",
+        "testimonial_LEdWMU",
+        "testimonial_yJjPib"
+      ],
+      "settings": {
+        "title": "Reviews from brands that love Recipe Kit",
+        "review_line": "5/5 from 75+ reviews on Shopify",
+        "review_url": "https://apps.shopify.com/recipe-kit?utm_source=rk_website&utm_medium=homepage",
+        "review_url_new_tab": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "stats_BmRkMe": {
+      "type": "stats",
+      "blocks": {
+        "stat_nqEc8V": {
+          "type": "stat",
+          "settings": {
+            "label": "Total Sales",
+            "value": "$4.8m"
+          }
+        },
+        "stat_RcEHKp": {
+          "type": "stat",
+          "settings": {
+            "label": "Total Sales",
+            "value": "$4.8m"
+          }
+        },
+        "stat_JVcYNT": {
+          "type": "stat",
+          "settings": {
+            "label": "Total Sales",
+            "value": "$4.8m"
+          }
+        },
+        "stat_fr8mJY": {
+          "type": "stat",
+          "settings": {
+            "label": "Total Sales",
+            "value": "$4.8m"
+          }
+        }
+      },
+      "block_order": [
+        "stat_nqEc8V",
+        "stat_RcEHKp",
+        "stat_JVcYNT",
+        "stat_fr8mJY"
+      ],
+      "settings": {
+        "title": "Trusted by eCommerce Businesses",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolores laborum labore provident impedit esse recusandae facere libero harum sequi.",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "icon_blurbs_NBcN7z": {
+      "type": "icon-blurbs",
+      "blocks": {
+        "blurb_fqd7rW": {
+          "type": "blurb",
+          "settings": {
+            "title": "Vestibulum Sagittis",
+            "text": "Vestibulum sagittis purus sit amet volutpat consequat mauris nunc congue.",
+            "icon": "internet"
+          }
+        },
+        "blurb_d8btQD": {
+          "type": "blurb",
+          "settings": {
+            "title": "Nulla Facilisi",
+            "text": "Nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris.",
+            "icon": "sparkles"
+          }
+        },
+        "blurb_mqRtqx": {
+          "type": "blurb",
+          "settings": {
+            "title": "Massa Tempor",
+            "text": "Massa tempor nec feugiat nisl pretium fusce id velit ut tortor.",
+            "icon": "star"
+          }
+        },
+        "blurb_jjLYY7": {
+          "type": "blurb",
+          "settings": {
+            "title": "Ultrices Gravida",
+            "text": "Ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim.",
+            "icon": "gift"
+          }
+        },
+        "blurb_Kr4PL6": {
+          "type": "blurb",
+          "settings": {
+            "title": "Pharetra Magna",
+            "text": "Pharetra magna ac placerat vestibulum lectus mauris ultrices eros in.",
+            "icon": "heart"
+          }
+        },
+        "blurb_YFKG9M": {
+          "type": "blurb",
+          "settings": {
+            "title": "Cursus Euismod",
+            "text": "Cursus euismod quis viverra nibh cras pulvinar mattis nunc sed.",
+            "icon": "beaker"
+          }
+        }
+      },
+      "block_order": [
+        "blurb_fqd7rW",
+        "blurb_d8btQD",
+        "blurb_mqRtqx",
+        "blurb_jjLYY7",
+        "blurb_Kr4PL6",
+        "blurb_YFKG9M"
+      ],
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "pricing_plans_pC3n8Q": {
@@ -550,7 +550,8 @@
         "button_style": "primary",
         "text_alignment": "center",
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "content_max_width": 750
       }
     }
   },

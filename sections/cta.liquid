@@ -45,12 +45,15 @@
   .section-{{ section.id }} .content-wrapper {
     position: relative;
     z-index: 2;
+    {% if section.settings.content_max_width != blank %}
+      max-width: {{ section.settings.content_max_width }}px;
+    {% endif %}
   }
 {%- endstyle -%}
 
 <div class='color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}'>
   <div class='section-{{ section.id }}-padding page-width'>
-    <div class='content-wrapper twcss:max-w-6xl twcss:mx-auto twcss:text-{{ section.settings.text_alignment }} twcss:relative twcss:py-16 md:twcss:py-24'>
+    <div class='content-wrapper twcss:mx-auto twcss:text-{{ section.settings.text_alignment }} twcss:relative twcss:py-16 md:twcss:py-24'>
       <div class='{% if section.settings.background_image != blank %}twcss:bg-transparent{% else %}twcss:bg-opacity-95{% endif %} twcss:rounded-3xl twcss:px-8 twcss:py-12 md:twcss:px-16 md:twcss:py-20'>
         {%- if section.settings.heading != blank -%}
           <h2 class='twcss:!text-4xl twcss:!font-extrabold twcss:tracking-tight twcss:md:!text-6xl twcss:md:!leading-16 twcss:mb-8 {% if section.settings.background_image != blank %}twcss:!text-white{% endif %}'>
@@ -188,6 +191,17 @@
       "unit": "px",
       "label": "Padding bottom",
       "default": 36
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "min": 600,
+      "max": 1200,
+      "step": 50,
+      "unit": "px",
+      "label": "Content max width",
+      "info": "Controls the maximum width of the inner content area",
+      "default": 800
     }
   ],
   "presets": [

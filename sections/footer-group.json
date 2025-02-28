@@ -14,6 +14,15 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "footer-2": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "image": "shopify://shop_images/Recipe-Kit-Logo_Color_5f9b6024-8870-42d5-83cc-e81cf15cca8c.png",
+            "image_width": 200,
+            "subtext": "<p>Automatic recipe structured data, beautiful recipe cards, and shoppable ingredient buttons make your recipe blog magic, helping you sell more products immediately.</p>"
+          }
+        },
         "footer-0": {
           "type": "link_list",
           "settings": {
@@ -21,35 +30,23 @@
             "menu": "footer"
           }
         },
-        "footer-1": {
-          "type": "link_list",
+        "cta_hdUHay": {
+          "type": "cta",
           "settings": {
-            "heading": "Info",
-            "menu": "footer"
-          }
-        },
-        "footer-2": {
-          "type": "text",
-          "settings": {
-            "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+            "heading": "Get Recipe Kit Today",
+            "text": "<p>Stay updated with our latest products and news</p>",
+            "button_text": "Learn More",
+            "button_link": "https://apps.shopify.com/recipe-kit"
           }
         }
       },
       "block_order": [
+        "footer-2",
         "footer-0",
-        "footer-1",
-        "footer-2"
+        "cta_hdUHay"
       ],
       "settings": {
         "color_scheme": "scheme-1",
-        "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
-        "show_social": true,
-        "enable_country_selector": false,
-        "enable_language_selector": false,
-        "payment_enable": true,
-        "show_policy": false,
         "margin_top": 48,
         "padding_top": 36,
         "padding_bottom": 36

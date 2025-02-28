@@ -16,7 +16,7 @@
 
 <div class='twcss:isolate{% unless section.settings.full_width %} page-width{% endunless %}'>
   <section class='rich-text-hero content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text-hero--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding twcss:bg-gray-50'>
-    <div class='rich-text-hero__wrapper rich-text-hero__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %} twcss:mx-auto twcss:px-4 twcss:py-32 twcss:lg:flex twcss:lg:items-center {% unless section.settings.full_width %}twcss:max-w-content{% endunless %}'>
+    <div class='rich-text-hero__wrapper rich-text-hero__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %} twcss:mx-auto twcss:px-4 twcss:py-32 twcss:lg:flex twcss:lg:items-center'>
       <div class='rich-text-hero__blocks {{ section.settings.content_alignment }} twcss:mx-auto twcss:text-center twcss:grid'>
         {%- for block in section.blocks -%}
           {%- case block.type -%}
