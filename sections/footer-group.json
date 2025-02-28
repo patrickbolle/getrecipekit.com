@@ -14,15 +14,6 @@
     "footer": {
       "type": "footer",
       "blocks": {
-        "footer-2": {
-          "type": "text",
-          "settings": {
-            "heading": "",
-            "image": "shopify://shop_images/Recipe-Kit-Logo_Color_5f9b6024-8870-42d5-83cc-e81cf15cca8c.png",
-            "image_width": 200,
-            "subtext": "<p>Recipe Kit helps food brands turn recipes into revenue. Our top-rated Shopify app creates SEO-optimized, shoppable recipe cards that seamlessly integrate with your store. Drive more sales by turning ingredient lists into shopping opportunities and blog visitors into loyal customers.</p>"
-          }
-        },
         "footer-0": {
           "type": "link_list",
           "settings": {
@@ -30,23 +21,35 @@
             "menu": "footer"
           }
         },
-        "cta_reWT3H": {
-          "type": "cta",
+        "footer-1": {
+          "type": "link_list",
           "settings": {
-            "heading": "Get Recipe Kit Today",
-            "text": "<p>Install Recipe Kit on your Shopify store today and discover a new way to increase traffic and monetize your Shopify store!</p>",
-            "button_text": "Get Recipe Kit",
-            "button_link": "/"
+            "heading": "Info",
+            "menu": "footer"
+          }
+        },
+        "footer-2": {
+          "type": "text",
+          "settings": {
+            "heading": "Our mission",
+            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
           }
         }
       },
       "block_order": [
-        "footer-2",
         "footer-0",
-        "cta_reWT3H"
+        "footer-1",
+        "footer-2"
       ],
       "settings": {
         "color_scheme": "scheme-1",
+        "newsletter_enable": true,
+        "newsletter_heading": "Subscribe to our emails",
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": false,
         "margin_top": 48,
         "padding_top": 36,
         "padding_bottom": 36

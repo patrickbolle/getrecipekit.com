@@ -52,6 +52,20 @@
         "padding_bottom": 52
       }
     },
+    "video_mqjLCq": {
+      "type": "video",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "logo_list_zNL88B": {
       "type": "logo-list",
       "blocks": {
@@ -103,54 +117,6 @@
         "heading_highlight": "1500+ Shopify brands",
         "padding_top": 36,
         "padding_bottom": 36
-      }
-    },
-    "feature_box_grid_UUefGJ": {
-      "type": "feature-box-grid",
-      "blocks": {
-        "feature_box_4DGXYx": {
-          "type": "feature_box",
-          "settings": {
-            "title": "This is a feature box heading",
-            "layout": "one_column",
-            "reverse_columns": false,
-            "icon": "banknotes",
-            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
-            "show_checklist": false,
-            "check_1": "This is the first checklist item",
-            "check_2": "This is the second checklist item",
-            "check_3": "This is the third checklist item",
-            "box_image": "shopify://shop_images/20241023213348-wqurxy1511453156.jpg",
-            "box_image_2": "shopify://shop_images/Screenshot_2024-06-19_at_14-54-42_mac_and_cheese_recipe_shopify_-_Google_Search.png",
-            "box_image_3": "shopify://shop_images/20240618212816-8-grohjwffncwzdii.png",
-            "image_aspect": "wide",
-            "image_fill": false,
-            "image_min_height": "50vh",
-            "slideshow_interval": 6,
-            "show_button": false,
-            "button_label": "Click this button",
-            "button_link": "",
-            "button_style": "primary"
-          }
-        }
-      },
-      "block_order": [
-        "feature_box_4DGXYx"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "header_width": 55,
-        "text_alignment": "left",
-        "heading_prefix": "This is the",
-        "heading_emphasis": "emphasized part",
-        "heading_suffix": "of the heading",
-        "subheading": "This is the subheading text that appears below the main heading. It can be used to provide additional context or information.",
-        "special_grid_type": "none",
-        "columns": "1",
-        "custom_grid": "none",
-        "padding_top": 64,
-        "padding_bottom": 36,
-        "boxes_fill_height": true
       }
     },
     "icon_blurbs_NBcN7z": {
@@ -221,353 +187,6 @@
         "padding_bottom": 36
       }
     },
-    "feature_box_grid_xBUEfq": {
-      "type": "feature-box-grid",
-      "blocks": {
-        "feature_box_wnb3Ba": {
-          "type": "feature_box",
-          "settings": {
-            "title": "Heading for box 1",
-            "layout": "one_column",
-            "reverse_columns": false,
-            "icon": "sparkles",
-            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
-            "show_checklist": false,
-            "check_1": "This is the first checklist item",
-            "check_2": "This is the second checklist item",
-            "check_3": "This is the third checklist item",
-            "box_image": "shopify://shop_images/20241023213348-wqurxy1511453156.jpg",
-            "box_image_2": "shopify://shop_images/DALL_E2024-01-1110.48.35-Aproductimageofajarofpeanutbutterlabeled_Grandma_sPeanutButter_.Thejarisglasswithaclassicdesign_featuringaredandwhitegingham.png",
-            "image_aspect": "portrait",
-            "image_fill": true,
-            "image_min_height": "300px",
-            "slideshow_interval": 4,
-            "show_button": false,
-            "button_label": "Click this button",
-            "button_link": "",
-            "button_style": "primary"
-          }
-        },
-        "feature_box_kbRnGN": {
-          "type": "feature_box",
-          "settings": {
-            "title": "Heading 2",
-            "layout": "one_column",
-            "reverse_columns": false,
-            "icon": "clock",
-            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
-            "show_checklist": true,
-            "check_1": "This is the first checklist item",
-            "check_2": "This is the second checklist item",
-            "check_3": "This is the third checklist item",
-            "image_aspect": "landscape",
-            "image_fill": false,
-            "image_min_height": "300px",
-            "slideshow_interval": 4,
-            "show_button": false,
-            "button_label": "Click this button",
-            "button_link": "#",
-            "button_style": "primary"
-          }
-        },
-        "feature_box_iPwN8q": {
-          "type": "feature_box",
-          "settings": {
-            "title": "Heading 3",
-            "layout": "one_column",
-            "reverse_columns": false,
-            "icon": "heart",
-            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
-            "show_checklist": false,
-            "check_1": "This is the first checklist item",
-            "check_2": "This is the second checklist item",
-            "check_3": "This is the third checklist item",
-            "image_aspect": "landscape",
-            "image_fill": false,
-            "image_min_height": "300px",
-            "slideshow_interval": 4,
-            "show_button": false,
-            "button_label": "Click this button",
-            "button_link": "#",
-            "button_style": "secondary"
-          }
-        },
-        "feature_box_DPhh9c": {
-          "type": "feature_box",
-          "settings": {
-            "title": "Heading 4",
-            "layout": "one_column",
-            "reverse_columns": false,
-            "icon": "shop",
-            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.\n<br><br>\nA little extra content in this one! I just added this to help balance out the column lengths on desktop... gives it a sense of balance. very nice.",
-            "show_checklist": false,
-            "check_1": "This is the first checklist item",
-            "check_2": "This is the second checklist item",
-            "check_3": "This is the third checklist item",
-            "image_aspect": "landscape",
-            "image_fill": false,
-            "image_min_height": "300px",
-            "slideshow_interval": 4,
-            "show_button": true,
-            "button_label": "Click this button",
-            "button_link": "#",
-            "button_style": "primary"
-          }
-        }
-      },
-      "block_order": [
-        "feature_box_wnb3Ba",
-        "feature_box_kbRnGN",
-        "feature_box_iPwN8q",
-        "feature_box_DPhh9c"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "header_width": 80,
-        "text_alignment": "center",
-        "heading_prefix": "This is another",
-        "heading_emphasis": "of the same section type",
-        "heading_suffix": "",
-        "subheading": "This is the subheading text that appears below the main heading. It can be used to provide additional context or information.",
-        "special_grid_type": "1-left",
-        "columns": "2",
-        "custom_grid": "3fr 2fr",
-        "padding_top": 100,
-        "padding_bottom": 36,
-        "boxes_fill_height": true
-      }
-    },
-    "feature_box_grid_KBNjXp": {
-      "type": "feature-box-grid",
-      "blocks": {
-        "feature_box_4JwkGf": {
-          "type": "feature_box",
-          "settings": {
-            "title": "This is a feature box heading",
-            "layout": "one_column",
-            "reverse_columns": false,
-            "icon": "clock",
-            "box_text": "",
-            "show_checklist": true,
-            "check_1": "This is the first checklist item",
-            "check_2": "This is the second checklist item",
-            "check_3": "This is the third checklist item",
-            "image_aspect": "landscape",
-            "image_fill": false,
-            "image_min_height": "300px",
-            "slideshow_interval": 4,
-            "show_button": true,
-            "button_label": "Click this button",
-            "button_link": "#",
-            "button_style": "secondary"
-          }
-        },
-        "feature_box_JjWBzd": {
-          "type": "feature_box",
-          "settings": {
-            "title": "This is a feature box heading",
-            "layout": "one_column",
-            "reverse_columns": false,
-            "icon": "heart",
-            "box_text": "",
-            "show_checklist": true,
-            "check_1": "This is the first checklist item",
-            "check_2": "This is the second checklist item",
-            "check_3": "This is the third checklist item",
-            "image_aspect": "landscape",
-            "image_fill": false,
-            "image_min_height": "300px",
-            "slideshow_interval": 4,
-            "show_button": true,
-            "button_label": "Click this button",
-            "button_link": "#",
-            "button_style": "primary"
-          }
-        },
-        "feature_box_jC3rEy": {
-          "type": "feature_box",
-          "settings": {
-            "title": "This is a feature box heading",
-            "layout": "one_column",
-            "reverse_columns": false,
-            "icon": "shop",
-            "box_text": "",
-            "show_checklist": true,
-            "check_1": "This is the first checklist item",
-            "check_2": "This is the second checklist item",
-            "check_3": "This is the third checklist item",
-            "image_aspect": "landscape",
-            "image_fill": false,
-            "image_min_height": "300px",
-            "slideshow_interval": 4,
-            "show_button": true,
-            "button_label": "Click this button",
-            "button_link": "#",
-            "button_style": "secondary"
-          }
-        }
-      },
-      "block_order": [
-        "feature_box_4JwkGf",
-        "feature_box_JjWBzd",
-        "feature_box_jC3rEy"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "header_width": 80,
-        "text_alignment": "center",
-        "heading_prefix": "These",
-        "heading_emphasis": "box sections",
-        "heading_suffix": "are so fun",
-        "subheading": "What's this one for? Who knows! Could be a pricing table, value proposition, or whatever you want! These are totally customizable.",
-        "special_grid_type": "none",
-        "columns": "3",
-        "custom_grid": "",
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "boxes_fill_height": true
-      }
-    },
-    "feature_box_grid_wHGd3i": {
-      "type": "feature-box-grid",
-      "blocks": {
-        "feature_box_DVxDpG": {
-          "type": "feature_box",
-          "settings": {
-            "title": "This is a feature box heading",
-            "layout": "two_column",
-            "reverse_columns": false,
-            "icon": "clock",
-            "box_text": "I added the ability to show the image in another column within the cards themselves.\n<br><br>\nHow neat is that?",
-            "show_checklist": false,
-            "check_1": "This is the first checklist item",
-            "check_2": "This is the second checklist item",
-            "check_3": "This is the third checklist item",
-            "box_image": "shopify://shop_images/20241016192230-vegan-ramen-square.jpg",
-            "image_aspect": "landscape",
-            "image_fill": false,
-            "image_min_height": "300px",
-            "slideshow_interval": 4,
-            "show_button": false,
-            "button_label": "Click this button",
-            "button_link": "#",
-            "button_style": "secondary"
-          }
-        },
-        "feature_box_fDHYTT": {
-          "type": "feature_box",
-          "settings": {
-            "title": "This is a feature box heading",
-            "layout": "one_column",
-            "reverse_columns": false,
-            "icon": "fire",
-            "box_text": "Install recipe book today on your Shopify store, and experience the best recipe app out there.",
-            "show_checklist": false,
-            "check_1": "This is the first checklist item",
-            "check_2": "This is the second checklist item",
-            "check_3": "This is the third checklist item",
-            "image_aspect": "landscape",
-            "image_fill": false,
-            "image_min_height": "300px",
-            "slideshow_interval": 4,
-            "show_button": true,
-            "button_label": "Click this button",
-            "button_link": "#",
-            "button_style": "primary"
-          }
-        }
-      },
-      "block_order": [
-        "feature_box_DVxDpG",
-        "feature_box_fDHYTT"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "header_width": 80,
-        "text_alignment": "center",
-        "heading_prefix": "One more,",
-        "heading_emphasis": "just for kicks",
-        "heading_suffix": "",
-        "subheading": "What's this one for? Who knows! Could be a pricing table, value proposition, or whatever you want! These are totally customizable.",
-        "special_grid_type": "none",
-        "columns": "2",
-        "custom_grid": "2fr 1fr",
-        "padding_top": 100,
-        "padding_bottom": 0,
-        "boxes_fill_height": true
-      }
-    },
-    "feature_box_grid_7PNgbc": {
-      "type": "feature-box-grid",
-      "blocks": {
-        "feature_box_hWFK9b": {
-          "type": "feature_box",
-          "settings": {
-            "title": "",
-            "layout": "one_column",
-            "reverse_columns": false,
-            "icon": "none",
-            "box_text": "",
-            "show_checklist": false,
-            "check_1": "This is the first checklist item",
-            "check_2": "This is the second checklist item",
-            "check_3": "This is the third checklist item",
-            "box_image": "shopify://shop_images/hands-type-on-a-laptop-with-google-home-screen.jpg",
-            "box_image_2": "shopify://shop_images/20241023213952-wqurxy1511453156.jpg",
-            "image_aspect": "square",
-            "image_fill": true,
-            "image_min_height": "300px",
-            "slideshow_interval": 6,
-            "show_button": false,
-            "button_label": "Click this button",
-            "button_link": "#",
-            "button_style": "secondary"
-          }
-        },
-        "feature_box_HNBeNN": {
-          "type": "feature_box",
-          "settings": {
-            "title": "This is a feature box heading",
-            "layout": "one_column",
-            "reverse_columns": false,
-            "icon": "none",
-            "box_text": "",
-            "show_checklist": false,
-            "check_1": "This is the first checklist item",
-            "check_2": "This is the second checklist item",
-            "check_3": "This is the third checklist item",
-            "box_image": "shopify://shop_images/chad-montano-lP5MCM6nZ5A-unsplash_cropped.jpg",
-            "image_aspect": "wide",
-            "image_fill": false,
-            "image_min_height": "300px",
-            "slideshow_interval": 4,
-            "show_button": false,
-            "button_label": "Click this button",
-            "button_link": "#",
-            "button_style": "primary"
-          }
-        }
-      },
-      "block_order": [
-        "feature_box_hWFK9b",
-        "feature_box_HNBeNN"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "header_width": 80,
-        "text_alignment": "center",
-        "heading_prefix": "",
-        "heading_emphasis": "",
-        "heading_suffix": "",
-        "subheading": "",
-        "special_grid_type": "none",
-        "columns": "2",
-        "custom_grid": "1fr 2fr",
-        "padding_top": 0,
-        "padding_bottom": 36,
-        "boxes_fill_height": true
-      }
-    },
     "testimonials_W7jaYf": {
       "type": "testimonials",
       "blocks": {
@@ -576,13 +195,6 @@
           "settings": {
             "author": "BBQ Pit Boys",
             "content": "This is by far the best recipe app that exists for Shopify. We've battled for a long time with Shopify blogs to try to create recipes but thankfully this app solves all those issues! Highly recommend it."
-          }
-        },
-        "testimonial_4JenaF": {
-          "type": "testimonial",
-          "settings": {
-            "author": "Brew and Feed",
-            "content": "This app is the best way I engage my customers. Publishing a recipe is quick and easy and the styling on my website is beautiful."
           }
         },
         "testimonial_LEdWMU": {
@@ -598,45 +210,180 @@
             "author": "Olive Love",
             "content": "Recipe Kit has been invaluable in showing customers how my store's infused olive oils and vinegars fit into their kitchens. If you're in the culinary e-commerce space, I would go so far as to say that you need this app."
           }
-        },
-        "testimonial_fYYHQc": {
-          "type": "testimonial",
-          "settings": {
-            "author": "Nomfan",
-            "content": "I moved over from Wordpress and was used to the WP Recipe Maker plugin (the king of recipe plugins on wordpress). I was super excited to see that there was a quality recipe card plugin on Shopify. The developer is super responsive. The app correctly outputs JSON so that your recipes will show up properly in Google search results! If you are looking to blog to increase traffic then this app is for you."
-          }
-        },
-        "testimonial_RNLrRy": {
-          "type": "testimonial",
-          "settings": {
-            "author": "La Boîte",
-            "content": "One of the best app experiences we have had on Shopify. Patrick is incredibly responsive and creative when it comes to our requests and is constantly coming up with new features to make the app better. The app itself is rock solid, easy to use, and does exactly what it's supposed to do. Can't recommend it enough to anyone looking to add recipes to their shopify store."
-          }
-        },
-        "testimonial_jdPeNM": {
-          "type": "testimonial",
-          "settings": {
-            "author": "National Mustard Museum",
-            "content": "We really like using this app to feature recipes that use our products. It's cool that we're able to link to the products directly in the ingredients list. It's nice and easy to import a lot of recipes at once."
-          }
         }
       },
       "block_order": [
         "testimonial_VbdQeF",
-        "testimonial_4JenaF",
         "testimonial_LEdWMU",
-        "testimonial_yJjPib",
-        "testimonial_fYYHQc",
-        "testimonial_RNLrRy",
-        "testimonial_jdPeNM"
+        "testimonial_yJjPib"
       ],
       "settings": {
-        "title": "Reviews from food brands that love Recipe Kit",
-        "review_line": "5/5 from 75+ reviews on Shopify!",
+        "title": "Reviews from brands that love Recipe Kit",
+        "review_line": "5/5 from 75+ reviews on Shopify",
         "review_url": "https://apps.shopify.com/recipe-kit?utm_source=rk_website&utm_medium=homepage",
         "review_url_new_tab": true,
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "stats_BmRkMe": {
+      "type": "stats",
+      "blocks": {
+        "stat_nqEc8V": {
+          "type": "stat",
+          "settings": {
+            "label": "Total Sales",
+            "value": "$4.8m"
+          }
+        },
+        "stat_RcEHKp": {
+          "type": "stat",
+          "settings": {
+            "label": "Total Sales",
+            "value": "$4.8m"
+          }
+        },
+        "stat_JVcYNT": {
+          "type": "stat",
+          "settings": {
+            "label": "Total Sales",
+            "value": "$4.8m"
+          }
+        },
+        "stat_fr8mJY": {
+          "type": "stat",
+          "settings": {
+            "label": "Total Sales",
+            "value": "$4.8m"
+          }
+        }
+      },
+      "block_order": [
+        "stat_nqEc8V",
+        "stat_RcEHKp",
+        "stat_JVcYNT",
+        "stat_fr8mJY"
+      ],
+      "settings": {
+        "title": "Trusted by eCommerce Businesses",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione dolores laborum labore provident impedit esse recusandae facere libero harum sequi.",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "feature_box_grid_a3AiDU": {
+      "type": "feature-box-grid",
+      "blocks": {
+        "feature_box_qkK3Pp": {
+          "type": "feature_box",
+          "settings": {
+            "title": "This is a feature box heading",
+            "layout": "one_column",
+            "reverse_columns": false,
+            "icon": "none",
+            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
+            "show_checklist": true,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "box_image": "shopify://shop_images/RK-Feature-2021_0727-1.jpg",
+            "image_aspect": "landscape",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        },
+        "feature_box_6jgd4D": {
+          "type": "feature_box",
+          "settings": {
+            "title": "This is a feature box heading",
+            "layout": "two_column",
+            "reverse_columns": false,
+            "icon": "none",
+            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "landscape",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        },
+        "feature_box_Yk8FNj": {
+          "type": "feature_box",
+          "settings": {
+            "title": "This is a feature box heading",
+            "layout": "two_column",
+            "reverse_columns": false,
+            "icon": "none",
+            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "landscape",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        },
+        "feature_box_pAmAjf": {
+          "type": "feature_box",
+          "settings": {
+            "title": "This is a feature box heading",
+            "layout": "two_column",
+            "reverse_columns": false,
+            "icon": "none",
+            "box_text": "This is the main text content of the feature box. It can be used to describe features, benefits, or any other relevant information.",
+            "show_checklist": false,
+            "check_1": "This is the first checklist item",
+            "check_2": "This is the second checklist item",
+            "check_3": "This is the third checklist item",
+            "image_aspect": "landscape",
+            "image_fill": false,
+            "image_min_height": "300px",
+            "slideshow_interval": 4,
+            "show_button": false,
+            "button_label": "Click this button",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "feature_box_qkK3Pp",
+        "feature_box_6jgd4D",
+        "feature_box_Yk8FNj",
+        "feature_box_pAmAjf"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "header_width": 100,
+        "text_alignment": "center",
+        "heading_prefix": "This is the",
+        "heading_emphasis": "emphasized part",
+        "heading_suffix": "of the heading",
+        "subheading": "This is the subheading text that appears below the main heading. It can be used to provide additional context or information.",
+        "special_grid_type": "1-left",
+        "columns": "1",
+        "custom_grid": "",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "boxes_fill_height": true
       }
     },
     "pricing_plans_pC3n8Q": {
@@ -791,19 +538,17 @@
         "padding_bottom": 36
       }
     },
-    "featured_blog_kdEgAW": {
-      "type": "featured-blog",
+    "cta_CeR44h": {
+      "type": "cta",
       "settings": {
-        "heading": "Learn about the best tips for food blogging",
-        "heading_size": "h1",
-        "blog": "our-blog",
-        "post_limit": 3,
-        "columns_desktop": 3,
-        "color_scheme": "scheme-1",
-        "show_image": true,
-        "show_date": false,
-        "show_author": false,
-        "show_view_all": true,
+        "overlay_opacity": 70,
+        "color_scheme": "accent-1",
+        "heading": "Add automatic recipe structured data to your Shopify store, easily.",
+        "text": "<p>Automatic recipe structured data, beautiful recipe cards, and shoppable ingredient buttons make your recipe blog magic, helping you sell more products immediately.</p>",
+        "button_label": "Install Recipe Kit on Shopify",
+        "button_link": "",
+        "button_style": "primary",
+        "text_alignment": "center",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -812,15 +557,13 @@
   "order": [
     "rich_text_hero_kxj36j",
     "logo_list_zNL88B",
-    "feature_box_grid_UUefGJ",
-    "icon_blurbs_NBcN7z",
-    "feature_box_grid_xBUEfq",
-    "feature_box_grid_KBNjXp",
-    "feature_box_grid_wHGd3i",
-    "feature_box_grid_7PNgbc",
+    "video_mqjLCq",
+    "feature_box_grid_a3AiDU",
     "testimonials_W7jaYf",
+    "stats_BmRkMe",
+    "icon_blurbs_NBcN7z",
     "pricing_plans_pC3n8Q",
     "accordion_dh7tGF",
-    "featured_blog_kdEgAW"
+    "cta_CeR44h"
   ]
 }
