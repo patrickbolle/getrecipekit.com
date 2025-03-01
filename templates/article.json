@@ -34,13 +34,21 @@
         "content": {
           "type": "content",
           "settings": {}
+        },
+        "recipe_kit_app_block_LjfiPH": {
+          "type": "shopify://apps/recipe-kit/blocks/app-block/0afa374e-81c7-4989-96de-e1ac84640954",
+          "settings": {
+            "custom_js": "",
+            "custom_css": ""
+          }
         }
       },
       "block_order": [
         "featured_image",
         "title",
         "share",
-        "content"
+        "content",
+        "recipe_kit_app_block_LjfiPH"
       ],
       "settings": {}
     }
