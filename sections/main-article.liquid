@@ -1,5 +1,17 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
 
+{%- style -%}
+  .article-template__content-width {
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 750px) {
+    .article-template__content-width {
+      max-width: {{ section.settings.content_max_width }}px;
+    }
+  }
+{%- endstyle -%}
+
 <article class='article-template'>
   {%- for block in section.blocks -%}
     {%- case block.type -%}
@@ -43,7 +55,7 @@
 
       {%- when 'title' -%}
         <header
-          class='page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}'
+          class='page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %} article-template__content-width'
           {{ block.shopify_attributes }}
         >
           {%- if block.settings.blog_show_date or block.settings.blog_show_author -%}
@@ -72,7 +84,7 @@
 
       {%- when 'content' -%}
         <div
-          class='article-template__content page-width page-width--narrow rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
+          class='article-template__content page-width page-width--narrow rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} article-template__content-width'
           {{ block.shopify_attributes }}
         >
           {{ article.content }}
@@ -80,7 +92,7 @@
 
       {%- when 'share' -%}
         <div
-          class='article-template__social-sharing page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
+          class='article-template__social-sharing page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} article-template__content-width'
           {{ block.shopify_attributes }}
         >
           <div class='social-sharing'>
@@ -146,7 +158,7 @@
     {%- endcase -%}
   {%- endfor -%}
 
-  <div class='article-template__back element-margin-top center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'>
+  <div class='article-template__back element-margin-top center{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} article-template__content-width'>
     <a href='{{ blog.url }}' class='article-template__link'>
       <span class='icon-wrap'>
         <span class='svg-wrapper'>
@@ -161,7 +173,7 @@
     <div class='article-template__comment-wrapper'>
       <div
         id='comments'
-        class='page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}'
+        class='page-width page-width--narrow{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} article-template__content-width'
       >
         {%- if article.comments_count > 0 -%}
           {%- assign anchorId = '#Comments-' | append: article.id -%}
@@ -411,6 +423,19 @@
           "default": "Share"
         }
       ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "min": 700,
+      "max": 1600,
+      "step": 50,
+      "unit": "px",
+      "label": "Max width",
+      "default": 1200,
+      "info": "Controls the maximum width of the article content on desktop"
     }
   ]
 }
