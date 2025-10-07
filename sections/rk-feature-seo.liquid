@@ -14,21 +14,32 @@
 
     <div class="rk-feature-seo__hub">
       <div class="rk-feature-seo__center">
-        <div class="rk-feature-seo__recipe-card">
-          <div class="rk-feature-seo__recipe-image"></div>
-          <h3>{{ section.settings.recipe_title | default: 'Chocolate Chip Cookies' }}</h3>
-          <div class="rk-feature-seo__recipe-rating">
-            ⭐⭐⭐⭐⭐ <span>4.9 (127 reviews)</span>
+        <div class="rk-feature-seo__center-google">
+          <div class="rk-feature-seo__google-url">yourstore.com › recipes › chocolate-chip-cookies</div>
+          <h3 class="rk-feature-seo__google-title">🍪 Best Chocolate Chip Cookies Recipe</h3>
+          <div class="rk-feature-seo__google-meta">
+            <span class="rk-feature-seo__google-rating">⭐⭐⭐⭐⭐</span>
+            <span class="rk-feature-seo__google-time">⏱️ 30 min</span>
+            <span class="rk-feature-seo__google-cal">280 cal</span>
+          </div>
+          <p class="rk-feature-seo__google-description">
+            Perfect chocolate chip cookies made with premium ingredients from our store...
+          </p>
+          <div class="rk-feature-seo__schema-badge">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M8 1l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" fill="#68d391"/>
+            </svg>
+            Schema.org Rich Results
           </div>
         </div>
-        
+
         <div class="rk-feature-seo__connections">
           <svg class="rk-feature-seo__connection-lines" viewBox="0 0 400 400">
             <circle cx="200" cy="200" r="120" fill="none" stroke="url(#gradient)" stroke-width="2" stroke-dasharray="5,5" opacity="0.3"/>
             <defs>
               <linearGradient id="gradient">
                 <stop offset="0%" stop-color="#EB4C2E"/>
-                <stop offset="100%" stop-color="#4ECDC4"/>
+                <stop offset="100%" stop-color="#FF8A4C"/>
               </linearGradient>
             </defs>
           </svg>
@@ -51,33 +62,6 @@
             <p class="rk-feature-seo__channel-description">{{ block.settings.description }}</p>
             {% if block.settings.stat != blank %}
               <div class="rk-feature-seo__channel-stat">{{ block.settings.stat }}</div>
-            {% endif %}
-            
-            {% if block.settings.show_preview %}
-              <div class="rk-feature-seo__preview rk-feature-seo__preview--{{ block.settings.preview_type }}">
-                {% case block.settings.preview_type %}
-                  {% when 'google' %}
-                    <div class="rk-feature-seo__google-result">
-                      <div class="rk-feature-seo__google-url">yourstore.com › recipes</div>
-                      <div class="rk-feature-seo__google-title">Chocolate Chip Cookies Recipe</div>
-                      <div class="rk-feature-seo__google-rich">
-                        <span>⭐ 4.9</span>
-                        <span>• 127 reviews</span>
-                        <span>• 30 min</span>
-                      </div>
-                    </div>
-                  {% when 'ai' %}
-                    <div class="rk-feature-seo__ai-result">
-                      <div class="rk-feature-seo__ai-prompt">Show me cookie recipes</div>
-                      <div class="rk-feature-seo__ai-response">Based on Recipe Kit data...</div>
-                    </div>
-                  {% when 'social' %}
-                    <div class="rk-feature-seo__social-card">
-                      <div class="rk-feature-seo__social-image"></div>
-                      <div class="rk-feature-seo__social-text">Delicious Recipe</div>
-                    </div>
-                {% endcase %}
-              </div>
             {% endif %}
           </div>
         {% endfor %}
@@ -204,23 +188,6 @@
           "id": "stat",
           "label": "Statistic",
           "default": "3x more clicks"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_preview",
-          "label": "Show Preview",
-          "default": true
-        },
-        {
-          "type": "select",
-          "id": "preview_type",
-          "label": "Preview Type",
-          "options": [
-            {"value": "google", "label": "Google Result"},
-            {"value": "ai", "label": "AI Response"},
-            {"value": "social", "label": "Social Card"}
-          ],
-          "default": "google"
         }
       ]
     }
@@ -235,9 +202,7 @@
             "icon": "🔍",
             "title": "Google Rich Results",
             "description": "Schema.org structured data",
-            "stat": "3x more clicks",
-            "show_preview": true,
-            "preview_type": "google"
+            "stat": "3x more clicks"
           }
         },
         {
@@ -246,9 +211,7 @@
             "icon": "🤖",
             "title": "AI & ChatGPT",
             "description": "Optimized for AI assistants",
-            "stat": "Future-proof",
-            "show_preview": true,
-            "preview_type": "ai"
+            "stat": "Future-proof"
           }
         },
         {
@@ -257,9 +220,7 @@
             "icon": "📱",
             "title": "Social Media",
             "description": "Open Graph tags included",
-            "stat": "2x more shares",
-            "show_preview": true,
-            "preview_type": "social"
+            "stat": "2x more shares"
           }
         },
         {
@@ -268,8 +229,7 @@
             "icon": "🎙️",
             "title": "Voice Search",
             "description": "Optimized for Alexa & Google",
-            "stat": "40% of searches",
-            "show_preview": false
+            "stat": "40% of searches"
           }
         }
       ]

@@ -1,6 +1,6 @@
 {{ 'rk-hero.css' | asset_url | stylesheet_tag }}
 
-<section class="rk-hero rk-hero--{{ section.settings.layout }}" data-section-id="{{ section.id }}">
+<section class="rk-hero rk-hero--{{ section.settings.layout }} {% if section.settings.hero_image == blank %}rk-hero--no-image{% endif %}" data-section-id="{{ section.id }}">
   <div class="rk-hero__container">
     <div class="rk-hero__content-wrapper">
       <div class="rk-hero__content">
@@ -37,8 +37,8 @@
         {% endif %}
       </div>
 
-      <div class="rk-hero__visual">
-        {% if section.settings.hero_image != blank %}
+      {% if section.settings.hero_image != blank %}
+        <div class="rk-hero__visual">
           <div class="rk-hero__image-wrapper">
             {{ section.settings.hero_image | image_url: width: 1200 | image_tag:
               loading: 'eager',
@@ -47,33 +47,25 @@
               class: 'rk-hero__image'
             }}
           </div>
-        {% else %}
-          <div class="rk-hero__placeholder">
-            <svg class="rk-hero__placeholder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
-              <path d="M2 17L12 22L22 17"/>
-              <path d="M2 12L12 17L22 12"/>
-            </svg>
-          </div>
-        {% endif %}
 
-        {% if section.settings.enable_animation %}
-          <div class="rk-hero__floating-cards">
-            <div class="rk-hero__floating-card rk-hero__floating-card--1">
-              <div class="rk-hero__card-icon">🥘</div>
-              <div class="rk-hero__card-text">Beautiful Recipes</div>
+          {% if section.settings.enable_animation %}
+            <div class="rk-hero__floating-cards">
+              <div class="rk-hero__floating-card rk-hero__floating-card--1">
+                <div class="rk-hero__card-icon">🥘</div>
+                <div class="rk-hero__card-text">Beautiful Recipes</div>
+              </div>
+              <div class="rk-hero__floating-card rk-hero__floating-card--2">
+                <div class="rk-hero__card-icon">📈</div>
+                <div class="rk-hero__card-text">SEO Optimized</div>
+              </div>
+              <div class="rk-hero__floating-card rk-hero__floating-card--3">
+                <div class="rk-hero__card-icon">🛒</div>
+                <div class="rk-hero__card-text">Drive Sales</div>
+              </div>
             </div>
-            <div class="rk-hero__floating-card rk-hero__floating-card--2">
-              <div class="rk-hero__card-icon">📈</div>
-              <div class="rk-hero__card-text">SEO Optimized</div>
-            </div>
-            <div class="rk-hero__floating-card rk-hero__floating-card--3">
-              <div class="rk-hero__card-icon">🛒</div>
-              <div class="rk-hero__card-text">Drive Sales</div>
-            </div>
-          </div>
-        {% endif %}
-      </div>
+          {% endif %}
+        </div>
+      {% endif %}
     </div>
   </div>
 

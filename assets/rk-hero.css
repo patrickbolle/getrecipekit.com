@@ -2,7 +2,7 @@
   --rk-primary: #eb4c2e;
   --rk-primary-hover: #eb2912;
   --rk-secondary: #fff8f3;
-  --rk-accent: #4ecdc4;
+  --rk-accent: #ff8a4c;
   --rk-text-primary: #2d3436;
   --rk-text-secondary: #636e72;
   --rk-background: #fefefe;
@@ -51,6 +51,16 @@
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.rk-hero--no-image .rk-hero__content-wrapper {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.rk-hero--no-image.rk-hero--centered .rk-hero__content-wrapper {
+  text-align: center;
 }
 
 .rk-hero__eyebrow {

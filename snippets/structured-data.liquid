@@ -1,0 +1,107 @@
+{% comment %}
+  Enhanced Structured Data for Recipe Kit
+  Adds Organization, WebSite, and BreadcrumbList schema
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Recipe Kit",
+  "url": "{{ shop.url }}",
+  "logo": "{{ 'logo.png' | asset_url }}",
+  "description": "Recipe Kit is a Shopify app that helps food brands create beautiful, SEO-optimized, and shoppable recipe cards to drive engagement and sales.",
+  "sameAs": [
+    {% if settings.social_twitter_link != blank %}"{{ settings.social_twitter_link }}",{% endif %}
+    {% if settings.social_facebook_link != blank %}"{{ settings.social_facebook_link }}",{% endif %}
+    {% if settings.social_instagram_link != blank %}"{{ settings.social_instagram_link }}"{% endif %}
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Support",
+    "url": "{{ shop.url }}/pages/contact"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ shop.name }}",
+  "url": "{{ shop.url }}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "{{ shop.url }}/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+{% if template contains 'page' or template contains 'article' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "{{ shop.url }}"
+      }
+      {% if request.page_type == 'page' or request.page_type == 'article' %},
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ page_title }}",
+        "item": "{{ canonical_url }}"
+      }
+      {% endif %}
+    ]
+  }
+  </script>
+{% endif %}
+
+{% comment %}
+  SoftwareApplication schema for homepage
+{% endcomment %}
+{% if template == 'index' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Recipe Kit",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web-based",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "priceValidUntil": "2025-12-31",
+      "availability": "https://schema.org/InStock",
+      "description": "14-day free trial available"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "1700",
+      "bestRating": "5"
+    },
+    "description": "Recipe Kit helps food brands create beautiful, SEO-optimized, and shoppable recipe cards for Shopify stores.",
+    "featureList": [
+      "Drag & drop recipe builder",
+      "Schema.org structured data",
+      "Shoppable ingredient linking",
+      "Recipe analytics & insights",
+      "Mobile-responsive design",
+      "SEO optimization"
+    ],
+    "softwareVersion": "2.0",
+    "applicationSubCategory": "Recipe Management Software"
+  }
+  </script>
+{% endif %}

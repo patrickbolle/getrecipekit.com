@@ -105,7 +105,8 @@
   border-radius: 8px;
   padding: 40px 24px 24px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  min-height: 320px;
+  display: flex;
+  flex-direction: column;
   transition: all 0.3s ease;
 }
 
@@ -151,11 +152,80 @@
 
 /* Visuals */
 .rk-feature-revenue__visual {
-  margin-top: 20px;
+  margin-top: auto;
+  padding-top: 20px;
 }
 
+/* Google Search Result */
+.rk-feature-revenue__google-result {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.rk-feature-revenue__google-url {
+  color: #5f6368;
+  font-size: 11px;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.rk-feature-revenue__google-title {
+  color: #1a0dab;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 8px;
+  line-height: 1.3;
+  cursor: pointer;
+}
+
+.rk-feature-revenue__google-title:hover {
+  text-decoration: underline;
+}
+
+.rk-feature-revenue__google-meta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 11px;
+  color: #5f6368;
+  flex-wrap: wrap;
+}
+
+.rk-feature-revenue__google-rating,
+.rk-feature-revenue__google-time,
+.rk-feature-revenue__google-cal {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.rk-feature-revenue__google-description {
+  color: #4d5156;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.rk-feature-revenue__schema-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(104, 211, 145, 0.1);
+  color: #68d391;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* Recipe Card */
 .rk-feature-revenue__recipe-card {
-  background: #f9fafb;
+  background: white;
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
   padding: 16px;
   font-size: 12px;
@@ -163,7 +233,7 @@
 
 .rk-feature-revenue__recipe-image {
   width: 100%;
-  height: 80px;
+  height: 100px;
   background: linear-gradient(
     135deg,
     #ffe4e1 0%,
@@ -174,91 +244,198 @@
 }
 
 .rk-feature-revenue__recipe-card h4 {
-  font-size: 14px;
-  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px;
   color: var(--rk-text-primary, #2d3436);
+}
+
+.rk-feature-revenue__recipe-meta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 11px;
+  color: var(--rk-text-secondary, #636e72);
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rk-feature-revenue__ingredients-header {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--rk-text-primary, #2d3436);
+  margin-bottom: 12px;
 }
 
 .rk-feature-revenue__ingredients {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 12px;
+  gap: 10px;
 }
 
-.rk-feature-revenue__ingredients label {
+.rk-feature-revenue__ingredient-item {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  color: var(--rk-text-secondary, #636e72);
+  padding: 10px 0;
+  border-bottom: 1px solid #f3f4f6;
 }
 
-.rk-feature-revenue__add-all {
-  width: 100%;
-  padding: 10px;
+.rk-feature-revenue__ingredient-item:last-child {
+  border-bottom: none;
+}
+
+.rk-feature-revenue__ingredient-info {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex: 1;
+}
+
+.rk-feature-revenue__ingredient-qty {
+  font-size: 11px;
+  color: var(--rk-text-secondary, #636e72);
+  font-weight: 500;
+  min-width: 50px;
+}
+
+.rk-feature-revenue__ingredient-name {
+  font-size: 13px;
+  color: var(--rk-text-primary, #2d3436);
+}
+
+.rk-feature-revenue__add-to-cart {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
   background: var(--rk-primary, #eb4c2e);
   color: white;
   border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.rk-feature-revenue__add-to-cart:hover {
+  background: #d43920;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(235, 76, 46, 0.3);
+}
+
+.rk-feature-revenue__add-to-cart svg {
+  flex-shrink: 0;
+}
+
+/* Checkout Success */
+.rk-feature-revenue__checkout {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.rk-feature-revenue__shopify-checkout {
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px 16px;
+  margin-bottom: 16px;
+}
+
+.rk-feature-revenue__shopify-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.rk-feature-revenue__checkout-label {
+  font-size: 11px;
+  color: #5f6368;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.rk-feature-revenue__checkout-mockup {
+  background: white;
   border-radius: 6px;
-  font-size: 13px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.rk-feature-revenue__checkout-items {
+  margin-bottom: 16px;
+}
+
+.rk-feature-revenue__checkout-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 12px;
+  color: var(--rk-text-secondary, #636e72);
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.rk-feature-revenue__checkout-item:last-child {
+  border-bottom: none;
+}
+
+.rk-feature-revenue__checkout-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0 8px;
+  font-size: 14px;
+  color: var(--rk-text-primary, #2d3436);
+  border-top: 2px solid #e5e7eb;
+  margin-top: 8px;
+}
+
+.rk-feature-revenue__checkout-button {
+  width: 100%;
+  padding: 12px;
+  background: #5469d4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.rk-feature-revenue__add-all:hover {
-  background: #eb2912;
+.rk-feature-revenue__checkout-button:hover {
+  background: #4053c2;
   transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(84, 105, 212, 0.3);
 }
 
-.rk-feature-revenue__cart {
-  background: #f9fafb;
-  border-radius: 8px;
-  padding: 16px;
-  font-size: 12px;
-}
-
-.rk-feature-revenue__cart-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  color: var(--rk-text-secondary, #636e72);
-}
-
-.rk-feature-revenue__cart-total {
-  padding-top: 12px;
-  text-align: right;
-  color: var(--rk-text-primary, #2d3436);
-  font-size: 14px;
-}
-
-.rk-feature-revenue__checkout {
-  text-align: center;
-  padding: 20px;
-}
-
-.rk-feature-revenue__success {
-  font-size: 24px;
-  color: #68d391;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.rk-feature-revenue__metrics {
+.rk-feature-revenue__impact-badges {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
-.rk-feature-revenue__metrics span {
-  padding: 4px 12px;
-  background: rgba(104, 211, 145, 0.1);
-  color: #68d391;
-  border-radius: 8px;
-  font-size: 12px;
+.rk-feature-revenue__badge {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 11px;
   font-weight: 600;
+}
+
+.rk-feature-revenue__badge--aov {
+  background: rgba(104, 211, 145, 0.15);
+  color: #68d391;
+}
+
+.rk-feature-revenue__badge--saved {
+  background: rgba(84, 105, 212, 0.15);
+  color: #5469d4;
 }
 
 /* Metrics Panel */

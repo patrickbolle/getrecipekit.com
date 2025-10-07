@@ -1,0 +1,134 @@
+{{ 'rk-features-list.css' | asset_url | stylesheet_tag }}
+
+<section class='rk-features-list' data-section-id='{{ section.id }}'>
+  <div class='rk-features-list__container'>
+    <div class='rk-features-list__header'>
+      {% if section.settings.eyebrow != blank %}
+        <span class='rk-features-list__eyebrow'>{{ section.settings.eyebrow }}</span>
+      {% endif %}
+      <h2 class='rk-features-list__heading'>{{ section.settings.heading }}</h2>
+      {% if section.settings.subheading != blank %}
+        <p class='rk-features-list__subheading'>{{ section.settings.subheading }}</p>
+      {% endif %}
+    </div>
+
+    <div class='rk-features-list__grid'>
+      {% for block in section.blocks %}
+        {% if block.type == 'category' %}
+          <div class='rk-features-list__category' {{ block.shopify_attributes }}>
+            <h3 class='rk-features-list__category-title'>
+              <span class='rk-features-list__category-icon'>{{ block.settings.icon }}</span>
+              {{ block.settings.title }}
+            </h3>
+            <div class='rk-features-list__category-features'>
+              {% assign feature_list = block.settings.features | newline_to_br | split: '<br />' %}
+              {% for feature in feature_list %}
+                {% if feature != blank %}
+                  <div class='rk-features-list__feature'>
+                    <svg class='rk-features-list__check' width='20' height='20' viewBox='0 0 20 20' fill='none'>
+                      <circle cx='10' cy='10' r='10' fill='#68d391' opacity='0.2'/>
+                      <path d='M6 10l3 3 5-6' stroke='#68d391' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/>
+                    </svg>
+                    <span>{{ feature }}</span>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "RK Features List",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Complete Feature Set"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Everything you need to <em>succeed</em></p>"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Recipe Kit includes all the tools food brands need to create, share, and monetize recipes"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Feature Category",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (Emoji)",
+          "default": "🍳"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Category Title",
+          "default": "Recipe Creation"
+        },
+        {
+          "type": "textarea",
+          "id": "features",
+          "label": "Features (one per line)",
+          "default": "Drag & drop recipe builder\nMultiple layout options\nCustom branding & styling",
+          "info": "Enter each feature on a new line"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK Features List",
+      "blocks": [
+        {
+          "type": "category",
+          "settings": {
+            "icon": "🍳",
+            "title": "Recipe Creation",
+            "features": "Drag & drop recipe builder\nMultiple layout options\nCustom branding & styling\nImage optimization\nVideo embedding\nPrint-friendly formatting"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "icon": "🔍",
+            "title": "SEO & Discovery",
+            "features": "Schema.org structured data\nGoogle Rich Results\nAI & ChatGPT optimization\nSocial media previews\nVoice search ready\nAutomatic sitemap generation"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "icon": "🛒",
+            "title": "Shoppable & Commerce",
+            "features": "Product ingredient linking\nOne-click add to cart\nServing size calculator\nBundle recommendations\nOut-of-stock alternatives\nCross-sell engine"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "icon": "📊",
+            "title": "Analytics & Insights",
+            "features": "Recipe performance tracking\nRevenue attribution\nCustomer behavior analysis\nSmart recommendations\nA/B testing\nConversion tracking"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

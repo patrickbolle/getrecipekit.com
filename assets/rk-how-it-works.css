@@ -1,24 +1,25 @@
 .rk-how-it-works {
   padding: 80px 0;
-  background: var(--rk-background, #fefefe);
+  background: linear-gradient(135deg, #fefefe 0%, #fff8f3 100%);
+  overflow: hidden;
 }
 
 .rk-how-it-works__container {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 .rk-how-it-works__header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 80px;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .rk-how-it-works__heading {
-  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-size: clamp(2.5rem, 5vw, 3rem);
   font-weight: 700;
   color: var(--rk-text-primary, #2d3436);
   margin: 0 0 16px;
@@ -26,7 +27,7 @@
 }
 
 .rk-how-it-works__description {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--rk-text-secondary, #636e72);
   line-height: 1.6;
 }
@@ -35,21 +36,43 @@
   margin: 0;
 }
 
-/* Timeline Layout */
+/* Timeline Layout - Step by Step */
 .rk-how-it-works--timeline .rk-how-it-works__steps {
-  display: flex;
-  justify-content: space-between;
   position: relative;
   margin-bottom: 48px;
 }
 
+/* Vertical connecting line */
+.rk-how-it-works--timeline .rk-how-it-works__steps::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 80px;
+  bottom: 80px;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    var(--rk-primary, #eb4c2e) 0%,
+    #ff8a4c 100%
+  );
+  opacity: 0.2;
+}
+
 .rk-how-it-works--timeline .rk-how-it-works__step {
-  flex: 1;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 60px;
   position: relative;
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rk-how-it-works--timeline .rk-how-it-works__step:last-child {
+  margin-bottom: 0;
 }
 
 .rk-how-it-works--timeline .rk-how-it-works__step--visible {
@@ -101,72 +124,120 @@
 
 /* Step Number Styles */
 .rk-how-it-works__step-number {
-  margin-bottom: 20px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
 }
 
-.rk-how-it-works--vertical .rk-how-it-works__step-number {
-  flex-shrink: 0;
-  margin-bottom: 0;
+.rk-how-it-works--cards .rk-how-it-works__step-number {
+  margin-bottom: 20px;
 }
 
 .rk-how-it-works__number-circle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: 80px;
+  height: 80px;
   background: linear-gradient(
     135deg,
     var(--rk-primary, #eb4c2e) 0%,
-    var(--rk-accent, #4ecdc4) 100%
+    #ff8a4c 100%
   );
   color: white;
   border-radius: 50%;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 700;
-  box-shadow: 0 4px 12px rgba(235, 76, 46, 0.3);
+  box-shadow: 0 8px 24px rgba(235, 76, 46, 0.25);
+  position: relative;
+}
+
+.rk-how-it-works__number-circle::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--rk-primary, #eb4c2e);
+  opacity: 0.2;
 }
 
 .rk-how-it-works__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
-  background: rgba(235, 76, 46, 0.1);
-  border-radius: var(--rk-border-radius-sm, 8px);
-  font-size: 32px;
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  font-size: 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+.rk-how-it-works__icon::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(235, 76, 46, 0.2);
 }
 
 .rk-how-it-works__number-text {
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--rk-primary, #eb4c2e);
-  background: rgba(235, 76, 46, 0.1);
-  padding: 4px 12px;
-  border-radius: 20px;
+  letter-spacing: 0.1em;
+  color: white;
+  background: linear-gradient(
+    135deg,
+    var(--rk-primary, #eb4c2e) 0%,
+    #ff8a4c 100%
+  );
+  padding: 8px 20px;
+  border-radius: 30px;
   display: inline-block;
+  box-shadow: 0 4px 12px rgba(235, 76, 46, 0.25);
 }
 
 /* Step Content */
 .rk-how-it-works__step-content {
-  flex: 1;
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(235, 76, 46, 0.1);
+  text-align: center;
+}
+
+.rk-how-it-works--timeline
+  .rk-how-it-works__step:hover
+  .rk-how-it-works__step-content {
+  box-shadow: 0 8px 32px rgba(235, 76, 46, 0.15);
+  transform: translateY(-4px);
+}
+
+.rk-how-it-works--cards .rk-how-it-works__step-content {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border: none;
 }
 
 .rk-how-it-works__step-title {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: 700;
   color: var(--rk-text-primary, #2d3436);
   margin: 0 0 12px;
   line-height: 1.3;
 }
 
 .rk-how-it-works__step-description {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--rk-text-secondary, #636e72);
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0;
 }
 
@@ -182,24 +253,13 @@
   display: block;
 }
 
-/* Connector Lines */
+/* Connector Lines - Hidden in new design */
 .rk-how-it-works__connector {
-  position: absolute;
-  top: 24px;
-  left: calc(100% - 20px);
-  width: calc(100% - 40px);
-  pointer-events: none;
-}
-
-.rk-how-it-works--vertical .rk-how-it-works__connector {
   display: none;
 }
 
 .rk-how-it-works__connector-line {
-  width: 100%;
-  height: 2px;
-  color: var(--rk-accent, #4ecdc4);
-  opacity: 0.3;
+  display: none;
 }
 
 /* CTA Button */
@@ -230,13 +290,19 @@
 }
 
 @media (max-width: 991px) {
-  .rk-how-it-works--timeline .rk-how-it-works__steps {
-    flex-direction: column;
-    gap: 40px;
+  .rk-how-it-works__number-circle,
+  .rk-how-it-works__icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
   }
 
-  .rk-how-it-works--timeline .rk-how-it-works__connector {
-    display: none;
+  .rk-how-it-works__icon {
+    font-size: 32px;
+  }
+
+  .rk-how-it-works__step-content {
+    padding: 24px;
   }
 }
 
@@ -246,7 +312,7 @@
   }
 
   .rk-how-it-works__header {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
   }
 
   .rk-how-it-works__heading {
@@ -254,7 +320,28 @@
   }
 
   .rk-how-it-works__description {
-    font-size: 16px;
+    font-size: 18px;
+  }
+
+  .rk-how-it-works--timeline .rk-how-it-works__steps::before {
+    display: none;
+  }
+
+  .rk-how-it-works--timeline .rk-how-it-works__step {
+    margin-bottom: 48px;
+    gap: 20px;
+  }
+
+  .rk-how-it-works__step-content {
+    padding: 24px;
+  }
+
+  .rk-how-it-works__step-title {
+    font-size: 20px;
+  }
+
+  .rk-how-it-works__step-description {
+    font-size: 15px;
   }
 
   .rk-how-it-works--cards .rk-how-it-works__steps {

@@ -1,0 +1,227 @@
+{{ 'rk-feature-highlight.css' | asset_url | stylesheet_tag }}
+
+<section
+  class='rk-feature-highlight rk-feature-highlight--{{ section.settings.layout }}'
+  data-section-id='{{ section.id }}'
+>
+  <div class='rk-feature-highlight__container'>
+    <div class='rk-feature-highlight__content'>
+      {% if section.settings.eyebrow != blank %}
+        <span class='rk-feature-highlight__eyebrow'>{{ section.settings.eyebrow }}</span>
+      {% endif %}
+      <h2 class='rk-feature-highlight__heading'>{{ section.settings.heading }}</h2>
+      {% if section.settings.description != blank %}
+        <div class='rk-feature-highlight__description'>{{ section.settings.description }}</div>
+      {% endif %}
+
+      {% if section.blocks.size > 0 %}
+        <ul class='rk-feature-highlight__features'>
+          {% for block in section.blocks %}
+            <li class='rk-feature-highlight__feature-item' {{ block.shopify_attributes }}>
+              <div class='rk-feature-highlight__feature-icon'>{{ block.settings.icon }}</div>
+              <div class='rk-feature-highlight__feature-content'>
+                <h3 class='rk-feature-highlight__feature-title'>{{ block.settings.title }}</h3>
+                <p class='rk-feature-highlight__feature-description'>{{ block.settings.description }}</p>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if section.settings.cta_text != blank %}
+        <a href='{{ section.settings.cta_link }}' class='rk-feature-highlight__cta'>
+          {{ section.settings.cta_text }}
+          <svg width='20' height='20' viewBox='0 0 20 20' fill='none'>
+            <path
+              d='M7 10h6m0 0l-3-3m3 3l-3 3'
+              stroke='currentColor'
+              stroke-width='2'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+            />
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+
+    <div class='rk-feature-highlight__visual'>
+      {% case section.settings.mockup_type %}
+        {% when 'recipe-editor' %}
+          <div class='rk-mockup rk-mockup--editor'>
+            <div class='rk-mockup__toolbar'>
+              <div class='rk-mockup__toolbar-item'>Recipe</div>
+              <div class='rk-mockup__toolbar-item'>Design</div>
+              <div class='rk-mockup__toolbar-item'>Settings</div>
+            </div>
+            <div class='rk-mockup__content'>
+              <div class='rk-mockup__field'>
+                <div class='rk-mockup__label'>Recipe Title</div>
+                <div class='rk-mockup__input'>Chocolate Chip Cookies</div>
+              </div>
+              <div class='rk-mockup__field'>
+                <div class='rk-mockup__label'>Description</div>
+                <div class='rk-mockup__textarea'></div>
+              </div>
+              <div class='rk-mockup__field'>
+                <div class='rk-mockup__label'>Ingredients</div>
+                <div class='rk-mockup__list'>
+                  <div class='rk-mockup__list-item'>2 cups flour</div>
+                  <div class='rk-mockup__list-item'>1 cup butter</div>
+                  <div class='rk-mockup__list-item'>1 cup sugar</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        {% when 'google-search' %}
+          <div class='rk-mockup rk-mockup--google'>
+            <div class='rk-mockup__search-bar'>
+              <svg width='16' height='16' viewBox='0 0 24 24' fill='none'>
+                <circle cx='11' cy='11' r='8' stroke='#9ca3af' stroke-width='2'/>
+                <path d='M21 21l-4.35-4.35' stroke='#9ca3af' stroke-width='2' stroke-linecap='round'/>
+              </svg>
+              chocolate chip cookie recipe
+            </div>
+            <div class='rk-mockup__result'>
+              <div class='rk-mockup__url'>yourstore.com › recipes</div>
+              <div class='rk-mockup__title'>🍪 Best Chocolate Chip Cookies</div>
+              <div class='rk-mockup__meta'>⭐⭐⭐⭐⭐ • ⏱️ 30 min • 280 cal</div>
+              <div class='rk-mockup__description'>
+                Perfect chocolate chip cookies made with premium ingredients...
+              </div>
+            </div>
+          </div>
+
+        {% when 'recipe-card' %}
+          <div class='rk-mockup rk-mockup--recipe'>
+            <div class='rk-mockup__recipe-image'></div>
+            <div class='rk-mockup__recipe-title'>Chocolate Chip Cookies</div>
+            <div class='rk-mockup__recipe-meta'>⏱️ 30 min • 🍪 24 cookies</div>
+            <div class='rk-mockup__ingredients'>
+              <div class='rk-mockup__ingredient'>
+                <span>2 cups Premium Flour</span>
+                <button class='rk-mockup__add-btn'>Add to Cart</button>
+              </div>
+              <div class='rk-mockup__ingredient'>
+                <span>1 cup Organic Butter</span>
+                <button class='rk-mockup__add-btn'>Add to Cart</button>
+              </div>
+              <div class='rk-mockup__ingredient'>
+                <span>1 cup Pure Sugar</span>
+                <button class='rk-mockup__add-btn'>Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+        {% when 'analytics' %}
+          <div class='rk-mockup rk-mockup--analytics'>
+            <div class='rk-mockup__chart'>
+              <div class='rk-mockup__bar' style='height: 60%'></div>
+              <div class='rk-mockup__bar' style='height: 80%'></div>
+              <div class='rk-mockup__bar' style='height: 45%'></div>
+              <div class='rk-mockup__bar' style='height: 90%'></div>
+              <div class='rk-mockup__bar' style='height: 70%'></div>
+            </div>
+            <div class='rk-mockup__stats'>
+              <div class='rk-mockup__stat'>
+                <div class='rk-mockup__stat-value'>12.5K</div>
+                <div class='rk-mockup__stat-label'>Recipe Views</div>
+              </div>
+              <div class='rk-mockup__stat'>
+                <div class='rk-mockup__stat-value'>$8,450</div>
+                <div class='rk-mockup__stat-label'>Revenue</div>
+              </div>
+            </div>
+          </div>
+      {% endcase %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "RK Feature Highlight",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        { "value": "image-left", "label": "Image Left" },
+        { "value": "image-right", "label": "Image Right" }
+      ],
+      "default": "image-right"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Feature Name"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Feature <em>Headline</em></p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "select",
+      "id": "mockup_type",
+      "label": "Mockup Type",
+      "options": [
+        { "value": "recipe-editor", "label": "Recipe Editor" },
+        { "value": "google-search", "label": "Google Search" },
+        { "value": "recipe-card", "label": "Recipe Card" },
+        { "value": "analytics", "label": "Analytics Dashboard" }
+      ],
+      "default": "recipe-editor"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (Emoji)",
+          "default": "✨"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Feature description goes here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK Feature Highlight"
+    }
+  ]
+}
+{% endschema %}

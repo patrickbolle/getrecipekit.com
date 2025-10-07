@@ -1,0 +1,317 @@
+{
+  "sections": {
+    "hero": {
+      "type": "rk-hero",
+      "settings": {
+        "eyebrow": "Recipe Kit Features",
+        "headline": "<p>Everything you need to <em>grow</em> with recipes</p>",
+        "description": "<p>From beautiful recipe cards to powerful analytics, Recipe Kit gives food brands the tools to turn content into revenue.</p>",
+        "cta_primary_text": "Start Free Trial",
+        "cta_primary_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+        "cta_secondary_text": "View Pricing",
+        "cta_secondary_link": "/pricing",
+        "trust_badge": "✨ 14-day free trial • No credit card required",
+        "layout": "centered",
+        "enable_animation": false,
+        "show_scroll_indicator": false
+      }
+    },
+    "features-list": {
+      "type": "rk-features-list",
+      "blocks": {
+        "category-1": {
+          "type": "category",
+          "settings": {
+            "icon": "🍳",
+            "title": "Recipe Creation & Design",
+            "features": "Drag & drop recipe builder\nMultiple layout options (card, list, full-page)\nCustom branding & styling\nImage optimization & lazy loading\nVideo embedding (YouTube, Vimeo)\nPrint-friendly formatting\nMobile-responsive design\nServing size calculator\nIngredient notes & substitutions"
+          }
+        },
+        "category-2": {
+          "type": "category",
+          "settings": {
+            "icon": "🔍",
+            "title": "SEO & Discoverability",
+            "features": "Schema.org structured data\nGoogle Rich Results eligible\nAI & ChatGPT optimization\nOpen Graph social previews\nVoice search optimization\nAutomatic sitemap generation\nMeta title & description control\nCanonical URLs\nImage alt text optimization"
+          }
+        },
+        "category-3": {
+          "type": "category",
+          "settings": {
+            "icon": "🛒",
+            "title": "Shoppable & Commerce",
+            "features": "Smart product-ingredient linking\nOne-click add all to cart\nInline add to cart buttons\nServing size product calculator\nBundle & upsell recommendations\nOut-of-stock alternatives\nCross-sell engine\nVariant support\nInventory sync"
+          }
+        },
+        "category-4": {
+          "type": "category",
+          "settings": {
+            "icon": "📊",
+            "title": "Analytics & Insights",
+            "features": "Recipe performance tracking\nRevenue attribution\nCustomer behavior analysis\nSmart content recommendations\nConversion tracking\nTop recipes dashboard\nIngredient popularity metrics\nTraffic source analysis"
+          }
+        },
+        "category-5": {
+          "type": "category",
+          "settings": {
+            "icon": "⭐",
+            "title": "Engagement & Social",
+            "features": "Recipe ratings & reviews\nSocial sharing buttons\nPinterest-optimized images\nEmail recipe saves\nPrint recipe functionality\nCook mode with timers\nRecipe collections\nUser favorites\nRecipe comments"
+          }
+        },
+        "category-6": {
+          "type": "category",
+          "settings": {
+            "icon": "🎨",
+            "title": "Customization & Branding",
+            "features": "Custom CSS support\nBrand color matching\nFont customization\nLayout flexibility\nCustom badges & labels\nMultiple themes\nWhite label options\nIcon customization"
+          }
+        }
+      },
+      "block_order": [
+        "category-1",
+        "category-2",
+        "category-3",
+        "category-4",
+        "category-5",
+        "category-6"
+      ],
+      "settings": {
+        "eyebrow": "Complete Feature Set",
+        "heading": "<p>Everything you need to <em>succeed</em></p>",
+        "subheading": "Recipe Kit includes all the tools food brands need to create, share, and monetize recipes on Shopify"
+      }
+    },
+    "highlight-recipe-creation": {
+      "type": "rk-feature-highlight",
+      "blocks": {
+        "feature-1": {
+          "type": "feature",
+          "settings": {
+            "icon": "✨",
+            "title": "Intuitive Drag & Drop",
+            "description": "Build beautiful recipes without code. Simply drag elements into place and customize everything."
+          }
+        },
+        "feature-2": {
+          "type": "feature",
+          "settings": {
+            "icon": "🎨",
+            "title": "Match Your Brand",
+            "description": "Customize colors, fonts, and layouts to perfectly match your store's unique style."
+          }
+        },
+        "feature-3": {
+          "type": "feature",
+          "settings": {
+            "icon": "📱",
+            "title": "Mobile Optimized",
+            "description": "Every recipe looks perfect on any device with automatic responsive design."
+          }
+        }
+      },
+      "block_order": ["feature-1", "feature-2", "feature-3"],
+      "settings": {
+        "layout": "image-right",
+        "eyebrow": "Recipe Creation",
+        "heading": "<p>Create Beautiful Recipes in <em>Minutes</em></p>",
+        "description": "<p>Our intuitive drag-and-drop editor makes it easy to create professional recipe cards that match your brand perfectly. No coding required.</p>",
+        "mockup_type": "recipe-editor",
+        "cta_text": "Try the Recipe Builder",
+        "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com"
+      }
+    },
+    "highlight-seo": {
+      "type": "rk-feature-highlight",
+      "blocks": {
+        "feature-1": {
+          "type": "feature",
+          "settings": {
+            "icon": "🔍",
+            "title": "Schema.org Markup",
+            "description": "Automatic structured data makes your recipes eligible for Google Rich Results."
+          }
+        },
+        "feature-2": {
+          "type": "feature",
+          "settings": {
+            "icon": "🤖",
+            "title": "AI-Ready Content",
+            "description": "Optimized for AI assistants like ChatGPT to help customers discover your recipes."
+          }
+        },
+        "feature-3": {
+          "type": "feature",
+          "settings": {
+            "icon": "📈",
+            "title": "3x More Clicks",
+            "description": "Rich results with ratings, cook time, and images drive significantly more traffic."
+          }
+        }
+      },
+      "block_order": ["feature-1", "feature-2", "feature-3"],
+      "settings": {
+        "layout": "image-left",
+        "eyebrow": "SEO & Discoverability",
+        "heading": "<p>Get Found in <em>Google Search</em></p>",
+        "description": "<p>Recipe Kit automatically adds Schema.org structured data to every recipe, making them eligible for Google Rich Results with ratings, cook time, and calories.</p>",
+        "mockup_type": "google-search",
+        "cta_text": "Learn About SEO",
+        "cta_link": "/pages/seo-structured-data"
+      }
+    },
+    "highlight-shoppable": {
+      "type": "rk-feature-highlight",
+      "blocks": {
+        "feature-1": {
+          "type": "feature",
+          "settings": {
+            "icon": "🔗",
+            "title": "Smart Product Linking",
+            "description": "Connect ingredients to products with automatic matching and variant support."
+          }
+        },
+        "feature-2": {
+          "type": "feature",
+          "settings": {
+            "icon": "🛒",
+            "title": "One-Click Shopping",
+            "description": "Customers can add individual ingredients or all at once with a single click."
+          }
+        },
+        "feature-3": {
+          "type": "feature",
+          "settings": {
+            "icon": "💰",
+            "title": "45% Higher AOV",
+            "description": "Recipe-driven shopping increases average order value significantly."
+          }
+        }
+      },
+      "block_order": ["feature-1", "feature-2", "feature-3"],
+      "settings": {
+        "layout": "image-right",
+        "eyebrow": "Shoppable Recipes",
+        "heading": "<p>Turn Recipes into <em>Revenue</em></p>",
+        "description": "<p>Make every recipe shoppable with inline add-to-cart buttons. Customers can purchase ingredients directly from the recipe card in one seamless flow.</p>",
+        "mockup_type": "recipe-card",
+        "cta_text": "See Shoppable Features",
+        "cta_link": "/pages/shoppable-recipes"
+      }
+    },
+    "highlight-analytics": {
+      "type": "rk-feature-highlight",
+      "blocks": {
+        "feature-1": {
+          "type": "feature",
+          "settings": {
+            "icon": "📊",
+            "title": "Recipe Performance",
+            "description": "Track views, engagement, and revenue for every recipe in your dashboard."
+          }
+        },
+        "feature-2": {
+          "type": "feature",
+          "settings": {
+            "icon": "💡",
+            "title": "Smart Recommendations",
+            "description": "AI-powered insights tell you what content to create next."
+          }
+        },
+        "feature-3": {
+          "type": "feature",
+          "settings": {
+            "icon": "🎯",
+            "title": "Revenue Attribution",
+            "description": "See exactly how much revenue each recipe generates for your store."
+          }
+        }
+      },
+      "block_order": ["feature-1", "feature-2", "feature-3"],
+      "settings": {
+        "layout": "image-left",
+        "eyebrow": "Analytics & Insights",
+        "heading": "<p>Know What <em>Works</em></p>",
+        "description": "<p>Deep analytics show you which recipes drive the most engagement and revenue, helping you create more of what your customers love.</p>",
+        "mockup_type": "analytics",
+        "cta_text": "Explore Analytics",
+        "cta_link": "/pages/analytics-tracking"
+      }
+    },
+    "testimonials": {
+      "type": "rk-testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "company": "Schacht Spindle Company",
+            "quote": "We're so impressed with Recipe Kit and its support. The app ties recipes directly to our products, streamlining our workflow and driving sales.",
+            "author": "",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "company": "Olive Love",
+            "quote": "Recipe Kit has transformed how we present recipes. Customers can explore our recipes, shop ingredients instantly, and share them beautifully across platforms.",
+            "author": "",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        "testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "company": "Growing Naturals",
+            "quote": "This app did a phenomenal job helping us to integrate recipes into our store. The analytics feature is a bonus—we can now see which recipes drive the most engagement.",
+            "author": "",
+            "rating": 5,
+            "verified": true
+          }
+        }
+      },
+      "block_order": ["testimonial-1", "testimonial-2", "testimonial-3"],
+      "settings": {
+        "eyebrow": "Customer Success Stories",
+        "heading": "<p>Loved by <em>Food Brands</em> Everywhere</p>",
+        "subheading": "See how Recipe Kit is helping brands connect with customers through beautiful, shoppable recipes.",
+        "stats_enable": true,
+        "stat_1_number": "1700+",
+        "stat_1_label": "Happy Brands",
+        "stat_2_number": "4.8/5",
+        "stat_2_label": "Average Rating",
+        "stat_3_number": "",
+        "stat_3_label": "",
+        "cta_text": "Join These Success Stories",
+        "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com"
+      }
+    },
+    "final-cta": {
+      "type": "rk-cta-final",
+      "settings": {
+        "badge_text": "",
+        "heading": "<p>Ready to transform your <em>recipe content</em>?</p>",
+        "subheading": "<p>Join hundreds of food brands growing with Recipe Kit</p>",
+        "cta_primary_text": "Start Your Free Trial",
+        "cta_primary_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+        "cta_secondary_text": "View Pricing",
+        "cta_secondary_link": "/pricing",
+        "trust_indicators": "✓ 14-day free trial ✓ No credit card required ✓ Setup in minutes",
+        "background_type": "linear-gradient(135deg, #FFF8F3 0%, #FFE4E1 100%)",
+        "show_decorations": true
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "features-list",
+    "highlight-recipe-creation",
+    "highlight-seo",
+    "highlight-shoppable",
+    "highlight-analytics",
+    "testimonials",
+    "final-cta"
+  ]
+}

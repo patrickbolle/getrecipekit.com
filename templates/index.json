@@ -286,29 +286,29 @@
         "step-1": {
           "type": "step",
           "settings": {
-            "icon": "👀",
-            "title": "Customer Views Recipe",
-            "description": "Visitors discover your delicious recipes with highlighted ingredients",
+            "icon": "🔍",
+            "title": "Found in Google Search",
+            "description": "Recipe Kit adds Schema.org markup so your recipes appear in Google with rich results - ratings, cook time, and calories",
             "show_visual": true,
-            "visual_type": "recipe"
+            "visual_type": "google"
           }
         },
         "step-2": {
           "type": "step",
           "settings": {
             "icon": "🛒",
-            "title": "Smart Shopping Experience",
-            "description": "One-click adds all ingredients to cart with quantity calculator",
+            "title": "Shop Directly from Recipe",
+            "description": "Customers discover your recipe and can instantly add all ingredients to their cart with one click",
             "show_visual": true,
-            "visual_type": "cart"
+            "visual_type": "recipe"
           }
         },
         "step-3": {
           "type": "step",
           "settings": {
-            "icon": "💳",
-            "title": "Seamless Checkout",
-            "description": "Higher order values with recipe-based product bundles",
+            "icon": "💰",
+            "title": "Complete Purchase",
+            "description": "Seamless checkout turns recipe browsers into buyers, increasing average order value by 45%",
             "show_visual": true,
             "visual_type": "checkout"
           }
@@ -320,9 +320,9 @@
         "step-3"
       ],
       "settings": {
-        "eyebrow": "Revenue Generation",
+        "eyebrow": "Recipe Schema to Revenue",
         "heading": "<p>Turn Inspiration into <em>Sales</em></p>",
-        "subheading": "Convert recipe browsers into buyers with seamless shopping experiences that drive revenue.",
+        "subheading": "Your recipes get discovered in Google with rich schema markup, customers find them, and purchase your products directly from the recipe card.",
         "show_metrics": false,
         "metrics_title": "Revenue Impact",
         "show_calculator": false
@@ -474,32 +474,32 @@
           "type": "step",
           "settings": {
             "icon": "✍️",
-            "title": "Create Your Recipe",
-            "description": "Use our intuitive editor to build beautiful recipes that match your brand"
+            "title": "Build Your Recipe",
+            "description": "Add ingredients, instructions, prep time, servings, and beautiful photos using our drag-and-drop recipe builder"
           }
         },
         "step-2": {
           "type": "step",
           "settings": {
-            "icon": "🎨",
-            "title": "Customize the Look",
-            "description": "Match your brand's style with custom colors, fonts, and layouts"
+            "icon": "🛍️",
+            "title": "Link Your Products",
+            "description": "Connect recipe ingredients to your Shopify products with one-click add-to-cart buttons"
           }
         },
         "step-3": {
           "type": "step",
           "settings": {
             "icon": "🚀",
-            "title": "Publish & Share",
-            "description": "One-click publishing to your store and all your marketing channels"
+            "title": "Publish to Your Store",
+            "description": "Embed recipe cards anywhere on your site - product pages, blog posts, or dedicated recipe collections"
           }
         },
         "step-4": {
           "type": "step",
           "settings": {
             "icon": "📊",
-            "title": "Track & Grow",
-            "description": "Monitor performance and watch your engagement and sales increase"
+            "title": "Track Sales & Engagement",
+            "description": "See which recipes drive the most clicks, add-to-carts, and revenue with built-in analytics"
           }
         }
       },

@@ -1,80 +1,164 @@
 {{ 'rk-feature-revenue.css' | asset_url | stylesheet_tag }}
 
-<section class="rk-feature-revenue" data-section-id="{{ section.id }}">
-  <div class="rk-feature-revenue__container">
-    <div class="rk-feature-revenue__header">
+<section class='rk-feature-revenue' data-section-id='{{ section.id }}'>
+  <div class='rk-feature-revenue__container'>
+    <div class='rk-feature-revenue__header'>
       {% if section.settings.eyebrow != blank %}
-        <span class="rk-feature-revenue__eyebrow">{{ section.settings.eyebrow }}</span>
+        <span class='rk-feature-revenue__eyebrow'>{{ section.settings.eyebrow }}</span>
       {% endif %}
-      <h2 class="rk-feature-revenue__heading">{{ section.settings.heading }}</h2>
+      <h2 class='rk-feature-revenue__heading'>{{ section.settings.heading }}</h2>
       {% if section.settings.subheading != blank %}
-        <p class="rk-feature-revenue__subheading">{{ section.settings.subheading }}</p>
+        <p class='rk-feature-revenue__subheading'>{{ section.settings.subheading }}</p>
       {% endif %}
     </div>
 
-    <div class="rk-feature-revenue__flow">
+    <div class='rk-feature-revenue__flow'>
       {% for block in section.blocks %}
-        <div class="rk-feature-revenue__step rk-feature-revenue__step--{{ forloop.index }}" {{ block.shopify_attributes }}>
-          <div class="rk-feature-revenue__step-number">{{ forloop.index }}</div>
-          <div class="rk-feature-revenue__step-card">
-            <div class="rk-feature-revenue__step-header">
-              <span class="rk-feature-revenue__step-icon">{{ block.settings.icon }}</span>
-              <h3 class="rk-feature-revenue__step-title">{{ block.settings.title }}</h3>
+        <div
+          class='rk-feature-revenue__step rk-feature-revenue__step--{{ forloop.index }}'
+          {{ block.shopify_attributes }}
+        >
+          <div class='rk-feature-revenue__step-number'>{{ forloop.index }}</div>
+          <div class='rk-feature-revenue__step-card'>
+            <div class='rk-feature-revenue__step-header'>
+              <span class='rk-feature-revenue__step-icon'>{{ block.settings.icon }}</span>
+              <h3 class='rk-feature-revenue__step-title'>{{ block.settings.title }}</h3>
             </div>
-            <p class="rk-feature-revenue__step-description">{{ block.settings.description }}</p>
-            
+            <p class='rk-feature-revenue__step-description'>{{ block.settings.description }}</p>
+
             {% if block.settings.show_visual %}
-              <div class="rk-feature-revenue__visual rk-feature-revenue__visual--{{ block.settings.visual_type }}">
+              <div class='rk-feature-revenue__visual rk-feature-revenue__visual--{{ block.settings.visual_type }}'>
                 {% case block.settings.visual_type %}
-                  {% when 'recipe' %}
-                    <div class="rk-feature-revenue__recipe-card">
-                      <div class="rk-feature-revenue__recipe-image"></div>
-                      <h4>Chocolate Chip Cookies</h4>
-                      <div class="rk-feature-revenue__ingredients">
-                        <label><input type="checkbox" checked> 2 cups flour</label>
-                        <label><input type="checkbox" checked> 1 cup butter</label>
-                        <label><input type="checkbox"> 1 cup sugar</label>
+                  {% when 'google' %}
+                    <div class='rk-feature-revenue__google-result'>
+                      <div class='rk-feature-revenue__google-url'>yourstore.com › recipes › chocolate-chip-cookies</div>
+                      <h4 class='rk-feature-revenue__google-title'>🍪 Best Chocolate Chip Cookies Recipe</h4>
+                      <div class='rk-feature-revenue__google-meta'>
+                        <span class='rk-feature-revenue__google-rating'>⭐⭐⭐⭐⭐</span>
+                        <span class='rk-feature-revenue__google-time'>⏱️ 30 min</span>
+                        <span class='rk-feature-revenue__google-cal'>280 cal</span>
                       </div>
-                      <button class="rk-feature-revenue__add-all">
-                        🛒 Add All to Cart ($24.99)
-                      </button>
+                      <p class='rk-feature-revenue__google-description'>
+                        Perfect chocolate chip cookies made with premium ingredients from our store...
+                      </p>
+                      <div class='rk-feature-revenue__schema-badge'>
+                        <svg width='16' height='16' viewBox='0 0 16 16' fill='none'>
+                          <path d="M8 1l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z" fill="#68d391"/>
+                        </svg>
+                        Schema.org Rich Results
+                      </div>
                     </div>
-                  {% when 'cart' %}
-                    <div class="rk-feature-revenue__cart">
-                      <div class="rk-feature-revenue__cart-item">
-                        <span>Organic Flour</span>
-                        <span>$8.99</span>
+                  {% when 'recipe' %}
+                    <div class='rk-feature-revenue__recipe-card'>
+                      <h4>Chocolate Chip Cookies</h4>
+                      <div class='rk-feature-revenue__recipe-meta'>
+                        <span>⏱️ 30 min</span>
+                        <span>🍪 24 cookies</span>
                       </div>
-                      <div class="rk-feature-revenue__cart-item">
-                        <span>Premium Butter</span>
-                        <span>$12.99</span>
-                      </div>
-                      <div class="rk-feature-revenue__cart-item">
-                        <span>Pure Sugar</span>
-                        <span>$3.01</span>
-                      </div>
-                      <div class="rk-feature-revenue__cart-total">
-                        <strong>Total: $24.99</strong>
+                      <div class='rk-feature-revenue__ingredients-header'>Ingredients</div>
+                      <div class='rk-feature-revenue__ingredients'>
+                        <div class='rk-feature-revenue__ingredient-item'>
+                          <div class='rk-feature-revenue__ingredient-info'>
+                            <span class='rk-feature-revenue__ingredient-qty'>2 cups</span>
+                            <span class='rk-feature-revenue__ingredient-name'>Premium Flour</span>
+                          </div>
+                          <button class='rk-feature-revenue__add-to-cart'>
+                            <svg
+                              width='14'
+                              height='14'
+                              viewBox='0 0 24 24'
+                              fill='none'
+                              stroke='currentColor'
+                              stroke-width='2'
+                            >
+                              <path d="M9 21a1 1 0 100-2 1 1 0 000 2zM20 21a1 1 0 100-2 1 1 0 000 2zM1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+                            </svg>
+                            Add to Cart
+                          </button>
+                        </div>
+                        <div class='rk-feature-revenue__ingredient-item'>
+                          <div class='rk-feature-revenue__ingredient-info'>
+                            <span class='rk-feature-revenue__ingredient-qty'>1 cup</span>
+                            <span class='rk-feature-revenue__ingredient-name'>Organic Butter</span>
+                          </div>
+                          <button class='rk-feature-revenue__add-to-cart'>
+                            <svg
+                              width='14'
+                              height='14'
+                              viewBox='0 0 24 24'
+                              fill='none'
+                              stroke='currentColor'
+                              stroke-width='2'
+                            >
+                              <path d="M9 21a1 1 0 100-2 1 1 0 000 2zM20 21a1 1 0 100-2 1 1 0 000 2zM1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+                            </svg>
+                            Add to Cart
+                          </button>
+                        </div>
+                        <div class='rk-feature-revenue__ingredient-item'>
+                          <div class='rk-feature-revenue__ingredient-info'>
+                            <span class='rk-feature-revenue__ingredient-qty'>1 cup</span>
+                            <span class='rk-feature-revenue__ingredient-name'>Pure Cane Sugar</span>
+                          </div>
+                          <button class='rk-feature-revenue__add-to-cart'>
+                            <svg
+                              width='14'
+                              height='14'
+                              viewBox='0 0 24 24'
+                              fill='none'
+                              stroke='currentColor'
+                              stroke-width='2'
+                            >
+                              <path d="M9 21a1 1 0 100-2 1 1 0 000 2zM20 21a1 1 0 100-2 1 1 0 000 2zM1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
+                            </svg>
+                            Add to Cart
+                          </button>
+                        </div>
                       </div>
                     </div>
                   {% when 'checkout' %}
-                    <div class="rk-feature-revenue__checkout">
-                      <div class="rk-feature-revenue__success">
-                        ✅ Order Complete!
-                      </div>
-                      <div class="rk-feature-revenue__metrics">
-                        <span>+45% AOV</span>
-                        <span>Recipe Saved</span>
+                    <div class='rk-feature-revenue__checkout'>
+                      <div class='rk-feature-revenue__shopify-checkout'>
+                        <div class='rk-feature-revenue__shopify-logo'>
+                          <img
+                            src='{{ 'shopify.png' | asset_url }}'
+                            alt='Shopify'
+                            width='45'
+                            height='23'
+                            style='width: 45px;'
+                          >
+                        </div>
+                        <div class='rk-feature-revenue__checkout-mockup'>
+                          <div class='rk-feature-revenue__checkout-items'>
+                            <div class='rk-feature-revenue__checkout-item'>
+                              <span>Premium Flour</span>
+                              <span>$8.99</span>
+                            </div>
+                            <div class='rk-feature-revenue__checkout-item'>
+                              <span>Organic Butter</span>
+                              <span>$12.99</span>
+                            </div>
+                            <div class='rk-feature-revenue__checkout-item'>
+                              <span>Pure Cane Sugar</span>
+                              <span>$3.01</span>
+                            </div>
+                            <div class='rk-feature-revenue__checkout-total'>
+                              <strong>Total</strong>
+                              <strong>$24.99</strong>
+                            </div>
+                          </div>
+                          <button class='rk-feature-revenue__checkout-button'>Complete Order</button>
+                        </div>
                       </div>
                     </div>
                 {% endcase %}
               </div>
             {% endif %}
           </div>
-          
+
           {% unless forloop.last %}
-            <div class="rk-feature-revenue__arrow">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <div class='rk-feature-revenue__arrow'>
+              <svg width='40' height='40' viewBox='0 0 40 40' fill='none'>
                 <path d="M15 20h10m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               </svg>
             </div>
@@ -84,45 +168,45 @@
     </div>
 
     {% if section.settings.show_metrics %}
-      <div class="rk-feature-revenue__metrics-panel">
-        <h3 class="rk-feature-revenue__metrics-title">{{ section.settings.metrics_title }}</h3>
-        <div class="rk-feature-revenue__metrics-grid">
-          <div class="rk-feature-revenue__metric">
-            <div class="rk-feature-revenue__metric-value">+45%</div>
-            <div class="rk-feature-revenue__metric-label">Average Order Value</div>
+      <div class='rk-feature-revenue__metrics-panel'>
+        <h3 class='rk-feature-revenue__metrics-title'>{{ section.settings.metrics_title }}</h3>
+        <div class='rk-feature-revenue__metrics-grid'>
+          <div class='rk-feature-revenue__metric'>
+            <div class='rk-feature-revenue__metric-value'>+45%</div>
+            <div class='rk-feature-revenue__metric-label'>Average Order Value</div>
           </div>
-          <div class="rk-feature-revenue__metric">
-            <div class="rk-feature-revenue__metric-value">+28%</div>
-            <div class="rk-feature-revenue__metric-label">Conversion Rate</div>
+          <div class='rk-feature-revenue__metric'>
+            <div class='rk-feature-revenue__metric-value'>+28%</div>
+            <div class='rk-feature-revenue__metric-label'>Conversion Rate</div>
           </div>
-          <div class="rk-feature-revenue__metric">
-            <div class="rk-feature-revenue__metric-value">+62%</div>
-            <div class="rk-feature-revenue__metric-label">Repeat Purchases</div>
+          <div class='rk-feature-revenue__metric'>
+            <div class='rk-feature-revenue__metric-value'>+62%</div>
+            <div class='rk-feature-revenue__metric-label'>Repeat Purchases</div>
           </div>
-          <div class="rk-feature-revenue__metric">
-            <div class="rk-feature-revenue__metric-value">+37%</div>
-            <div class="rk-feature-revenue__metric-label">Customer Lifetime Value</div>
+          <div class='rk-feature-revenue__metric'>
+            <div class='rk-feature-revenue__metric-value'>+37%</div>
+            <div class='rk-feature-revenue__metric-label'>Customer Lifetime Value</div>
           </div>
         </div>
       </div>
     {% endif %}
 
     {% if section.settings.show_calculator %}
-      <div class="rk-feature-revenue__calculator">
+      <div class='rk-feature-revenue__calculator'>
         <h3>Calculate Your Revenue Potential</h3>
-        <div class="rk-feature-revenue__calculator-inputs">
-          <div class="rk-feature-revenue__input-group">
+        <div class='rk-feature-revenue__calculator-inputs'>
+          <div class='rk-feature-revenue__input-group'>
             <label>Monthly Visitors</label>
-            <input type="number" value="10000" id="visitors-{{ section.id }}">
+            <input type='number' value='10000' id='visitors-{{ section.id }}'>
           </div>
-          <div class="rk-feature-revenue__input-group">
+          <div class='rk-feature-revenue__input-group'>
             <label>Average Order Value</label>
-            <input type="number" value="50" id="aov-{{ section.id }}">
+            <input type='number' value='50' id='aov-{{ section.id }}'>
           </div>
         </div>
-        <div class="rk-feature-revenue__calculator-result">
+        <div class='rk-feature-revenue__calculator-result'>
           <span>Potential Monthly Revenue Increase:</span>
-          <strong id="result-{{ section.id }}">$14,000</strong>
+          <strong id='result-{{ section.id }}'>$14,000</strong>
         </div>
       </div>
     {% endif %}
@@ -132,26 +216,26 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const section = document.querySelector('[data-section-id="{{ section.id }}"]');
-    
+
     {% if section.settings.show_calculator %}
       const visitorsInput = section.querySelector('#visitors-{{ section.id }}');
       const aovInput = section.querySelector('#aov-{{ section.id }}');
       const resultElement = section.querySelector('#result-{{ section.id }}');
-      
+
       function calculateRevenue() {
         const visitors = parseInt(visitorsInput.value) || 0;
         const aov = parseInt(aovInput.value) || 0;
         const conversionIncrease = 0.28;
         const aovIncrease = 0.45;
-        
+
         const revenue = visitors * 0.02 * (aov * (1 + aovIncrease)) * conversionIncrease;
         resultElement.textContent = '$' + Math.round(revenue).toLocaleString();
       }
-      
+
       visitorsInput.addEventListener('input', calculateRevenue);
       aovInput.addEventListener('input', calculateRevenue);
     {% endif %}
-    
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
@@ -161,7 +245,7 @@
         }
       });
     }, { threshold: 0.2 });
-    
+
     section.querySelectorAll('.rk-feature-revenue__step').forEach(step => {
       observer.observe(step);
     });
@@ -243,11 +327,11 @@
           "id": "visual_type",
           "label": "Visual Type",
           "options": [
-            {"value": "recipe", "label": "Recipe Card"},
-            {"value": "cart", "label": "Shopping Cart"},
-            {"value": "checkout", "label": "Checkout Success"}
+            { "value": "google", "label": "Google Search Result" },
+            { "value": "recipe", "label": "Recipe Card" },
+            { "value": "checkout", "label": "Checkout Success" }
           ],
-          "default": "recipe"
+          "default": "google"
         }
       ]
     }

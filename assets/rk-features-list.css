@@ -1,0 +1,124 @@
+.rk-features-list {
+  padding: 80px 0;
+  background: #fafbfc;
+}
+
+.rk-features-list__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.rk-features-list__header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.rk-features-list__eyebrow {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(104, 211, 145, 0.15);
+  color: #68d391;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.rk-features-list__heading {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--rk-text-primary, #2d3436);
+  margin: 0 0 20px;
+  line-height: 1.2;
+}
+
+.rk-features-list__heading em {
+  font-style: normal;
+  background: linear-gradient(
+    135deg,
+    #68d391 0%,
+    var(--rk-primary, #eb4c2e) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rk-features-list__subheading {
+  font-size: 18px;
+  color: var(--rk-text-secondary, #636e72);
+  line-height: 1.6;
+}
+
+.rk-features-list__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.rk-features-list__category {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.rk-features-list__category:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.rk-features-list__category-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--rk-text-primary, #2d3436);
+  margin: 0 0 24px;
+}
+
+.rk-features-list__category-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.rk-features-list__category-features {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rk-features-list__feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--rk-text-secondary, #636e72);
+  line-height: 1.5;
+}
+
+.rk-features-list__check {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .rk-features-list {
+    padding: 60px 0;
+  }
+
+  .rk-features-list__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .rk-features-list__category {
+    padding: 24px;
+  }
+}
