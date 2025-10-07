@@ -1,0 +1,242 @@
+{{ 'rk-feature-recipe-creation.css' | asset_url | stylesheet_tag }}
+
+<section class="rk-feature-recipe" data-section-id="{{ section.id }}">
+  <div class="rk-feature-recipe__container">
+    <div class="rk-feature-recipe__header">
+      {% if section.settings.eyebrow != blank %}
+        <span class="rk-feature-recipe__eyebrow">{{ section.settings.eyebrow }}</span>
+      {% endif %}
+
+      <h2 class="rk-feature-recipe__heading">{{ section.settings.heading }}</h2>
+      
+      {% if section.settings.subheading != blank %}
+        <p class="rk-feature-recipe__subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+    </div>
+
+    <div class="rk-feature-recipe__grid">
+      <div class="rk-feature-recipe__demo">
+        <div class="rk-feature-recipe__demo-wrapper">
+          <div class="rk-feature-recipe__browser">
+            <div class="rk-feature-recipe__browser-bar">
+              <div class="rk-feature-recipe__browser-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="rk-feature-recipe__browser-url">recipekit.com/editor</div>
+            </div>
+            <div class="rk-feature-recipe__editor">
+              {% if section.settings.demo_image != blank %}
+                {{ section.settings.demo_image | image_url: width: 800 | image_tag: 
+                  class: 'rk-feature-recipe__demo-image',
+                  loading: 'lazy'
+                }}
+              {% else %}
+                <div class="rk-feature-recipe__editor-placeholder">
+                  <div class="rk-feature-recipe__editor-toolbar">
+                    <button class="rk-feature-recipe__tool active">📝</button>
+                    <button class="rk-feature-recipe__tool">🎨</button>
+                    <button class="rk-feature-recipe__tool">📷</button>
+                    <button class="rk-feature-recipe__tool">⚙️</button>
+                  </div>
+                  <div class="rk-feature-recipe__editor-canvas">
+                    <div class="rk-feature-recipe__recipe-preview">
+                      <div class="rk-feature-recipe__recipe-header">
+                        <div class="rk-feature-recipe__recipe-image"></div>
+                        <h3 class="rk-feature-recipe__recipe-title">Delicious Recipe Title</h3>
+                      </div>
+                      <div class="rk-feature-recipe__recipe-meta">
+                        <span>⏱️ 30 mins</span>
+                        <span>👥 4 servings</span>
+                        <span>⭐ 4.8 rating</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="rk-feature-recipe__floating-cards">
+            <div class="rk-feature-recipe__format-card rk-feature-recipe__format-card--1">
+              <div class="rk-feature-recipe__format-icon">📱</div>
+              <span>Mobile Ready</span>
+            </div>
+            <div class="rk-feature-recipe__format-card rk-feature-recipe__format-card--2">
+              <div class="rk-feature-recipe__format-icon">🖨️</div>
+              <span>Print Perfect</span>
+            </div>
+            <div class="rk-feature-recipe__format-card rk-feature-recipe__format-card--3">
+              <div class="rk-feature-recipe__format-icon">📤</div>
+              <span>One-Click Share</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rk-feature-recipe__content">
+        <div class="rk-feature-recipe__features">
+          {% for block in section.blocks %}
+            <div class="rk-feature-recipe__feature-item" {{ block.shopify_attributes }}>
+              <div class="rk-feature-recipe__feature-icon">{{ block.settings.icon }}</div>
+              <div class="rk-feature-recipe__feature-text">
+                <h4>{{ block.settings.title }}</h4>
+                <p>{{ block.settings.description }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        {% if section.settings.testimonial_text != blank %}
+          <div class="rk-feature-recipe__testimonial">
+            <blockquote>{{ section.settings.testimonial_text }}</blockquote>
+            <cite>— {{ section.settings.testimonial_author }}</cite>
+          </div>
+        {% endif %}
+
+        {% if section.settings.cta_text != blank %}
+          <a href="{{ section.settings.cta_link | default: '#' }}" class="rk-feature-recipe__cta">
+            {{ section.settings.cta_text }}
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M7 10h6m0 0l-3-3m3 3l-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "RK Recipe Builder",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Easy Recipe Builder"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Beautiful Recipes, <em>Your Way</em></p>"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Create stunning, professional recipe cards in minutes with our intuitive drag-and-drop editor. No coding required."
+    },
+    {
+      "type": "image_picker",
+      "id": "demo_image",
+      "label": "Demo Screenshot (Optional)"
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_text",
+      "label": "Testimonial Text",
+      "default": "Recipe Kit transformed how we share recipes. Our engagement increased by 300% in just 2 months!"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_author",
+      "label": "Testimonial Author",
+      "default": "Sarah, Founder of Sweet Treats Co."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Try the Recipe Builder"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (Emoji)",
+          "default": "✨"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Feature Title",
+          "default": "Drag & Drop Editor"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Feature Description",
+          "default": "Simply drag elements to build your perfect recipe layout"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK Recipe Builder",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "✨",
+            "title": "Drag & Drop Editor",
+            "description": "Simply drag elements to build your perfect recipe layout"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "🎨",
+            "title": "Multiple Layouts",
+            "description": "Choose from cards, lists, or full-page recipe formats"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "📱",
+            "title": "Responsive Design",
+            "description": "Looks perfect on every device, from phones to desktops"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "🖨️",
+            "title": "Print Optimized",
+            "description": "Beautiful printed recipes with smart page breaks"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "🔗",
+            "title": "One-Click Sharing",
+            "description": "Share directly to social media with optimized previews"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "📸",
+            "title": "Smart Images",
+            "description": "Automatic image optimization and lazy loading"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

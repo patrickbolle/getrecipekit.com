@@ -1,0 +1,303 @@
+{{ 'rk-footer.css' | asset_url | stylesheet_tag }}
+
+<footer class="rk-footer" data-section-id="{{ section.id }}">
+  <div class="rk-footer__container">
+    <div class="rk-footer__main">
+      <!-- Brand Column -->
+      <div class="rk-footer__brand">
+        <a href="/" class="rk-footer__logo-link">
+          {% if section.settings.logo != blank %}
+            {{ section.settings.logo | image_url: width: 180 | image_tag: 
+              class: 'rk-footer__logo',
+              alt: shop.name
+            }}
+          {% else %}
+            <span class="rk-footer__logo-text">{{ shop.name }}</span>
+          {% endif %}
+        </a>
+        
+        {% if section.settings.tagline != blank %}
+          <p class="rk-footer__tagline">{{ section.settings.tagline }}</p>
+        {% endif %}
+
+        <div class="rk-footer__social">
+          {% if section.settings.social_instagram != blank %}
+            <a href="{{ section.settings.social_instagram }}" class="rk-footer__social-link" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect x="2" y="2" width="16" height="16" rx="5" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/>
+                <circle cx="14.5" cy="5.5" r="1" fill="currentColor"/>
+              </svg>
+            </a>
+          {% endif %}
+          
+          {% if section.settings.social_pinterest != blank %}
+            <a href="{{ section.settings.social_pinterest }}" class="rk-footer__social-link" aria-label="Pinterest">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 12c0-2 1-4 3-4s3 1.5 3 3-1 3-3 3c-1 0-2-.5-2-1.5 0 0-1 4-1 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </a>
+          {% endif %}
+          
+          {% if section.settings.social_youtube != blank %}
+            <a href="{{ section.settings.social_youtube }}" class="rk-footer__social-link" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <rect x="2" y="5" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M8 8v4l4-2L8 8z" fill="currentColor"/>
+              </svg>
+            </a>
+          {% endif %}
+          
+          {% if section.settings.social_twitter != blank %}
+            <a href="{{ section.settings.social_twitter }}" class="rk-footer__social-link" aria-label="Twitter">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M18 4l-2 2c0 6-4 10-10 10-2 0-4-.5-5-1 2 0 4-1 5-2-2 0-3-1-3.5-2.5.5 0 1 0 1.5-.1C2 10 1 8 1 6c.5.3 1.1.4 1.7.4C1 5 1 3 2 1c2 3 5 5 9 5 0-3 2-5 4.5-5 1.3 0 2.5.5 3.3 1.3L20 2l-2 2z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Navigation Columns -->
+      <div class="rk-footer__nav">
+        {% for block in section.blocks %}
+          {% if block.type == 'menu' %}
+            <div class="rk-footer__column" {{ block.shopify_attributes }}>
+              <h3 class="rk-footer__column-title">{{ block.settings.title }}</h3>
+              {% if block.settings.menu != blank %}
+                <ul class="rk-footer__menu">
+                  {% for link in block.settings.menu.links %}
+                    <li class="rk-footer__menu-item">
+                      <a href="{{ link.url }}" class="rk-footer__link">
+                        {{ link.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <!-- Newsletter -->
+      <div class="rk-footer__newsletter">
+        <h3 class="rk-footer__newsletter-title">
+          {{ section.settings.newsletter_title | default: 'Recipe for Success 📧' }}
+        </h3>
+        <p class="rk-footer__newsletter-text">
+          {{ section.settings.newsletter_text | default: 'Weekly tips to grow your food brand' }}
+        </p>
+        
+        <form action="/contact#footer-newsletter" method="post" class="rk-footer__newsletter-form">
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <input type="email" 
+                 name="contact[email]" 
+                 placeholder="your@email.com" 
+                 class="rk-footer__newsletter-input"
+                 required>
+          <button type="submit" class="rk-footer__newsletter-button">
+            Subscribe
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </form>
+
+        {% if section.settings.newsletter_success != blank %}
+          <p class="rk-footer__newsletter-success">
+            {{ section.settings.newsletter_success }}
+          </p>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Trust Bar -->
+    {% if section.settings.show_trust_bar %}
+      <div class="rk-footer__trust">
+        <div class="rk-footer__trust-item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M10 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6l2-6z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+          <span>Trusted by 500+ Brands</span>
+        </div>
+        <div class="rk-footer__trust-item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6 10l3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span>SSL Secure</span>
+        </div>
+        <div class="rk-footer__trust-item">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="2" y="6" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M2 10h16" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>Secure Payments</span>
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Bottom Bar -->
+    <div class="rk-footer__bottom">
+      <div class="rk-footer__copyright">
+        © {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.
+      </div>
+      
+      <div class="rk-footer__legal">
+        {% for link in section.settings.legal_menu.links %}
+          <a href="{{ link.url }}" class="rk-footer__legal-link">
+            {{ link.title }}
+          </a>
+          {% unless forloop.last %}
+            <span class="rk-footer__legal-separator">•</span>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button class="rk-footer__back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <path d="M10 14V6M6 10l4-4 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const backToTop = document.querySelector('.rk-footer__back-to-top');
+    
+    // Show/hide back to top button
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        backToTop.classList.add('rk-footer__back-to-top--visible');
+      } else {
+        backToTop.classList.remove('rk-footer__back-to-top--visible');
+      }
+    });
+    
+    // Scroll to top
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "RK Footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Footer Logo"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Helping food brands grow, one recipe at a time"
+    },
+    {
+      "type": "text",
+      "id": "social_instagram",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "text",
+      "id": "social_pinterest",
+      "label": "Pinterest URL"
+    },
+    {
+      "type": "text",
+      "id": "social_youtube",
+      "label": "YouTube URL"
+    },
+    {
+      "type": "text",
+      "id": "social_twitter",
+      "label": "Twitter URL"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "Newsletter Title",
+      "default": "Recipe for Success 📧"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_text",
+      "label": "Newsletter Description",
+      "default": "Weekly tips to grow your food brand"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_success",
+      "label": "Success Message",
+      "default": "✅ Welcome aboard!"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trust_bar",
+      "label": "Show Trust Bar",
+      "default": true
+    },
+    {
+      "type": "link_list",
+      "id": "legal_menu",
+      "label": "Legal Menu",
+      "default": "footer"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Menu Column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Column Title",
+          "default": "Quick Links"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK Footer",
+      "blocks": [
+        {
+          "type": "menu",
+          "settings": {
+            "title": "Product"
+          }
+        },
+        {
+          "type": "menu",
+          "settings": {
+            "title": "Resources"
+          }
+        },
+        {
+          "type": "menu",
+          "settings": {
+            "title": "Company"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

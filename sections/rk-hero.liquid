@@ -1,0 +1,174 @@
+{{ 'rk-hero.css' | asset_url | stylesheet_tag }}
+
+<section class="rk-hero rk-hero--{{ section.settings.layout }}" data-section-id="{{ section.id }}">
+  <div class="rk-hero__container">
+    <div class="rk-hero__content-wrapper">
+      <div class="rk-hero__content">
+        {% if section.settings.eyebrow != blank %}
+          <div class="rk-hero__eyebrow">{{ section.settings.eyebrow }}</div>
+        {% endif %}
+
+        {% if section.settings.headline != blank %}
+          <h1 class="rk-hero__headline">{{ section.settings.headline }}</h1>
+        {% endif %}
+
+        {% if section.settings.description != blank %}
+          <div class="rk-hero__description">{{ section.settings.description }}</div>
+        {% endif %}
+
+        <div class="rk-hero__buttons">
+          {% if section.settings.cta_primary_text != blank %}
+            <a href="{{ section.settings.cta_primary_link | default: '#' }}" class="rk-hero__button rk-hero__button--primary">
+              {{ section.settings.cta_primary_text }}
+            </a>
+          {% endif %}
+
+          {% if section.settings.cta_secondary_text != blank %}
+            <a href="{{ section.settings.cta_secondary_link | default: '#' }}" class="rk-hero__button rk-hero__button--secondary">
+              {{ section.settings.cta_secondary_text }}
+            </a>
+          {% endif %}
+        </div>
+
+        {% if section.settings.trust_badge != blank %}
+          <div class="rk-hero__trust-badge">
+            {{ section.settings.trust_badge }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="rk-hero__visual">
+        {% if section.settings.hero_image != blank %}
+          <div class="rk-hero__image-wrapper">
+            {{ section.settings.hero_image | image_url: width: 1200 | image_tag:
+              loading: 'eager',
+              sizes: '(min-width: 750px) 50vw, 100vw',
+              widths: '375, 550, 750, 1100, 1200',
+              class: 'rk-hero__image'
+            }}
+          </div>
+        {% else %}
+          <div class="rk-hero__placeholder">
+            <svg class="rk-hero__placeholder-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+              <path d="M2 17L12 22L22 17"/>
+              <path d="M2 12L12 17L22 12"/>
+            </svg>
+          </div>
+        {% endif %}
+
+        {% if section.settings.enable_animation %}
+          <div class="rk-hero__floating-cards">
+            <div class="rk-hero__floating-card rk-hero__floating-card--1">
+              <div class="rk-hero__card-icon">🥘</div>
+              <div class="rk-hero__card-text">Beautiful Recipes</div>
+            </div>
+            <div class="rk-hero__floating-card rk-hero__floating-card--2">
+              <div class="rk-hero__card-icon">📈</div>
+              <div class="rk-hero__card-text">SEO Optimized</div>
+            </div>
+            <div class="rk-hero__floating-card rk-hero__floating-card--3">
+              <div class="rk-hero__card-icon">🛒</div>
+              <div class="rk-hero__card-text">Drive Sales</div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% if section.settings.show_scroll_indicator %}
+    <div class="rk-hero__scroll-indicator">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "RK Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "For Food Brands on Shopify"
+    },
+    {
+      "type": "richtext",
+      "id": "headline",
+      "label": "Headline",
+      "default": "<p>Turn Recipes into <em>Revenue</em></p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Help your customers discover what to make with your products while driving sales through beautiful, SEO-optimized recipe content.</p>"
+    },
+    {
+      "type": "text",
+      "id": "cta_primary_text",
+      "label": "Primary Button Text",
+      "default": "Start Free Trial"
+    },
+    {
+      "type": "url",
+      "id": "cta_primary_link",
+      "label": "Primary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "cta_secondary_text",
+      "label": "Secondary Button Text",
+      "default": "See How It Works"
+    },
+    {
+      "type": "url",
+      "id": "cta_secondary_link",
+      "label": "Secondary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "trust_badge",
+      "label": "Trust Badge Text",
+      "default": "✨ No credit card required • 14-day free trial"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "options": [
+        {"value": "text-left", "label": "Text Left"},
+        {"value": "text-right", "label": "Text Right"},
+        {"value": "centered", "label": "Centered"}
+      ],
+      "default": "text-left"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_animation",
+      "label": "Enable Floating Cards Animation",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_scroll_indicator",
+      "label": "Show Scroll Indicator",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK Hero"
+    }
+  ]
+}
+{% endschema %}

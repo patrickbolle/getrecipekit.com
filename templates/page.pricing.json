@@ -1,0 +1,389 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "rk-hero",
+      "disabled": true,
+      "settings": {
+        "eyebrow": "Simple, Transparent Pricing",
+        "headline": "<p>Choose Your <em>Perfect Plan</em></p>",
+        "description": "<p>Start your 14-day free trial. No credit card required. Cancel anytime. All plans include unlimited recipes and full access to core features.</p>",
+        "cta_primary_text": "Start Free Trial",
+        "cta_primary_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+        "cta_secondary_text": "Compare Plans",
+        "cta_secondary_link": "#pricing",
+        "trust_badge": "✨ 14-day free trial • No credit card required • Cancel anytime",
+        "layout": "centered",
+        "enable_animation": false,
+        "show_scroll_indicator": true
+      }
+    },
+    "pricing": {
+      "type": "rk-pricing",
+      "blocks": {
+        "plan-1": {
+          "type": "plan",
+          "settings": {
+            "plan_name": "Essentials",
+            "icon": "🌱",
+            "description": "Perfect for getting started with recipe content",
+            "monthly_price": 20,
+            "yearly_price": 17,
+            "yearly_total": "200",
+            "savings_text": "Save 17% with yearly billing",
+            "featured": false,
+            "badge_text": "Most Popular",
+            "cta_text": "Start Free Trial",
+            "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+            "trial_text": "14-day free trial",
+            "features_heading": "Everything you need:",
+            "features": "Unlimited recipes\nAdd Shopify products to ingredients\nAuto-generated SEO snippets\nSocial media sharing\n4 recipe designs\nBlog tag filters\nMobile-responsive design\nPrint-friendly recipes"
+          }
+        },
+        "plan-2": {
+          "type": "plan",
+          "settings": {
+            "plan_name": "Advanced",
+            "icon": "🚀",
+            "description": "For brands ready to scale recipe content",
+            "monthly_price": 30,
+            "yearly_price": 26,
+            "yearly_total": "310",
+            "savings_text": "Save 14% with yearly billing",
+            "featured": true,
+            "badge_text": "Most Popular",
+            "cta_text": "Start Free Trial",
+            "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+            "trial_text": "14-day free trial",
+            "features_heading": "Everything in Essentials, plus:",
+            "features": "Add-to-cart buttons in ingredients\nMultiple direction images\nAI generated recipes\nDetailed recipe analytics\nRevenue attribution tracking\nAdvanced SEO features\nCustom fields & metadata\nEmail support"
+          }
+        },
+        "plan-3": {
+          "type": "plan",
+          "settings": {
+            "plan_name": "Enterprise",
+            "icon": "⭐",
+            "description": "For high-volume brands needing premium support",
+            "monthly_price": 90,
+            "yearly_price": 75,
+            "yearly_total": "900",
+            "savings_text": "Save 17% with yearly billing",
+            "featured": false,
+            "badge_text": "Most Popular",
+            "cta_text": "Start Free Trial",
+            "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+            "trial_text": "14-day free trial",
+            "features_heading": "Everything in Advanced, plus:",
+            "features": "1-on-1 consultation call\nCustom recipe styling changes\nFirst access to new features\nPriority support\nDedicated account manager\nCustom integrations\nWhite-label options\nAdvanced API access"
+          }
+        },
+        "addon-1": {
+          "type": "addon",
+          "settings": {
+            "addon_name": "Related Recipes",
+            "addon_icon": "🔗",
+            "addon_description": "Automatically show related recipes based on ingredients, categories, and user behavior to increase engagement and time on site.",
+            "addon_price": 30,
+            "price_type": "one-time",
+            "addon_cta_text": "Add to Store",
+            "addon_cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com"
+          }
+        },
+        "addon-2": {
+          "type": "addon",
+          "settings": {
+            "addon_name": "Manual Import Service",
+            "addon_icon": "📥",
+            "addon_description": "Our team will manually import and format your existing recipes from any platform - WordPress, spreadsheets, or documents. Starting from $110 per 35 recipes.",
+            "addon_price": 110,
+            "price_type": "one-time",
+            "addon_cta_text": "Get Started",
+            "addon_cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com"
+          }
+        },
+        "addon-3": {
+          "type": "addon",
+          "disabled": true,
+          "settings": {
+            "addon_name": "Custom Design Package",
+            "addon_icon": "🎨",
+            "addon_description": "Professional designer creates custom recipe layouts and styling perfectly matched to your brand guidelines.",
+            "addon_price": 699,
+            "price_type": "one-time",
+            "addon_cta_text": "Request Design",
+            "addon_cta_link": "/pages/contact"
+          }
+        }
+      },
+      "block_order": [
+        "plan-1",
+        "plan-2",
+        "plan-3",
+        "addon-1",
+        "addon-2",
+        "addon-3"
+      ],
+      "settings": {
+        "eyebrow": "Pricing Plans",
+        "heading": "<p>Choose Your <em>Perfect Plan</em></p>",
+        "subheading": "Start your 14-day free trial. Cancel anytime.",
+        "show_billing_toggle": true,
+        "show_addons": true,
+        "addons_heading": "Add-ons & Services",
+        "addons_description": "Optional premium features and services to enhance your Recipe Kit experience",
+        "show_faq_link": true,
+        "footer_text": "Have questions about pricing?",
+        "footer_link_text": "View FAQ",
+        "footer_link": "#faq"
+      }
+    },
+    "social-proof": {
+      "type": "rk-social-proof",
+      "blocks": {
+        "metric-1": {
+          "type": "metric",
+          "settings": {
+            "icon": "⭐",
+            "number": "500",
+            "suffix": "+",
+            "label": "Happy Brands"
+          }
+        },
+        "metric-2": {
+          "type": "metric",
+          "settings": {
+            "icon": "📈",
+            "number": "92",
+            "suffix": "%",
+            "label": "Average Sales Increase"
+          }
+        },
+        "metric-3": {
+          "type": "metric",
+          "settings": {
+            "icon": "⚡",
+            "number": "10000",
+            "suffix": "+",
+            "label": "Recipes Created"
+          }
+        },
+        "metric-4": {
+          "type": "metric",
+          "settings": {
+            "icon": "💰",
+            "number": "4.9",
+            "suffix": "/5",
+            "label": "Customer Rating"
+          }
+        }
+      },
+      "block_order": [
+        "metric-1",
+        "metric-2",
+        "metric-3",
+        "metric-4"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Trusted by leading food brands",
+        "display_type": "metrics",
+        "enable_scroll": true,
+        "animation_speed": 30,
+        "animate_numbers": true
+      }
+    },
+    "features": {
+      "type": "rk-feature-showcase",
+      "blocks": {
+        "feature-1": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "✅",
+            "heading": "All Plans Include",
+            "description": "Unlimited recipes, SEO optimization, mobile responsive design, and 14-day free trial.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "feature-2": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🔒",
+            "heading": "Secure & Reliable",
+            "description": "Bank-level security, 99.9% uptime, and automatic backups of all your recipes.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "feature-3": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "💳",
+            "heading": "Flexible Billing",
+            "description": "Monthly or yearly plans, cancel anytime, and save up to 17% with annual billing.",
+            "link_text": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "feature-1",
+        "feature-2",
+        "feature-3"
+      ],
+      "settings": {
+        "heading": "Why choose Recipe Kit?",
+        "description": "<p>Everything you need to create, manage, and monetize recipe content</p>",
+        "columns": "3",
+        "card_style": "shadow",
+        "icon_style": "filled"
+      }
+    },
+    "testimonials": {
+      "type": "rk-testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "company": "Schacht Spindle Company",
+            "quote": "We're so impressed with Recipe Kit and its support. The app ties recipes directly to our products, streamlining our workflow and driving sales.",
+            "author": "",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "company": "Olive Love",
+            "quote": "Recipe Kit has transformed how we present recipes. Customers can explore our recipes, shop ingredients instantly, and share them beautifully across platforms.",
+            "author": "",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        "testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "company": "La Boîte",
+            "quote": "One of the best app experiences we have had on Shopify. The value for the price is incredible.",
+            "author": "",
+            "rating": 5,
+            "verified": true
+          }
+        }
+      },
+      "block_order": [
+        "testimonial-1",
+        "testimonial-2",
+        "testimonial-3"
+      ],
+      "settings": {
+        "eyebrow": "Customer Success Stories",
+        "heading": "<p>Loved by <em>Food Brands</em> Everywhere</p>",
+        "subheading": "See why brands choose Recipe Kit for their recipe content",
+        "stats_enable": true,
+        "stat_1_number": "500+",
+        "stat_1_label": "Happy Brands",
+        "stat_2_number": "4.9/5",
+        "stat_2_label": "Average Rating",
+        "stat_3_number": "300%",
+        "stat_3_label": "Avg Engagement Boost",
+        "cta_text": "Start Your Free Trial",
+        "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com"
+      }
+    },
+    "faq": {
+      "type": "rk-faq",
+      "blocks": {
+        "faq-1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What's included in the free trial?",
+            "answer": "<p>All plans include a full 14-day free trial with access to every feature. No credit card required to start. You can create unlimited recipes, test all features, and see the full value before committing.</p>"
+          }
+        },
+        "faq-2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I switch plans later?",
+            "answer": "<p>Absolutely! You can upgrade or downgrade your plan at any time. When you upgrade, you'll get immediate access to new features. When you downgrade, changes take effect at your next billing cycle.</p>"
+          }
+        },
+        "faq-3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What happens if I cancel?",
+            "answer": "<p>You can cancel anytime with no penalties or fees. Your recipes remain accessible until the end of your billing period. We can also export all your recipes if you need to move platforms.</p>"
+          }
+        },
+        "faq-4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Are there any hidden fees?",
+            "answer": "<p>No hidden fees ever. The price you see is the price you pay. Add-ons are completely optional and clearly priced. We believe in transparent, straightforward pricing.</p>"
+          }
+        },
+        "faq-5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do you offer discounts for non-profits?",
+            "answer": "<p>Yes! We offer special pricing for non-profits, educational institutions, and early-stage startups. Contact our support team with details about your organization.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq-1",
+        "faq-2",
+        "faq-3",
+        "faq-4",
+        "faq-5"
+      ],
+      "settings": {
+        "eyebrow": "Frequently Asked Questions",
+        "heading": "<p>Common <em>Pricing Questions</em></p>",
+        "subheading": "Everything you need to know about Recipe Kit pricing",
+        "accordion_mode": true,
+        "cta_subtext": "Still have questions?",
+        "cta_text": "Contact Support",
+        "cta_link": "/pages/contact"
+      }
+    },
+    "final-cta": {
+      "type": "rk-cta-final",
+      "settings": {
+        "badge_text": "🎉 Start Your Free Trial Today",
+        "heading": "<p>Ready to transform your <em>recipe content</em>?</p>",
+        "subheading": "<p>Join hundreds of food brands growing with Recipe Kit</p>",
+        "cta_primary_text": "Start Free Trial",
+        "cta_primary_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+        "cta_secondary_text": "View All Features",
+        "cta_secondary_link": "/",
+        "trust_indicators": "✓ 14-day free trial • ✓ No credit card required • ✓ Cancel anytime",
+        "background_type": "linear-gradient(135deg, #FFF8F3 0%, #FFE4E1 100%)",
+        "show_decorations": true
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "pricing",
+    "social-proof",
+    "features",
+    "testimonials",
+    "faq",
+    "final-cta"
+  ]
+}

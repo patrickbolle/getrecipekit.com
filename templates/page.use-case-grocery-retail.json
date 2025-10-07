@@ -1,0 +1,322 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "rk-hero",
+      "settings": {
+        "eyebrow": "Recipe Kit for Grocery & Retail",
+        "headline": "<p>Transform Browsers into <em>Buyers</em></p>",
+        "description": "<p>Grocery stores and food retailers use Recipe Kit to inspire meal planning, increase basket size, and drive repeat purchases. Turn your product inventory into meal solutions that sell.</p>",
+        "cta_primary_text": "Start Free Trial",
+        "cta_primary_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+        "cta_secondary_text": "See Examples",
+        "cta_secondary_link": "#examples",
+        "trust_badge": "✨ Trusted by grocery retailers • 14-day free trial",
+        "layout": "centered",
+        "enable_animation": false,
+        "show_scroll_indicator": true
+      }
+    },
+    "social-proof": {
+      "type": "rk-social-proof",
+      "blocks": {
+        "metric-1": {
+          "type": "metric",
+          "settings": {
+            "icon": "🛒",
+            "number": "170",
+            "suffix": "+",
+            "label": "Retailers"
+          }
+        },
+        "metric-2": {
+          "type": "metric",
+          "settings": {
+            "icon": "📦",
+            "number": "4.2",
+            "suffix": "x",
+            "label": "Items per Order"
+          }
+        },
+        "metric-3": {
+          "type": "metric",
+          "settings": {
+            "icon": "💰",
+            "number": "Up to 85",
+            "suffix": "%",
+            "label": "Basket Size Increase"
+          }
+        },
+        "metric-4": {
+          "type": "metric",
+          "settings": {
+            "icon": "🔄",
+            "number": "2.8",
+            "suffix": "x",
+            "label": "Repeat Purchase Rate"
+          }
+        }
+      },
+      "block_order": ["metric-1", "metric-2", "metric-3", "metric-4"],
+      "settings": {
+        "heading": "Proven results for grocery retailers",
+        "display_type": "metrics",
+        "animate_numbers": true
+      }
+    },
+    "features": {
+      "type": "rk-feature-showcase",
+      "blocks": {
+        "feature-1": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🍽️",
+            "heading": "Meal Planning Solutions",
+            "description": "Help customers plan complete meals with recipe collections. They add all ingredients at once, increasing basket size significantly.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "feature-2": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "📦",
+            "heading": "Increase Basket Size",
+            "description": "Recipes bundle products naturally. Customers buying for a recipe purchase 3-5x more items than single product shoppers.",
+            "link_text": "Learn more",
+            "link_url": "/pages/shoppable-recipes"
+          }
+        },
+        "feature-3": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🌿",
+            "heading": "Seasonal Merchandising",
+            "description": "Promote seasonal produce and ingredients through timely recipes. Move inventory faster with targeted recipe content.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "feature-4": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🔁",
+            "heading": "Drive Repeat Orders",
+            "description": "Recipe collections keep customers returning. Weekly meal plans and recipe series create habitual purchasing patterns.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "feature-5": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🎯",
+            "heading": "Cross-Sell Naturally",
+            "description": "Recipes introduce customers to new products and categories they wouldn't discover through browsing alone.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "feature-6": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "📱",
+            "heading": "Mobile Shopping Lists",
+            "description": "Customers create shopping lists from recipes on mobile. Perfect for curbside pickup and delivery ordering.",
+            "link_text": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": ["feature-1", "feature-2", "feature-3", "feature-4", "feature-5", "feature-6"],
+      "settings": {
+        "heading": "Everything grocery retailers need",
+        "description": "<p>Built for stores selling fresh food and groceries online</p>",
+        "columns": "3",
+        "card_style": "shadow",
+        "icon_style": "filled"
+      }
+    },
+    "how-it-works": {
+      "type": "rk-how-it-works",
+      "blocks": {
+        "step-1": {
+          "type": "step",
+          "settings": {
+            "icon": "📝",
+            "title": "Create Recipe Collections",
+            "description": "Build recipes featuring your products, organized by meal type or occasion"
+          }
+        },
+        "step-2": {
+          "type": "step",
+          "settings": {
+            "icon": "🔗",
+            "title": "Link to Inventory",
+            "description": "Connect recipe ingredients to your product catalog"
+          }
+        },
+        "step-3": {
+          "type": "step",
+          "settings": {
+            "icon": "📧",
+            "title": "Market to Customers",
+            "description": "Share recipes via email, social media, and on-site promotions"
+          }
+        },
+        "step-4": {
+          "type": "step",
+          "settings": {
+            "icon": "📊",
+            "title": "Track Performance",
+            "description": "Monitor which recipes drive sales and optimize your merchandising"
+          }
+        }
+      },
+      "block_order": ["step-1", "step-2", "step-3", "step-4"],
+      "settings": {
+        "heading": "Start increasing basket size today",
+        "description": "<p>From setup to sales in 4 simple steps</p>",
+        "layout_style": "timeline",
+        "number_style": "icon",
+        "show_connector": true,
+        "animate_on_scroll": true,
+        "cta_text": "Get Started Free",
+        "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com"
+      }
+    },
+    "testimonials": {
+      "type": "rk-testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "company": "OC Wild Seafood",
+            "quote": "We are a local fresh seafood delivery service and Recipe Kit has been a game changer. Customers see a recipe and can buy everything they need immediately. Average order value increased significantly.",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "company": "La Boîte",
+            "quote": "One of the best app experiences we have had on Shopify. Recipe Kit helps us showcase our specialty ingredients in context, driving discovery and sales.",
+            "rating": 5,
+            "verified": true
+          }
+        }
+      },
+      "block_order": ["testimonial-1", "testimonial-2"],
+      "settings": {
+        "eyebrow": "Retailer Success Stories",
+        "heading": "<p>Loved by <em>Grocery Retailers</em></p>",
+        "subheading": "See how stores are growing basket size with Recipe Kit",
+        "stats_enable": true,
+        "stat_1_number": "170+",
+        "stat_1_label": "Retailers",
+        "stat_2_number": "4.2x",
+        "stat_2_label": "Items per Order",
+        "stat_3_number": "Up to 85%",
+        "stat_3_label": "Basket Increase",
+        "cta_text": "Join These Stores",
+        "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com"
+      }
+    },
+    "faq": {
+      "type": "rk-faq",
+      "blocks": {
+        "faq-1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do recipes increase basket size?",
+            "answer": "<p>Recipes create bundled purchases. Instead of buying a single chicken breast, customers buy chicken, vegetables, herbs, and pantry items for the complete meal. Grocery retailers see 3-5x more items per transaction when customers shop from recipes versus product pages.</p>"
+          }
+        },
+        "faq-2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can we promote seasonal and sale items?",
+            "answer": "<p>Yes! Create recipe collections featuring seasonal produce, sale items, or inventory you want to move quickly. Update recipes throughout the year to align with seasonal availability and promotions.</p>"
+          }
+        },
+        "faq-3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Does this work for curbside pickup and delivery?",
+            "answer": "<p>Absolutely! Customers can add all recipe ingredients to their cart for pickup or delivery orders. Recipe Kit works seamlessly with Shopify's local delivery and pickup features, making meal planning easy for busy customers.</p>"
+          }
+        },
+        "faq-4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do we organize recipes for customers?",
+            "answer": "<p>Recipe Kit supports collections, categories, and tags. Organize by meal type (breakfast, dinner), diet (vegan, keto), cook time (30-minute meals), or any system that makes sense for your customers. Built-in search helps customers find exactly what they need.</p>"
+          }
+        },
+        "faq-5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can we customize recipes to our brand?",
+            "answer": "<p>Yes! Fully customize colors, layouts, and styling to match your store's branding. Recipe Kit also supports custom CSS and Liquid for advanced design control.</p>"
+          }
+        },
+        "faq-6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What metrics can we track?",
+            "answer": "<p>Track recipe views, products added from recipes, basket size from recipe traffic, and revenue per recipe. Use this data to optimize which recipes to promote and which products to feature.</p>"
+          }
+        }
+      },
+      "block_order": ["faq-1", "faq-2", "faq-3", "faq-4", "faq-5", "faq-6"],
+      "settings": {
+        "eyebrow": "Common Questions",
+        "heading": "<p>Grocery Retailer <em>Questions</em></p>",
+        "subheading": "Everything you need to know about Recipe Kit for your store",
+        "accordion_mode": true,
+        "cta_subtext": "More questions?",
+        "cta_text": "Contact Our Team",
+        "cta_link": "/pages/contact"
+      }
+    },
+    "final-cta": {
+      "type": "rk-cta-final",
+      "settings": {
+        "badge_text": "🛒 Join 170+ Grocery Retailers",
+        "heading": "<p>Ready to increase <em>basket size</em>?</p>",
+        "subheading": "<p>Start creating meal solutions that drive larger orders</p>",
+        "cta_primary_text": "Start Free Trial",
+        "cta_primary_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+        "cta_secondary_text": "View Pricing",
+        "cta_secondary_link": "/pages/pricing",
+        "trust_indicators": "✓ 14-day free trial • ✓ No credit card required • ✓ Perfect for delivery & pickup",
+        "background_type": "linear-gradient(135deg, #FFF8F3 0%, #FFE4E1 100%)",
+        "show_decorations": true
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "social-proof",
+    "features",
+    "how-it-works",
+    "testimonials",
+    "faq",
+    "final-cta"
+  ]
+}

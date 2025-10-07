@@ -1,0 +1,293 @@
+{{ 'rk-feature-revenue.css' | asset_url | stylesheet_tag }}
+
+<section class="rk-feature-revenue" data-section-id="{{ section.id }}">
+  <div class="rk-feature-revenue__container">
+    <div class="rk-feature-revenue__header">
+      {% if section.settings.eyebrow != blank %}
+        <span class="rk-feature-revenue__eyebrow">{{ section.settings.eyebrow }}</span>
+      {% endif %}
+      <h2 class="rk-feature-revenue__heading">{{ section.settings.heading }}</h2>
+      {% if section.settings.subheading != blank %}
+        <p class="rk-feature-revenue__subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+    </div>
+
+    <div class="rk-feature-revenue__flow">
+      {% for block in section.blocks %}
+        <div class="rk-feature-revenue__step rk-feature-revenue__step--{{ forloop.index }}" {{ block.shopify_attributes }}>
+          <div class="rk-feature-revenue__step-number">{{ forloop.index }}</div>
+          <div class="rk-feature-revenue__step-card">
+            <div class="rk-feature-revenue__step-header">
+              <span class="rk-feature-revenue__step-icon">{{ block.settings.icon }}</span>
+              <h3 class="rk-feature-revenue__step-title">{{ block.settings.title }}</h3>
+            </div>
+            <p class="rk-feature-revenue__step-description">{{ block.settings.description }}</p>
+            
+            {% if block.settings.show_visual %}
+              <div class="rk-feature-revenue__visual rk-feature-revenue__visual--{{ block.settings.visual_type }}">
+                {% case block.settings.visual_type %}
+                  {% when 'recipe' %}
+                    <div class="rk-feature-revenue__recipe-card">
+                      <div class="rk-feature-revenue__recipe-image"></div>
+                      <h4>Chocolate Chip Cookies</h4>
+                      <div class="rk-feature-revenue__ingredients">
+                        <label><input type="checkbox" checked> 2 cups flour</label>
+                        <label><input type="checkbox" checked> 1 cup butter</label>
+                        <label><input type="checkbox"> 1 cup sugar</label>
+                      </div>
+                      <button class="rk-feature-revenue__add-all">
+                        🛒 Add All to Cart ($24.99)
+                      </button>
+                    </div>
+                  {% when 'cart' %}
+                    <div class="rk-feature-revenue__cart">
+                      <div class="rk-feature-revenue__cart-item">
+                        <span>Organic Flour</span>
+                        <span>$8.99</span>
+                      </div>
+                      <div class="rk-feature-revenue__cart-item">
+                        <span>Premium Butter</span>
+                        <span>$12.99</span>
+                      </div>
+                      <div class="rk-feature-revenue__cart-item">
+                        <span>Pure Sugar</span>
+                        <span>$3.01</span>
+                      </div>
+                      <div class="rk-feature-revenue__cart-total">
+                        <strong>Total: $24.99</strong>
+                      </div>
+                    </div>
+                  {% when 'checkout' %}
+                    <div class="rk-feature-revenue__checkout">
+                      <div class="rk-feature-revenue__success">
+                        ✅ Order Complete!
+                      </div>
+                      <div class="rk-feature-revenue__metrics">
+                        <span>+45% AOV</span>
+                        <span>Recipe Saved</span>
+                      </div>
+                    </div>
+                {% endcase %}
+              </div>
+            {% endif %}
+          </div>
+          
+          {% unless forloop.last %}
+            <div class="rk-feature-revenue__arrow">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <path d="M15 20h10m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          {% endunless %}
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if section.settings.show_metrics %}
+      <div class="rk-feature-revenue__metrics-panel">
+        <h3 class="rk-feature-revenue__metrics-title">{{ section.settings.metrics_title }}</h3>
+        <div class="rk-feature-revenue__metrics-grid">
+          <div class="rk-feature-revenue__metric">
+            <div class="rk-feature-revenue__metric-value">+45%</div>
+            <div class="rk-feature-revenue__metric-label">Average Order Value</div>
+          </div>
+          <div class="rk-feature-revenue__metric">
+            <div class="rk-feature-revenue__metric-value">+28%</div>
+            <div class="rk-feature-revenue__metric-label">Conversion Rate</div>
+          </div>
+          <div class="rk-feature-revenue__metric">
+            <div class="rk-feature-revenue__metric-value">+62%</div>
+            <div class="rk-feature-revenue__metric-label">Repeat Purchases</div>
+          </div>
+          <div class="rk-feature-revenue__metric">
+            <div class="rk-feature-revenue__metric-value">+37%</div>
+            <div class="rk-feature-revenue__metric-label">Customer Lifetime Value</div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if section.settings.show_calculator %}
+      <div class="rk-feature-revenue__calculator">
+        <h3>Calculate Your Revenue Potential</h3>
+        <div class="rk-feature-revenue__calculator-inputs">
+          <div class="rk-feature-revenue__input-group">
+            <label>Monthly Visitors</label>
+            <input type="number" value="10000" id="visitors-{{ section.id }}">
+          </div>
+          <div class="rk-feature-revenue__input-group">
+            <label>Average Order Value</label>
+            <input type="number" value="50" id="aov-{{ section.id }}">
+          </div>
+        </div>
+        <div class="rk-feature-revenue__calculator-result">
+          <span>Potential Monthly Revenue Increase:</span>
+          <strong id="result-{{ section.id }}">$14,000</strong>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.querySelector('[data-section-id="{{ section.id }}"]');
+    
+    {% if section.settings.show_calculator %}
+      const visitorsInput = section.querySelector('#visitors-{{ section.id }}');
+      const aovInput = section.querySelector('#aov-{{ section.id }}');
+      const resultElement = section.querySelector('#result-{{ section.id }}');
+      
+      function calculateRevenue() {
+        const visitors = parseInt(visitorsInput.value) || 0;
+        const aov = parseInt(aovInput.value) || 0;
+        const conversionIncrease = 0.28;
+        const aovIncrease = 0.45;
+        
+        const revenue = visitors * 0.02 * (aov * (1 + aovIncrease)) * conversionIncrease;
+        resultElement.textContent = '$' + Math.round(revenue).toLocaleString();
+      }
+      
+      visitorsInput.addEventListener('input', calculateRevenue);
+      aovInput.addEventListener('input', calculateRevenue);
+    {% endif %}
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('rk-feature-revenue__step--visible');
+          }, index * 200);
+        }
+      });
+    }, { threshold: 0.2 });
+    
+    section.querySelectorAll('.rk-feature-revenue__step').forEach(step => {
+      observer.observe(step);
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "RK Revenue Feature",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Revenue Generation"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Turn Inspiration into <em>Sales</em></p>"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Convert recipe browsers into buyers with seamless shopping experiences that drive revenue."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_metrics",
+      "label": "Show Metrics Panel",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "metrics_title",
+      "label": "Metrics Title",
+      "default": "Revenue Impact"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_calculator",
+      "label": "Show Revenue Calculator",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Revenue Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (Emoji)",
+          "default": "👀"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step Title",
+          "default": "Customer Views Recipe"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Step Description",
+          "default": "Visitors discover your delicious recipes with highlighted ingredients"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_visual",
+          "label": "Show Visual",
+          "default": true
+        },
+        {
+          "type": "select",
+          "id": "visual_type",
+          "label": "Visual Type",
+          "options": [
+            {"value": "recipe", "label": "Recipe Card"},
+            {"value": "cart", "label": "Shopping Cart"},
+            {"value": "checkout", "label": "Checkout Success"}
+          ],
+          "default": "recipe"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK Revenue Feature",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "icon": "👀",
+            "title": "Customer Views Recipe",
+            "description": "Visitors discover your delicious recipes with highlighted ingredients",
+            "show_visual": true,
+            "visual_type": "recipe"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "icon": "🛒",
+            "title": "Smart Shopping Experience",
+            "description": "One-click adds all ingredients to cart with quantity calculator",
+            "show_visual": true,
+            "visual_type": "cart"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "icon": "💳",
+            "title": "Seamless Checkout",
+            "description": "Higher order values with recipe-based product bundles",
+            "show_visual": true,
+            "visual_type": "checkout"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,83 @@
+{% comment %}
+  Schema.org SoftwareApplication structured data (JSON-LD)
+
+  Usage:
+  {% render 'schema-software-app' %}
+
+  This snippet generates SoftwareApplication schema for Recipe Kit.
+  Include this in your main layout or homepage.
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Recipe Kit",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "E-commerce",
+  "operatingSystem": "Web-based",
+  "offers": {
+    "@type": "AggregateOffer",
+    "offeredBy": {
+      "@type": "Organization",
+      "name": "Recipe Kit"
+    },
+    "lowPrice": "20",
+    "highPrice": "90",
+    "priceCurrency": "USD",
+    "priceSpecification": [
+      {
+        "@type": "UnitPriceSpecification",
+        "price": "20",
+        "priceCurrency": "USD",
+        "name": "Essentials Plan",
+        "billingDuration": "P1M",
+        "description": "Perfect for getting started with recipe content"
+      },
+      {
+        "@type": "UnitPriceSpecification",
+        "price": "30",
+        "priceCurrency": "USD",
+        "name": "Advanced Plan",
+        "billingDuration": "P1M",
+        "description": "For brands ready to scale recipe content"
+      },
+      {
+        "@type": "UnitPriceSpecification",
+        "price": "90",
+        "priceCurrency": "USD",
+        "name": "Enterprise Plan",
+        "billingDuration": "P1M",
+        "description": "For high-volume brands needing premium support"
+      }
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "500",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "featureList": [
+    "Unlimited recipes",
+    "Add Shopify products to ingredients",
+    "Auto-generated SEO snippets",
+    "Social media sharing",
+    "Recipe designs",
+    "Blog tag filters",
+    "Add-to-cart buttons",
+    "AI generated recipes",
+    "Detailed recipe analytics",
+    "Custom recipe styling"
+  ],
+  "screenshot": "{{ 'rk-hero-image.jpg' | asset_url }}",
+  "downloadUrl": "https://apps.shopify.com/recipe-kit",
+  "softwareVersion": "2.0",
+  "author": {
+    "@type": "Organization",
+    "name": "Recipe Kit",
+    "url": "{{ shop.url }}"
+  }
+}
+</script>

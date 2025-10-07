@@ -1,0 +1,132 @@
+{{ 'rk-blog-grid.css' | asset_url | stylesheet_tag }}
+
+{% if blog %}
+  {% comment %} Use the current blog context if available (for blog.liquid template) {% endcomment %}
+  {% assign current_blog = blog %}
+{% else %}
+  {% comment %} Otherwise use the blog from settings (for homepage sections) {% endcomment %}
+  {% assign current_blog = blogs[section.settings.blog] %}
+{% endif %}
+
+<section class="rk-blog-grid" data-section-id="{{ section.id }}">
+  <div class="rk-blog-grid__container">
+    <div class="rk-blog-grid__header">
+      {% if section.settings.heading != blank %}
+        <h2 class="rk-blog-grid__heading">{{ section.settings.heading }}</h2>
+      {% elsif current_blog %}
+        <h2 class="rk-blog-grid__heading">{{ current_blog.title }}</h2>
+      {% endif %}
+      {% if section.settings.description != blank %}
+        <p class="rk-blog-grid__description">{{ section.settings.description }}</p>
+      {% endif %}
+      {% if current_blog != blank and section.settings.show_view_all %}
+        <a href="{{ current_blog.url }}" class="rk-blog-grid__view-all">
+          View all posts
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 8h6M8 5l3 3-3 3"/>
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+
+    {% if current_blog != blank %}
+      <div class="rk-blog-grid__posts">
+        {% for article in current_blog.articles limit: section.settings.posts_limit %}
+          <article class="rk-blog-grid__card">
+            {% if article.image != blank %}
+              <a href="{{ article.url }}" class="rk-blog-grid__image-link">
+                {{ article.image | image_url: width: 600 | image_tag: 
+                  loading: 'lazy',
+                  class: 'rk-blog-grid__image',
+                  alt: article.image.alt | default: article.title
+                }}
+              </a>
+            {% else %}
+              <a href="{{ article.url }}" class="rk-blog-grid__image-link">
+                <div class="rk-blog-grid__image-placeholder">
+                  <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                </div>
+              </a>
+            {% endif %}
+            
+            <div class="rk-blog-grid__content">
+              {% if article.tags.size > 0 %}
+                <div class="rk-blog-grid__tags">
+                  {% for tag in article.tags limit: 1 %}
+                    <span class="rk-blog-grid__tag">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              
+              <h3 class="rk-blog-grid__title">
+                <a href="{{ article.url }}">{{ article.title }}</a>
+              </h3>
+              
+              {% if article.excerpt != blank %}
+                <p class="rk-blog-grid__excerpt">{{ article.excerpt | strip_html | truncate: 150 }}</p>
+              {% elsif article.content != blank %}
+                <p class="rk-blog-grid__excerpt">{{ article.content | strip_html | truncate: 150 }}</p>
+              {% endif %}
+              
+              <div class="rk-blog-grid__meta">
+                <span class="rk-blog-grid__author">{{ article.author }}</span>
+                <span class="rk-blog-grid__date">{{ article.published_at | date: "%b %d, %Y" }}</span>
+              </div>
+            </div>
+          </article>
+        {% else %}
+          <p class="rk-blog-grid__empty">No blog posts found. Please select a blog with published articles.</p>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="rk-blog-grid__empty">Please select a blog to display posts from.</p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "RK Blog Grid",
+  "settings": [
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "From Our Blog"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Section Description",
+      "default": "Latest tips and insights for growing your food brand"
+    },
+    {
+      "type": "range",
+      "id": "posts_limit",
+      "label": "Number of posts to show",
+      "min": 3,
+      "max": 12,
+      "step": 3,
+      "default": 6
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show 'View all' link",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK Blog Grid"
+    }
+  ]
+}
+{% endschema %}

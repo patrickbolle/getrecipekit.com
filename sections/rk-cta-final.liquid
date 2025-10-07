@@ -1,0 +1,120 @@
+{{ 'rk-cta-final.css' | asset_url | stylesheet_tag }}
+
+<section class="rk-cta-final" data-section-id="{{ section.id }}" style="background: {{ section.settings.background_type }};">
+  <div class="rk-cta-final__container">
+    <div class="rk-cta-final__content">
+      {% if section.settings.badge_text != blank %}
+        <div class="rk-cta-final__badge">{{ section.settings.badge_text }}</div>
+      {% endif %}
+
+      {% if section.settings.heading != blank %}
+        <h2 class="rk-cta-final__heading">{{ section.settings.heading }}</h2>
+      {% endif %}
+
+      {% if section.settings.subheading != blank %}
+        <div class="rk-cta-final__subheading">{{ section.settings.subheading }}</div>
+      {% endif %}
+
+      <div class="rk-cta-final__buttons">
+        {% if section.settings.cta_primary_text != blank %}
+          <a href="{{ section.settings.cta_primary_link | default: '#' }}" class="rk-cta-final__button rk-cta-final__button--primary">
+            {{ section.settings.cta_primary_text }}
+          </a>
+        {% endif %}
+
+        {% if section.settings.cta_secondary_text != blank %}
+          <a href="{{ section.settings.cta_secondary_link | default: '#' }}" class="rk-cta-final__button rk-cta-final__button--secondary">
+            {{ section.settings.cta_secondary_text }}
+          </a>
+        {% endif %}
+      </div>
+
+      {% if section.settings.trust_indicators != blank %}
+        <div class="rk-cta-final__trust">
+          {{ section.settings.trust_indicators }}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if section.settings.show_decorations %}
+      <div class="rk-cta-final__decorations">
+        <div class="rk-cta-final__decoration rk-cta-final__decoration--1">🍕</div>
+        <div class="rk-cta-final__decoration rk-cta-final__decoration--2">🥗</div>
+        <div class="rk-cta-final__decoration rk-cta-final__decoration--3">🍰</div>
+        <div class="rk-cta-final__decoration rk-cta-final__decoration--4">🥘</div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "RK Final CTA",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "🎉 Limited Time Offer"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Ready to turn recipes into <em>revenue</em>?</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>Join hundreds of food brands growing with Recipe Kit</p>"
+    },
+    {
+      "type": "text",
+      "id": "cta_primary_text",
+      "label": "Primary Button Text",
+      "default": "Start Your Free Trial"
+    },
+    {
+      "type": "url",
+      "id": "cta_primary_link",
+      "label": "Primary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "cta_secondary_text",
+      "label": "Secondary Button Text",
+      "default": "View Pricing"
+    },
+    {
+      "type": "url",
+      "id": "cta_secondary_link",
+      "label": "Secondary Button Link"
+    },
+    {
+      "type": "text",
+      "id": "trust_indicators",
+      "label": "Trust Indicators",
+      "default": "✓ 14-day free trial • ✓ No credit card required • ✓ Cancel anytime"
+    },
+    {
+      "type": "textarea",
+      "id": "background_type",
+      "label": "Background CSS",
+      "default": "linear-gradient(135deg, #FFF8F3 0%, #FFE4E1 100%)",
+      "info": "Enter CSS gradient or color"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_decorations",
+      "label": "Show Floating Decorations",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK Final CTA"
+    }
+  ]
+}
+{% endschema %}

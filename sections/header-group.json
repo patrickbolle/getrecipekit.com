@@ -1,44 +1,29 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-  "name": "t:sections.header.name",
   "type": "header",
+  "name": "RK Header Group",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "text_alignment": "center",
-            "color_scheme": "scheme-1",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "announcement-bar-0"
-      ]
-    },
-    "header": {
-      "type": "header",
+    "rk_header": {
+      "type": "rk-header",
       "settings": {
-        "color_scheme": "scheme-1",
-        "logo_position": "middle-left",
+        "logo": "shopify://shop_images/logo.png",
         "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
-        "show_line_separator": true,
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "mobile_logo_position": "center",
-        "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
+        "show_search": false,
+        "cta_text": "Start Free Trial",
+        "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+        "sticky_header": true
       }
     }
   },
   "order": [
-    "announcement-bar",
-    "header"
+    "rk_header"
   ]
 }

@@ -1,0 +1,190 @@
+{{ 'rk-feature-showcase.css' | asset_url | stylesheet_tag }}
+
+<section class="rk-features" data-section-id="{{ section.id }}">
+  <div class="rk-features__container">
+    {% if section.settings.heading != blank or section.settings.description != blank %}
+      <div class="rk-features__header">
+        {% if section.settings.heading != blank %}
+          <h2 class="rk-features__heading">{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.description != blank %}
+          <div class="rk-features__description">{{ section.settings.description }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="rk-features__grid rk-features__grid--{{ section.settings.columns }}">
+      {% for block in section.blocks %}
+        <div class="rk-features__item rk-features__item--{{ section.settings.card_style }}" {{ block.shopify_attributes }}>
+          {% if block.settings.icon != blank %}
+            <div class="rk-features__icon-wrapper rk-features__icon--{{ section.settings.icon_style }}">
+              {% if block.settings.icon_type == 'emoji' %}
+                <span class="rk-features__icon-emoji">{{ block.settings.icon }}</span>
+              {% elsif block.settings.icon_type == 'image' %}
+                {{ block.settings.icon_image | image_url: width: 60 | image_tag: class: 'rk-features__icon-image' }}
+              {% else %}
+                <div class="rk-features__icon-svg">
+                  {{ block.settings.icon }}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          <h3 class="rk-features__item-heading">{{ block.settings.heading }}</h3>
+          
+          {% if block.settings.description != blank %}
+            <p class="rk-features__item-description">{{ block.settings.description }}</p>
+          {% endif %}
+
+          {% if block.settings.link_text != blank and block.settings.link_url != blank %}
+            <a href="{{ block.settings.link_url }}" class="rk-features__link">
+              {{ block.settings.link_text }}
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 8h6M8 5l3 3-3 3"/>
+              </svg>
+            </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "RK Feature Showcase",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Everything you need to grow"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Section Description",
+      "default": "<p>Transform your recipes into a powerful marketing tool that drives engagement and sales.</p>"
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Columns",
+      "options": [
+        {"value": "2", "label": "2 Columns"},
+        {"value": "3", "label": "3 Columns"},
+        {"value": "4", "label": "4 Columns"}
+      ],
+      "default": "3"
+    },
+    {
+      "type": "select",
+      "id": "card_style",
+      "label": "Card Style",
+      "options": [
+        {"value": "none", "label": "No Border"},
+        {"value": "bordered", "label": "Bordered"},
+        {"value": "shadow", "label": "Shadow"}
+      ],
+      "default": "shadow"
+    },
+    {
+      "type": "select",
+      "id": "icon_style",
+      "label": "Icon Style",
+      "options": [
+        {"value": "filled", "label": "Filled Background"},
+        {"value": "outlined", "label": "Outlined"},
+        {"value": "none", "label": "No Background"}
+      ],
+      "default": "filled"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Icon Type",
+          "options": [
+            {"value": "emoji", "label": "Emoji"},
+            {"value": "svg", "label": "SVG Code"},
+            {"value": "image", "label": "Image"}
+          ],
+          "default": "emoji"
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (Emoji or SVG)",
+          "default": "🍳",
+          "info": "Enter an emoji or paste SVG code"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Icon Image",
+          "info": "Used when Icon Type is set to Image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Create Beautiful Recipes"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Design professional recipe cards that match your brand's unique style and voice."
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "Learn more"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK Feature Showcase",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "🍳",
+            "heading": "Create Beautiful Recipes",
+            "description": "Design professional recipe cards that perfectly match your brand's unique style."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "📈",
+            "heading": "Drive Organic Traffic",
+            "description": "SEO-optimized recipe content that ranks on Google and brings customers to you."
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "icon": "🛒",
+            "heading": "Convert to Sales",
+            "description": "Seamlessly integrate shopping into recipes to turn inspiration into purchases."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

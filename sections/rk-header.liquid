@@ -1,0 +1,254 @@
+{{ 'rk-header.css' | asset_url | stylesheet_tag }}
+
+<header class="rk-header {% if section.settings.sticky_header %}rk-header--sticky{% endif %}" data-section-id="{{ section.id }}">
+  <div class="rk-header__container">
+    <div class="rk-header__wrapper">
+      <!-- Logo -->
+      <div class="rk-header__logo">
+        <a href="/" class="rk-header__logo-link">
+          {% if section.settings.logo != blank %}
+            {{ section.settings.logo | image_url: width: 200 | image_tag: 
+              class: 'rk-header__logo-image',
+              alt: shop.name,
+              loading: 'eager'
+            }}
+          {% else %}
+            <span class="rk-header__logo-text">{{ shop.name }}</span>
+          {% endif %}
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="rk-header__nav">
+        <ul class="rk-header__menu">
+          {% for link in section.settings.menu.links %}
+            <li class="rk-header__menu-item {% if link.links.size > 0 %}rk-header__menu-item--has-dropdown{% endif %}">
+              <a href="{{ link.url }}" class="rk-header__menu-link">
+                {{ link.title }}
+                {% if link.links.size > 0 %}
+                  <svg class="rk-header__dropdown-arrow" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                {% endif %}
+              </a>
+              
+              {% if link.links.size > 0 %}
+                <div class="rk-header__dropdown">
+                  <ul class="rk-header__dropdown-menu">
+                    {% for child_link in link.links %}
+                      <li class="rk-header__dropdown-item">
+                        <a href="{{ child_link.url }}" class="rk-header__dropdown-link">
+                          {{ child_link.title }}
+                        </a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      <!-- Actions -->
+      <div class="rk-header__actions">
+        {% if shop.customer_accounts_enabled %}
+          <a href="/account" class="rk-header__action-link">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M3 17c0-3.3 3.1-6 7-6s7 2.7 7 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+        {% endif %}
+
+        {% if section.settings.show_search %}
+          <button class="rk-header__action-link rk-header__search-trigger">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M13 13l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        {% endif %}
+
+        {% if section.settings.cta_text != blank %}
+          <a href="{{ section.settings.cta_link | default: '#' }}" class="rk-header__cta">
+            {{ section.settings.cta_text }}
+          </a>
+        {% endif %}
+
+        <!-- Mobile Menu Toggle -->
+        <button class="rk-header__mobile-toggle" aria-label="Menu">
+          <span class="rk-header__burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="rk-header__mobile-menu">
+    <div class="rk-header__mobile-container">
+      <nav class="rk-header__mobile-nav">
+        {% for link in section.settings.menu.links %}
+          <div class="rk-header__mobile-item">
+            {% if link.links.size > 0 %}
+              <button class="rk-header__mobile-link rk-header__mobile-link--parent">
+                {{ link.title }}
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M4.5 3L7.5 6L4.5 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </button>
+              <div class="rk-header__mobile-submenu">
+                {% for child_link in link.links %}
+                  <a href="{{ child_link.url }}" class="rk-header__mobile-sublink">
+                    {{ child_link.title }}
+                  </a>
+                {% endfor %}
+              </div>
+            {% else %}
+              <a href="{{ link.url }}" class="rk-header__mobile-link">
+                {{ link.title }}
+              </a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </nav>
+
+      {% if section.settings.cta_text != blank %}
+        <div class="rk-header__mobile-cta">
+          <a href="{{ section.settings.cta_link | default: '#' }}" class="rk-header__cta rk-header__cta--mobile">
+            {{ section.settings.cta_text }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  {% if section.settings.show_search %}
+    <div class="rk-header__search-modal">
+      <div class="rk-header__search-container">
+        <form action="/search" method="get" class="rk-header__search-form">
+          <input type="search" name="q" placeholder="Search recipes, tips, and more..." class="rk-header__search-input">
+          <button type="submit" class="rk-header__search-submit">
+            Search
+          </button>
+        </form>
+        <button class="rk-header__search-close" aria-label="Close search">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  {% endif %}
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('[data-section-id="{{ section.id }}"]');
+    const mobileToggle = header.querySelector('.rk-header__mobile-toggle');
+    const mobileMenu = header.querySelector('.rk-header__mobile-menu');
+    const searchTrigger = header.querySelector('.rk-header__search-trigger');
+    const searchModal = header.querySelector('.rk-header__search-modal');
+    const searchClose = header.querySelector('.rk-header__search-close');
+    
+    // Mobile menu toggle
+    mobileToggle?.addEventListener('click', function() {
+      this.classList.toggle('rk-header__mobile-toggle--active');
+      mobileMenu.classList.toggle('rk-header__mobile-menu--active');
+      document.body.classList.toggle('no-scroll');
+    });
+
+    // Mobile submenu toggles
+    const mobileParents = header.querySelectorAll('.rk-header__mobile-link--parent');
+    mobileParents.forEach(parent => {
+      parent.addEventListener('click', function() {
+        this.classList.toggle('rk-header__mobile-link--open');
+        this.nextElementSibling.classList.toggle('rk-header__mobile-submenu--open');
+      });
+    });
+
+    // Search modal
+    searchTrigger?.addEventListener('click', function() {
+      searchModal.classList.add('rk-header__search-modal--active');
+      searchModal.querySelector('.rk-header__search-input').focus();
+    });
+
+    searchClose?.addEventListener('click', function() {
+      searchModal.classList.remove('rk-header__search-modal--active');
+    });
+
+    // Sticky header
+    {% if section.settings.sticky_header %}
+      let lastScroll = 0;
+      window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 100) {
+          header.classList.add('rk-header--scrolled');
+          
+          if (currentScroll > lastScroll) {
+            header.classList.add('rk-header--hidden');
+          } else {
+            header.classList.remove('rk-header--hidden');
+          }
+        } else {
+          header.classList.remove('rk-header--scrolled');
+        }
+        
+        lastScroll = currentScroll;
+      });
+    {% endif %}
+  });
+</script>
+
+{% schema %}
+{
+  "name": "RK Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Main Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "Show Search",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Start Free Trial"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Button Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_header",
+      "label": "Sticky Header",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK Header"
+    }
+  ]
+}
+{% endschema %}

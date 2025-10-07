@@ -1,210 +1,628 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "announcement": {
+      "type": "rk-announcement-bar",
+      "disabled": true,
+      "settings": {
+        "enable": true,
+        "text": "🎉 Get 30% off your first month - Limited time offer!",
+        "icon": "✨",
+        "link": "/pricing",
+        "background_color": "#ff6b6b",
+        "text_color": "#ffffff",
+        "show_close": true,
+        "auto_dismiss": 0
+      }
+    },
+    "hero": {
+      "type": "rk-hero",
+      "settings": {
+        "eyebrow": "For Food Brands on Shopify",
+        "headline": "<p>Turn Recipes into <em>Revenue</em></p>",
+        "description": "<p>Help your customers discover what to make with your products while driving sales through beautiful, SEO-optimized recipe content.</p>",
+        "cta_primary_text": "Start Free Trial",
+        "cta_primary_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+        "cta_secondary_text": "See How It Works",
+        "cta_secondary_link": "#how-it-works",
+        "trust_badge": "✨ 14-day free trial",
+        "hero_image": "shopify://shop_images/Screenshot_2025-09-25_at_15-56-08_Recipe_Kit_Recipe_Kit_Shopify.png",
+        "layout": "centered",
+        "enable_animation": false,
+        "show_scroll_indicator": false
+      }
+    },
+    "social-proof": {
+      "type": "rk-social-proof",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "metric-1": {
+          "type": "metric",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
+            "icon": "🍴",
+            "number": "250,000",
+            "suffix": "+",
+            "label": "Recipes Created"
           }
         },
-        "text": {
-          "type": "text",
+        "metric-2": {
+          "type": "metric",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
+            "icon": "🛍️",
+            "number": "1700",
+            "suffix": "+",
+            "label": "Food Brands"
           }
         },
-        "button": {
-          "type": "buttons",
+        "metric-3": {
+          "type": "metric",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "icon": "📈",
+            "number": "10 million",
+            "suffix": "",
+            "label": "Recipe Page Views"
+          }
+        },
+        "metric-4": {
+          "type": "metric",
+          "settings": {
+            "icon": "⭐",
+            "number": "4.8",
+            "suffix": "/5",
+            "label": "Shopfiy App Store Rating"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "metric-1",
+        "metric-2",
+        "metric-3",
+        "metric-4"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "heading": "Trusted by top food brands on Shopify",
+        "display_type": "metrics",
+        "enable_scroll": true,
+        "animation_speed": 30,
+        "animate_numbers": false
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "features": {
+      "type": "rk-feature-showcase",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "feature-1": {
+          "type": "feature",
           "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
+            "icon_type": "emoji",
+            "icon": "🍳",
+            "heading": "Create Beautiful Recipes",
+            "description": "Design professional recipe cards that perfectly match your brand's unique style and voice.",
+            "link_text": "Learn more",
+            "link_url": "/features/recipe-creator"
           }
         },
-        "text": {
-          "type": "text",
+        "feature-2": {
+          "type": "feature",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "icon_type": "emoji",
+            "icon": "📈",
+            "heading": "Drive Organic Traffic",
+            "description": "SEO-optimized recipe content that ranks on Google and brings customers to your store.",
+            "link_text": "Learn more",
+            "link_url": "/features/seo"
+          }
+        },
+        "feature-3": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🛒",
+            "heading": "Convert to Sales",
+            "description": "Seamlessly integrate shopping into recipes to turn inspiration into purchases.",
+            "link_text": "Learn more",
+            "link_url": "/features/shoppable"
           }
         }
       },
       "block_order": [
-        "heading",
-        "text"
+        "feature-1",
+        "feature-2",
+        "feature-3"
       ],
       "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
+        "heading": "Everything you need to grow",
+        "description": "<p>Transform your recipes into a powerful marketing tool that drives engagement and sales.</p>",
+        "columns": "3",
+        "card_style": "shadow",
+        "icon_style": "filled"
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
+    "feature-recipe-creation": {
+      "type": "rk-feature-recipe-creation",
       "blocks": {
-        "collection-0": {
-          "type": "collection",
+        "feature-1": {
+          "type": "feature",
           "settings": {
-            "collection": ""
+            "icon": "✨",
+            "title": "Drag & Drop Editor",
+            "description": "Simply drag elements to build your perfect recipe layout"
           }
         },
-        "product": {
-          "type": "product",
+        "feature-2": {
+          "type": "feature",
           "settings": {
-            "product": "",
-            "second_image": false
+            "icon": "🎨",
+            "title": "Multiple Layouts",
+            "description": "Choose from cards, lists, or full-page recipe formats"
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "feature-3": {
+          "type": "feature",
           "settings": {
-            "collection": ""
+            "icon": "📱",
+            "title": "Responsive Design",
+            "description": "Looks perfect on every device, from phones to desktops"
+          }
+        },
+        "feature-4": {
+          "type": "feature",
+          "settings": {
+            "icon": "🖨️",
+            "title": "Print Optimized",
+            "description": "Beautiful printed recipes with smart page breaks"
+          }
+        },
+        "feature-5": {
+          "type": "feature",
+          "settings": {
+            "icon": "🔗",
+            "title": "One-Click Sharing",
+            "description": "Share directly to social media with optimized previews"
+          }
+        },
+        "feature-6": {
+          "type": "feature",
+          "settings": {
+            "icon": "📸",
+            "title": "Smart Images",
+            "description": "Automatic image optimization and lazy loading"
           }
         }
       },
       "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
+        "feature-1",
+        "feature-2",
+        "feature-3",
+        "feature-4",
+        "feature-5",
+        "feature-6"
       ],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "eyebrow": "Easy Recipe Builder",
+        "heading": "<p>Beautiful Recipes, <em>Your Way</em></p>",
+        "subheading": "Create stunning, professional recipe cards in minutes with our intuitive drag-and-drop editor. No coding required.",
+        "testimonial_text": "Recipe Kit transformed how we share recipes. Our engagement increased by 300% in just 2 months!",
+        "testimonial_author": "Sarah, Founder of Sweet Treats Co.",
+        "cta_text": "Try the Recipe Builder",
+        "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com"
       }
     },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
+    "feature-seo": {
+      "type": "rk-feature-seo",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "channel-1": {
+          "type": "channel",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "icon_type": "emoji",
+            "icon": "🔍",
+            "title": "Google Rich Results",
+            "description": "Schema.org structured data",
+            "stat": "3x more clicks",
+            "show_preview": true,
+            "preview_type": "google"
           }
         },
-        "column2": {
-          "type": "column",
+        "channel-2": {
+          "type": "channel",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "icon_type": "emoji",
+            "icon": "🤖",
+            "title": "AI & ChatGPT",
+            "description": "Optimized for AI assistants",
+            "stat": "Future-proof",
+            "show_preview": true,
+            "preview_type": "ai"
           }
         },
-        "column3": {
-          "type": "column",
+        "channel-3": {
+          "type": "channel",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "icon_type": "emoji",
+            "icon": "📱",
+            "title": "Social Media",
+            "description": "Open Graph tags included",
+            "stat": "2x more shares",
+            "show_preview": true,
+            "preview_type": "social"
+          }
+        },
+        "channel-4": {
+          "type": "channel",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🎙️",
+            "title": "Voice Search",
+            "description": "Optimized for Alexa & Google",
+            "stat": "40% of searches",
+            "show_preview": false,
+            "preview_type": "google"
           }
         }
       },
       "block_order": [
-        "column1",
-        "column2",
-        "column3"
+        "channel-1",
+        "channel-2",
+        "channel-3",
+        "channel-4"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "eyebrow": "SEO & Discoverability",
+        "heading": "<p>Get Found <em>Everywhere</em></p>",
+        "subheading": "Your recipes will appear in Google search, AI assistants, voice searches, and social media with rich, engaging previews.",
+        "recipe_title": "Chocolate Chip Cookies",
+        "show_stats": true
+      }
+    },
+    "feature-revenue": {
+      "type": "rk-feature-revenue",
+      "blocks": {
+        "step-1": {
+          "type": "step",
+          "settings": {
+            "icon": "👀",
+            "title": "Customer Views Recipe",
+            "description": "Visitors discover your delicious recipes with highlighted ingredients",
+            "show_visual": true,
+            "visual_type": "recipe"
+          }
+        },
+        "step-2": {
+          "type": "step",
+          "settings": {
+            "icon": "🛒",
+            "title": "Smart Shopping Experience",
+            "description": "One-click adds all ingredients to cart with quantity calculator",
+            "show_visual": true,
+            "visual_type": "cart"
+          }
+        },
+        "step-3": {
+          "type": "step",
+          "settings": {
+            "icon": "💳",
+            "title": "Seamless Checkout",
+            "description": "Higher order values with recipe-based product bundles",
+            "show_visual": true,
+            "visual_type": "checkout"
+          }
+        }
+      },
+      "block_order": [
+        "step-1",
+        "step-2",
+        "step-3"
+      ],
+      "settings": {
+        "eyebrow": "Revenue Generation",
+        "heading": "<p>Turn Inspiration into <em>Sales</em></p>",
+        "subheading": "Convert recipe browsers into buyers with seamless shopping experiences that drive revenue.",
+        "show_metrics": false,
+        "metrics_title": "Revenue Impact",
+        "show_calculator": false
+      }
+    },
+    "feature-analytics": {
+      "type": "rk-feature-analytics",
+      "blocks": {
+        "recommendation-1": {
+          "type": "recommendation",
+          "settings": {
+            "icon": "🍳",
+            "title": "Create more breakfast recipes",
+            "description": "Morning recipes get 3x more engagement",
+            "impact": "High Impact"
+          }
+        },
+        "recommendation-2": {
+          "type": "recommendation",
+          "settings": {
+            "icon": "🎄",
+            "title": "Feature seasonal ingredients",
+            "description": "Holiday recipes trending now",
+            "impact": "Trending"
+          }
+        },
+        "recommendation-3": {
+          "type": "recommendation",
+          "settings": {
+            "icon": "🎥",
+            "title": "Add video to top recipes",
+            "description": "Videos increase conversion by 45%",
+            "impact": "Quick Win"
+          }
+        },
+        "recommendation-4": {
+          "type": "recommendation",
+          "settings": {
+            "icon": "📱",
+            "title": "Optimize for mobile users",
+            "description": "73% of your traffic is mobile",
+            "impact": "Priority"
+          }
+        }
+      },
+      "block_order": [
+        "recommendation-1",
+        "recommendation-2",
+        "recommendation-3",
+        "recommendation-4"
+      ],
+      "settings": {
+        "eyebrow": "Analytics & Insights",
+        "heading": "<p>Know What Your <em>Customers Love</em></p>",
+        "subheading": "Get deep insights into customer preferences and behavior with powerful recipe analytics that drive smarter decisions."
+      }
+    },
+    "testimonials": {
+      "type": "rk-testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "company": "Schacht Spindle Company",
+            "quote": "We're so impressed with Recipe Kit and its support. The app ties recipes directly to our products, streamlining our workflow and driving sales.",
+            "author": "",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "company": "Olive Love",
+            "quote": "Recipe Kit has transformed how we present recipes. Customers can explore our recipes, shop ingredients instantly, and share them beautifully across platforms.",
+            "author": "",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        "testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "company": "Growing Naturals",
+            "quote": "This app did a phenomenal job helping us to integrate recipes into our store. The analytics feature is a bonus—we can now see which recipes drive the most engagement.",
+            "author": "",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        "testimonial-4": {
+          "type": "testimonial",
+          "settings": {
+            "company": "Nomfan",
+            "quote": "I moved over from Wordpress and was used to their plugins, but Recipe Kit completely surpassed my expectations. It saved me hours every week and made my content so much more engaging.",
+            "author": "",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        "testimonial-5": {
+          "type": "testimonial",
+          "settings": {
+            "company": "La Boîte",
+            "quote": "One of the best app experiences we have had on Shopify.",
+            "author": "",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        "testimonial-6": {
+          "type": "testimonial",
+          "settings": {
+            "company": "OC Wild Seafood",
+            "quote": "We are a local fresh seafood delivery service … Recipe Kit has been a game changer.",
+            "author": "",
+            "rating": 5,
+            "verified": true
+          }
+        }
+      },
+      "block_order": [
+        "testimonial-1",
+        "testimonial-2",
+        "testimonial-3",
+        "testimonial-4",
+        "testimonial-5",
+        "testimonial-6"
+      ],
+      "settings": {
+        "eyebrow": "Customer Success Stories",
+        "heading": "<p>Loved by <em>Food Brands</em> Everywhere</p>",
+        "subheading": "See how Recipe Kit is helping brands connect with customers through beautiful, shoppable recipes.",
+        "stats_enable": true,
+        "stat_1_number": "1700+",
+        "stat_1_label": "Happy Brands",
+        "stat_2_number": "4.8/5",
+        "stat_2_label": "Average Rating",
+        "stat_3_number": "",
+        "stat_3_label": "",
+        "cta_text": "Join These Success Stories",
+        "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com"
+      }
+    },
+    "how-it-works": {
+      "type": "rk-how-it-works",
+      "blocks": {
+        "step-1": {
+          "type": "step",
+          "settings": {
+            "icon": "✍️",
+            "title": "Create Your Recipe",
+            "description": "Use our intuitive editor to build beautiful recipes that match your brand"
+          }
+        },
+        "step-2": {
+          "type": "step",
+          "settings": {
+            "icon": "🎨",
+            "title": "Customize the Look",
+            "description": "Match your brand's style with custom colors, fonts, and layouts"
+          }
+        },
+        "step-3": {
+          "type": "step",
+          "settings": {
+            "icon": "🚀",
+            "title": "Publish & Share",
+            "description": "One-click publishing to your store and all your marketing channels"
+          }
+        },
+        "step-4": {
+          "type": "step",
+          "settings": {
+            "icon": "📊",
+            "title": "Track & Grow",
+            "description": "Monitor performance and watch your engagement and sales increase"
+          }
+        }
+      },
+      "block_order": [
+        "step-1",
+        "step-2",
+        "step-3",
+        "step-4"
+      ],
+      "settings": {
+        "heading": "How Recipe Kit Works",
+        "description": "<p>Get started in minutes and watch your engagement soar</p>",
+        "layout_style": "timeline",
+        "number_style": "icon",
+        "show_connector": true,
+        "animate_on_scroll": true,
+        "cta_text": "Get Started Free",
+        "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com"
+      }
+    },
+    "faq": {
+      "type": "rk-faq",
+      "blocks": {
+        "faq-1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does Recipe Kit work?",
+            "answer": "<p>Recipe Kit integrates seamlessly with your Shopify store, allowing you to create beautiful, shoppable recipe cards that link directly to your products. Simply install the app, create recipes with our drag-and-drop editor, and embed them anywhere on your site.</p>"
+          }
+        },
+        "faq-2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need coding skills to use Recipe Kit?",
+            "answer": "<p>Not at all! Recipe Kit is designed for everyone. Our intuitive drag-and-drop editor makes it easy to create professional recipe cards without any technical knowledge. Plus, our support team is always here to help.</p>"
+          }
+        },
+        "faq-3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will Recipe Kit slow down my website?",
+            "answer": "<p>No, Recipe Kit is optimized for performance. We use lazy loading, optimized images, and efficient code to ensure your recipes load quickly without impacting your site's speed. Most users actually see improved engagement metrics.</p>"
+          }
+        },
+        "faq-4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I customize the look of my recipes?",
+            "answer": "<p>Absolutely! Recipe Kit offers multiple layouts, custom styling options, and full control over colors, fonts, and spacing. Your recipes will match your brand perfectly while maintaining a professional, appetizing appearance.</p>"
+          }
+        },
+        "faq-5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does Recipe Kit help with SEO?",
+            "answer": "<p>Recipe Kit automatically generates structured data (Schema.org) for all your recipes, making them eligible for rich snippets in Google search results. This means your recipes can appear with ratings, cooking times, and images directly in search results.</p>"
+          }
+        },
+        "faq-6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What kind of support do you offer?",
+            "answer": "<p>We provide comprehensive support including email assistance, detailed documentation, video tutorials, and personalized onboarding for new users. Our team is passionate about your success and responds quickly to all inquiries.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq-1",
+        "faq-2",
+        "faq-3",
+        "faq-4",
+        "faq-5",
+        "faq-6"
+      ],
+      "settings": {
+        "eyebrow": "Frequently Asked Questions",
+        "heading": "<p>Everything You Need to <em>Know</em></p>",
+        "subheading": "Got questions? We've got answers. Learn how Recipe Kit can transform your food content strategy.",
+        "accordion_mode": true,
+        "cta_subtext": "Still have questions?",
+        "cta_text": "Contact Support",
+        "cta_link": "/pages/contact"
+      }
+    },
+    "blog-grid": {
+      "type": "rk-blog-grid",
+      "settings": {
+        "blog": "our-blog",
+        "heading": "From Our Blog",
+        "description": "Latest tips and insights for growing your food brand",
+        "posts_limit": 3,
+        "show_view_all": true
+      }
+    },
+    "final-cta": {
+      "type": "rk-cta-final",
+      "settings": {
+        "badge_text": "",
+        "heading": "<p>Ready to turn recipes into <em>revenue</em>?</p>",
+        "subheading": "<p>Join hundreds of food brands growing with Recipe Kit</p>",
+        "cta_primary_text": "Start Your Free Trial",
+        "cta_primary_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+        "cta_secondary_text": "View Pricing",
+        "cta_secondary_link": "/pricing",
+        "trust_indicators": "✓ 14-day free trial ✓ Cancel anytime",
+        "background_type": "linear-gradient(135deg, #FFF8F3 0%, #FFE4E1 100%)",
+        "show_decorations": true
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "announcement",
+    "hero",
+    "social-proof",
+    "features",
+    "feature-recipe-creation",
+    "feature-seo",
+    "feature-revenue",
+    "feature-analytics",
+    "testimonials",
+    "how-it-works",
+    "faq",
+    "blog-grid",
+    "final-cta"
   ]
 }

@@ -1,0 +1,279 @@
+{{ 'rk-feature-seo.css' | asset_url | stylesheet_tag }}
+
+<section class="rk-feature-seo" data-section-id="{{ section.id }}">
+  <div class="rk-feature-seo__container">
+    <div class="rk-feature-seo__header">
+      {% if section.settings.eyebrow != blank %}
+        <span class="rk-feature-seo__eyebrow">{{ section.settings.eyebrow }}</span>
+      {% endif %}
+      <h2 class="rk-feature-seo__heading">{{ section.settings.heading }}</h2>
+      {% if section.settings.subheading != blank %}
+        <p class="rk-feature-seo__subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+    </div>
+
+    <div class="rk-feature-seo__hub">
+      <div class="rk-feature-seo__center">
+        <div class="rk-feature-seo__recipe-card">
+          <div class="rk-feature-seo__recipe-image"></div>
+          <h3>{{ section.settings.recipe_title | default: 'Chocolate Chip Cookies' }}</h3>
+          <div class="rk-feature-seo__recipe-rating">
+            ⭐⭐⭐⭐⭐ <span>4.9 (127 reviews)</span>
+          </div>
+        </div>
+        
+        <div class="rk-feature-seo__connections">
+          <svg class="rk-feature-seo__connection-lines" viewBox="0 0 400 400">
+            <circle cx="200" cy="200" r="120" fill="none" stroke="url(#gradient)" stroke-width="2" stroke-dasharray="5,5" opacity="0.3"/>
+            <defs>
+              <linearGradient id="gradient">
+                <stop offset="0%" stop-color="#EB4C2E"/>
+                <stop offset="100%" stop-color="#4ECDC4"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+
+      <div class="rk-feature-seo__channels">
+        {% for block in section.blocks %}
+          <div class="rk-feature-seo__channel rk-feature-seo__channel--{{ forloop.index }}" {{ block.shopify_attributes }}>
+            <div class="rk-feature-seo__channel-icon">
+              {% if block.settings.icon_type == 'emoji' %}
+                {{ block.settings.icon }}
+              {% elsif block.settings.icon_type == 'image' and block.settings.icon_image != blank %}
+                {{ block.settings.icon_image | image_url: width: 48 | image_tag }}
+              {% else %}
+                <div class="rk-feature-seo__icon-placeholder"></div>
+              {% endif %}
+            </div>
+            <h4 class="rk-feature-seo__channel-title">{{ block.settings.title }}</h4>
+            <p class="rk-feature-seo__channel-description">{{ block.settings.description }}</p>
+            {% if block.settings.stat != blank %}
+              <div class="rk-feature-seo__channel-stat">{{ block.settings.stat }}</div>
+            {% endif %}
+            
+            {% if block.settings.show_preview %}
+              <div class="rk-feature-seo__preview rk-feature-seo__preview--{{ block.settings.preview_type }}">
+                {% case block.settings.preview_type %}
+                  {% when 'google' %}
+                    <div class="rk-feature-seo__google-result">
+                      <div class="rk-feature-seo__google-url">yourstore.com › recipes</div>
+                      <div class="rk-feature-seo__google-title">Chocolate Chip Cookies Recipe</div>
+                      <div class="rk-feature-seo__google-rich">
+                        <span>⭐ 4.9</span>
+                        <span>• 127 reviews</span>
+                        <span>• 30 min</span>
+                      </div>
+                    </div>
+                  {% when 'ai' %}
+                    <div class="rk-feature-seo__ai-result">
+                      <div class="rk-feature-seo__ai-prompt">Show me cookie recipes</div>
+                      <div class="rk-feature-seo__ai-response">Based on Recipe Kit data...</div>
+                    </div>
+                  {% when 'social' %}
+                    <div class="rk-feature-seo__social-card">
+                      <div class="rk-feature-seo__social-image"></div>
+                      <div class="rk-feature-seo__social-text">Delicious Recipe</div>
+                    </div>
+                {% endcase %}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% if section.settings.show_stats %}
+      <div class="rk-feature-seo__stats">
+        <div class="rk-feature-seo__stat-item">
+          <div class="rk-feature-seo__stat-number" data-count="3">3x</div>
+          <div class="rk-feature-seo__stat-label">More Clicks</div>
+        </div>
+        <div class="rk-feature-seo__stat-item">
+          <div class="rk-feature-seo__stat-number" data-count="40">40%</div>
+          <div class="rk-feature-seo__stat-label">Voice Searches</div>
+        </div>
+        <div class="rk-feature-seo__stat-item">
+          <div class="rk-feature-seo__stat-number" data-count="2">2x</div>
+          <div class="rk-feature-seo__stat-label">Social Shares</div>
+        </div>
+        <div class="rk-feature-seo__stat-item">
+          <div class="rk-feature-seo__stat-number" data-count="100">100%</div>
+          <div class="rk-feature-seo__stat-label">AI Ready</div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.querySelector('[data-section-id="{{ section.id }}"]');
+    const channels = section.querySelectorAll('.rk-feature-seo__channel');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('rk-feature-seo__channel--visible');
+          }, index * 150);
+        }
+      });
+    }, { threshold: 0.2 });
+    
+    channels.forEach(channel => observer.observe(channel));
+  });
+</script>
+
+{% schema %}
+{
+  "name": "RK Feature - SEO",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "SEO & Discoverability"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Get Found <em>Everywhere</em></p>"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Your recipes will appear in Google search, AI assistants, voice searches, and social media with rich, engaging previews."
+    },
+    {
+      "type": "text",
+      "id": "recipe_title",
+      "label": "Sample Recipe Title",
+      "default": "Chocolate Chip Cookies"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stats",
+      "label": "Show Statistics Bar",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "channel",
+      "name": "Discovery Channel",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon_type",
+          "label": "Icon Type",
+          "options": [
+            {"value": "emoji", "label": "Emoji"},
+            {"value": "image", "label": "Image"}
+          ],
+          "default": "emoji"
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (Emoji)",
+          "default": "🔍"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Icon Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Channel Title",
+          "default": "Google Rich Results"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Channel Description",
+          "default": "Schema.org structured data for enhanced search results"
+        },
+        {
+          "type": "text",
+          "id": "stat",
+          "label": "Statistic",
+          "default": "3x more clicks"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_preview",
+          "label": "Show Preview",
+          "default": true
+        },
+        {
+          "type": "select",
+          "id": "preview_type",
+          "label": "Preview Type",
+          "options": [
+            {"value": "google", "label": "Google Result"},
+            {"value": "ai", "label": "AI Response"},
+            {"value": "social", "label": "Social Card"}
+          ],
+          "default": "google"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK Feature - SEO",
+      "blocks": [
+        {
+          "type": "channel",
+          "settings": {
+            "icon": "🔍",
+            "title": "Google Rich Results",
+            "description": "Schema.org structured data",
+            "stat": "3x more clicks",
+            "show_preview": true,
+            "preview_type": "google"
+          }
+        },
+        {
+          "type": "channel",
+          "settings": {
+            "icon": "🤖",
+            "title": "AI & ChatGPT",
+            "description": "Optimized for AI assistants",
+            "stat": "Future-proof",
+            "show_preview": true,
+            "preview_type": "ai"
+          }
+        },
+        {
+          "type": "channel",
+          "settings": {
+            "icon": "📱",
+            "title": "Social Media",
+            "description": "Open Graph tags included",
+            "stat": "2x more shares",
+            "show_preview": true,
+            "preview_type": "social"
+          }
+        },
+        {
+          "type": "channel",
+          "settings": {
+            "icon": "🎙️",
+            "title": "Voice Search",
+            "description": "Optimized for Alexa & Google",
+            "stat": "40% of searches",
+            "show_preview": false
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,265 @@
+{{ 'rk-testimonials.css' | asset_url | stylesheet_tag }}
+
+<section class="rk-testimonials" data-section-id="{{ section.id }}">
+  <div class="rk-testimonials__container">
+    <div class="rk-testimonials__header">
+      {% if section.settings.eyebrow != blank %}
+        <span class="rk-testimonials__eyebrow">{{ section.settings.eyebrow }}</span>
+      {% endif %}
+      
+      <h2 class="rk-testimonials__heading">{{ section.settings.heading }}</h2>
+      
+      {% if section.settings.subheading != blank %}
+        <p class="rk-testimonials__subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+    </div>
+
+    <div class="rk-testimonials__grid">
+      {% for block in section.blocks %}
+        <div class="rk-testimonials__card" {{ block.shopify_attributes }}>
+          <div class="rk-testimonials__stars" aria-label="{{ block.settings.rating }} star rating">
+            {% for i in (1..5) %}
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 1l2.598 5.265 5.811.845-4.204 4.098L15.196 17 10 14.265 4.804 17l.991-5.792L1.591 7.11l5.811-.845z"/>
+              </svg>
+            {% endfor %}
+          </div>
+          
+          <blockquote class="rk-testimonials__quote">
+            {{ block.settings.quote }}
+          </blockquote>
+          
+          <div class="rk-testimonials__author">
+            {% if block.settings.company_logo != blank %}
+              <div class="rk-testimonials__company-logo">
+                {{ block.settings.company_logo | image_url: width: 120 | image_tag: 
+                  loading: 'lazy',
+                  alt: block.settings.company
+                }}
+              </div>
+            {% else %}
+              <div class="rk-testimonials__company">{{ block.settings.company }}</div>
+            {% endif %}
+            
+            {% if block.settings.author != blank %}
+              <div class="rk-testimonials__author-name">{{ block.settings.author }}</div>
+            {% endif %}
+            
+            {% if block.settings.verified %}
+              <div class="rk-testimonials__verified">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M8 0l1.66 1.66 2.34-.33-.33 2.34L13.33 5.33 11.67 7l1.66 1.66-1.66 1.67L13.33 12l-1.66 1.67L11.34 16l-2.34-.33L8 14.34l-1.66 1.33L4 16l-.33-2.33L2 12l1.67-1.67L2 8.66 3.67 7 2 5.33l1.67-1.66L4 1.33 6.34 1.66 8 0zm2.83 6.17l-4 4a.5.5 0 01-.71 0l-2-2a.5.5 0 11.71-.71L6.5 9.12l3.65-3.65a.5.5 0 01.71.71l-.03-.01z"/>
+                </svg>
+                Verified Customer
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if section.settings.stats_enable %}
+      <div class="rk-testimonials__stats">
+        <div class="rk-testimonials__stat">
+          <div class="rk-testimonials__stat-number">{{ section.settings.stat_1_number }}</div>
+          <div class="rk-testimonials__stat-label">{{ section.settings.stat_1_label }}</div>
+        </div>
+        <div class="rk-testimonials__stat">
+          <div class="rk-testimonials__stat-number">{{ section.settings.stat_2_number }}</div>
+          <div class="rk-testimonials__stat-label">{{ section.settings.stat_2_label }}</div>
+        </div>
+        <div class="rk-testimonials__stat">
+          <div class="rk-testimonials__stat-number">{{ section.settings.stat_3_number }}</div>
+          <div class="rk-testimonials__stat-label">{{ section.settings.stat_3_label }}</div>
+        </div>
+      </div>
+    {% endif %}
+
+    {% if section.settings.cta_text != blank %}
+      <div class="rk-testimonials__cta-wrapper">
+        <a href="{{ section.settings.cta_link | default: '#' }}" class="rk-testimonials__cta">
+          {{ section.settings.cta_text }}
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M7 10h6m0 0l-3-3m3 3l-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "RK Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Customer Success Stories"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Loved by <em>Food Brands</em> Everywhere</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "See how Recipe Kit is helping brands connect with customers through beautiful, shoppable recipes."
+    },
+    {
+      "type": "checkbox",
+      "id": "stats_enable",
+      "label": "Show Statistics",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "stat_1_number",
+      "label": "Stat 1 Number",
+      "default": "500+"
+    },
+    {
+      "type": "text",
+      "id": "stat_1_label",
+      "label": "Stat 1 Label",
+      "default": "Happy Brands"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_number",
+      "label": "Stat 2 Number",
+      "default": "4.9/5"
+    },
+    {
+      "type": "text",
+      "id": "stat_2_label",
+      "label": "Stat 2 Label",
+      "default": "Average Rating"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_number",
+      "label": "Stat 3 Number",
+      "default": "300%"
+    },
+    {
+      "type": "text",
+      "id": "stat_3_label",
+      "label": "Stat 3 Label",
+      "default": "Avg Engagement Boost"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Join These Success Stories"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "company",
+          "label": "Company Name",
+          "default": "Company Name"
+        },
+        {
+          "type": "image_picker",
+          "id": "company_logo",
+          "label": "Company Logo (Optional)"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Testimonial Quote",
+          "default": "Recipe Kit transformed how we engage with customers."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author Name (Optional)"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Star Rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Show Verified Badge",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "company": "Nomfan",
+            "quote": "Recipe Kit completely surpassed my expectations. It saved me hours every week and made my content so much more engaging.",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "company": "Schacht Spindle Company",
+            "quote": "The app ties recipes directly to our products, streamlining our workflow and driving sales. Patrick and his team have been fantastic—quick, knowledgeable, and genuinely invested in our success.",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "company": "Olive Love",
+            "quote": "Recipe Kit has transformed how we present recipes. Customers can explore, shop ingredients instantly, and share beautifully across platforms.",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "company": "Growing Naturals",
+            "quote": "As a food brand, being able to show our products in real, creative recipes is crucial—and Recipe Kit makes it seamless. The analytics help us see what content drives the most engagement.",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "company": "NUTRILOVERS",
+            "quote": "Easy to use with a simple, good-looking design. Recipe Kit finally gave us exactly what we needed to grow with recipe content.",
+            "rating": 5,
+            "verified": true
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

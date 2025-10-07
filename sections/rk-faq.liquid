@@ -1,0 +1,190 @@
+{{ 'rk-faq.css' | asset_url | stylesheet_tag }}
+
+<section class="rk-faq" data-section-id="{{ section.id }}">
+  <div class="rk-faq__container">
+    <div class="rk-faq__header">
+      {% if section.settings.eyebrow != blank %}
+        <span class="rk-faq__eyebrow">{{ section.settings.eyebrow }}</span>
+      {% endif %}
+      
+      <h2 class="rk-faq__heading">{{ section.settings.heading }}</h2>
+      
+      {% if section.settings.subheading != blank %}
+        <p class="rk-faq__subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+    </div>
+
+    <div class="rk-faq__grid">
+      {% for block in section.blocks %}
+        <details class="rk-faq__item" {{ block.shopify_attributes }}>
+          <summary class="rk-faq__question">
+            <span>{{ block.settings.question }}</span>
+            <div class="rk-faq__icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 4v12m-6-6h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </summary>
+          <div class="rk-faq__answer">
+            {{ block.settings.answer }}
+          </div>
+        </details>
+      {% endfor %}
+    </div>
+
+    {% if section.settings.cta_text != blank %}
+      <div class="rk-faq__cta-wrapper">
+        <p class="rk-faq__cta-text">{{ section.settings.cta_subtext }}</p>
+        <a href="{{ section.settings.cta_link | default: '#' }}" class="rk-faq__cta">
+          {{ section.settings.cta_text }}
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M7 10h6m0 0l-3-3m3 3l-3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{%- comment -%} Add FAQPage Schema for SEO {%- endcomment -%}
+{% render 'schema-faq', section: section %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('[data-section-id="{{ section.id }}"] .rk-faq__item');
+    
+    faqItems.forEach(item => {
+      const summary = item.querySelector('.rk-faq__question');
+      
+      summary.addEventListener('click', function(e) {
+        // Close other items if accordion mode is enabled
+        {% if section.settings.accordion_mode %}
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item && otherItem.open) {
+              otherItem.open = false;
+            }
+          });
+        {% endif %}
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "RK FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Everything You Need to <em>Know</em></p>"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Got questions? We've got answers. Learn how Recipe Kit can transform your food content strategy."
+    },
+    {
+      "type": "checkbox",
+      "id": "accordion_mode",
+      "label": "Accordion Mode",
+      "default": true,
+      "info": "Only one answer open at a time"
+    },
+    {
+      "type": "text",
+      "id": "cta_subtext",
+      "label": "CTA Subtext",
+      "default": "Still have questions?"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Contact Support"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How does Recipe Kit work?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Recipe Kit integrates seamlessly with your Shopify store, allowing you to create beautiful, shoppable recipe cards that link directly to your products. Simply install the app, create recipes with our drag-and-drop editor, and embed them anywhere on your site.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK FAQ",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does Recipe Kit work?",
+            "answer": "<p>Recipe Kit integrates seamlessly with your Shopify store, allowing you to create beautiful, shoppable recipe cards that link directly to your products. Simply install the app, create recipes with our drag-and-drop editor, and embed them anywhere on your site.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need coding skills to use Recipe Kit?",
+            "answer": "<p>Not at all! Recipe Kit is designed for everyone. Our intuitive drag-and-drop editor makes it easy to create professional recipe cards without any technical knowledge. Plus, our support team is always here to help.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will Recipe Kit slow down my website?",
+            "answer": "<p>No, Recipe Kit is optimized for performance. We use lazy loading, optimized images, and efficient code to ensure your recipes load quickly without impacting your site's speed. Most users actually see improved engagement metrics.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I customize the look of my recipes?",
+            "answer": "<p>Absolutely! Recipe Kit offers multiple layouts, custom styling options, and full control over colors, fonts, and spacing. Your recipes will match your brand perfectly while maintaining a professional, appetizing appearance.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does Recipe Kit help with SEO?",
+            "answer": "<p>Recipe Kit automatically generates structured data (Schema.org) for all your recipes, making them eligible for rich snippets in Google search results. This means your recipes can appear with ratings, cooking times, and images directly in search results.</p>"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "question": "What kind of support do you offer?",
+            "answer": "<p>We provide comprehensive support including email assistance, detailed documentation, video tutorials, and personalized onboarding for new users. Our team is passionate about your success and responds quickly to all inquiries.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

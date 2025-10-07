@@ -1,0 +1,225 @@
+.rk-cta-final {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.rk-cta-final__container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.rk-cta-final__content {
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  padding: 60px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.rk-cta-final__badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: linear-gradient(
+    135deg,
+    var(--rk-primary, #eb4c2e) 0%,
+    var(--rk-accent, #4ecdc4) 100%
+  );
+  color: white;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  animation: pulse-badge 2s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.rk-cta-final__heading {
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--rk-text-primary, #2d3436);
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.rk-cta-final__heading em {
+  font-style: normal;
+  background: linear-gradient(
+    135deg,
+    var(--rk-primary, #eb4c2e) 0%,
+    var(--rk-accent, #4ecdc4) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rk-cta-final__heading p {
+  margin: 0;
+}
+
+.rk-cta-final__subheading {
+  font-size: 18px;
+  color: var(--rk-text-secondary, #636e72);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.rk-cta-final__subheading p {
+  margin: 0;
+}
+
+.rk-cta-final__buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.rk-cta-final__button {
+  padding: 16px 32px;
+  border-radius: var(--rk-border-radius-sm, 8px);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rk-cta-final__button--primary {
+  background: var(--rk-primary, #eb4c2e);
+  color: white;
+  box-shadow: 0 4px 14px rgba(235, 76, 46, 0.3);
+}
+
+.rk-cta-final__button--primary:hover {
+  background: var(--rk-primary-hover, #eb2912);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(235, 76, 46, 0.4);
+}
+
+.rk-cta-final__button--secondary {
+  background: transparent;
+  color: var(--rk-text-primary, #2d3436);
+  border: 2px solid var(--rk-text-primary, #2d3436);
+}
+
+.rk-cta-final__button--secondary:hover {
+  background: var(--rk-text-primary, #2d3436);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.rk-cta-final__trust {
+  font-size: 14px;
+  color: var(--rk-text-secondary, #636e72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.rk-cta-final__decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.rk-cta-final__decoration {
+  position: absolute;
+  font-size: 48px;
+  opacity: 0.2;
+  animation: float-decoration 20s ease-in-out infinite;
+}
+
+.rk-cta-final__decoration--1 {
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+  animation-duration: 18s;
+}
+
+.rk-cta-final__decoration--2 {
+  top: 20%;
+  right: 10%;
+  animation-delay: 3s;
+  animation-duration: 22s;
+}
+
+.rk-cta-final__decoration--3 {
+  bottom: 15%;
+  left: 8%;
+  animation-delay: 6s;
+  animation-duration: 20s;
+}
+
+.rk-cta-final__decoration--4 {
+  bottom: 25%;
+  right: 5%;
+  animation-delay: 9s;
+  animation-duration: 24s;
+}
+
+@keyframes float-decoration {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(15deg);
+  }
+}
+
+@media (max-width: 749px) {
+  .rk-cta-final {
+    padding: 60px 0;
+  }
+
+  .rk-cta-final__content {
+    padding: 40px 24px;
+  }
+
+  .rk-cta-final__heading {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+  }
+
+  .rk-cta-final__subheading {
+    font-size: 16px;
+  }
+
+  .rk-cta-final__buttons {
+    flex-direction: column;
+  }
+
+  .rk-cta-final__button {
+    width: 100%;
+  }
+
+  .rk-cta-final__decoration {
+    font-size: 32px;
+  }
+}

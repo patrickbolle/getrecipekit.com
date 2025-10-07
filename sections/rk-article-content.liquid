@@ -1,0 +1,202 @@
+{{ 'rk-article-content.css' | asset_url | stylesheet_tag }}
+
+{% comment %} Handle author name replacement {% endcomment %}
+{% assign display_author = article.author %}
+{% if article.author == "Shopify API" %}
+  {% assign display_author = "Recipe Kit Team" %}
+{% endif %}
+
+<article class="rk-article" data-section-id="{{ section.id }}">
+  <div class="rk-article__container">
+    {% if section.settings.show_title %}
+      <h1 class="rk-article__title">{{ article.title }}</h1>
+    {% endif %}
+
+    {% if section.settings.show_featured_image and article.image %}
+      <div class="rk-article__featured-image">
+        {{ article.image | image_url: width: 1200 | image_tag:
+          loading: 'eager',
+          class: 'rk-article__image',
+          alt: article.image.alt | default: article.title
+        }}
+      </div>
+    {% endif %}
+
+    <div class="rk-article__meta">
+      <div class="rk-article__author-info">
+        {% if section.settings.show_author %}
+          <span class="rk-article__author">{{ display_author }}</span>
+        {% endif %}
+        {% if section.settings.show_date %}
+          <span class="rk-article__date">{{ article.published_at | date: "%B %d, %Y" }}</span>
+        {% endif %}
+      </div>
+
+      {% if section.settings.show_share %}
+        <div class="rk-article__share">
+          <span class="rk-article__share-label">Share:</span>
+          <a href="https://twitter.com/intent/tweet?text={{ article.title | url_encode }}&url={{ shop.url }}{{ article.url }}"
+             target="_blank"
+             rel="noopener"
+             class="rk-article__share-link"
+             aria-label="Share on Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ article.url }}"
+             target="_blank"
+             rel="noopener"
+             class="rk-article__share-link"
+             aria-label="Share on Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ shop.url }}{{ article.url }}&title={{ article.title | url_encode }}"
+             target="_blank"
+             rel="noopener"
+             class="rk-article__share-link"
+             aria-label="Share on LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if article.tags.size > 0 %}
+      <div class="rk-article__tags">
+        {% for tag in article.tags %}
+          <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="rk-article__tag">
+            {{ tag }}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="rk-article__content rte">
+      {{ article.content }}
+    </div>
+
+    {% if section.settings.show_comments and blog.comments_enabled? %}
+      <div class="rk-article__comments">
+        <h3 class="rk-article__comments-heading">Comments</h3>
+
+        {% if article.comments_count > 0 %}
+          <div class="rk-article__comments-list">
+            {% paginate article.comments by 10 %}
+              {% for comment in article.comments %}
+                <div class="rk-article__comment">
+                  <div class="rk-article__comment-header">
+                    <strong class="rk-article__comment-author">{{ comment.author }}</strong>
+                    <span class="rk-article__comment-date">{{ comment.created_at | date: "%B %d, %Y" }}</span>
+                  </div>
+                  <div class="rk-article__comment-content">
+                    {{ comment.content }}
+                  </div>
+                </div>
+              {% endfor %}
+
+              {% if paginate.pages > 1 %}
+                <div class="rk-article__pagination">
+                  {{ paginate | default_pagination }}
+                </div>
+              {% endif %}
+            {% endpaginate %}
+          </div>
+        {% endif %}
+
+        <div class="rk-article__comment-form">
+          {% form 'new_comment', article %}
+            <h4 class="rk-article__form-heading">Leave a Comment</h4>
+
+            {% if form.posted_successfully? %}
+              <p class="rk-article__form-success">
+                Your comment was posted successfully! {% if blog.moderated? %}It will be visible once approved.{% endif %}
+              </p>
+            {% endif %}
+
+            {% if form.errors %}
+              <div class="rk-article__form-errors">
+                {{ form.errors | default_errors }}
+              </div>
+            {% endif %}
+
+            <div class="rk-article__form-row">
+              <div class="rk-article__form-group">
+                <label for="comment-author">Name *</label>
+                <input type="text" id="comment-author" name="comment[author]" value="{{ form.author }}" required>
+              </div>
+              <div class="rk-article__form-group">
+                <label for="comment-email">Email *</label>
+                <input type="email" id="comment-email" name="comment[email]" value="{{ form.email }}" required>
+              </div>
+            </div>
+
+            <div class="rk-article__form-group">
+              <label for="comment-body">Comment *</label>
+              <textarea id="comment-body" name="comment[body]" required>{{ form.body }}</textarea>
+            </div>
+
+            <button type="submit" class="rk-article__form-submit">
+              Post Comment
+            </button>
+          {% endform %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "RK Article Content",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Show Article Title",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_featured_image",
+      "label": "Show Featured Image",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Show Author",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show Date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share",
+      "label": "Show Share Buttons",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_comments",
+      "label": "Show Comments Section",
+      "default": true,
+      "info": "Comments must be enabled in your blog settings"
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK Article Content"
+    }
+  ]
+}
+{% endschema %}

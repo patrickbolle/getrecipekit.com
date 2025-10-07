@@ -1,0 +1,39 @@
+{% comment %}
+  Schema.org Organization structured data (JSON-LD)
+
+  Usage:
+  {% render 'schema-organization' %}
+
+  This snippet generates Organization schema for Recipe Kit.
+  Include this in your main layout or homepage for brand information.
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Recipe Kit",
+  "url": "{{ shop.url }}",
+  "logo": "{{ 'rk-logo.png' | asset_url }}",
+  "description": "Recipe Kit is a Shopify app that helps food brands create beautiful, shoppable, SEO-optimized recipe content that drives sales.",
+  "email": "support@recipekit.com",
+  "sameAs": [
+    "https://apps.shopify.com/recipe-kit",
+    "https://twitter.com/recipekit",
+    "https://facebook.com/recipekit"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Support",
+    "email": "support@recipekit.com",
+    "availableLanguage": ["English"]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "500",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>

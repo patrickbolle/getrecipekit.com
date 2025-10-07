@@ -1,0 +1,542 @@
+:root {
+  --rk-primary: #eb4c2e;
+  --rk-primary-hover: #eb2912;
+  --rk-secondary: #fff8f3;
+  --rk-accent: #4ecdc4;
+  --rk-text-primary: #2d3436;
+  --rk-text-secondary: #636e72;
+  --rk-background: #fefefe;
+  --rk-border-radius: 8px;
+  --rk-border-radius-sm: 4px;
+  --rk-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --rk-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+  --rk-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.rk-pricing {
+  padding: 80px 0;
+  background: linear-gradient(
+    180deg,
+    var(--rk-background) 0%,
+    var(--rk-secondary) 100%
+  );
+}
+
+.rk-pricing__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.rk-pricing__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.rk-pricing__eyebrow {
+  color: var(--rk-primary);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(235, 76, 46, 0.1);
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.rk-pricing__heading {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--rk-text-primary);
+  margin: 0 0 16px;
+}
+
+.rk-pricing__heading em {
+  font-style: normal;
+  color: var(--rk-primary);
+}
+
+.rk-pricing__subheading {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--rk-text-secondary);
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+/* Billing Toggle */
+.rk-pricing__billing-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px;
+  background: white;
+  border-radius: 50px;
+  box-shadow: var(--rk-shadow-sm);
+}
+
+.rk-pricing__billing-option {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--rk-text-secondary);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rk-pricing__billing-option--active {
+  color: var(--rk-primary);
+}
+
+.rk-pricing__savings-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--rk-accent);
+  background: rgba(78, 205, 196, 0.1);
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.rk-pricing__toggle {
+  position: relative;
+  width: 48px;
+  height: 26px;
+  background: var(--rk-primary);
+  border: none;
+  border-radius: 13px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.rk-pricing__toggle:hover {
+  background: var(--rk-primary-hover);
+}
+
+.rk-pricing__toggle-slider {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.rk-pricing__toggle--monthly .rk-pricing__toggle-slider {
+  transform: translateX(-22px);
+}
+
+/* Plans Grid */
+.rk-pricing__plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+.rk-pricing__plan {
+  position: relative;
+  background: white;
+  border-radius: var(--rk-border-radius);
+  padding: 40px 32px;
+  box-shadow: var(--rk-shadow-md);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.rk-pricing__plan:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--rk-shadow-lg);
+}
+
+.rk-pricing__plan--featured {
+  border-color: var(--rk-primary);
+  transform: scale(1.05);
+}
+
+.rk-pricing__plan--featured:hover {
+  transform: scale(1.05) translateY(-4px);
+}
+
+.rk-pricing__badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--rk-primary);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Plan Header */
+.rk-pricing__plan-header {
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.rk-pricing__plan-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.rk-pricing__plan-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--rk-text-primary);
+  margin: 0 0 8px;
+}
+
+.rk-pricing__plan-description {
+  font-size: 14px;
+  color: var(--rk-text-secondary);
+  margin: 0;
+}
+
+/* Price */
+.rk-pricing__plan-price {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.rk-pricing__price-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.rk-pricing__currency {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--rk-text-primary);
+  margin-right: 4px;
+  margin-top: 8px;
+}
+
+.rk-pricing__amount {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--rk-text-primary);
+  transition: all 0.3s ease;
+}
+
+.rk-pricing__period {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--rk-text-secondary);
+  margin-left: 4px;
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
+
+.rk-pricing__billed-yearly {
+  font-size: 13px;
+  color: var(--rk-text-secondary);
+  margin: 4px 0;
+}
+
+.rk-pricing__savings {
+  font-size: 13px;
+  color: var(--rk-accent);
+  font-weight: 600;
+  margin: 4px 0 0;
+}
+
+/* CTA Button */
+.rk-pricing__cta {
+  display: block;
+  width: 100%;
+  padding: 14px 28px;
+  background: white;
+  color: var(--rk-primary);
+  border: 2px solid var(--rk-primary);
+  border-radius: var(--rk-border-radius-sm);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-bottom: 12px;
+}
+
+.rk-pricing__cta:hover {
+  background: var(--rk-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(235, 76, 46, 0.3);
+}
+
+.rk-pricing__cta--featured {
+  background: var(--rk-primary);
+  color: white;
+}
+
+.rk-pricing__cta--featured:hover {
+  background: var(--rk-primary-hover);
+}
+
+.rk-pricing__trial {
+  text-align: center;
+  font-size: 13px;
+  color: var(--rk-text-secondary);
+  margin: 0 0 24px;
+}
+
+/* Features */
+.rk-pricing__features {
+  margin-top: 24px;
+}
+
+.rk-pricing__features-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--rk-text-primary);
+  margin: 0 0 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rk-pricing__features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rk-pricing__feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--rk-text-secondary);
+  line-height: 1.5;
+}
+
+.rk-pricing__check-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--rk-accent);
+}
+
+/* Add-ons Section */
+.rk-pricing__addons {
+  margin-top: 80px;
+}
+
+.rk-pricing__addons-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.rk-pricing__addons-heading {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--rk-text-primary);
+  margin: 0 0 12px;
+}
+
+.rk-pricing__addons-description {
+  font-size: 16px;
+  color: var(--rk-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.rk-pricing__addons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.rk-pricing__addon {
+  background: white;
+  border-radius: var(--rk-border-radius);
+  padding: 32px 24px;
+  box-shadow: var(--rk-shadow-sm);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.rk-pricing__addon:hover {
+  box-shadow: var(--rk-shadow-md);
+  transform: translateY(-2px);
+}
+
+.rk-pricing__addon-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.rk-pricing__addon-icon {
+  font-size: 32px;
+}
+
+.rk-pricing__addon-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--rk-text-primary);
+  margin: 0;
+}
+
+.rk-pricing__addon-description {
+  font-size: 14px;
+  color: var(--rk-text-secondary);
+  line-height: 1.6;
+  margin: 0 0 16px;
+  flex-grow: 1;
+}
+
+.rk-pricing__addon-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.rk-pricing__addon-amount {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--rk-text-primary);
+}
+
+.rk-pricing__addon-type {
+  font-size: 14px;
+  color: var(--rk-text-secondary);
+  text-transform: capitalize;
+}
+
+.rk-pricing__addon-cta {
+  display: block;
+  width: 100%;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--rk-primary);
+  border: 2px solid var(--rk-primary);
+  border-radius: var(--rk-border-radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.rk-pricing__addon-cta:hover {
+  background: var(--rk-primary);
+  color: white;
+}
+
+/* Footer */
+.rk-pricing__footer {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.rk-pricing__footer-text {
+  font-size: 16px;
+  color: var(--rk-text-secondary);
+  margin: 0;
+}
+
+.rk-pricing__footer-link {
+  color: var(--rk-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.rk-pricing__footer-link:hover {
+  color: var(--rk-primary-hover);
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .rk-pricing {
+    padding: 60px 0;
+  }
+
+  .rk-pricing__header {
+    margin-bottom: 40px;
+  }
+
+  .rk-pricing__heading {
+    font-size: clamp(1.75rem, 5vw, 2rem);
+  }
+
+  .rk-pricing__subheading {
+    font-size: 16px;
+  }
+
+  .rk-pricing__plans {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+
+  .rk-pricing__plan--featured {
+    transform: scale(1);
+  }
+
+  .rk-pricing__plan--featured:hover {
+    transform: translateY(-4px);
+  }
+
+  .rk-pricing__amount {
+    font-size: 48px;
+  }
+
+  .rk-pricing__addons {
+    margin-top: 60px;
+  }
+
+  .rk-pricing__addons-header {
+    margin-bottom: 32px;
+  }
+
+  .rk-pricing__addons-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rk-pricing__billing-toggle {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rk-pricing__container {
+    padding: 0 16px;
+  }
+
+  .rk-pricing__plan {
+    padding: 32px 24px;
+  }
+
+  .rk-pricing__addon {
+    padding: 24px 20px;
+  }
+}

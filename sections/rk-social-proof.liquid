@@ -1,0 +1,242 @@
+{{ 'rk-social-proof.css' | asset_url | stylesheet_tag }}
+
+<section class="rk-social-proof" data-section-id="{{ section.id }}">
+  <div class="rk-social-proof__container">
+    {% if section.settings.heading != blank %}
+      <div class="rk-social-proof__heading">{{ section.settings.heading }}</div>
+    {% endif %}
+
+    {% if section.settings.display_type == 'logos' %}
+      <div class="rk-social-proof__logos-wrapper">
+        <div class="rk-social-proof__logos" data-speed="{{ section.settings.animation_speed }}">
+          {% for block in section.blocks %}
+            {% if block.type == 'logo' %}
+              <div class="rk-social-proof__logo-item" {{ block.shopify_attributes }}>
+                {% if block.settings.logo != blank %}
+                  {{ block.settings.logo | image_url: width: 150 | image_tag: 
+                    class: 'rk-social-proof__logo',
+                    alt: block.settings.logo_alt,
+                    loading: 'lazy'
+                  }}
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+          
+          {% comment %} Duplicate for seamless scroll {% endcomment %}
+          {% if section.settings.enable_scroll %}
+            {% for block in section.blocks %}
+              {% if block.type == 'logo' %}
+                <div class="rk-social-proof__logo-item" aria-hidden="true">
+                  {% if block.settings.logo != blank %}
+                    {{ block.settings.logo | image_url: width: 150 | image_tag: 
+                      class: 'rk-social-proof__logo',
+                      alt: block.settings.logo_alt,
+                      loading: 'lazy'
+                    }}
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    {% elsif section.settings.display_type == 'metrics' %}
+      <div class="rk-social-proof__metrics">
+        {% for block in section.blocks %}
+          {% if block.type == 'metric' %}
+            <div class="rk-social-proof__metric" {{ block.shopify_attributes }}>
+              {% if block.settings.icon != blank %}
+                <div class="rk-social-proof__metric-icon">{{ block.settings.icon }}</div>
+              {% endif %}
+              <div class="rk-social-proof__metric-number" data-count="{{ block.settings.number }}">
+                {{ block.settings.number }}{{ block.settings.suffix }}
+              </div>
+              <div class="rk-social-proof__metric-label">{{ block.settings.label }}</div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.querySelector('[data-section-id="{{ section.id }}"]');
+    
+    {% if section.settings.display_type == 'logos' and section.settings.enable_scroll %}
+      const logosContainer = section.querySelector('.rk-social-proof__logos');
+      const speed = parseFloat(logosContainer.dataset.speed) || 30;
+      
+      logosContainer.style.animationDuration = speed + 's';
+    {% endif %}
+    
+    {% if section.settings.display_type == 'metrics' and section.settings.animate_numbers %}
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const metrics = entry.target.querySelectorAll('.rk-social-proof__metric-number');
+            metrics.forEach(metric => {
+              const target = parseInt(metric.dataset.count);
+              const suffix = metric.textContent.replace(/[0-9]/g, '');
+              let current = 0;
+              const increment = target / 50;
+              const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                  current = target;
+                  clearInterval(timer);
+                }
+                metric.textContent = Math.floor(current) + suffix;
+              }, 30);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      observer.observe(section);
+    {% endif %}
+  });
+</script>
+
+{% schema %}
+{
+  "name": "RK Social Proof",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Trusted by leading food brands"
+    },
+    {
+      "type": "select",
+      "id": "display_type",
+      "label": "Display Type",
+      "options": [
+        {"value": "logos", "label": "Brand Logos"},
+        {"value": "metrics", "label": "Metrics/Stats"}
+      ],
+      "default": "logos"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_scroll",
+      "label": "Enable Auto-scroll (Logos)",
+      "default": true,
+      "info": "Only applies to logo display type"
+    },
+    {
+      "type": "range",
+      "id": "animation_speed",
+      "label": "Scroll Speed (seconds)",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "default": 30,
+      "info": "Duration for one complete scroll"
+    },
+    {
+      "type": "checkbox",
+      "id": "animate_numbers",
+      "label": "Animate Numbers (Metrics)",
+      "default": true,
+      "info": "Only applies to metrics display type"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo Image"
+        },
+        {
+          "type": "text",
+          "id": "logo_alt",
+          "label": "Logo Alt Text"
+        }
+      ]
+    },
+    {
+      "type": "metric",
+      "name": "Metric",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (Emoji)",
+          "default": "🚀"
+        },
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "500"
+        },
+        {
+          "type": "text",
+          "id": "suffix",
+          "label": "Suffix",
+          "default": "+",
+          "info": "e.g., '+', 'k', '%'"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Happy Brands"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK Social Proof",
+      "blocks": [
+        {
+          "type": "metric",
+          "settings": {
+            "icon": "🍴",
+            "number": "10000",
+            "suffix": "+",
+            "label": "Recipes Created"
+          }
+        },
+        {
+          "type": "metric",
+          "settings": {
+            "icon": "🛍️",
+            "number": "500",
+            "suffix": "+",
+            "label": "Food Brands"
+          }
+        },
+        {
+          "type": "metric",
+          "settings": {
+            "icon": "📈",
+            "number": "92",
+            "suffix": "%",
+            "label": "Sales Increase"
+          }
+        },
+        {
+          "type": "metric",
+          "settings": {
+            "icon": "⭐",
+            "number": "4.9",
+            "suffix": "/5",
+            "label": "Customer Rating"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

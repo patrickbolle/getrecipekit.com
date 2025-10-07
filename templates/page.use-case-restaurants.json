@@ -1,0 +1,322 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "rk-hero",
+      "settings": {
+        "eyebrow": "Recipe Kit for Restaurants & Cafes",
+        "headline": "<p>Share Your Recipes, <em>Sell Your Ingredients</em></p>",
+        "description": "<p>Restaurants and cafes use Recipe Kit to share signature recipes while selling ingredients, meal kits, sauces, and branded products. Turn your culinary expertise into a retail revenue stream.</p>",
+        "cta_primary_text": "Start Free Trial",
+        "cta_primary_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+        "cta_secondary_text": "See Examples",
+        "cta_secondary_link": "#examples",
+        "trust_badge": "✨ Trusted by restaurants & cafes • 14-day free trial",
+        "layout": "centered",
+        "enable_animation": false,
+        "show_scroll_indicator": true
+      }
+    },
+    "social-proof": {
+      "type": "rk-social-proof",
+      "blocks": {
+        "metric-1": {
+          "type": "metric",
+          "settings": {
+            "icon": "🍽️",
+            "number": "255",
+            "suffix": "+",
+            "label": "Restaurants"
+          }
+        },
+        "metric-2": {
+          "type": "metric",
+          "settings": {
+            "icon": "💰",
+            "number": "New",
+            "suffix": "",
+            "label": "Revenue Stream"
+          }
+        },
+        "metric-3": {
+          "type": "metric",
+          "settings": {
+            "icon": "📦",
+            "number": "65",
+            "suffix": "%",
+            "label": "Buy Ingredients"
+          }
+        },
+        "metric-4": {
+          "type": "metric",
+          "settings": {
+            "icon": "⭐",
+            "number": "4.9",
+            "suffix": "/5",
+            "label": "Customer Rating"
+          }
+        }
+      },
+      "block_order": ["metric-1", "metric-2", "metric-3", "metric-4"],
+      "settings": {
+        "heading": "Helping restaurants diversify revenue",
+        "display_type": "metrics",
+        "animate_numbers": true
+      }
+    },
+    "features": {
+      "type": "rk-feature-showcase",
+      "blocks": {
+        "feature-1": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🥘",
+            "heading": "Share Signature Recipes",
+            "description": "Give customers the ability to recreate your dishes at home. Build brand loyalty and engagement beyond your dining room.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "feature-2": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🛒",
+            "heading": "Sell Ingredients & Products",
+            "description": "Link recipes to your house-made sauces, spice blends, meal kits, or specialty ingredients. Create a new retail revenue stream.",
+            "link_text": "Learn more",
+            "link_url": "/pages/shoppable-recipes"
+          }
+        },
+        "feature-3": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "📦",
+            "heading": "Meal Kit Add-On",
+            "description": "Sell pre-portioned meal kits with recipes. Customers order online for pickup or delivery, expanding your business model.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "feature-4": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🎓",
+            "heading": "Cooking Class Companion",
+            "description": "Share recipes with cooking class participants. They can reference instructions later and buy ingredients from you.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "feature-5": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🌟",
+            "heading": "Build Brand Authority",
+            "description": "Position your restaurant as the expert. Recipe content ranks on Google, driving discovery and new customer acquisition.",
+            "link_text": "Learn more",
+            "link_url": "/pages/seo-structured-data"
+          }
+        },
+        "feature-6": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "💌",
+            "heading": "Email Marketing Gold",
+            "description": "Recipes are highly shareable content for newsletters. Keep customers engaged between visits and drive repeat business.",
+            "link_text": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": ["feature-1", "feature-2", "feature-3", "feature-4", "feature-5", "feature-6"],
+      "settings": {
+        "heading": "Everything restaurants need",
+        "description": "<p>Built for chefs and restaurateurs selling products online</p>",
+        "columns": "3",
+        "card_style": "shadow",
+        "icon_style": "filled"
+      }
+    },
+    "how-it-works": {
+      "type": "rk-how-it-works",
+      "blocks": {
+        "step-1": {
+          "type": "step",
+          "settings": {
+            "icon": "👨‍🍳",
+            "title": "Share Your Recipes",
+            "description": "Create recipe cards for your signature dishes and menu items"
+          }
+        },
+        "step-2": {
+          "type": "step",
+          "settings": {
+            "icon": "🏷️",
+            "title": "Link to Products",
+            "description": "Connect recipes to your sauces, kits, ingredients, or branded items"
+          }
+        },
+        "step-3": {
+          "type": "step",
+          "settings": {
+            "icon": "📣",
+            "title": "Promote to Customers",
+            "description": "Share recipes via email, social media, and on your website"
+          }
+        },
+        "step-4": {
+          "type": "step",
+          "settings": {
+            "icon": "💰",
+            "title": "Generate Retail Sales",
+            "description": "Track product sales from recipes and grow your retail business"
+          }
+        }
+      },
+      "block_order": ["step-1", "step-2", "step-3", "step-4"],
+      "settings": {
+        "heading": "From kitchen to commerce in 4 steps",
+        "description": "<p>Start selling products alongside your recipes</p>",
+        "layout_style": "timeline",
+        "number_style": "icon",
+        "show_connector": true,
+        "animate_on_scroll": true,
+        "cta_text": "Get Started Free",
+        "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com"
+      }
+    },
+    "testimonials": {
+      "type": "rk-testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "company": "La Boîte",
+            "quote": "One of the best app experiences we have had on Shopify. Recipe Kit lets us share our culinary expertise while selling our specialty spice blends. It's opened up a whole new revenue channel.",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "company": "OC Wild Seafood",
+            "quote": "Recipe Kit has been a game changer for our seafood business. Customers see recipes featuring our products and can order everything for delivery. It's perfect for our business model.",
+            "rating": 5,
+            "verified": true
+          }
+        }
+      },
+      "block_order": ["testimonial-1", "testimonial-2"],
+      "settings": {
+        "eyebrow": "Restaurant Success Stories",
+        "heading": "<p>Trusted by <em>Chefs & Restaurateurs</em></p>",
+        "subheading": "See how restaurants are building retail revenue with Recipe Kit",
+        "stats_enable": true,
+        "stat_1_number": "255+",
+        "stat_1_label": "Restaurants",
+        "stat_2_number": "65%",
+        "stat_2_label": "Buy Ingredients",
+        "stat_3_number": "New",
+        "stat_3_label": "Revenue Stream",
+        "cta_text": "Join These Restaurants",
+        "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com"
+      }
+    },
+    "faq": {
+      "type": "rk-faq",
+      "blocks": {
+        "faq-1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Why would we share our recipes?",
+            "answer": "<p>Sharing recipes builds brand loyalty and creates new revenue opportunities. Most successful restaurants find that recipe sharing increases customer engagement, drives retail product sales, and positions them as culinary experts. You control what recipes to share and can adapt them for home cooking.</p>"
+          }
+        },
+        "faq-2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What products can we sell with recipes?",
+            "answer": "<p>Restaurants typically sell house-made sauces, spice blends, marinades, meal kits, specialty ingredients, branded merchandise, cooking tools, or partner products. Some also offer complete meal kits with pre-portioned ingredients for recipe recreation at home.</p>"
+          }
+        },
+        "faq-3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do recipes compete with our restaurant business?",
+            "answer": "<p>No! Recipes typically complement your restaurant by building brand awareness and loyalty. Customers who cook at home still dine out for special occasions, convenience, and the full restaurant experience. Many restaurants find recipe sharing actually increases in-person visits by keeping the brand top-of-mind.</p>"
+          }
+        },
+        "faq-4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can we use this for cooking classes?",
+            "answer": "<p>Absolutely! Share recipes with cooking class participants, sell class-related products, and provide ongoing value after the class ends. Students can reference recipes anytime and reorder ingredients directly from you.</p>"
+          }
+        },
+        "faq-5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do customers order meal kits?",
+            "answer": "<p>Create meal kit products in your Shopify store, then link them to recipes. Customers can add complete kits to cart or individual ingredients. Perfect for local pickup, delivery, or shipping to customers.</p>"
+          }
+        },
+        "faq-6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can we customize recipes to our brand?",
+            "answer": "<p>Yes! Recipe Kit supports full brand customization including colors, fonts, layouts, and custom CSS. Your recipes will match your restaurant's existing website and brand identity perfectly.</p>"
+          }
+        }
+      },
+      "block_order": ["faq-1", "faq-2", "faq-3", "faq-4", "faq-5", "faq-6"],
+      "settings": {
+        "eyebrow": "Common Questions",
+        "heading": "<p>Restaurant <em>Questions</em></p>",
+        "subheading": "Everything you need to know about Recipe Kit for restaurants",
+        "accordion_mode": true,
+        "cta_subtext": "More questions?",
+        "cta_text": "Contact Our Team",
+        "cta_link": "/pages/contact"
+      }
+    },
+    "final-cta": {
+      "type": "rk-cta-final",
+      "settings": {
+        "badge_text": "🍽️ Join 255+ Restaurants",
+        "heading": "<p>Ready to build <em>retail revenue</em>?</p>",
+        "subheading": "<p>Start sharing recipes and selling products today</p>",
+        "cta_primary_text": "Start Free Trial",
+        "cta_primary_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+        "cta_secondary_text": "View Pricing",
+        "cta_secondary_link": "/pages/pricing",
+        "trust_indicators": "✓ 14-day free trial • ✓ No credit card required • ✓ Perfect for meal kits",
+        "background_type": "linear-gradient(135deg, #FFF8F3 0%, #FFE4E1 100%)",
+        "show_decorations": true
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "social-proof",
+    "features",
+    "how-it-works",
+    "testimonials",
+    "faq",
+    "final-cta"
+  ]
+}

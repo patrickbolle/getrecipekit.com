@@ -1,0 +1,266 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "rk-hero",
+      "settings": {
+        "eyebrow": "Recipe Kit for Food Bloggers",
+        "headline": "<p>Turn Your Blog into <em>Passive Income</em></p>",
+        "description": "<p>Food bloggers use Recipe Kit to monetize their content through affiliate links, ad-supported recipe cards, and Shopify product integrations. Create beautiful, SEO-optimized recipes that rank on Google and generate revenue.</p>",
+        "cta_primary_text": "Start Free Trial",
+        "cta_primary_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+        "cta_secondary_text": "See Examples",
+        "cta_secondary_link": "#examples",
+        "trust_badge": "✨ Used by food bloggers nationwide • 14-day free trial",
+        "layout": "centered",
+        "enable_animation": false,
+        "show_scroll_indicator": true
+      }
+    },
+    "social-proof": {
+      "type": "rk-social-proof",
+      "blocks": {
+        "metric-1": {
+          "type": "metric",
+          "settings": {
+            "icon": "📝",
+            "number": "500",
+            "suffix": "+",
+            "label": "Food Bloggers"
+          }
+        },
+        "metric-2": {
+          "type": "metric",
+          "settings": {
+            "icon": "💰",
+            "number": "3",
+            "suffix": "x",
+            "label": "More Revenue"
+          }
+        },
+        "metric-3": {
+          "type": "metric",
+          "settings": {
+            "icon": "📈",
+            "number": "250",
+            "suffix": "%",
+            "label": "More Organic Traffic"
+          }
+        },
+        "metric-4": {
+          "type": "metric",
+          "settings": {
+            "icon": "⭐",
+            "number": "4.9",
+            "suffix": "/5",
+            "label": "Blogger Rating"
+          }
+        }
+      },
+      "block_order": ["metric-1", "metric-2", "metric-3", "metric-4"],
+      "settings": {
+        "heading": "Trusted by food bloggers everywhere",
+        "display_type": "metrics",
+        "animate_numbers": true
+      }
+    },
+    "features": {
+      "type": "rk-feature-showcase",
+      "blocks": {
+        "feature-1": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🔍",
+            "heading": "Google Recipe Cards",
+            "description": "Automatic Schema.org markup gets your recipes featured in Google's recipe carousel with ratings, cook time, and beautiful images.",
+            "link_text": "Learn more",
+            "link_url": "/pages/seo-structured-data"
+          }
+        },
+        "feature-2": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "💰",
+            "heading": "Monetization Options",
+            "description": "Integrate affiliate links, ads, sponsored products, and Shopify store items directly into your recipe cards for passive income.",
+            "link_text": "Learn more",
+            "link_url": "/pages/shoppable-recipes"
+          }
+        },
+        "feature-3": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "📱",
+            "heading": "Mobile-First Design",
+            "description": "73% of food blog traffic is mobile. Recipe Kit's templates are optimized for phones and tablets with touch-friendly interactions.",
+            "link_text": "Learn more",
+            "link_url": "/pages/customizable-design"
+          }
+        },
+        "feature-4": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "📊",
+            "heading": "Analytics Dashboard",
+            "description": "Track which recipes drive the most traffic, engagement, and revenue. Make data-driven decisions about your content strategy.",
+            "link_text": "Learn more",
+            "link_url": "/pages/analytics-tracking"
+          }
+        },
+        "feature-5": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🎨",
+            "heading": "Beautiful Templates",
+            "description": "50+ professionally designed recipe card templates that match your blog's style. Customize colors, fonts, and layouts easily.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "feature-6": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🖨️",
+            "heading": "Print-Friendly",
+            "description": "Readers love printing recipes. Recipe Kit automatically formats recipes for beautiful printed copies with smart page breaks.",
+            "link_text": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": ["feature-1", "feature-2", "feature-3", "feature-4", "feature-5", "feature-6"],
+      "settings": {
+        "heading": "Everything food bloggers need",
+        "description": "<p>Built specifically for monetizing food blog content</p>",
+        "columns": "3",
+        "card_style": "shadow",
+        "icon_style": "filled"
+      }
+    },
+    "testimonials": {
+      "type": "rk-testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "company": "Nomfan",
+            "quote": "I moved over from WordPress and Recipe Kit completely surpassed my expectations. It saved me hours every week and made my content so much more engaging. My traffic tripled!",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "company": "Sweet Treats Co.",
+            "quote": "Recipe Kit transformed how we share recipes. Our engagement increased by 300% in just 2 months and affiliate revenue is up 250%.",
+            "rating": 5,
+            "verified": true
+          }
+        }
+      },
+      "block_order": ["testimonial-1", "testimonial-2"],
+      "settings": {
+        "eyebrow": "Blogger Success Stories",
+        "heading": "<p>Loved by <em>Food Bloggers</em></p>",
+        "subheading": "See how bloggers are growing traffic and revenue with Recipe Kit",
+        "stats_enable": true,
+        "stat_1_number": "500+",
+        "stat_1_label": "Food Bloggers",
+        "stat_2_number": "3x",
+        "stat_2_label": "More Revenue",
+        "stat_3_number": "250%",
+        "stat_3_label": "Traffic Increase",
+        "cta_text": "Start Your Free Trial",
+        "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com"
+      }
+    },
+    "faq": {
+      "type": "rk-faq",
+      "blocks": {
+        "faq-1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I migrate my existing recipes from WordPress?",
+            "answer": "<p>Yes! Recipe Kit can import recipes from most WordPress plugins including WP Recipe Maker, Tasty Recipes, and WP Ultimate Recipe. We also offer a manual import service where our team does the migration for you.</p>"
+          }
+        },
+        "faq-2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How do I monetize my recipes?",
+            "answer": "<p>Recipe Kit supports multiple monetization methods: affiliate product links, sponsored ingredient callouts, ad placements within recipes, and direct Shopify product sales if you have your own store or products.</p>"
+          }
+        },
+        "faq-3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Will this help my SEO and Google rankings?",
+            "answer": "<p>Absolutely! Recipe Kit automatically generates Google-compliant recipe schema that makes your recipes eligible for rich snippets and recipe carousels in search results. Most bloggers see 2-3x more clicks from Google.</p>"
+          }
+        },
+        "faq-4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need a Shopify store to use Recipe Kit?",
+            "answer": "<p>No! While Recipe Kit is a Shopify app, you don't need to sell anything on Shopify. Many bloggers use the free Shopify plan just to access Recipe Kit and embed recipes on their WordPress or other blog platforms.</p>"
+          }
+        },
+        "faq-5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does pricing work for food bloggers?",
+            "answer": "<p>Recipe Kit starts at $20/month with a 14-day free trial. Most food bloggers find the Advanced plan ($30/month) perfect, as it includes AI recipe generation and detailed analytics. No credit card required to start.</p>"
+          }
+        }
+      },
+      "block_order": ["faq-1", "faq-2", "faq-3", "faq-4", "faq-5"],
+      "settings": {
+        "eyebrow": "Common Questions",
+        "heading": "<p>Food Blogger <em>Questions</em></p>",
+        "subheading": "Everything you need to know about Recipe Kit for your blog",
+        "accordion_mode": true,
+        "cta_subtext": "More questions?",
+        "cta_text": "Contact Support",
+        "cta_link": "/pages/contact"
+      }
+    },
+    "final-cta": {
+      "type": "rk-cta-final",
+      "settings": {
+        "badge_text": "🎉 Join 500+ Food Bloggers",
+        "heading": "<p>Ready to grow your <em>blog revenue</em>?</p>",
+        "subheading": "<p>Start creating SEO-optimized, monetized recipes today</p>",
+        "cta_primary_text": "Start Free Trial",
+        "cta_primary_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+        "cta_secondary_text": "View Pricing",
+        "cta_secondary_link": "/pages/pricing",
+        "trust_indicators": "✓ 14-day free trial • ✓ No credit card required • ✓ WordPress compatible",
+        "background_type": "linear-gradient(135deg, #FFF8F3 0%, #FFE4E1 100%)",
+        "show_decorations": true
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "social-proof",
+    "features",
+    "testimonials",
+    "faq",
+    "final-cta"
+  ]
+}

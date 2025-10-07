@@ -1,0 +1,124 @@
+{{ 'rk-announcement-bar.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.enable %}
+<div class="rk-announcement-bar" data-section-id="{{ section.id }}" style="background-color: {{ section.settings.background_color }};">
+  <div class="rk-announcement-bar__container">
+    <div class="rk-announcement-bar__content">
+      {% if section.settings.icon != blank %}
+        <span class="rk-announcement-bar__icon">{{ section.settings.icon }}</span>
+      {% endif %}
+      
+      <div class="rk-announcement-bar__text" style="color: {{ section.settings.text_color }};">
+        {% if section.settings.link != blank %}
+          <a href="{{ section.settings.link }}" class="rk-announcement-bar__link" style="color: {{ section.settings.text_color }};">
+            {{ section.settings.text }}
+          </a>
+        {% else %}
+          {{ section.settings.text }}
+        {% endif %}
+      </div>
+
+      {% if section.settings.show_close %}
+        <button class="rk-announcement-bar__close" aria-label="Close announcement">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 4L4 12M4 4l8 8"/>
+          </svg>
+        </button>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const bar = document.querySelector('[data-section-id="{{ section.id }}"]');
+    const closeBtn = bar?.querySelector('.rk-announcement-bar__close');
+    
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function() {
+        bar.style.animation = 'slideUp 0.3s ease-out forwards';
+        setTimeout(() => bar.remove(), 300);
+        sessionStorage.setItem('rk-announcement-closed-{{ section.id }}', 'true');
+      });
+    }
+
+    // Check if previously closed
+    if (sessionStorage.getItem('rk-announcement-closed-{{ section.id }}') === 'true') {
+      bar?.remove();
+    }
+
+    {% if section.settings.auto_dismiss > 0 %}
+      setTimeout(() => {
+        if (bar && !sessionStorage.getItem('rk-announcement-closed-{{ section.id }}')) {
+          bar.style.animation = 'slideUp 0.3s ease-out forwards';
+          setTimeout(() => bar.remove(), 300);
+        }
+      }, {{ section.settings.auto_dismiss }} * 1000);
+    {% endif %}
+  });
+</script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "RK Announcement Bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable",
+      "label": "Enable Announcement Bar",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Announcement Text",
+      "default": "🎉 Get 30% off your first month - Limited time offer!"
+    },
+    {
+      "type": "text",
+      "id": "icon",
+      "label": "Icon (emoji or text)",
+      "default": "✨"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link URL"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#EB4C2E"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_close",
+      "label": "Show Close Button",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "auto_dismiss",
+      "label": "Auto-dismiss after (seconds)",
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "default": 0,
+      "info": "Set to 0 to disable auto-dismiss"
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK Announcement Bar"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,379 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "rk-hero",
+      "settings": {
+        "eyebrow": "Analytics & Engagement Tracking",
+        "headline": "<p>Know What Your <em>Customers Love</em></p>",
+        "description": "<p>Track recipe performance with detailed analytics including views, engagement, and conversion metrics. Get insights that highlight which recipes generate the most traffic and drive the most sales.</p>",
+        "cta_primary_text": "Start Free Trial",
+        "cta_primary_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+        "cta_secondary_text": "See Dashboard Demo",
+        "cta_secondary_link": "#demo",
+        "trust_badge": "✨ Real-time insights • Revenue tracking • Actionable data",
+        "layout": "centered",
+        "enable_animation": false,
+        "show_scroll_indicator": true
+      }
+    },
+    "social-proof": {
+      "type": "rk-social-proof",
+      "blocks": {
+        "metric-1": {
+          "type": "metric",
+          "settings": {
+            "icon": "📊",
+            "number": "15",
+            "suffix": "+",
+            "label": "Key Metrics Tracked"
+          }
+        },
+        "metric-2": {
+          "type": "metric",
+          "settings": {
+            "icon": "💰",
+            "number": "100",
+            "suffix": "%",
+            "label": "Revenue Attribution"
+          }
+        },
+        "metric-3": {
+          "type": "metric",
+          "settings": {
+            "icon": "⚡",
+            "number": "Real",
+            "suffix": "-time",
+            "label": "Data Updates"
+          }
+        },
+        "metric-4": {
+          "type": "metric",
+          "settings": {
+            "icon": "🎯",
+            "number": "Smart",
+            "suffix": "",
+            "label": "Recommendations"
+          }
+        }
+      },
+      "block_order": ["metric-1", "metric-2", "metric-3", "metric-4"],
+      "settings": {
+        "heading": "Data-driven recipe strategy",
+        "display_type": "metrics",
+        "animate_numbers": true
+      }
+    },
+    "feature-analytics": {
+      "type": "rk-feature-analytics",
+      "blocks": {
+        "recommendation-1": {
+          "type": "recommendation",
+          "settings": {
+            "icon": "🍳",
+            "title": "Create more breakfast recipes",
+            "description": "Morning recipes get 3x more engagement",
+            "impact": "High Impact"
+          }
+        },
+        "recommendation-2": {
+          "type": "recommendation",
+          "settings": {
+            "icon": "🎄",
+            "title": "Feature seasonal ingredients",
+            "description": "Holiday recipes trending now",
+            "impact": "Trending"
+          }
+        },
+        "recommendation-3": {
+          "type": "recommendation",
+          "settings": {
+            "icon": "🎥",
+            "title": "Add video to top recipes",
+            "description": "Videos increase conversion by 45%",
+            "impact": "Quick Win"
+          }
+        },
+        "recommendation-4": {
+          "type": "recommendation",
+          "settings": {
+            "icon": "📱",
+            "title": "Optimize for mobile users",
+            "description": "73% of your traffic is mobile",
+            "impact": "Priority"
+          }
+        }
+      },
+      "block_order": ["recommendation-1", "recommendation-2", "recommendation-3", "recommendation-4"],
+      "settings": {
+        "eyebrow": "Smart Insights",
+        "heading": "<p>Data That <em>Drives Decisions</em></p>",
+        "subheading": "Get deep insights into customer preferences and behavior with powerful recipe analytics that help you create more of what works."
+      }
+    },
+    "features": {
+      "type": "rk-feature-showcase",
+      "blocks": {
+        "feature-1": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "📈",
+            "heading": "Recipe Performance",
+            "description": "Track views, engagement time, scroll depth, and completion rates for every recipe. See what keeps customers engaged.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "feature-2": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "💰",
+            "heading": "Revenue Attribution",
+            "description": "Know exactly how much revenue each recipe generates. Track which recipes drive the most sales and highest order values.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "feature-3": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🎯",
+            "heading": "Conversion Tracking",
+            "description": "Monitor recipe-to-purchase conversion rates, add-to-cart events, and checkout completions. Optimize for sales.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "feature-4": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "👥",
+            "heading": "Audience Insights",
+            "description": "Understand your customers' preferences, dietary restrictions, cooking skill levels, and favorite recipe types.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "feature-5": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🔍",
+            "heading": "Search Performance",
+            "description": "Track which recipes rank in Google, monitor click-through rates from search, and optimize for SEO performance.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "feature-6": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🤖",
+            "heading": "Smart Recommendations",
+            "description": "AI-powered suggestions on which recipes to create next, what content to optimize, and opportunities to increase revenue.",
+            "link_text": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": ["feature-1", "feature-2", "feature-3", "feature-4", "feature-5", "feature-6"],
+      "settings": {
+        "heading": "Everything you need to understand performance",
+        "description": "<p>Comprehensive analytics for data-driven content strategy</p>",
+        "columns": "3",
+        "card_style": "shadow",
+        "icon_style": "filled"
+      }
+    },
+    "how-it-works": {
+      "type": "rk-how-it-works",
+      "blocks": {
+        "step-1": {
+          "type": "step",
+          "settings": {
+            "icon": "📊",
+            "title": "Automatic Tracking",
+            "description": "Analytics start working immediately after you publish recipes"
+          }
+        },
+        "step-2": {
+          "type": "step",
+          "settings": {
+            "icon": "📈",
+            "title": "Monitor Performance",
+            "description": "View real-time metrics in your intuitive analytics dashboard"
+          }
+        },
+        "step-3": {
+          "type": "step",
+          "settings": {
+            "icon": "💡",
+            "title": "Get Recommendations",
+            "description": "Receive AI-powered insights on what to create and optimize"
+          }
+        },
+        "step-4": {
+          "type": "step",
+          "settings": {
+            "icon": "🚀",
+            "title": "Optimize & Grow",
+            "description": "Make data-driven decisions to increase engagement and revenue"
+          }
+        }
+      },
+      "block_order": ["step-1", "step-2", "step-3", "step-4"],
+      "settings": {
+        "heading": "Turn data into growth in 4 steps",
+        "description": "<p>From insights to action without complexity</p>",
+        "layout_style": "timeline",
+        "number_style": "icon",
+        "show_connector": true,
+        "animate_on_scroll": true,
+        "cta_text": "Get Started Free",
+        "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com"
+      }
+    },
+    "testimonials": {
+      "type": "rk-testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "company": "Growing Naturals",
+            "quote": "The analytics feature is a bonus—we can now see which recipes drive the most engagement and which products customers buy most often. It's transformed our content strategy.",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "company": "Olive Love",
+            "quote": "Recipe Kit's analytics showed us that breakfast recipes drive 3x more revenue than dinner recipes. We shifted our strategy and saw immediate results.",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        "testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "company": "Schacht Spindle Company",
+            "quote": "Being able to track which recipes lead to sales has been invaluable. We now focus our efforts on creating more of what actually drives revenue.",
+            "rating": 5,
+            "verified": true
+          }
+        }
+      },
+      "block_order": ["testimonial-1", "testimonial-2", "testimonial-3"],
+      "settings": {
+        "eyebrow": "Success Stories",
+        "heading": "<p>Data-Driven <em>Success</em></p>",
+        "subheading": "See how analytics are helping brands make smarter content decisions",
+        "stats_enable": true,
+        "stat_1_number": "15+",
+        "stat_1_label": "Metrics Tracked",
+        "stat_2_number": "Real-time",
+        "stat_2_label": "Updates",
+        "stat_3_number": "100%",
+        "stat_3_label": "Revenue Visible",
+        "cta_text": "Start Tracking",
+        "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com"
+      }
+    },
+    "faq": {
+      "type": "rk-faq",
+      "blocks": {
+        "faq-1": {
+          "type": "faq_item",
+          "settings": {
+            "question": "What metrics does Recipe Kit track?",
+            "answer": "<p>We track 15+ metrics including recipe views, engagement time, scroll depth, add-to-cart events, purchases, revenue, conversion rates, search rankings, social shares, print actions, and more. All data is presented in an easy-to-understand dashboard.</p>"
+          }
+        },
+        "faq-2": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I see which recipes drive the most revenue?",
+            "answer": "<p>Yes! Recipe Kit tracks revenue attribution for each recipe, showing exactly how much revenue each one generates, which products are purchased from each recipe, and your recipe-to-purchase conversion rate.</p>"
+          }
+        },
+        "faq-3": {
+          "type": "faq_item",
+          "settings": {
+            "question": "How does the smart recommendations feature work?",
+            "answer": "<p>Our AI analyzes your recipe performance, customer behavior, seasonal trends, and industry benchmarks to suggest which recipes to create next, what content to optimize, and opportunities to increase engagement and revenue.</p>"
+          }
+        },
+        "faq-4": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Is the data real-time?",
+            "answer": "<p>Yes! Analytics update in real-time so you can monitor performance as it happens. Track views, engagement, and sales as they occur.</p>"
+          }
+        },
+        "faq-5": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Can I export analytics data?",
+            "answer": "<p>Absolutely! Export your analytics data to CSV for deeper analysis, reporting, or integration with other tools. All metrics are exportable.</p>"
+          }
+        },
+        "faq-6": {
+          "type": "faq_item",
+          "settings": {
+            "question": "Do I need Google Analytics?",
+            "answer": "<p>No! Recipe Kit has built-in analytics specifically designed for recipe content. However, it works alongside Google Analytics if you want to use both for comprehensive tracking.</p>"
+          }
+        }
+      },
+      "block_order": ["faq-1", "faq-2", "faq-3", "faq-4", "faq-5", "faq-6"],
+      "settings": {
+        "eyebrow": "Common Questions",
+        "heading": "<p>Everything About <em>Recipe Analytics</em></p>",
+        "subheading": "Learn how Recipe Kit helps you make data-driven content decisions",
+        "accordion_mode": true,
+        "cta_subtext": "Need help with analytics?",
+        "cta_text": "Contact Support",
+        "cta_link": "/pages/contact"
+      }
+    },
+    "final-cta": {
+      "type": "rk-cta-final",
+      "settings": {
+        "badge_text": "📊 Data-Driven Growth",
+        "heading": "<p>Ready to understand your <em>customers</em>?</p>",
+        "subheading": "<p>Join food brands using Recipe Kit to make smarter content decisions</p>",
+        "cta_primary_text": "Start Your Free Trial",
+        "cta_primary_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+        "cta_secondary_text": "View Dashboard Demo",
+        "cta_secondary_link": "#demo",
+        "trust_indicators": "✓ 14-day free trial • ✓ No credit card required • ✓ Real-time analytics included",
+        "background_type": "linear-gradient(135deg, #FFF8F3 0%, #FFE4E1 100%)",
+        "show_decorations": true
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "social-proof",
+    "feature-analytics",
+    "features",
+    "how-it-works",
+    "testimonials",
+    "faq",
+    "final-cta"
+  ]
+}

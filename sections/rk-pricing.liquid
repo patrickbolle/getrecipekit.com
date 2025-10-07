@@ -1,0 +1,465 @@
+{{ 'rk-pricing.css' | asset_url | stylesheet_tag }}
+
+<section class="rk-pricing" data-section-id="{{ section.id }}">
+  <div class="rk-pricing__container">
+    <div class="rk-pricing__header">
+      {% if section.settings.eyebrow != blank %}
+        <span class="rk-pricing__eyebrow">{{ section.settings.eyebrow }}</span>
+      {% endif %}
+      <h2 class="rk-pricing__heading">{{ section.settings.heading }}</h2>
+      {% if section.settings.subheading != blank %}
+        <p class="rk-pricing__subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+
+      {% if section.settings.show_billing_toggle %}
+        <div class="rk-pricing__billing-toggle">
+          <span class="rk-pricing__billing-option" data-billing="monthly">Monthly</span>
+          <button class="rk-pricing__toggle" aria-label="Toggle billing period">
+            <span class="rk-pricing__toggle-slider"></span>
+          </button>
+          <span class="rk-pricing__billing-option rk-pricing__billing-option--active" data-billing="yearly">
+            Yearly
+            <span class="rk-pricing__savings-badge">Save up to 17%</span>
+          </span>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="rk-pricing__plans">
+      {% for block in section.blocks %}
+        {% if block.type == 'plan' %}
+          <div class="rk-pricing__plan {% if block.settings.featured %}rk-pricing__plan--featured{% endif %}" {{ block.shopify_attributes }}>
+            {% if block.settings.featured and block.settings.badge_text != blank %}
+              <div class="rk-pricing__badge">{{ block.settings.badge_text }}</div>
+            {% endif %}
+
+            <div class="rk-pricing__plan-header">
+              {% if block.settings.icon != blank %}
+                <div class="rk-pricing__plan-icon">{{ block.settings.icon }}</div>
+              {% endif %}
+              <h3 class="rk-pricing__plan-name">{{ block.settings.plan_name }}</h3>
+              <p class="rk-pricing__plan-description">{{ block.settings.description }}</p>
+            </div>
+
+            <div class="rk-pricing__plan-price">
+              <div class="rk-pricing__price-wrapper">
+                <span class="rk-pricing__currency">$</span>
+                <span class="rk-pricing__amount" data-monthly="{{ block.settings.monthly_price }}" data-yearly="{{ block.settings.yearly_price }}">
+                  {{ block.settings.yearly_price }}
+                </span>
+                <span class="rk-pricing__period">/mo</span>
+              </div>
+              {% if block.settings.yearly_total != blank %}
+                <p class="rk-pricing__billed-yearly">Billed yearly at ${{ block.settings.yearly_total }}</p>
+              {% endif %}
+              {% if block.settings.savings_text != blank %}
+                <p class="rk-pricing__savings">{{ block.settings.savings_text }}</p>
+              {% endif %}
+            </div>
+
+            <a href="{{ block.settings.cta_link | default: '#' }}" class="rk-pricing__cta {% if block.settings.featured %}rk-pricing__cta--featured{% endif %}">
+              {{ block.settings.cta_text | default: 'Start Free Trial' }}
+            </a>
+
+            {% if block.settings.trial_text != blank %}
+              <p class="rk-pricing__trial">{{ block.settings.trial_text }}</p>
+            {% endif %}
+
+            <div class="rk-pricing__features">
+              {% if block.settings.features_heading != blank %}
+                <h4 class="rk-pricing__features-heading">{{ block.settings.features_heading }}</h4>
+              {% endif %}
+              <ul class="rk-pricing__features-list">
+                {% assign features = block.settings.features | newline_to_br | split: '<br />' %}
+                {% for feature in features %}
+                  {% if feature != blank %}
+                    <li class="rk-pricing__feature-item">
+                      <svg class="rk-pricing__check-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="10" fill="currentColor" opacity="0.1"/>
+                        <path d="M6 10L9 13L14 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      <span>{{ feature }}</span>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if section.settings.show_addons %}
+      <div class="rk-pricing__addons">
+        <div class="rk-pricing__addons-header">
+          <h3 class="rk-pricing__addons-heading">{{ section.settings.addons_heading | default: 'Add-ons & Services' }}</h3>
+          <p class="rk-pricing__addons-description">{{ section.settings.addons_description }}</p>
+        </div>
+
+        <div class="rk-pricing__addons-grid">
+          {% for block in section.blocks %}
+            {% if block.type == 'addon' %}
+              <div class="rk-pricing__addon" {{ block.shopify_attributes }}>
+                <div class="rk-pricing__addon-header">
+                  {% if block.settings.addon_icon != blank %}
+                    <div class="rk-pricing__addon-icon">{{ block.settings.addon_icon }}</div>
+                  {% endif %}
+                  <h4 class="rk-pricing__addon-name">{{ block.settings.addon_name }}</h4>
+                </div>
+                <p class="rk-pricing__addon-description">{{ block.settings.addon_description }}</p>
+                <div class="rk-pricing__addon-price">
+                  <span class="rk-pricing__addon-amount">${{ block.settings.addon_price }}</span>
+                  <span class="rk-pricing__addon-type">{{ block.settings.price_type | default: 'one-time' }}</span>
+                </div>
+                {% if block.settings.addon_cta_text != blank %}
+                  <a href="{{ block.settings.addon_cta_link | default: '#' }}" class="rk-pricing__addon-cta">
+                    {{ block.settings.addon_cta_text }}
+                  </a>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if section.settings.show_faq_link %}
+      <div class="rk-pricing__footer">
+        <p class="rk-pricing__footer-text">
+          {{ section.settings.footer_text }}
+          {% if section.settings.footer_link_text != blank %}
+            <a href="{{ section.settings.footer_link | default: '#' }}" class="rk-pricing__footer-link">
+              {{ section.settings.footer_link_text }}
+            </a>
+          {% endif %}
+        </p>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.querySelector('[data-section-id="{{ section.id }}"]');
+    if (!section) return;
+
+    const toggle = section.querySelector('.rk-pricing__toggle');
+    const billingOptions = section.querySelectorAll('.rk-pricing__billing-option');
+    const priceAmounts = section.querySelectorAll('.rk-pricing__amount');
+
+    if (!toggle) return;
+
+    let isYearly = true;
+
+    toggle.addEventListener('click', function() {
+      isYearly = !isYearly;
+      toggle.classList.toggle('rk-pricing__toggle--monthly');
+
+      billingOptions.forEach(option => {
+        option.classList.toggle('rk-pricing__billing-option--active');
+      });
+
+      priceAmounts.forEach(amount => {
+        const monthly = amount.dataset.monthly;
+        const yearly = amount.dataset.yearly;
+        amount.textContent = isYearly ? yearly : monthly;
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "RK Pricing",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Text",
+      "default": "Pricing Plans"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Choose Your <em>Perfect Plan</em></p>"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Start your 14-day free trial. No credit card required. Cancel anytime."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_billing_toggle",
+      "label": "Show Billing Toggle",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Add-ons Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_addons",
+      "label": "Show Add-ons Section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "addons_heading",
+      "label": "Add-ons Heading",
+      "default": "Add-ons & Services"
+    },
+    {
+      "type": "textarea",
+      "id": "addons_description",
+      "label": "Add-ons Description",
+      "default": "Optional premium features and services to enhance your Recipe Kit experience"
+    },
+    {
+      "type": "header",
+      "content": "Footer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_faq_link",
+      "label": "Show Footer",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "footer_text",
+      "label": "Footer Text",
+      "default": "Have questions about pricing?"
+    },
+    {
+      "type": "text",
+      "id": "footer_link_text",
+      "label": "Footer Link Text",
+      "default": "View FAQ"
+    },
+    {
+      "type": "url",
+      "id": "footer_link",
+      "label": "Footer Link URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "plan",
+      "name": "Pricing Plan",
+      "settings": [
+        {
+          "type": "text",
+          "id": "plan_name",
+          "label": "Plan Name",
+          "default": "Essentials"
+        },
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (Emoji)",
+          "default": "🌱"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Perfect for getting started"
+        },
+        {
+          "type": "number",
+          "id": "monthly_price",
+          "label": "Monthly Price",
+          "default": 20
+        },
+        {
+          "type": "number",
+          "id": "yearly_price",
+          "label": "Yearly Price (per month)",
+          "default": 17
+        },
+        {
+          "type": "text",
+          "id": "yearly_total",
+          "label": "Yearly Total",
+          "default": "200"
+        },
+        {
+          "type": "text",
+          "id": "savings_text",
+          "label": "Savings Text",
+          "default": "Save 17% with yearly billing"
+        },
+        {
+          "type": "checkbox",
+          "id": "featured",
+          "label": "Featured Plan",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge Text (if featured)",
+          "default": "Most Popular"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "Button Text",
+          "default": "Start Free Trial"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "trial_text",
+          "label": "Trial Text",
+          "default": "14-day free trial"
+        },
+        {
+          "type": "text",
+          "id": "features_heading",
+          "label": "Features Heading",
+          "default": "Everything in Essentials:"
+        },
+        {
+          "type": "textarea",
+          "id": "features",
+          "label": "Features (one per line)",
+          "default": "Unlimited recipes\nAdd Shopify products to ingredients\nAuto-generated SEO snippets\nSocial media sharing\n4 recipe designs\nBlog tag filters"
+        }
+      ]
+    },
+    {
+      "type": "addon",
+      "name": "Add-on",
+      "settings": [
+        {
+          "type": "text",
+          "id": "addon_name",
+          "label": "Add-on Name",
+          "default": "Related Recipes"
+        },
+        {
+          "type": "text",
+          "id": "addon_icon",
+          "label": "Icon (Emoji)",
+          "default": "🔗"
+        },
+        {
+          "type": "textarea",
+          "id": "addon_description",
+          "label": "Description",
+          "default": "Show related recipes to increase engagement"
+        },
+        {
+          "type": "number",
+          "id": "addon_price",
+          "label": "Price",
+          "default": 99
+        },
+        {
+          "type": "select",
+          "id": "price_type",
+          "label": "Price Type",
+          "options": [
+            {"value": "one-time", "label": "One-time"},
+            {"value": "monthly", "label": "Monthly"},
+            {"value": "yearly", "label": "Yearly"}
+          ],
+          "default": "one-time"
+        },
+        {
+          "type": "text",
+          "id": "addon_cta_text",
+          "label": "Button Text",
+          "default": "Add to Plan"
+        },
+        {
+          "type": "url",
+          "id": "addon_cta_link",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK Pricing",
+      "blocks": [
+        {
+          "type": "plan",
+          "settings": {
+            "plan_name": "Essentials",
+            "icon": "🌱",
+            "description": "Perfect for getting started with recipe content",
+            "monthly_price": 20,
+            "yearly_price": 17,
+            "yearly_total": "200",
+            "savings_text": "Save 17% with yearly billing",
+            "featured": false,
+            "features": "Unlimited recipes\nAdd Shopify products to ingredients\nAuto-generated SEO snippets\nSocial media sharing\n4 recipe designs\nBlog tag filters"
+          }
+        },
+        {
+          "type": "plan",
+          "settings": {
+            "plan_name": "Advanced",
+            "icon": "🚀",
+            "description": "For brands ready to scale recipe content",
+            "monthly_price": 30,
+            "yearly_price": 26,
+            "yearly_total": "310",
+            "savings_text": "Save 14% with yearly billing",
+            "featured": true,
+            "badge_text": "Most Popular",
+            "features_heading": "Everything in Essentials, plus:",
+            "features": "Add-to-cart buttons in ingredients\nMultiple direction images\nAI generated recipes\nDetailed recipe analytics"
+          }
+        },
+        {
+          "type": "plan",
+          "settings": {
+            "plan_name": "Enterprise",
+            "icon": "⭐",
+            "description": "For high-volume brands needing premium support",
+            "monthly_price": 90,
+            "yearly_price": 75,
+            "yearly_total": "900",
+            "savings_text": "Save 17% with yearly billing",
+            "featured": false,
+            "features_heading": "Everything in Advanced, plus:",
+            "features": "1-on-1 consultation call\nCustom recipe styling changes\nFirst access to new features\nPriority support"
+          }
+        },
+        {
+          "type": "addon",
+          "settings": {
+            "addon_name": "Related Recipes",
+            "addon_icon": "🔗",
+            "addon_description": "Automatically show related recipes to increase engagement and time on site",
+            "addon_price": 99,
+            "price_type": "one-time"
+          }
+        },
+        {
+          "type": "addon",
+          "settings": {
+            "addon_name": "Manual Import Service",
+            "addon_icon": "📥",
+            "addon_description": "We'll manually import and format your existing recipes for you",
+            "addon_price": 199,
+            "price_type": "one-time"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

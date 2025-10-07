@@ -1,0 +1,191 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "rk-hero",
+      "settings": {
+        "eyebrow": "About Recipe Kit",
+        "headline": "<p>We Help Food Brands <em>Grow</em></p>",
+        "description": "<p>Recipe Kit was built to solve a simple problem: food brands needed a way to create beautiful, shoppable, SEO-optimized recipes without technical complexity or expensive developers.</p>",
+        "cta_primary_text": "Start Free Trial",
+        "cta_primary_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+        "cta_secondary_text": "Our Story",
+        "cta_secondary_link": "#story",
+        "trust_badge": "✨ Trusted by 1,700+ merchants since 2020",
+        "layout": "centered",
+        "enable_animation": false,
+        "show_scroll_indicator": true
+      }
+    },
+    "social-proof": {
+      "type": "rk-social-proof",
+      "blocks": {
+        "metric-1": {
+          "type": "metric",
+          "settings": {
+            "icon": "🏢",
+            "number": "500",
+            "suffix": "+",
+            "label": "Food Brands"
+          }
+        },
+        "metric-2": {
+          "type": "metric",
+          "settings": {
+            "icon": "🍳",
+            "number": "10000",
+            "suffix": "+",
+            "label": "Recipes Created"
+          }
+        },
+        "metric-3": {
+          "type": "metric",
+          "settings": {
+            "icon": "🌍",
+            "number": "50",
+            "suffix": "+",
+            "label": "Countries"
+          }
+        },
+        "metric-4": {
+          "type": "metric",
+          "settings": {
+            "icon": "⭐",
+            "number": "4.9",
+            "suffix": "/5",
+            "label": "Customer Rating"
+          }
+        }
+      },
+      "block_order": ["metric-1", "metric-2", "metric-3", "metric-4"],
+      "settings": {
+        "heading": "Recipe Kit by the numbers",
+        "display_type": "metrics",
+        "animate_numbers": true
+      }
+    },
+    "features": {
+      "type": "rk-feature-showcase",
+      "blocks": {
+        "value-1": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🎯",
+            "heading": "Our Mission",
+            "description": "Empower food brands to create engaging content that educates customers and drives revenue, without requiring technical expertise.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "value-2": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "💡",
+            "heading": "Our Values",
+            "description": "Customer success first, continuous innovation, transparency in pricing, and building tools that actually solve real problems.",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "value-3": {
+          "type": "feature",
+          "settings": {
+            "icon_type": "emoji",
+            "icon": "🚀",
+            "heading": "Our Vision",
+            "description": "Become the #1 recipe platform for e-commerce, helping thousands of food brands connect with customers through beautiful content.",
+            "link_text": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": ["value-1", "value-2", "value-3"],
+      "settings": {
+        "heading": "What drives us",
+        "description": "<p>The principles that guide everything we build</p>",
+        "columns": "3",
+        "card_style": "shadow",
+        "icon_style": "filled"
+      }
+    },
+    "testimonials": {
+      "type": "rk-testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "company": "Schacht Spindle Company",
+            "quote": "We're so impressed with Recipe Kit and its support. The app ties recipes directly to our products, streamlining our workflow and driving sales.",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "company": "Olive Love",
+            "quote": "Recipe Kit has transformed how we present recipes. Customers can explore our recipes, shop ingredients instantly, and share them beautifully across platforms.",
+            "rating": 5,
+            "verified": true
+          }
+        },
+        "testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "company": "La Boîte",
+            "quote": "One of the best app experiences we have had on Shopify.",
+            "rating": 5,
+            "verified": true
+          }
+        }
+      },
+      "block_order": ["testimonial-1", "testimonial-2", "testimonial-3"],
+      "settings": {
+        "eyebrow": "What Our Customers Say",
+        "heading": "<p>Trusted by <em>Leading Brands</em></p>",
+        "subheading": "See why food brands choose Recipe Kit",
+        "stats_enable": true,
+        "stat_1_number": "500+",
+        "stat_1_label": "Happy Customers",
+        "stat_2_number": "4.9/5",
+        "stat_2_label": "Average Rating",
+        "stat_3_number": "92%",
+        "stat_3_label": "Would Recommend",
+        "cta_text": "Join These Brands",
+        "cta_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com"
+      }
+    },
+    "final-cta": {
+      "type": "rk-cta-final",
+      "settings": {
+        "badge_text": "🌟 Join 500+ Food Brands",
+        "heading": "<p>Ready to <em>grow</em> with us?</p>",
+        "subheading": "<p>Start creating beautiful, revenue-driving recipes today</p>",
+        "cta_primary_text": "Start Free Trial",
+        "cta_primary_link": "https://apps.shopify.com/recipe-kit?utm_source=recipekit.com",
+        "cta_secondary_text": "Contact Us",
+        "cta_secondary_link": "/pages/contact",
+        "trust_indicators": "✓ 14-day free trial • ✓ No credit card required • ✓ World-class support",
+        "background_type": "linear-gradient(135deg, #FFF8F3 0%, #FFE4E1 100%)",
+        "show_decorations": true
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "social-proof",
+    "features",
+    "testimonials",
+    "final-cta"
+  ]
+}

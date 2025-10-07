@@ -1,0 +1,222 @@
+{{ 'rk-how-it-works.css' | asset_url | stylesheet_tag }}
+
+<section class="rk-how-it-works rk-how-it-works--{{ section.settings.layout_style }}" data-section-id="{{ section.id }}">
+  <div class="rk-how-it-works__container">
+    {% if section.settings.heading != blank or section.settings.description != blank %}
+      <div class="rk-how-it-works__header">
+        {% if section.settings.heading != blank %}
+          <h2 class="rk-how-it-works__heading">{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.description != blank %}
+          <div class="rk-how-it-works__description">{{ section.settings.description }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="rk-how-it-works__steps">
+      {% for block in section.blocks %}
+        <div class="rk-how-it-works__step" data-step="{{ forloop.index }}" {{ block.shopify_attributes }}>
+          <div class="rk-how-it-works__step-number">
+            {% if section.settings.number_style == 'circle' %}
+              <span class="rk-how-it-works__number-circle">{{ forloop.index }}</span>
+            {% elsif section.settings.number_style == 'icon' and block.settings.icon != blank %}
+              <span class="rk-how-it-works__icon">{{ block.settings.icon }}</span>
+            {% else %}
+              <span class="rk-how-it-works__number-text">Step {{ forloop.index }}</span>
+            {% endif %}
+          </div>
+
+          <div class="rk-how-it-works__step-content">
+            <h3 class="rk-how-it-works__step-title">{{ block.settings.title }}</h3>
+            <p class="rk-how-it-works__step-description">{{ block.settings.description }}</p>
+            
+            {% if block.settings.image != blank %}
+              <div class="rk-how-it-works__step-image">
+                {{ block.settings.image | image_url: width: 400 | image_tag: 
+                  loading: 'lazy',
+                  class: 'rk-how-it-works__image'
+                }}
+              </div>
+            {% endif %}
+          </div>
+
+          {% unless forloop.last %}
+            {% if section.settings.show_connector %}
+              <div class="rk-how-it-works__connector">
+                <svg class="rk-how-it-works__connector-line" viewBox="0 0 100 2" preserveAspectRatio="none">
+                  <line x1="0" y1="1" x2="100" y2="1" stroke="currentColor" stroke-width="2" stroke-dasharray="5,5"/>
+                </svg>
+              </div>
+            {% endif %}
+          {% endunless %}
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if section.settings.cta_text != blank %}
+      <div class="rk-how-it-works__cta">
+        <a href="{{ section.settings.cta_link | default: '#' }}" class="rk-how-it-works__button">
+          {{ section.settings.cta_text }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const section = document.querySelector('[data-section-id="{{ section.id }}"]');
+    const steps = section.querySelectorAll('.rk-how-it-works__step');
+    
+    {% if section.settings.animate_on_scroll %}
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('rk-how-it-works__step--visible');
+            }, index * 100);
+          }
+        });
+      }, { threshold: 0.3 });
+      
+      steps.forEach(step => {
+        observer.observe(step);
+      });
+    {% endif %}
+  });
+</script>
+
+{% schema %}
+{
+  "name": "RK How It Works",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "How Recipe Kit Works"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Section Description",
+      "default": "<p>Get started in minutes and watch your engagement soar</p>"
+    },
+    {
+      "type": "select",
+      "id": "layout_style",
+      "label": "Layout Style",
+      "options": [
+        {"value": "timeline", "label": "Timeline"},
+        {"value": "cards", "label": "Cards"},
+        {"value": "vertical", "label": "Vertical List"}
+      ],
+      "default": "timeline"
+    },
+    {
+      "type": "select",
+      "id": "number_style",
+      "label": "Number Style",
+      "options": [
+        {"value": "circle", "label": "Circle with Number"},
+        {"value": "icon", "label": "Icon"},
+        {"value": "text", "label": "Step Text"}
+      ],
+      "default": "circle"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_connector",
+      "label": "Show Connection Lines",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "animate_on_scroll",
+      "label": "Animate on Scroll",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Get Started Free"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "label": "Icon (Emoji)",
+          "default": "✍️"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step Title",
+          "default": "Create Your Recipe"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Step Description",
+          "default": "Use our intuitive editor to build beautiful recipes that match your brand"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Step Image (Optional)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "RK How It Works",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "icon": "✍️",
+            "title": "Create Your Recipe",
+            "description": "Use our intuitive editor to build beautiful recipes that match your brand"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "icon": "🎨",
+            "title": "Customize the Look",
+            "description": "Match your brand's style with custom colors, fonts, and layouts"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "icon": "🚀",
+            "title": "Publish & Share",
+            "description": "One-click publishing to your store and all your marketing channels"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "icon": "📊",
+            "title": "Track & Grow",
+            "description": "Monitor performance and watch your engagement and sales increase"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

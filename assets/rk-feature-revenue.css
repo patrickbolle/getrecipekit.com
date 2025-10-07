@@ -1,0 +1,401 @@
+.rk-feature-revenue {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #fefefe 0%, #f0fff4 100%);
+  overflow: hidden;
+}
+
+.rk-feature-revenue__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.rk-feature-revenue__header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.rk-feature-revenue__eyebrow {
+  display: inline-block;
+  padding: 6px 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(104, 211, 145, 0.2) 0%,
+    rgba(235, 76, 46, 0.2) 100%
+  );
+  color: var(--rk-primary, #eb4c2e);
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.rk-feature-revenue__heading {
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--rk-text-primary, #2d3436);
+  margin: 0 0 20px;
+  line-height: 1.2;
+}
+
+.rk-feature-revenue__heading em {
+  font-style: normal;
+  background: linear-gradient(
+    135deg,
+    #68d391 0%,
+    var(--rk-primary, #eb4c2e) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rk-feature-revenue__subheading {
+  font-size: 18px;
+  color: var(--rk-text-secondary, #636e72);
+  line-height: 1.6;
+}
+
+/* Flow Layout */
+.rk-feature-revenue__flow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.rk-feature-revenue__step {
+  flex: 1;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.rk-feature-revenue__step--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rk-feature-revenue__step-number {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: var(--rk-primary, #eb4c2e);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(235, 76, 46, 0.3);
+}
+
+.rk-feature-revenue__step-card {
+  background: white;
+  border-radius: 8px;
+  padding: 40px 24px 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  min-height: 320px;
+  transition: all 0.3s ease;
+}
+
+.rk-feature-revenue__step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(235, 76, 46, 0.15);
+}
+
+.rk-feature-revenue__step-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.rk-feature-revenue__step-icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.rk-feature-revenue__step-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--rk-text-primary, #2d3436);
+  margin: 0;
+}
+
+.rk-feature-revenue__step-description {
+  font-size: 14px;
+  color: var(--rk-text-secondary, #636e72);
+  text-align: center;
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+.rk-feature-revenue__arrow {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--rk-primary, #eb4c2e);
+  z-index: 1;
+}
+
+/* Visuals */
+.rk-feature-revenue__visual {
+  margin-top: 20px;
+}
+
+.rk-feature-revenue__recipe-card {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 12px;
+}
+
+.rk-feature-revenue__recipe-image {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(
+    135deg,
+    #ffe4e1 0%,
+    var(--rk-primary, #eb4c2e) 100%
+  );
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.rk-feature-revenue__recipe-card h4 {
+  font-size: 14px;
+  margin: 0 0 12px;
+  color: var(--rk-text-primary, #2d3436);
+}
+
+.rk-feature-revenue__ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.rk-feature-revenue__ingredients label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--rk-text-secondary, #636e72);
+}
+
+.rk-feature-revenue__add-all {
+  width: 100%;
+  padding: 10px;
+  background: var(--rk-primary, #eb4c2e);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rk-feature-revenue__add-all:hover {
+  background: #eb2912;
+  transform: translateY(-1px);
+}
+
+.rk-feature-revenue__cart {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 12px;
+}
+
+.rk-feature-revenue__cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  color: var(--rk-text-secondary, #636e72);
+}
+
+.rk-feature-revenue__cart-total {
+  padding-top: 12px;
+  text-align: right;
+  color: var(--rk-text-primary, #2d3436);
+  font-size: 14px;
+}
+
+.rk-feature-revenue__checkout {
+  text-align: center;
+  padding: 20px;
+}
+
+.rk-feature-revenue__success {
+  font-size: 24px;
+  color: #68d391;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.rk-feature-revenue__metrics {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.rk-feature-revenue__metrics span {
+  padding: 4px 12px;
+  background: rgba(104, 211, 145, 0.1);
+  color: #68d391;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Metrics Panel */
+.rk-feature-revenue__metrics-panel {
+  background: white;
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  margin-bottom: 40px;
+}
+
+.rk-feature-revenue__metrics-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--rk-text-primary, #2d3436);
+  text-align: center;
+  margin: 0 0 32px;
+}
+
+.rk-feature-revenue__metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+
+.rk-feature-revenue__metric-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--rk-primary, #eb4c2e);
+  margin-bottom: 8px;
+}
+
+.rk-feature-revenue__metric-label {
+  font-size: 14px;
+  color: var(--rk-text-secondary, #636e72);
+}
+
+/* Calculator */
+.rk-feature-revenue__calculator {
+  background: linear-gradient(
+    135deg,
+    rgba(235, 76, 46, 0.05) 0%,
+    rgba(104, 211, 145, 0.05) 100%
+  );
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+}
+
+.rk-feature-revenue__calculator h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--rk-text-primary, #2d3436);
+  margin: 0 0 24px;
+}
+
+.rk-feature-revenue__calculator-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.rk-feature-revenue__input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rk-feature-revenue__input-group label {
+  font-size: 14px;
+  color: var(--rk-text-secondary, #636e72);
+  font-weight: 500;
+}
+
+.rk-feature-revenue__input-group input {
+  padding: 12px 16px;
+  border: 2px solid rgba(235, 76, 46, 0.2);
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: center;
+  width: 150px;
+  transition: border 0.2s ease;
+}
+
+.rk-feature-revenue__input-group input:focus {
+  outline: none;
+  border-color: var(--rk-primary, #eb4c2e);
+}
+
+.rk-feature-revenue__calculator-result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 18px;
+  color: var(--rk-text-secondary, #636e72);
+}
+
+.rk-feature-revenue__calculator-result strong {
+  font-size: 36px;
+  color: #68d391;
+  font-weight: 700;
+}
+
+@media (max-width: 991px) {
+  .rk-feature-revenue__flow {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .rk-feature-revenue__arrow {
+    display: none;
+  }
+
+  .rk-feature-revenue__metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 749px) {
+  .rk-feature-revenue {
+    padding: 60px 0;
+  }
+
+  .rk-feature-revenue__calculator-inputs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rk-feature-revenue__metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .rk-feature-revenue__metric-value {
+    font-size: 28px;
+  }
+}
