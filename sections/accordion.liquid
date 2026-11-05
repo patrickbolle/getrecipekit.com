@@ -69,11 +69,7 @@
             >
               {% if block.settings.icon != 'none' %}
                 <div class='twcss:flex twcss:h-10 twcss:w-10 twcss:shrink-0 twcss:items-center twcss:justify-center twcss:rounded-full'>
-                  {%
-                    render 'icon' with
-                    icon: block.settings.icon,
-                    class: 'twcss:h-8 twcss:w-8 twcss:text-[rgb(var(--color-button))]'
-                  %}
+                  {% render 'icon' with icon, icon: block.settings.icon, class: 'twcss:h-8 twcss:w-8 twcss:text-[rgb(var(--color-button))]' %}
                 </div>
               {% endif %}
 
@@ -414,3 +410,19 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                        render 'icon' with
+                        icon: block.settings.icon,
+                        class: 'twcss:h-8 twcss:w-8 twcss:text-[rgb(var(--color-button))]'
+                      %}
+  to: "{% render 'icon' with icon, icon: block.settings.icon, class: 'twcss:h-8 twcss:w-8
+    twcss:text-[rgb(var(--color-button))]' %}"
+  position: 2742..2866
+{% endcomment %}

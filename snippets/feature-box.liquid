@@ -66,7 +66,7 @@
       <div class='{% if block.settings.layout == "two_column" %}twcss:md:flex-1{% endif %} twcss:flex twcss:flex-col'>
         {% if block.settings.icon != 'none' %}
           <div class='twcss:w-12 twcss:h-12 twcss:flex twcss:mb-6 twcss:items-center twcss:justify-center twcss:rounded-lg'>
-            {% render 'icon' with icon: block.settings.icon, class: 'twcss:w-8 twcss:h-8 twcss:text-accent twcss:size-8' %}
+            {% render 'icon' with icon, icon: block.settings.icon, class: 'twcss:w-8 twcss:h-8 twcss:text-accent twcss:size-8' %}
           </div>
         {% endif %}
 
@@ -86,19 +86,19 @@
           <ul class='twcss:mt-8 twcss:!text-2xl twcss:space-y-6'>
             {% if block.settings.check_1 != blank %}
               <li class='twcss:flex twcss:items-start twcss:gap-3'>
-                {% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}
+                {% render 'icon' with icon, icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}
                 <span>{{ block.settings.check_1 }}</span>
               </li>
             {% endif %}
             {% if block.settings.check_2 != blank %}
               <li class='twcss:flex twcss:items-start twcss:gap-3'>
-                {% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}
+                {% render 'icon' with icon, icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}
                 <span>{{ block.settings.check_2 }}</span>
               </li>
             {% endif %}
             {% if block.settings.check_3 != blank %}
               <li class='twcss:flex twcss:items-start twcss:gap-3'>
-                {% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}
+                {% render 'icon' with icon, icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}
                 <span>{{ block.settings.check_3 }}</span>
               </li>
             {% endif %}
@@ -189,3 +189,30 @@
     });
   </script>
 {% endif %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'icon' with icon: block.settings.icon, class: 'twcss:w-8 twcss:h-8
+    twcss:text-accent twcss:size-8' %}"
+  to: "{% render 'icon' with icon, icon: block.settings.icon, class: 'twcss:w-8 twcss:h-8
+    twcss:text-accent twcss:size-8' %}"
+  position: 2859..2976
+- from: "{% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent
+    twcss:flex-shrink-0 twcss:mt-0.5' %}"
+  to: "{% render 'icon' with icon, icon: 'checkmark', class: 'twcss:w-6 twcss:h-6
+    twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}"
+  position: 3625..3754
+- from: "{% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent
+    twcss:flex-shrink-0 twcss:mt-0.5' %}"
+  to: "{% render 'icon' with icon, icon: 'checkmark', class: 'twcss:w-6 twcss:h-6
+    twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}"
+  position: 3994..4123
+- from: "{% render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:text-accent
+    twcss:flex-shrink-0 twcss:mt-0.5' %}"
+  to: "{% render 'icon' with icon, icon: 'checkmark', class: 'twcss:w-6 twcss:h-6
+    twcss:text-accent twcss:flex-shrink-0 twcss:mt-0.5' %}"
+  position: 4363..4492
+{% endcomment %}

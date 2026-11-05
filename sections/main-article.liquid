@@ -123,7 +123,7 @@
                 <div class='social-sharing__copied-text twcss:flex twcss:items-center twcss:gap-2 twcss:w-fit twcss:justify-center'>
                   Copied
                   <span class='social-sharing__copied-text-checkmark inline-block'>
-                    {%- render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:size-6' -%}
+                    {%- render 'icon' with icon, icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:size-6' -%}
                   </span>
                 </div>
               </button>
@@ -415,3 +415,15 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{%- render 'icon' with icon: 'checkmark', class: 'twcss:w-6 twcss:h-6 twcss:size-6'
+    -%}"
+  to: "{%- render 'icon' with icon, icon: 'checkmark', class: 'twcss:w-6 twcss:h-6
+    twcss:size-6' -%}"
+  position: 6489..6582
+{% endcomment %}

@@ -32,11 +32,7 @@
                 <div class='twcss:flex twcss:flex-col twcss:md:flex-row twcss:items-center twcss:gap-4 twcss:justify-start'>
                   {% if block.settings.icon != 'none' %}
                     <div class='twcss:flex twcss:h-16 twcss:w-16 twcss:items-center twcss:justify-center twcss:rounded-full twcss:bg-[rgba(var(--color-button),0.1)]'>
-                      {%
-                        render 'icon' with
-                        icon: block.settings.icon,
-                        class: 'twcss:h-8 twcss:w-8 twcss:text-[rgb(var(--color-button))]'
-                      %}
+                      {% render 'icon' with icon, icon: block.settings.icon, class: 'twcss:h-8 twcss:w-8 twcss:text-[rgb(var(--color-button))]' %}
                     </div>
                   {% endif %}
 
@@ -251,3 +247,19 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                            render 'icon' with
+                            icon: block.settings.icon,
+                            class: 'twcss:h-8 twcss:w-8 twcss:text-[rgb(var(--color-button))]'
+                          %}
+  to: "{% render 'icon' with icon, icon: block.settings.icon, class: 'twcss:h-8 twcss:w-8
+    twcss:text-[rgb(var(--color-button))]' %}"
+  position: 1802..1926
+{% endcomment %}
