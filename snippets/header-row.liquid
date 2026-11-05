@@ -15,7 +15,7 @@
     assign item_column = settings[column_key] | default: 'left'
 
     case item
-      when 'actions':
+      when 'actions'
         assign item_column = 'right'
     endcase
 
@@ -76,3 +76,13 @@
     </div>
   {%- endif -%}
 {%- endfor -%}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "      when 'actions':"
+  to: "      when 'actions'"
+  position: 414..434
+{% endcomment %}
